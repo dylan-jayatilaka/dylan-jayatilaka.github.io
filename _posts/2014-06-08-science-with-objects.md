@@ -46,7 +46,7 @@ called “dot notation”, which I illustrate on numbers:
    b.times(3)
 ~~~
 
-Here the variable `a` is set to `1``. `a` and `b` are integer variables
+Here the variable `a` is set to `1`. `a` and `b` are integer variables
 as seen by the declaration `a,b :: INT`.  Then a message is sent to it
 via a dot followed by `plus(1)`. The intention of the message is that
 the value of `a` is incremented by the number `1`. Presumably the value
