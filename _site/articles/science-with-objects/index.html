@@ -1,0 +1,564 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Science with objects &#8211; That Blog by Dylan</title>
+<meta name="description" content="">
+<meta name="keywords" content="objects, scientific programming, how to program, basic Foo">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Science with objects">
+<meta property="og:description" content="">
+<meta property="og:url" content="//localhost:4000/articles/science-with-objects/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/science-with-objects/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/so-simple-sample-image-3.jpg" class="entry-feature-image" alt="Science with objects" ><p class="image-credit">Photo Credit: <a href="http://mademistakes.com">Michael Rose</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#objects" title="Pages tagged objects">objects</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#scientific programming" title="Pages tagged scientific programming">scientific programming</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#how to program" title="Pages tagged how to program">how to program</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#basic Foo" title="Pages tagged basic Foo">basic Foo</a></span>
+        
+          <h1 class="entry-title">Science with objects</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-06-08T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 08, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
+        
+        <span><a href="//localhost:4000/articles/science-with-objects/" rel="bookmark" title="Science with objects"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/science-with-objects/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Science with objects&url=//localhost:4000/articles/science-with-objects/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/science-with-objects/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>We’d better start with this definition of my own:</p>
+
+<blockquote>
+  <p>An object in computer science is a <strong>collection of labeled data</strong>
+together with actions or <strong>methods</strong> you can perform on that data.
+The methods are collected together in one place called a <strong>class</strong> or
+<strong>module</strong>.</p>
+</blockquote>
+
+<p>Sometimes methods are also called messages i.e. you pass messages to the
+object to ask it to perform an action. These methods or messages may
+involving other objects of different type which may also change. An
+object may also be called an abstract data type.</p>
+
+<h2 id="dot-notation">Dot notation</h2>
+
+<p>Any number may be regarded as an object.</p>
+
+<p>That’s because a particular number is a datum, and we can perform
+actions on it e.g adding or multiplying it by another number. If collect
+together these routines we have defined a class.</p>
+
+<p>The example code snippets below demonstrate a near universal notation,
+called “dot notation”, which I illustrate on numbers:</p>
+
+<pre><code class="language-fortran">   a,b :: INT
+
+   a = 1
+   a.plus(1)
+
+   b = 2
+   b.times(3)
+</code></pre>
+
+<p>Here the variable <code>a</code> is set to <code>1</code><code>. </code>a<code> and </code>b<code> are integer variables
+as seen by the declaration </code>a,b :: INT<code>.  Then a message is sent to it
+via a dot followed by </code>plus(1)<code>. The intention of the message is that
+the value of </code>a<code> is incremented by the number </code>1<code>. Presumably the value
+of </code>a<code> is </code>2<code> after this method is applied. Likewise, the number </code>b<code> is
+set to </code>2<code> and then the operations </code>times(3)<code> is performed on it,
+resulting in a value of </code>6`. For those of you who like quantum
+mechanics, this is nothing other than the application an operator,
+except the operator comes <em>after</em> the entity on which the action is
+performed.</p>
+
+<p>All of this might seem rather trivial. But consider this example:</p>
+
+<pre><code class="language-fortran">   m :: MAT{REAL}(3,3)
+   eigenvalues  :: VEC{REAL}(3)
+   eigenvectors :: MAT{REAL}(3,3)
+   i,j :: INT
+
+   do i = 1,3
+   do j = 1,3
+      m(i,j) = i + j
+   end
+   end
+
+   m.solve_eigenproblem(eigenvalues,eigenvectors)
+</code></pre>
+
+<p>Look closely.</p>
+
+<p>It does not require much imagination to guess that <code>m</code> is a
+\(3\times3\) matrix of <code>REAL</code> numbers, as is <code>eigenvectors</code>.
+<code>eigenvectors</code> is a 3-dimensional real vector.</p>
+
+<p>Next come a couple of <code>do</code> statements. These are a loops. Meaning that
+the integer variables <code>i</code> and <code>j</code> independently cycle from <code>1</code> to <code>3</code>
+and the matrix <code>m</code> is set so its \(i,j\)-th element is <code>i+j</code>.</p>
+
+<p>The next part is more interesting: a message is sent to to the matrix
+<code>m</code> to please <code>solve_eigenproblem(eigenectors,eigenvalues)</code>. Again it
+does not take much to guess that <code>eigenvalues</code> are the list of
+eigenvalues, while <code>eigenvectors</code> holds the matrix of eigenvector
+coefficients.</p>
+
+<p>All this is cute, but has anything really been achieved? Isn’t this just
+a familiar subroutine call? Well yes. But notice how the object-message
+makes it clear what the entity actually being “acted on” is, and what
+the inputs or output are.</p>
+
+<h2 id="a-leap">A leap</h2>
+
+<p>Let me now give a final example which quantum chemists will recognize.
+It is slightly changed from the Tonto code base. It is written in the
+<code>Foo</code> language, as are all the above examples. This is a big leap from
+the previous examples, but you know enough to unravel it.</p>
+
+<pre><code class="language-fortran">   usual_scf ::: recursive
+   ! Do an SCF calculation. The .molecular_orbitals,
+   ! .orbital_energies, and .density_matrix are produced as results.
+      self :: MOLECULE
+
+   ENSURE(self.basis_info_made,"no basis info")
+   ENSURE(self.atom.created,   "no atom list")
+   ENSURE(self.scfdata.created,"no scfdata")
+
+      self.initialize_scf
+
+      self.put_scf_banner_and_options
+      self.put_scf_table_header
+
+      do
+
+         self.update_molecular_orbitals
+         self.make_scf_density_matrix
+         self.make_fock_matrix
+         self.update_scfdata
+         self.update_scfdata_error
+         self.put_scf_table_body
+
+         if (self.scfdata.scf_done) exit
+
+      end
+
+      self.put_scf_results
+      self.cleanup_scf
+
+   end
+</code></pre>
+
+<p>Look carefully.</p>
+
+<p>It is clearly an SCF subroutine called <code>usual_scf</code> (for those who are
+not familiar with quantum chemistry, the SCF procedure is the one which
+yeilds the molecular orbitals for a molecule, from which the
+Hartree-Fock or density functional theory energy may be calculated). The
+declaration indicates that <code>usual_scf</code> is recursive i.e. it calles itself.</p>
+
+<p>There are descriptive comments following the routine name, following the
+exclamation marks, describing the results. They seem reasonable except
+for the do in front of soke of the terms.</p>
+
+<p>Next, a variable called <code>self</code> is declared. It is not an integer, or a
+real, or matrix as we have seen before, but a <code>MOLECULE</code>. We don’t know
+exactly what this <code>MOLECULE</code> is, but working by analogy it wpuld seem
+reasnable that is is comprised of data — probably quite a lot of data
+since a molecule is a compicated object. One might speculate that,
+stored in this variable of type <code>MOLECULE</code> are the types of atoms in it,
+and perhaps their positions. Notice that you can work all this out by
+intuition and by the naming of the entity. I don’t want to rub it in,
+but I did stress the importance of naming things properly in a previous
+post.</p>
+
+<p>What is the actual data that comprises the <code>self</code> variable of type
+<code>MOLECULE</code>? Where is it defined? We don’t get that information here,
+obviously.</p>
+
+<p>Let me inform you that the type <code>MOLECULE</code> is defined in the <code>types.foo</code>
+file along with all the other types in the Tonto system.</p>
+
+<p>Let me also tell you that <code>self</code> is in fact a <em>hidden argument</em> to this
+routine. In other words, to the routine called <code>usual_scf</code> requires
+<code>self</code> as an argument. In Fortran it might be called like this in
+another part of the library:</p>
+
+<pre><code class="language-fortran">   usual_scf(self)
+</code></pre>
+
+<p>In actual fact is called like this</p>
+
+<pre><code class="language-fortran">   self.usual_scf
+</code></pre>
+
+<p>or even more succinctly like this</p>
+
+<pre><code class="language-fortran">   .usual_scf
+</code></pre>
+
+<p>Pause on this a moment. I am saying that <code>self</code> is the object to which the
+message <code>usual_scf</code> is passed to. That is, the SCF calculation is
+performed on <code>self</code> itself. Perhaps this helps to explain the initially
+rather cryptic name. In any case, the appearance of a single dot after
+an empty space signifies the presence of a hidden <code>self</code> variable. Apart
+from anything this leads to less typing.</p>
+
+<h2 id="removing-your-self">Removing your <code>self</code></h2>
+
+<p>Let’s rewrite the above SCF routine without the unnecessary <code>self.</code>
+prefix.</p>
+
+<pre><code class="language-fortran">   usual_scf ::: recursive
+   ! Do an SCF calculation. The .molecular_orbitals,
+   ! .orbital_energies, and .density_matrix are produced as results.
+      self :: MOLECULE
+
+   ENSURE(.basis_info_made,"no basis info")
+   ENSURE(.atom.created,   "no atom list")
+   ENSURE(.scfdata.created,"no scfdata")
+
+      .initialize_scf
+
+      .put_scf_banner_and_options
+      .put_scf_table_header
+
+      do
+
+         .update_molecular_orbitals
+         .make_scf_density_matrix
+         .make_fock_matrix
+         .update_scfdata
+         .update_scfdata_error
+         .put_scf_table_body
+
+         if (.scfdata.scf_done) exit
+
+      end
+
+      .put_scf_results
+      .cleanup_scf
+
+   end
+</code></pre>
+
+<p>Now the routine reads like a dot-point list of things to do. It is
+really extremely readable. Indeed, It may seem hard to believe that this
+is a working program — perhaps even more unbelievable that this is
+essentially just syntactically modified Fortran. (Much of the bad
+reputation has come from the style of coding that scientists use: it is
+not the language itself these days).</p>
+
+<p>Furthermore, if we revisit the comments at the start of the routine it
+finally becomes clear why the dots appear before <code>.molecular_orbitals</code>,
+<code>.orbital_energies</code> and <code>.density_matrix</code>. These are messages passed to
+te <code>self</code> variable to return certain entities. You can guess what they
+are. These are in fact part of the data components which comprise the
+definition of a <code>MOLECULE</code></p>
+
+<h2 id="complex-numbers-as-objects">Complex numbers as objects</h2>
+
+<p>If you have understood all of this, test yourself with the following
+example.</p>
+
+<p>We are going to define a complex number type, as follows, in the
+<code>types.foo</code> file. (We don’t actually need to do thisbecause complex
+numbers are built-in, but this is an exercise)</p>
+
+<pre><code class="language-fortran">begin type COMPLEX_NUMBER
+
+   a :: REAL
+   ! The real part
+
+   b :: REAL
+   ! The complex part
+
+end type
+</code></pre>
+
+<p>Now you know how to define a <strong>derived type</strong> comprised of built-in
+types, in this case two <code>REAL</code> number types. A derived type may be
+comparised of any previously defined derived type or built-in type.</p>
+
+<p>What is the purpose of the following method? I will tell you that the
+rouine is not correct. Can you find the bug?</p>
+
+<pre><code class="language-fortran">module COMPLEX_NUMBER
+
+contains
+
+   to_product_with(z2) result (res)
+   ! What do I do?
+
+      self :: IN
+      z2 :: COMPLEX_NUMBER, IN
+      res :: COMPLEX_NUMBER
+
+      z_1 :: COMPLEX_NUMBER
+
+      z_1   = self
+      res.a = z1.a z2.a + z1.b z2.b
+      res.b = z1.a z2.b + z1.b z2.a
+
+   end
+
+end
+</code></pre>
+
+<h2 id="what-all-the-fuss-is-about">What all the fuss is about</h2>
+
+<p>This has been a long post but the key idea is just this:</p>
+
+<blockquote>
+  <p>The power of using objects lies in their organizing ability</p>
+</blockquote>
+
+<p>In particular</p>
+
+<ol>
+  <li>
+    <p><strong>All methods pertaining to an object are found in the corresponding
+module</strong>. This is helpful because duplication of code is eliminated.
+Consider the case of a program written by many contributors <em>not</em>
+written in object oriented way. The chances are that the different
+authors write many duplicated routines. In particular domains, much
+hard work has been expended to make libraries of, for example, linear
+algebra and array routines. However, in other fields this effort is
+almost non-existent. Consider the case of quantum chemistry, for
+example, with it’s plethora of programs. Consider the wasted and
+duplicated efforts of so many smart people!</p>
+  </li>
+  <li>
+    <p><strong>Organizing programs in an object oriented way facilitates program
+evolution</strong>. Let’s illustrate this again with examples from quantum
+chemistry.</p>
+
+    <ul>
+      <li>
+        <p>How easy would it be to make use of the <em>integrals</em> in
+this program in another one? Perhaps it isn’t hard if they have
+been written to a file … perhaps.</p>
+      </li>
+      <li>
+        <p>What if now you wanted to use <em>some</em> of the integrals and not
+others? Perhaps you want to calculate the energy contributions from
+a particular region to gain some physical insight?</p>
+      </li>
+      <li>
+        <p>What if now you have a new and <em>better way</em> of calculating the
+integrals. Perhaps you have discovered that gaussian basis
+functions with complex exponents work much better. How easy would
+it be to slot those integras into the code? After all, it would not
+be desirable to rewrite *everything in the original program.</p>
+      </li>
+    </ul>
+
+    <p>In general all of these tasks would be difficult to do unless the
+data used was well separated from the other parts of the program,
+and all actions on those data are <strong>encapulated</strong> in one place. But
+this is precisely the idea behind the object oriented approach.
+Indeed, as we saw, not only are all the methods which act on the same
+data collected in the same module — the data object on which the
+methods are applied are always the first argument in any routine.</p>
+  </li>
+  <li>
+    <p><strong>It is easier to maintain an object oriented program</strong>. If you have
+understood the above argument you should be able to provide reasons
+for this. As a matter of fact, it is well documented that during the
+life cycle of a program <strong>much more effort goes into maintenance and
+bug fixing that into the original writing!</strong> If this is accepted then
+it follows that much is gained by using objects.</p>
+  </li>
+</ol>
+
+<h2 id="proof-of-the-pudding">Proof of the pudding</h2>
+
+<p>The arguments given above may well seem like preaching. Some others may
+think that the idea behind object oriented methods is just the concept
+of a library — organizing routines acting on the same data in one
+place. This is correct: object orientation is just the library concept
+on steroids. In a later post I hope to illustrate how easy it is to
+write code in a well-designed quantum chemistry package.</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/hello-tonto-world/" class="btn" title="Hello Tonto World">Previous article</a>
+      
+      
+        <a href="//localhost:4000/articles/tonto-types/" class="btn" title="Tonto types">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

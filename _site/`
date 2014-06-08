@@ -1,0 +1,5 @@
+$$
+z_1 z_2 = (a_1 + i b_1) ( a_2 + i b_2) = (a_1 a_2 - b_1 b_2) + i (a_1 b_2 _ a_2 b_1),
+    a   = \textrm{Re}\, z.
+\end{align}
+$$
