@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-06-09T04:39:01+08:00</updated>
+<updated>2014-06-09T05:03:41+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -186,13 +186,13 @@ called “dot notation”, which I illustrate on numbers:&lt;/p&gt;
    b.times(3)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Here the variable &lt;code&gt;a&lt;/code&gt; is set to &lt;code&gt;1&lt;/code&gt;&lt;code&gt;. &lt;/code&gt;a&lt;code&gt; and &lt;/code&gt;b&lt;code&gt; are integer variables
-as seen by the declaration &lt;/code&gt;a,b :: INT&lt;code&gt;.  Then a message is sent to it
-via a dot followed by &lt;/code&gt;plus(1)&lt;code&gt;. The intention of the message is that
-the value of &lt;/code&gt;a&lt;code&gt; is incremented by the number &lt;/code&gt;1&lt;code&gt;. Presumably the value
-of &lt;/code&gt;a&lt;code&gt; is &lt;/code&gt;2&lt;code&gt; after this method is applied. Likewise, the number &lt;/code&gt;b&lt;code&gt; is
-set to &lt;/code&gt;2&lt;code&gt; and then the operations &lt;/code&gt;times(3)&lt;code&gt; is performed on it,
-resulting in a value of &lt;/code&gt;6`. For those of you who like quantum
+&lt;p&gt;Here the variable &lt;code&gt;a&lt;/code&gt; is set to &lt;code&gt;1&lt;/code&gt;. &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; are integer variables
+as seen by the declaration &lt;code&gt;a,b :: INT&lt;/code&gt;.  Then a message is sent to it
+via a dot followed by &lt;code&gt;plus(1)&lt;/code&gt;. The intention of the message is that
+the value of &lt;code&gt;a&lt;/code&gt; is incremented by the number &lt;code&gt;1&lt;/code&gt;. Presumably the value
+of &lt;code&gt;a&lt;/code&gt; is &lt;code&gt;2&lt;/code&gt; after this method is applied. Likewise, the number &lt;code&gt;b&lt;/code&gt; is
+set to &lt;code&gt;2&lt;/code&gt; and then the operations &lt;code&gt;times(3)&lt;/code&gt; is performed on it,
+resulting in a value of &lt;code&gt;6&lt;/code&gt;. For those of you who like quantum
 mechanics, this is nothing other than the application an operator,
 except the operator comes &lt;em&gt;after&lt;/em&gt; the entity on which the action is
 performed.&lt;/p&gt;
