@@ -137,68 +137,104 @@
 
 <p>Well, not theory but the relevant formulas.</p>
 
-<p>According to Head-Gordon et al (1988) the formula for the MP2 correlation
-energy is</p>
+<p>According to Head-Gordon, Pople and Frisch (1988) CPL 153 p. 503 the formula
+for the MP2 correlation energy is</p>
 
 <script type="math/tex; mode=display">
-E_\textrm{MP2} = 
+E_\textrm{MP2} =
 \frac{1}{2}
-\sum_{ijab}
-\frac{2(ia|jb)^2 + [(ia|jb)-(ib|ja)]^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
+\sum_{i,j,a,b}
+\frac{2(ia|jb)^2 + [(ia|jb)-(ib|ja)]^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}.
 </script>
 
-<p>In the above the $\epsilon_p$ are molecular orbital energies, and the indices
-$i$ and $j$ stand for occupied molecular orbitals $\phi_i$ and $\phi_j$, while $a$ and
-$b$ stand for unoccupied orbitals $\phi_a$ and $\phi_b$. The two electron
-integrals are</p>
+<p>Here the \( \epsilon_p \) are molecular orbital energies, 
+and the indices \( i \) and \( j \) stand for 
+occupied molecular orbitals \( \phi_i \) and \( \phi_j \), 
+while indices \( a \) and \( b \) stand for unoccupied orbitals
+\( \phi_a \) and \( \phi_b \). The two electron integrals are</p>
 
 <script type="math/tex; mode=display">
 (pq|rs) = \int \phi_p(1)\phi_q(1) r_{12}^{-1} \phi_r(2) \phi_s(2)
 </script>
 
-<p>These are obtained from the atomic orbital integrals \( (\mu\nu|\kappa\lambda) \) 
-through a four index transform</p>
+<p>These are obtained from the atomic orbital integrals \( (\mu\nu|\kappa\lambda) \)
+through a “four index transform”</p>
 
 <script type="math/tex; mode=display">
-(pq|rs) = \sum_{\mu\nu\kappa\lambda}
-          (\mu\nu|\kappa\lambda) c_{\mu p} c_{\nu q} c_{\kappa r} c_{\lambda s}
+(pq|rs) = 
+\sum_{\mu,\nu,\kappa,\lambda}
+          (\mu\nu|\kappa\lambda) c_{\mu p} c_{\nu q} c_{\kappa r} c_{\lambda s}.
 </script>
 
-<p>The coefficients \( )\textbf{c} \) are the matrix of the molecular orbital
+<p>The coefficients \( \textbf{c} \) are the matrix of the molecular orbital
 coefficients in the atomic orbital basis while. It seems we don’t actually need
 these if we have the corresponding molecular orbital energies.</p>
 
 <h2 id="get-ready">Get ready</h2>
 
-<p>To write the program we need to locate where the integrals are. Normally you
-would try an use the unix <code>grep</code> command with the word <code>integral</code> in the
-<code>foofiles/</code> source directory. If you try that you will get a lot of output. On
-reflection that is not unreasonable since much of quantum chemistry has to do
-with integrals. After piping the output through less</p>
+<p>To write the program we need to locate where the integrals are. In a
+typical program made by scientists there is no “integrated development
+environment”. Therefore in unix you would use the <code>grep</code> command with the
+word <code>integral</code> in the <code>foofiles/</code> source directory. If you try that you will
+get a lot of output. On reflection this is unreasonable: much of quantum
+chemistry has to do with integrals. The output can be “pioed”
+through the <code>less</code> pager</p>
 
-<pre><code>   cd foofiles
+<p><code>
+   cd foofiles
    grep integral | less
-</code></pre>
+</code></p>
 
-<p>After some searching you may come across the routine <code>.FOCK:make_ERI_integrals(v)</code> and
-<code>.FOCK:make_MO_ERI_integrals(v)</code>. Looking further at these routines we see that the second
-one produces a four dimensional array <code>v :: MAT4{REAL}</code>. From the documentation
-these hold the integrals that are required.</p>
+<p>After searching you come across the routines <code>.FOCK:make_ERI_integrals(v)</code>.
+Investigating further in the <code>molecule.fock.foo</code> file we see from the
+documentation that this <code>v</code>  is declared as a a four dimensional array 
+<code>v :: MAT4{REAL}</code> </p>
+
+<p>```</p>
+
+<p>make_MO_ERI_integrals(v)
+   ! Calculate “v” the electron repulsion integrals (ERI’s) in the MO basis
+     v :: MAT4{REAL}, OUT
+     …
+```</p>
+
+<p>Clearly <code>v</code> holds the two electron electron repulsion integrals (ERIs).
+()In a practical program there would be too many of these integrals to
+hold in an array, but we do it here just for teaching purposes).</p>
 
 <h2 id="housekeeping">Housekeeping</h2>
 
-<p>In a perfect world we would expect to call that routine, using a template like 
-in the “Hello Tonto World” program, and be returned the integrals we need. If
-we actually do that, the program will crash. Why would that happen? Well, clearly
-there is some set-up to do. For example, what molecule do we want to treat?
-What basis set to use? And finally, should we actually do an SCF calculation beforehand
-to get the molecular orbitals? And after that, we still need the orbital energies.
-You might recall from the post on objects that these are stored in <code>orbital_energies</code>.</p>
+<p>In a perfect world we would expect to call the routine above, just as we
+did in the in the “Hello World” program. The routine would simply work and
+returned the integrals. If we <em>actually</em> do that, our program will crash. </p>
 
-<p>Once this is realised, we see that we actually want to add our MP2 calculation to
-the end of a standard SCF calculation. Looking in the <code>tests/</code> folsderf we finda simple
-one for water, say <code>h2o_rhf_cc-pVDZ</code>. We should use that input file. And rather than
-starting with the “Hellow Tonto World” program we should start by modifying the
+<p>Why?</p>
+
+<p>Because there is some “set-up” to do. For example, </p>
+
+<ul>
+  <li>
+    <p>What molecule do we want to treat? </p>
+  </li>
+  <li>
+    <p>What basis set do to use? </p>
+  </li>
+  <li>
+    <p>We should do an SCF calculation beforehand for the orbitals and energies!
+()If you are reading previous posts, you may recall that the orbital energies
+are stored in a variable <code>orbital_energies</code>).</p>
+  </li>
+</ul>
+
+<p>So we want to add our MP2 calculation program to the end of a standard SCF calculation. 
+We can find an appropriate input file from the tests/<code> folder. The test job in folder
+</code>h2o_rhf_cc-pVDZ<code> is fine. The </code>stdin<code> file from this folder can be copied to the
+</code>tonto<code> folder or wherever you want to</code> run the program.</p>
+
+<h2 id="starting-to-write">Starting to write</h2>
+
+<p>To write the program it is always good to have a starting template.
+Since we actually need to run an SCF calculation beforehand we shouldwe should start by modifying the
 <code>run_molecule.exe</code> program. That, of course is in the <code>run_molecule.foo</code> file.</p>
 
 <p>So we start by adding our code to the end of that program. We should probably rename in to
@@ -206,7 +242,9 @@ something like <code>run_molecule_mp2.foo</code> before starting.</p>
 
 <h2 id="the-answer">The Answer</h2>
 
-<p>At this point I would give you answer, but perhaps you can do this as an exercise.</p>
+<p>At this point I should give you answer. </p>
+
+<p>But perhaps you can do this as an exercise?</p>
 
 
         
@@ -214,8 +252,10 @@ something like <code>run_molecule_mp2.foo</code> before starting.</p>
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/tonto-types/" class="btn" title="Tonto types">Previous article</a>
+        <a href="//localhost:4000/articles/science-with-objects/" class="btn" title="Science with objects">Previous article</a>
       
+      
+        <a href="//localhost:4000/articles/the-determinant-wavefunction/" class="btn" title="The determinant wavefunction">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>

@@ -10,13 +10,159 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-06-09T05:03:41+08:00</updated>
+<updated>2014-06-12T14:59:08+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
   <uri>http://localhost:4000/</uri>
   <email>dylan.jayatilaka@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[The determinant wavefunction]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/the-determinant-wavefunction/"/>
+  <id>http://localhost:4000/articles/the-determinant-wavefunction</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-12T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#wavefunction" term="wavefunction" /><category scheme="http://localhost:4000/tags/#determinant" term="determinant" /><category scheme="http://localhost:4000/tags/#Hartree-Fock" term="Hartree-Fock" /><category scheme="http://localhost:4000/tags/#DFT" term="DFT" />
+  <content type="html">
+  
+    &lt;p&gt;This article explains how the Pauli principle evolves naturally to
+the idea of a single determinant wavefunction. I don’t explain
+or justify the Pauli principle itself! Nevertheless, we start
+with it as a reminder.&lt;/p&gt;
+
+&lt;h2 id=&quot;pauli-principle&quot;&gt;Pauli principle&lt;/h2&gt;
+
+&lt;p&gt;The Pauli principle states that when the coordinates of &lt;em&gt;any&lt;/em&gt; pair of electrons
+is swapped the sign of the wavefunction is reversed,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+ \Psi(\textbf{x}_1 \ldots
+      \textbf{x}_i \ldots
+      \textbf{x}_j \ldots
+      \textbf{x}_N)
+=
+-\Psi(\textbf{x}_1 \ldots
+      \textbf{x}_j \ldots
+      \textbf{x}_i \ldots
+      \textbf{x}_N)
+&lt;/script&gt;
+
+&lt;p&gt;Pauli proved from quantum mechanics that this property holds for &lt;em&gt;any&lt;/em&gt; set of
+identical &lt;em&gt;fermions&lt;/em&gt;, and that any particle with half-integer spin is a fermion.
+He also showed that those of integer spin were &lt;em&gt;bosons&lt;/em&gt;, and when the coordinates
+of identical bosons are swapped, their wavefunction &lt;em&gt;does not&lt;/em&gt; change sign.&lt;/p&gt;
+
+&lt;h2 id=&quot;hartrees-orbital-product-wavefunction&quot;&gt;Hartree’s orbital-product wavefunction&lt;/h2&gt;
+
+&lt;p&gt;The simplest wavefunction we can think of is Hartree’s orbital-product
+wavefunction&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Phi(\textbf{x}_1 \ldots
+     \textbf{x}_N)
+=
+\phi_1(\textbf{x}_1) \ldots
+\phi_N(\textbf{x}_N)
+&lt;/script&gt;
+
+&lt;p&gt;Think of this as wavefunction representing electron 1 in orbital
+\( \phi_1 \), electron 2 in orbital \( \phi_2 \), and so on
+for all \( N \) particles.
+Note: if we swap coordinates \( \textbf{x}_i \) and
+\( \textbf{x}_j \) in the above product, it is the same as leaving the
+coordinates unchanged but swapping the functions \( \phi_i \) and
+\( \phi_j \). So we see that after the swap we we will not have the same
+wavefunction — the electrons will be in different orbitals. So the
+wavefunction is not the same — let alone obey the Pauli principle where
+the wavefunction is supposed to be the same except for sign reversal.&lt;/p&gt;
+
+&lt;p&gt;How can we make a wavefunction which satisfies the Pauli principle?&lt;/p&gt;
+
+&lt;p&gt;Let’s make the problem a bit easier. Suppose we wanted a wavefunction
+where swapping electrons led to &lt;em&gt;no&lt;/em&gt; change. How to achieve that?&lt;/p&gt;
+
+&lt;h2 id=&quot;symmetric-orbital-product-wavefunction&quot;&gt;Symmetric orbital-product wavefunction&lt;/h2&gt;
+
+&lt;p&gt;One way is to take any wavefunction, permute the particle coordinates in all
+ways, then add all these permuted-coordinate wavefunctions together. We call
+this a &lt;strong&gt;symmetrized wavefunction&lt;/strong&gt; because if we swap any pair of coordinates
+in this sum it will remain unchanged. It remains the same because in the list
+of all permuted wavefunctions a particular term always occurs with a unique
+partner where the two coordinates are swapped. We write the symmetrized
+wavefunction like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Phi(\textbf{x}_1 \ldots \textbf{x}_{N})
+=
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} P_u
+\phi_1(\textbf{x}_1) \ldots
+\phi_N(\textbf{x}_N).
+&lt;/script&gt;
+
+&lt;p&gt;The factor \( N! \) is required to ensure the wavefunction is normalized
+(assuming the orbitals \( \phi_i \) are normalized also). Incidentally, such
+a wavefunction is appropriate to describe a &lt;em&gt;boson&lt;/em&gt; wavefunction which obeys
+the Pauli principle for bosons. But we are interested in electrons, which are
+fermions, so the wavefunction should change sign. Since the permuted list
+contains all terms in pairs, it should be clear to you that for the
+wavefunction to change sign every term must be &lt;em&gt;subtracted&lt;/em&gt; from its permuted
+partner if we want the wavefunction to change sign. The result is&lt;/p&gt;
+
+&lt;h2 id=&quot;antisymmetric-orbital-product-wavefunction&quot;&gt;Antisymmetric orbital-product wavefunction&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Phi(textbf{x}_1\ldots\textbf{x}_{N})
+=
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \sigma_u P_u
+\phi_1(\textbf{x}_1) \ldots
+\phi_N(\textbf{x}_N).
+&lt;/script&gt;
+
+&lt;p&gt;The \( \sigma_u \) is either +1 or -1 depending on whether
+the permutation \( P_u \) if even or odd. The whole wavefunction
+is &lt;strong&gt;antisymmetrized&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that &lt;em&gt;any&lt;/em&gt; wavefunction can be symmetrized or antisymmetrized,
+not just the Hartree orbital-product wavefunction, as we have done.&lt;/p&gt;
+
+&lt;h2 id=&quot;determinant-wavefunction&quot;&gt;Determinant wavefunction&lt;/h2&gt;
+
+&lt;p&gt;Finally, the antisymmetrized orbital-product wavefunction can be written
+in terms of a determinant like this&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\Psi(\textbf{x}_1\ldots\textbf{x}_{N})
+=
+\frac{1}{\sqrt{N!}}
+\textrm{det}\,
+\left|
+\begin{array}{lll}
+\phi_1(\textrm{x}_1)          &amp; \ldots &amp; \phi_1(\textbf{x}_N) \\
+\vdots                        &amp; \ddots &amp; \vdots          \\
+\phi_N(\textrm{x}_1) &amp; \ldots &amp; \phi_N(\textrm{x}_N)
+\end{array}
+\right|.
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This is called a &lt;strong&gt;single determinant wavefunction&lt;/strong&gt;. It forms the basis
+of many methods for approximately solving the Schrodinger equation.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/the-determinant-wavefunction/&quot;&gt;The determinant wavefunction&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 12, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -38,68 +184,104 @@
 
 &lt;p&gt;Well, not theory but the relevant formulas.&lt;/p&gt;
 
-&lt;p&gt;According to Head-Gordon et al (1988) the formula for the MP2 correlation
-energy is&lt;/p&gt;
+&lt;p&gt;According to Head-Gordon, Pople and Frisch (1988) CPL 153 p. 503 the formula
+for the MP2 correlation energy is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-E_\textrm{MP2} = 
+E_\textrm{MP2} =
 \frac{1}{2}
-\sum_{ijab}
-\frac{2(ia|jb)^2 + [(ia|jb)-(ib|ja)]^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}
+\sum_{i,j,a,b}
+\frac{2(ia|jb)^2 + [(ia|jb)-(ib|ja)]^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}.
 &lt;/script&gt;
 
-&lt;p&gt;In the above the $\epsilon_p$ are molecular orbital energies, and the indices
-$i$ and $j$ stand for occupied molecular orbitals $\phi_i$ and $\phi_j$, while $a$ and
-$b$ stand for unoccupied orbitals $\phi_a$ and $\phi_b$. The two electron
-integrals are&lt;/p&gt;
+&lt;p&gt;Here the \( \epsilon_p \) are molecular orbital energies, 
+and the indices \( i \) and \( j \) stand for 
+occupied molecular orbitals \( \phi_i \) and \( \phi_j \), 
+while indices \( a \) and \( b \) stand for unoccupied orbitals
+\( \phi_a \) and \( \phi_b \). The two electron integrals are&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 (pq|rs) = \int \phi_p(1)\phi_q(1) r_{12}^{-1} \phi_r(2) \phi_s(2)
 &lt;/script&gt;
 
-&lt;p&gt;These are obtained from the atomic orbital integrals \( (\mu\nu|\kappa\lambda) \) 
-through a four index transform&lt;/p&gt;
+&lt;p&gt;These are obtained from the atomic orbital integrals \( (\mu\nu|\kappa\lambda) \)
+through a “four index transform”&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-(pq|rs) = \sum_{\mu\nu\kappa\lambda}
-          (\mu\nu|\kappa\lambda) c_{\mu p} c_{\nu q} c_{\kappa r} c_{\lambda s}
+(pq|rs) = 
+\sum_{\mu,\nu,\kappa,\lambda}
+          (\mu\nu|\kappa\lambda) c_{\mu p} c_{\nu q} c_{\kappa r} c_{\lambda s}.
 &lt;/script&gt;
 
-&lt;p&gt;The coefficients \( )\textbf{c} \) are the matrix of the molecular orbital
+&lt;p&gt;The coefficients \( \textbf{c} \) are the matrix of the molecular orbital
 coefficients in the atomic orbital basis while. It seems we don’t actually need
 these if we have the corresponding molecular orbital energies.&lt;/p&gt;
 
 &lt;h2 id=&quot;get-ready&quot;&gt;Get ready&lt;/h2&gt;
 
-&lt;p&gt;To write the program we need to locate where the integrals are. Normally you
-would try an use the unix &lt;code&gt;grep&lt;/code&gt; command with the word &lt;code&gt;integral&lt;/code&gt; in the
-&lt;code&gt;foofiles/&lt;/code&gt; source directory. If you try that you will get a lot of output. On
-reflection that is not unreasonable since much of quantum chemistry has to do
-with integrals. After piping the output through less&lt;/p&gt;
+&lt;p&gt;To write the program we need to locate where the integrals are. In a
+typical program made by scientists there is no “integrated development
+environment”. Therefore in unix you would use the &lt;code&gt;grep&lt;/code&gt; command with the
+word &lt;code&gt;integral&lt;/code&gt; in the &lt;code&gt;foofiles/&lt;/code&gt; source directory. If you try that you will
+get a lot of output. On reflection this is unreasonable: much of quantum
+chemistry has to do with integrals. The output can be “pioed”
+through the &lt;code&gt;less&lt;/code&gt; pager&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;   cd foofiles
+&lt;p&gt;&lt;code&gt;
+   cd foofiles
    grep integral | less
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;After some searching you may come across the routine &lt;code&gt;.FOCK:make_ERI_integrals(v)&lt;/code&gt; and
-&lt;code&gt;.FOCK:make_MO_ERI_integrals(v)&lt;/code&gt;. Looking further at these routines we see that the second
-one produces a four dimensional array &lt;code&gt;v :: MAT4{REAL}&lt;/code&gt;. From the documentation
-these hold the integrals that are required.&lt;/p&gt;
+&lt;p&gt;After searching you come across the routines &lt;code&gt;.FOCK:make_ERI_integrals(v)&lt;/code&gt;.
+Investigating further in the &lt;code&gt;molecule.fock.foo&lt;/code&gt; file we see from the
+documentation that this &lt;code&gt;v&lt;/code&gt;  is declared as a a four dimensional array 
+&lt;code&gt;v :: MAT4{REAL}&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;make_MO_ERI_integrals(v)
+   ! Calculate “v” the electron repulsion integrals (ERI’s) in the MO basis
+     v :: MAT4{REAL}, OUT
+     …
+```&lt;/p&gt;
+
+&lt;p&gt;Clearly &lt;code&gt;v&lt;/code&gt; holds the two electron electron repulsion integrals (ERIs).
+()In a practical program there would be too many of these integrals to
+hold in an array, but we do it here just for teaching purposes).&lt;/p&gt;
 
 &lt;h2 id=&quot;housekeeping&quot;&gt;Housekeeping&lt;/h2&gt;
 
-&lt;p&gt;In a perfect world we would expect to call that routine, using a template like 
-in the “Hello Tonto World” program, and be returned the integrals we need. If
-we actually do that, the program will crash. Why would that happen? Well, clearly
-there is some set-up to do. For example, what molecule do we want to treat?
-What basis set to use? And finally, should we actually do an SCF calculation beforehand
-to get the molecular orbitals? And after that, we still need the orbital energies.
-You might recall from the post on objects that these are stored in &lt;code&gt;orbital_energies&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In a perfect world we would expect to call the routine above, just as we
+did in the in the “Hello World” program. The routine would simply work and
+returned the integrals. If we &lt;em&gt;actually&lt;/em&gt; do that, our program will crash. &lt;/p&gt;
 
-&lt;p&gt;Once this is realised, we see that we actually want to add our MP2 calculation to
-the end of a standard SCF calculation. Looking in the &lt;code&gt;tests/&lt;/code&gt; folsderf we finda simple
-one for water, say &lt;code&gt;h2o_rhf_cc-pVDZ&lt;/code&gt;. We should use that input file. And rather than
-starting with the “Hellow Tonto World” program we should start by modifying the
+&lt;p&gt;Why?&lt;/p&gt;
+
+&lt;p&gt;Because there is some “set-up” to do. For example, &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;What molecule do we want to treat? &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What basis set do to use? &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We should do an SCF calculation beforehand for the orbitals and energies!
+()If you are reading previous posts, you may recall that the orbital energies
+are stored in a variable &lt;code&gt;orbital_energies&lt;/code&gt;).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So we want to add our MP2 calculation program to the end of a standard SCF calculation. 
+We can find an appropriate input file from the tests/&lt;code&gt; folder. The test job in folder
+&lt;/code&gt;h2o_rhf_cc-pVDZ&lt;code&gt; is fine. The &lt;/code&gt;stdin&lt;code&gt; file from this folder can be copied to the
+&lt;/code&gt;tonto&lt;code&gt; folder or wherever you want to&lt;/code&gt; run the program.&lt;/p&gt;
+
+&lt;h2 id=&quot;starting-to-write&quot;&gt;Starting to write&lt;/h2&gt;
+
+&lt;p&gt;To write the program it is always good to have a starting template.
+Since we actually need to run an SCF calculation beforehand we shouldwe should start by modifying the
 &lt;code&gt;run_molecule.exe&lt;/code&gt; program. That, of course is in the &lt;code&gt;run_molecule.foo&lt;/code&gt; file.&lt;/p&gt;
 
 &lt;p&gt;So we start by adding our code to the end of that program. We should probably rename in to
@@ -107,33 +289,13 @@ something like &lt;code&gt;run_molecule_mp2.foo&lt;/code&gt; before starting.&lt
 
 &lt;h2 id=&quot;the-answer&quot;&gt;The Answer&lt;/h2&gt;
 
-&lt;p&gt;At this point I would give you answer, but perhaps you can do this as an exercise.&lt;/p&gt;
+&lt;p&gt;At this point I should give you answer. &lt;/p&gt;
+
+&lt;p&gt;But perhaps you can do this as an exercise?&lt;/p&gt;
 
 
   
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/write-an-mp2-program/&quot;&gt;Write an MP2 program&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Tonto types]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/tonto-types/"/>
-  <id>http://localhost:4000/articles/tonto-types</id>
-  <updated>201-06-07T00:00:00-00:00</updated>
-  <published>2014-06-08T00:00:00+08:00</published>
-  
-  <author>
-    <name>Dylan Jayatilaka</name>
-    <uri>http://localhost:4000</uri>
-    <email>dylan.jayatilaka@gmail.com</email>
-  </author>
-  <category scheme="http://localhost:4000/tags/#Tonto" term="Tonto" /><category scheme="http://localhost:4000/tags/#types" term="types" /><category scheme="http://localhost:4000/tags/#declaration" term="declaration" />
-  <content type="html">
-  
-    
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/tonto-types/&quot;&gt;Tonto types&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -512,9 +674,9 @@ write code in a well-designed quantum chemistry package.&lt;/p&gt;
 
 
 <entry>
-  <title type="html"><![CDATA[Hello Tonto World]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/hello-tonto-world/"/>
-  <id>http://localhost:4000/articles/hello-tonto-world</id>
+  <title type="html"><![CDATA[Hello World]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/hello-world-program-in-tonto/"/>
+  <id>http://localhost:4000/articles/hello-world-program-in-tonto</id>
   <updated>201-06-07T00:00:00-00:00</updated>
   <published>2014-06-08T00:00:00+08:00</published>
   
@@ -523,56 +685,84 @@ write code in a well-designed quantum chemistry package.&lt;/p&gt;
     <uri>http://localhost:4000</uri>
     <email>dylan.jayatilaka@gmail.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#tonto" term="tonto" /><category scheme="http://localhost:4000/tags/#programming" term="programming" /><category scheme="http://localhost:4000/tags/#basic%20Foo" term="basic Foo" />
+  <category scheme="http://localhost:4000/tags/#hello%20world" term="hello world" /><category scheme="http://localhost:4000/tags/#tonto" term="tonto" /><category scheme="http://localhost:4000/tags/#programming" term="programming" /><category scheme="http://localhost:4000/tags/#basic%20Foo" term="basic Foo" />
   <content type="html">
   
     &lt;p&gt;This is what the “Hello World” program looks like in Tonto&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-fortran&quot;&gt;program run_HELLO_TONTO_WORLD
+&lt;pre&gt;&lt;code&gt;   program run_HELLO_WORLD
 
-   implicit none
+      implicit none
 
-   ! Macro to create Tonto system object
-   ! Start MPI-parallel stuff too (if needed)
-   TONTO_CREATE
+      ! Macro to create Tonto system object
+      ! Start MPI-parallel stuff too (if needed)
+      TONTO_CREATE
 
-   ! Start timer
-   std_time.start_timing
+      ! Start timer
+      std_time.start_timing
 
-   ! Initialise standard I/O files.
-   ! Always have this.
-   stderr.create_stderr; stderr.open
-    stdin.create_stdin;   stdin.open
-   stdout.create_stdout; stdout.open
+      ! Initialise standard I/O.
+      stdout.create_stdout
+      stdout.open
 
-   ! Do it
-   stdout.text(“Hello Tonto World”)
+      ! Do it
+      stdout.text(“Hello World”)
 
+      ! Memory report
+      TONTO_REPORT
 
-   ! Memory report
-   TONTO_REPORT
+      ! Clean-up files
+      stdout.destroy
 
-   ! Clean-up files
-   TEXTFILE:destroy(stdout)
-   TEXTFILE:destroy(stdin)
-   TEXTFILE:destroy(stderr)
+      ! Clean-up tonto system
+      TONTO_DESTROY
 
-   ! Clean-up tonto system
-   TONTO_DESTROY
-
-end
+   end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This file appears with all the other executable programs in the &lt;code&gt;runfiles&lt;/code&gt;
-folder. &lt;/p&gt;
+&lt;p&gt;To compile the program type &lt;code&gt;make run_hello_world.exe&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;To compile an type &lt;code&gt;make run_hello_tonto_world.exe&lt;/code&gt;. You have to do this after
-typing &lt;code&gt;make&lt;/code&gt; to ensure the library is compiled (this step needs to be done
-only once). &lt;/p&gt;
+&lt;p&gt;Other points to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The program name includes a &lt;code&gt;run_&lt;/code&gt; prefix before the name &lt;code&gt;HELLO_WORLD&lt;/code&gt; all
+in capitals. This is requied.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Comments appear after an exclamation mark&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a lot of “set up”  and “clean up” which occurs, controlled via
+macro commands such as &lt;code&gt;TONTO_START&lt;/code&gt; and &lt;code&gt;TONTO_DESTROY&lt;/code&gt; respectively. These
+are required.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The code uses standard dot notation to pass messages to objects e.g. the
+&lt;code&gt;“Hello World”&lt;/code&gt; is passed to the the &lt;code&gt;stdout&lt;/code&gt; textfile object.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;TONTO_REPORT&lt;/code&gt; produces optional timing, memory use, or call stack
+ backtrace — if compiled with special switches.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If this seems annoying, remember that Tonto is self-contained
+and nothing is hidden or farmed off to libraries.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can explicitly clean-up objects via &lt;code&gt;stdout.destroy&lt;/code&gt; but you don’t
+have to. It may help in places where you want high efficiency.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If this seems like a lot of work remember that the Tonto library is
+fully self contained: no external libraries are used and there are
+no hidden operations or code.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/hello-tonto-world/&quot;&gt;Hello Tonto World&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/hello-world-program-in-tonto/&quot;&gt;Hello World&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 

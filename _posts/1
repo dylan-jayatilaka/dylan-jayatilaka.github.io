@@ -1,22 +1,3 @@
----
-layout: post
-title: "The determinant wavefunction"
-description: "The single determinant wavefunction is described"
-category: articles
-tags: [Pauli principle, wavefunction, determinant, Hartree-Fock, DFT]
-modified: 201-06-07
-image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
-comments: false
-share: true
----
-
-The Pauli principle states that the wavefunction for a group of identical
-fermion particles (e.g electrons) must change sign when any two of the
-particles coordinates are swapped,
-
 $$
  \Psi(\textbf{x}_1 \ldots
       \textbf{x}_i \ldots
@@ -28,6 +9,8 @@ $$
       \textbf{x}_i \ldots
       \textbf{x}_\textrm{N})
 $$
+
+## Hartree's orbital-product wavefunction
 
 Now the simplest wavefunction we can think of is Hartree's orbital-product
 wavefunction
@@ -42,7 +25,7 @@ $$
 
 Think of this as wavefunction representing electron 1 in orbital 
 \\( \phi_1 \\), electron 2 in orbital \\( \phi_2 \\), and so on 
-for all \\( N \\) particles. 
+for all \\( N \\) particles.
 Note: if we swap coordinates \\( \textbf{x}_i \\) and 
 \\( \textbf{x}_j \\) in the above product, it is the same as leaving the 
 coordinates unchanged but swapping the functions \\( \phi_i \\) and 
@@ -56,12 +39,14 @@ How can we make a wavefunction which satisfies the Pauli principle?
 Let's make the problem a bit easier. Suppose we wanted a wavefunction
 where swapping electrons led to *no* change. How to achieve that?
 
+## Symmetric orbital-product wavefunction
+
 One way is to take any wavefunction, permute the particle coordinates in all
 ways, then add all these permuted-coordinate wavefunctions together. We call
 this a **symmetrized wavefunction** because if we swap any pair of coordinates
 in this sum it will remain unchanged. It remains the same because in the list
 of all permuted wavefunctions a particular term always occurs with a unique
-partner where the two coordinates are swapped. We write the symmetriized
+partner where the two coordinates are swapped. We write the symmetrized
 wavefunction like this:
 
 $$
@@ -81,6 +66,8 @@ should be clear to you that for the wavefunction to change sign every
 term must be *subtracted* from its permuted partner if we want the
 wavefunction to change sign. The result is
 
+## Antisymmetric orbital-product wavefunction
+
 $$
 \Phi(\B{x}_1\ldots\B{x}_{N}) 
 =
@@ -96,6 +83,8 @@ is **antisymmetrized**.
 
 Note that *any* wavefunction can be symmetrized or antisymmetrized,
 not just the Hartree orbital-product wavefunction, as we have done.
+
+## Determinant wavefunction
 
 Finally, the antisymmetrized orbital-product wavefunction can be written 
 in terms of a determinant like this
@@ -116,9 +105,4 @@ $$
 
 This is called a **single determinant wavefunction**. It forms the basis
 of many methods for approximately solving the Schrodinger equation.
-
-
-
-
-
 

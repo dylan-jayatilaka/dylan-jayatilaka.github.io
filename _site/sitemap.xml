@@ -44,11 +44,11 @@
 
     
     <url>
-        <loc>//localhost:4000/articles/write-an-mp2-program/</loc>
+        <loc>//localhost:4000/articles/the-determinant-wavefunction/</loc>
     </url>
     
     <url>
-        <loc>//localhost:4000/articles/tonto-types/</loc>
+        <loc>//localhost:4000/articles/write-an-mp2-program/</loc>
     </url>
     
     <url>
@@ -56,7 +56,7 @@
     </url>
     
     <url>
-        <loc>//localhost:4000/articles/hello-tonto-world/</loc>
+        <loc>//localhost:4000/articles/hello-world-program-in-tonto/</loc>
     </url>
     
     <url>

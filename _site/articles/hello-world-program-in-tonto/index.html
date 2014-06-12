@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Tonto types &#8211; That Blog by Dylan</title>
-<meta name="description" content="Tonto, types, declaration">
-<meta name="keywords" content="Tonto, types, declaration">
+<title>Hello World &#8211; That Blog by Dylan</title>
+<meta name="description" content="The Hello World program in Tonto">
+<meta name="keywords" content="hello world, tonto, programming, basic Foo">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tonto types">
-<meta property="og:description" content="Tonto, types, declaration">
-<meta property="og:url" content="//localhost:4000/articles/tonto-types/">
+<meta property="og:title" content="Hello World">
+<meta property="og:description" content="The Hello World program in Tonto">
+<meta property="og:url" content="//localhost:4000/articles/hello-world-program-in-tonto/">
 <meta property="og:site_name" content="That Blog by Dylan">
 
 
 
 
 
-<link rel="canonical" href="//localhost:4000/articles/tonto-types/">
+<link rel="canonical" href="//localhost:4000/articles/hello-world-program-in-tonto/">
 <link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
 
 
@@ -108,12 +108,12 @@
 
 <div id="main" role="main">
   <article class="hentry">
-    <img src="//localhost:4000/images/so-simple-sample-image-3.jpg" class="entry-feature-image" alt="Tonto types" ><p class="image-credit">Photo Credit: <a href="http://mademistakes.com">Michael Rose</a>
+    <img src="//localhost:4000/images/so-simple-sample-image-3.jpg" class="entry-feature-image" alt="Hello World" ><p class="image-credit">Photo Credit: <a href="http://mademistakes.com">Michael Rose</a>
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="//localhost:4000/tags/#Tonto" title="Pages tagged Tonto">Tonto</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#types" title="Pages tagged types">types</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#declaration" title="Pages tagged declaration">declaration</a></span>
+        <span class="entry-tags"><a href="//localhost:4000/tags/#hello world" title="Pages tagged hello world">hello world</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#tonto" title="Pages tagged tonto">tonto</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#programming" title="Pages tagged programming">programming</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#basic Foo" title="Pages tagged basic Foo">basic Foo</a></span>
         
-          <h1 class="entry-title">Tonto types</h1>
+          <h1 class="entry-title">Hello World</h1>
         
       </header>
       <footer class="entry-meta">
@@ -122,28 +122,99 @@
         <span class="entry-date date published"><time datetime="2014-06-08T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 08, 2014</time></span>
         <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
         
-        <span><a href="//localhost:4000/articles/tonto-types/" rel="bookmark" title="Tonto types"><i class="icon-link"></i> Permalink</a></span>
+        <span><a href="//localhost:4000/articles/hello-world-program-in-tonto/" rel="bookmark" title="Hello World"><i class="icon-link"></i> Permalink</a></span>
         
         <span class="social-share-facebook">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/tonto-types/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/hello-world-program-in-tonto/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
         <span class="social-share-twitter">
-            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Tonto types&url=//localhost:4000/articles/tonto-types/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Hello World&url=//localhost:4000/articles/hello-world-program-in-tonto/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
         <span class="social-share-googleplus">
-            <a href="https://plus.google.com/share?url=//localhost:4000/articles/tonto-types/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/hello-world-program-in-tonto/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
             <!-- /.social-share -->
       </footer>
       <div class="entry-content">
-        
+        <p>This is what the “Hello World” program looks like in Tonto</p>
+
+<pre><code>   program run_HELLO_WORLD
+
+      implicit none
+
+      ! Macro to create Tonto system object
+      ! Start MPI-parallel stuff too (if needed)
+      TONTO_CREATE
+
+      ! Start timer
+      std_time.start_timing
+
+      ! Initialise standard I/O.
+      stdout.create_stdout
+      stdout.open
+
+      ! Do it
+      stdout.text(“Hello World”)
+
+      ! Memory report
+      TONTO_REPORT
+
+      ! Clean-up files
+      stdout.destroy
+
+      ! Clean-up tonto system
+      TONTO_DESTROY
+
+   end
+</code></pre>
+
+<p>To compile the program type <code>make run_hello_world.exe</code>.</p>
+
+<p>Other points to note:</p>
+
+<ul>
+  <li>
+    <p>The program name includes a <code>run_</code> prefix before the name <code>HELLO_WORLD</code> all
+in capitals. This is requied.</p>
+  </li>
+  <li>
+    <p>Comments appear after an exclamation mark</p>
+  </li>
+  <li>
+    <p>There is a lot of “set up”  and “clean up” which occurs, controlled via
+macro commands such as <code>TONTO_START</code> and <code>TONTO_DESTROY</code> respectively. These
+are required.</p>
+  </li>
+  <li>
+    <p>The code uses standard dot notation to pass messages to objects e.g. the
+<code>“Hello World”</code> is passed to the the <code>stdout</code> textfile object.</p>
+  </li>
+  <li>
+    <p><code>TONTO_REPORT</code> produces optional timing, memory use, or call stack
+ backtrace — if compiled with special switches.</p>
+  </li>
+  <li>
+    <p>If this seems annoying, remember that Tonto is self-contained
+and nothing is hidden or farmed off to libraries.</p>
+  </li>
+  <li>
+    <p>You can explicitly clean-up objects via <code>stdout.destroy</code> but you don’t
+have to. It may help in places where you want high efficiency.</p>
+  </li>
+  <li>
+    <p>If this seems like a lot of work remember that the Tonto library is
+fully self contained: no external libraries are used and there are
+no hidden operations or code.</p>
+  </li>
+</ul>
+
 
         
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/science-with-objects/" class="btn" title="Science with objects">Previous article</a>
+        <a href="//localhost:4000/articles/quantum-theory-is-wrong/" class="btn" title="Quatum theory is wrong">Previous article</a>
       
       
-        <a href="//localhost:4000/articles/write-an-mp2-program/" class="btn" title="Write an MP2 program">Next article</a>
+        <a href="//localhost:4000/articles/science-with-objects/" class="btn" title="Science with objects">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>
