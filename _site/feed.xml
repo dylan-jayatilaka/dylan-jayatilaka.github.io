@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-06-29T15:06:37+08:00</updated>
+<updated>2014-06-29T16:17:16+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -865,7 +865,7 @@ write code in a well-designed quantum chemistry package.&lt;/p&gt;
   
     &lt;p&gt;This is what the “Hello World” program looks like in Tonto&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-ruby&quot;&gt;   program run_HELLO_WORLD
+&lt;pre&gt;&lt;code&gt;   program run_HELLO_WORLD
 
       implicit none
 
@@ -1131,24 +1131,29 @@ probed&lt;/em&gt; and experimentally tested.&lt;/p&gt;
 
 &lt;p&gt;That place to call home.&lt;/p&gt;
 
-&lt;p&gt;It has certainly taken some time. I’ve made an abortive attemp to do
-this once before, with the Wordpress, but it didn’t work. I was’t
-clear about what I wanted to wrote about. I didn’t like the format,
-the lack of control over my text.&lt;/p&gt;
+&lt;p&gt;Like the universe, this blog taken some time to get where it is. I made an
+abortive attempt to do this once before — with Wordpress. It didn’t work
+because I was’t clear about what I wanted to say. Also, I didn’t like the
+format, the lack of control over my text.&lt;/p&gt;
 
-&lt;p&gt;And what &lt;em&gt;is&lt;/em&gt;  going to be in here, you ask?&lt;/p&gt;
+&lt;p&gt;So: what &lt;em&gt;is&lt;/em&gt;  going to be in here, you ask?&lt;/p&gt;
 
-&lt;p&gt;Ah.&lt;/p&gt;
+&lt;p&gt;I’m intending this to be mainly technical — about quantum chemistry and
+crystallography, the computer codes I write to support that work, the text
+books, journal articles, conferences I go related to those topics. I daresay
+some teaching material will creep in.&lt;/p&gt;
 
-&lt;p&gt;I’m intending this to be technical — about quantum chemistry and
-crystallography, and the compter codes I write to support the work in
-there. I’m intending it to be about what I know about: the strange
-things that anything but banal. But no doubt some other things of
-interest will creep in adding piquancy on top ofthe meat.&lt;/p&gt;
+&lt;p&gt;I’m intending this to be about what I know about: the strange things that
+anything but banal. &lt;/p&gt;
 
 &lt;p&gt;Welcome.&lt;/p&gt;
 
 &lt;p&gt;Enjoy your stay.&lt;/p&gt;
+
+&lt;p&gt;ps. If you are wondering what the feather is for, it is the logo
+for the Tonto library, designed by Mike Turner. The Tonto website 
+is &lt;a href=&quot;dylan-jayatilaka.net/tonto&quot;&gt;here&lt;/a&gt; and whose GitHub repository is
+&lt;a href=&quot;http://github.com/dylan-jayatilaka/tonto&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 
   
