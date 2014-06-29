@@ -56,11 +56,15 @@
     </url>
     
     <url>
+        <loc>//localhost:4000/articles/hello-world-program-in-tonto/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/science-with-objects/</loc>
     </url>
     
     <url>
-        <loc>//localhost:4000/articles/hello-world-program-in-tonto/</loc>
+        <loc>//localhost:4000/articles/to-program-or-not/</loc>
     </url>
     
     <url>

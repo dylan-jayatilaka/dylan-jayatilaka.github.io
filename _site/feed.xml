@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-06-29T16:17:16+08:00</updated>
+<updated>2014-06-29T23:38:47+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -345,7 +345,7 @@ of many methods for approximately solving the Schrodinger equation.&lt;/p&gt;
   <link rel="alternate" type="text/html" href="http://localhost:4000/articles/write-an-mp2-program/"/>
   <id>http://localhost:4000/articles/write-an-mp2-program</id>
   <updated>201-06-07T00:00:00-00:00</updated>
-  <published>2014-06-08T00:00:00+08:00</published>
+  <published>2014-06-11T00:00:00+08:00</published>
   
   <author>
     <name>Dylan Jayatilaka</name>
@@ -470,7 +470,100 @@ something like &lt;code&gt;run_molecule_mp2.foo&lt;/code&gt; before starting.&lt
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/write-an-mp2-program/&quot;&gt;Write an MP2 program&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/write-an-mp2-program/&quot;&gt;Write an MP2 program&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 11, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Hello World]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/hello-world-program-in-tonto/"/>
+  <id>http://localhost:4000/articles/hello-world-program-in-tonto</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-10T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#hello%20world" term="hello world" /><category scheme="http://localhost:4000/tags/#tonto" term="tonto" /><category scheme="http://localhost:4000/tags/#programming" term="programming" /><category scheme="http://localhost:4000/tags/#basic%20Foo" term="basic Foo" />
+  <content type="html">
+  
+    &lt;p&gt;This is what the “Hello World” program looks like in Tonto&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   program run_HELLO_WORLD
+
+      implicit none
+
+      ! Macro to create Tonto system object
+      ! Start MPI-parallel stuff too (if needed)
+      TONTO_CREATE
+
+      ! Start timer
+      std_time.start_timing
+
+      ! Initialise standard I/O.
+      stdout.create_stdout
+      stdout.open
+
+      ! Do it
+      stdout.text(“Hello World”)
+
+      ! Memory report
+      TONTO_REPORT
+
+      ! Clean-up files
+      stdout.destroy
+
+      ! Clean-up tonto system
+      TONTO_DESTROY
+
+   end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To compile the program type &lt;code&gt;make run_hello_world.exe&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Other points to note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The program name includes a &lt;code&gt;run_&lt;/code&gt; prefix before the name &lt;code&gt;HELLO_WORLD&lt;/code&gt; all
+in capitals. This is requied.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Comments appear after an exclamation mark&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There is a lot of “set up”  and “clean up” which occurs, controlled via
+macro commands such as &lt;code&gt;TONTO_START&lt;/code&gt; and &lt;code&gt;TONTO_DESTROY&lt;/code&gt; respectively. These
+are required.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The code uses standard dot notation to pass messages to objects e.g. the
+&lt;code&gt;“Hello World”&lt;/code&gt; is passed to the the &lt;code&gt;stdout&lt;/code&gt; textfile object.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;TONTO_REPORT&lt;/code&gt; produces optional timing, memory use, or call stack
+ backtrace — if compiled with special switches.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If this seems annoying, remember that Tonto is self-contained
+and nothing is hidden or farmed off to libraries.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;You can explicitly clean-up objects via &lt;code&gt;stdout.destroy&lt;/code&gt; but you don’t
+have to. It may help in places where you want high efficiency.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If this seems like a lot of work remember that the Tonto library is
+fully self contained: no external libraries are used and there are
+no hidden operations or code.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/hello-world-program-in-tonto/&quot;&gt;Hello World&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 10, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -479,7 +572,7 @@ something like &lt;code&gt;run_molecule_mp2.foo&lt;/code&gt; before starting.&lt
   <link rel="alternate" type="text/html" href="http://localhost:4000/articles/science-with-objects/"/>
   <id>http://localhost:4000/articles/science-with-objects</id>
   <updated>201-06-07T00:00:00-00:00</updated>
-  <published>2014-06-08T00:00:00+08:00</published>
+  <published>2014-06-09T00:00:00+08:00</published>
   
   <author>
     <name>Dylan Jayatilaka</name>
@@ -844,14 +937,14 @@ write code in a well-designed quantum chemistry package.&lt;/p&gt;
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/science-with-objects/&quot;&gt;Science with objects&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/science-with-objects/&quot;&gt;Science with objects&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 09, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
-  <title type="html"><![CDATA[Hello World]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/hello-world-program-in-tonto/"/>
-  <id>http://localhost:4000/articles/hello-world-program-in-tonto</id>
+  <title type="html"><![CDATA[To program or not]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/to-program-or-not/"/>
+  <id>http://localhost:4000/articles/to-program-or-not</id>
   <updated>201-06-07T00:00:00-00:00</updated>
   <published>2014-06-08T00:00:00+08:00</published>
   
@@ -860,84 +953,154 @@ write code in a well-designed quantum chemistry package.&lt;/p&gt;
     <uri>http://localhost:4000</uri>
     <email>dylan.jayatilaka@gmail.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#hello%20world" term="hello world" /><category scheme="http://localhost:4000/tags/#tonto" term="tonto" /><category scheme="http://localhost:4000/tags/#programming" term="programming" /><category scheme="http://localhost:4000/tags/#basic%20Foo" term="basic Foo" />
+  <category scheme="http://localhost:4000/tags/#Programming" term="Programming" /><category scheme="http://localhost:4000/tags/#understanding" term="understanding" /><category scheme="http://localhost:4000/tags/#philosophy" term="philosophy" /><category scheme="http://localhost:4000/tags/#naming" term="naming" /><category scheme="http://localhost:4000/tags/#specification" term="specification" /><category scheme="http://localhost:4000/tags/#clarity" term="clarity" /><category scheme="http://localhost:4000/tags/#software%20life%20cycle" term="software life cycle" /><category scheme="http://localhost:4000/tags/#maintenance" term="maintenance" />
   <content type="html">
   
-    &lt;p&gt;This is what the “Hello World” program looks like in Tonto&lt;/p&gt;
+    &lt;p&gt;Doing quantum chemistry or quantum crystallography means doing calculations.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;   program run_HELLO_WORLD
+&lt;p&gt;That leaves you with two choices: use some else’s program or write your own.&lt;/p&gt;
 
-      implicit none
+&lt;p&gt;Here I argue that you should write your own.&lt;/p&gt;
 
-      ! Macro to create Tonto system object
-      ! Start MPI-parallel stuff too (if needed)
-      TONTO_CREATE
+&lt;h2 id=&quot;why-write-programs&quot;&gt;Why write programs?&lt;/h2&gt;
 
-      ! Start timer
-      std_time.start_timing
+&lt;p&gt;If you don’t write your own programs, you are obliged to trust that the program
+you use is correct. That by itself is not a problem: you may after all only be
+interested in the answer, and what that answer can reveal about some other
+bigger question.&lt;/p&gt;
 
-      ! Initialise standard I/O.
-      stdout.create_stdout
-      stdout.open
+&lt;p&gt;But what if something goes wrong? After all, scientific calculations are
+usually complex. &lt;/p&gt;
 
-      ! Do it
-      stdout.text(“Hello World”)
+&lt;p&gt;Then it helps to know something about how the methods works — how the program
+works — so you can know program limitations and can work around them.&lt;/p&gt;
 
-      ! Memory report
-      TONTO_REPORT
+&lt;p&gt;More importantly, everyone needs to know about how &lt;em&gt;accurate&lt;/em&gt; their calculated
+answer is. In this case, knowing &lt;em&gt;something&lt;/em&gt; about the algorithm implementation
+is essential — even if you don’t know all the details.&lt;/p&gt;
 
-      ! Clean-up files
-      stdout.destroy
+&lt;h2 id=&quot;understanding&quot;&gt;Understanding&lt;/h2&gt;
 
-      ! Clean-up tonto system
-      TONTO_DESTROY
+&lt;p&gt;So: you are a scientist and you want to write a moderately complex program to
+do a quantum chemical calculation. How do you start?&lt;/p&gt;
 
-   end
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let’s assume you have done the obvious and learned to program in a suitable 
+language for scientific programming. Fortran, C, Java or python. And let’s
+assume you’ve read the books and know the theory. Now what?&lt;/p&gt;
 
-&lt;p&gt;To compile the program type &lt;code&gt;make run_hello_world.exe&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The key step is to &lt;em&gt;understand&lt;/em&gt; what you want to do.&lt;/p&gt;
 
-&lt;p&gt;Other points to note:&lt;/p&gt;
+&lt;p&gt;But what is &lt;strong&gt;understanding&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;For me it means:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Giving meaningful names to things&lt;/em&gt; so that you can refer to
+those things by name when explaining things or — in our case — writing
+down the algorithms or equations, deriving such equations if necessary. I
+won’t pursue this aspect further: that is the province of textbooks. What I
+want to talk about here is what is &lt;strong&gt;not&lt;/strong&gt; in the textbooks. So let’s assume
+that you have a meaningful set of names, you have these names associated
+with some equations which determine your calculation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the equations are complicated, in order to program them, you need a plan.
+You need to structure intermediate results in a way that is both &lt;em&gt;easy to
+understand&lt;/em&gt; and &lt;em&gt;efficient to compute&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s discuss these points in more detail.&lt;/p&gt;
+
+&lt;h2 id=&quot;call-a-spade-a-spadehttpenwikipediaorgwikitocallaspadeaspade&quot;&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/To_call_a_spade_a_spade&quot;&gt;Call a spade a spade&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;Naming entities meaningfully is by far the most important and difficult part of
+the programming process.&lt;/p&gt;
+
+&lt;p&gt;Your disbelief is audible.&lt;/p&gt;
+
+&lt;p&gt;You say: surely understanding the quantum theory is more difficult?&lt;/p&gt;
+
+&lt;p&gt;I say: that is the &lt;em&gt;same thing&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Think about it. &lt;/p&gt;
+
+&lt;p&gt;Naming something properly is the start of how you &lt;em&gt;think&lt;/em&gt; about that thing.
+Naming and understanding go together like hand and glove: you simply can’t
+think about something clearly unless it is at least named properly. This goes
+for quantum theory, programming, and conversation.&lt;/p&gt;
+
+&lt;p&gt;Imagine calling a cup a bowl. Now imagine doing the equivalent when  writing a
+programs. Clearly, names are, or should be, even more important in this
+context. To wit, imagine calling a heavily used variable &lt;code&gt;v&lt;/code&gt; when it holds the
+position coordinate and the velocity by variable &lt;code&gt;x&lt;/code&gt;. Imagine naming a variable
+holding the momentum of partice 1 &lt;code&gt;l2&lt;/code&gt;. What a disaster! Yet this is &lt;em&gt;exactly&lt;/em&gt;
+what happens in much scientific software.&lt;/p&gt;
+
+&lt;p&gt;If you think I am joking about this just read wikipedia about the 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Software_development_process&quot;&gt;software development process&lt;/a&gt;. 
+You will learn that the first step is the “specification”. In fact, it is dogma
+in software engineering to “write the documentation first” before doing any
+kind of programming. Clearly that dogma is nothing but a formalization of the
+naming-thinking process, whereby the unknown objects needed in an algorithm are
+formally described in text, and described in sufficient detail to permit code
+to be written down. Unfortunately, the writing of documentation &lt;em&gt;before&lt;/em&gt; coding
+is rarely undertaken by any scientific programmer.&lt;/p&gt;
+
+&lt;h2 id=&quot;efficiency-versus-clarity&quot;&gt;Efficiency versus clarity&lt;/h2&gt;
+
+&lt;p&gt;Now to the second point.&lt;/p&gt;
+
+&lt;p&gt;Begin with the realization that the objectives of efficiency and clarity are
+largely but not completely independent. Generally speaking it &lt;em&gt;is&lt;/em&gt; harder to
+write a efficient program in a clear way because it may have to take advantage
+of special machine characteristics.&lt;/p&gt;
+
+&lt;p&gt;Of the two characeristics &lt;strong&gt;clarity is much more important&lt;/strong&gt;. That is
+because a clear code is easier to understand. Furthermore, a clearly written
+code has benefits later down the track, such as:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;The program name includes a &lt;code&gt;run_&lt;/code&gt; prefix before the name &lt;code&gt;HELLO_WORLD&lt;/code&gt; all
-in capitals. This is requied.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Better bug detection and reduced maintenance&lt;/strong&gt;. Perhaps later you will
+actually recall and understand what you did.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Comments appear after an exclamation mark&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Better opportunities for optimization and code evolution&lt;/strong&gt; by changing
+algorithms. Generally speaking the greatest gains in efficiency occur due to
+the use of &lt;em&gt;new algorithms&lt;/em&gt; rather than optimization of the instructions of
+computer codes to take advantage of hardware.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;There is a lot of “set up”  and “clean up” which occurs, controlled via
-macro commands such as &lt;code&gt;TONTO_START&lt;/code&gt; and &lt;code&gt;TONTO_DESTROY&lt;/code&gt; respectively. These
-are required.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The code uses standard dot notation to pass messages to objects e.g. the
-&lt;code&gt;“Hello World”&lt;/code&gt; is passed to the the &lt;code&gt;stdout&lt;/code&gt; textfile object.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code&gt;TONTO_REPORT&lt;/code&gt; produces optional timing, memory use, or call stack
- backtrace — if compiled with special switches.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If this seems annoying, remember that Tonto is self-contained
-and nothing is hidden or farmed off to libraries.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;You can explicitly clean-up objects via &lt;code&gt;stdout.destroy&lt;/code&gt; but you don’t
-have to. It may help in places where you want high efficiency.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;If this seems like a lot of work remember that the Tonto library is
-fully self contained: no external libraries are used and there are
-no hidden operations or code.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Greater chance of collaboration and sharing workload&lt;/strong&gt;, since an unclear
+code is unlikely to be adopted as the basis of a future work by you or
+anyone else. It is worth keeping in mind the fact that the vast amount of
+effort spent on a program occurs in maintenance and code evolution.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;what-next&quot;&gt;What next?&lt;/h2&gt;
+
+&lt;p&gt;If you are convinced by the above arguments, we should pay attention to best
+practice in software engineering. In computer science there are two broad approaches
+to creating creating well-structured code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Object-oriented methods&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Functional programming methods&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We would do well to understand the essence of these approaches, but that is for
+another time.&lt;/p&gt;
+
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/hello-world-program-in-tonto/&quot;&gt;Hello World&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/to-program-or-not/&quot;&gt;To program or not&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 08, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -1149,11 +1312,6 @@ anything but banal. &lt;/p&gt;
 &lt;p&gt;Welcome.&lt;/p&gt;
 
 &lt;p&gt;Enjoy your stay.&lt;/p&gt;
-
-&lt;p&gt;ps. If you are wondering what the feather is for, it is the logo
-for the Tonto library, designed by Mike Turner. The Tonto website 
-is &lt;a href=&quot;dylan-jayatilaka.net/tonto&quot;&gt;here&lt;/a&gt; and whose GitHub repository is
-&lt;a href=&quot;http://github.com/dylan-jayatilaka/tonto&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 
   
