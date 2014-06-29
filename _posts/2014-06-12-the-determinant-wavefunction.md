@@ -6,9 +6,9 @@ category: articles
 tags: [wavefunction, determinant, Hartree-Fock, DFT]
 modified: 201-06-07
 image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
+  feature: samuel-monier-patternmond.jpg
+  credit: Samuel Monnier
+  creditlink: http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201
 comments: false
 share: true
 ---
