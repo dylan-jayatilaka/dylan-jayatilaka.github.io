@@ -6,7 +6,7 @@ category: articles
 tags: [wavefunction, determinant, Hartree-Fock, DFT]
 modified: 201-06-07
 image:
-  feature: samuel-monier-patternmond.jpg
+  feature: samuel-monnier-patternmond.jpg
   credit: Samuel Monnier
   creditlink: http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201
 comments: false
