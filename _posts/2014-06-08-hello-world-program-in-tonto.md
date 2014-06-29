@@ -6,16 +6,16 @@ category: articles
 tags: [hello world, tonto, programming, basic Foo]
 modified: 201-06-07
 image:
-  feature: so-simple-sample-image-3.jpg
-  credit: Michael Rose
-  creditlink: http://mademistakes.com
+  feature: pieter-bruegel-landscape-with-the-flight-into-egypt.jpg
+  credit: Peter the Elder Bruegel - Landscape with the Flight into Egypt - The Courtald Institute of Art
+  creditlink: http://www.artandarchitecture.org.uk/images/gallery/6b06f360.html
 comments: false
 share: true
 ---
 
 This is what the “Hello World” program looks like in Tonto
 
-~~~
+~~~ 
    program run_HELLO_WORLD
 
       implicit none
