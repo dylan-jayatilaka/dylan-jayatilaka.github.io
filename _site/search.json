@@ -9,6 +9,22 @@
 		} ,
 	
 		{
+		  "title"      : "Determinant matrix elelemnts",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/determinant-matrix-elements/",
+		  "date"       : "2014-06-14 00:00:00 +0800",
+		  "shortdate"  : "June 14, 2014"
+		} ,
+	
+		{
+		  "title"      : "The antisymmetrizer",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/the-antisymmetrizer/",
+		  "date"       : "2014-06-13 00:00:00 +0800",
+		  "shortdate"  : "June 13, 2014"
+		} ,
+	
+		{
 		  "title"      : "The determinant wavefunction",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/the-determinant-wavefunction/",

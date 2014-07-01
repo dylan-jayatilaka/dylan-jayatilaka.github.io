@@ -48,6 +48,14 @@
     </url>
     
     <url>
+        <loc>//localhost:4000/articles/determinant-matrix-elements/</loc>
+    </url>
+    
+    <url>
+        <loc>//localhost:4000/articles/the-antisymmetrizer/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/the-determinant-wavefunction/</loc>
     </url>
     

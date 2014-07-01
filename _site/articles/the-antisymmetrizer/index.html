@@ -1,0 +1,415 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>The antisymmetrizer &#8211; That Blog by Dylan</title>
+<meta name="description" content="The antisymmetrizer operator">
+<meta name="keywords" content="antisymmetrizer, permutations, pauli principle, wavefunction, determinant">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The antisymmetrizer">
+<meta property="og:description" content="The antisymmetrizer operator">
+<meta property="og:url" content="//localhost:4000/articles/the-antisymmetrizer/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/the-antisymmetrizer/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\mbox{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1]
+        }
+    }
+});
+</script>
+<script type="text/javascript"
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/rene-magritte-decalcomania.jpg" class="entry-feature-image" alt="The antisymmetrizer" ><p class="image-credit">Photo Credit: <a href="http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201">Rene Magritte - Decalcomania</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#antisymmetrizer" title="Pages tagged antisymmetrizer">antisymmetrizer</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#permutations" title="Pages tagged permutations">permutations</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#pauli principle" title="Pages tagged pauli principle">pauli principle</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#wavefunction" title="Pages tagged wavefunction">wavefunction</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#determinant" title="Pages tagged determinant">determinant</a></span>
+        
+          <h1 class="entry-title">The antisymmetrizer</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-06-13T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 13, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
+        
+        <span><a href="//localhost:4000/articles/the-antisymmetrizer/" rel="bookmark" title="The antisymmetrizer"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/the-antisymmetrizer/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=The antisymmetrizer&url=//localhost:4000/articles/the-antisymmetrizer/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/the-antisymmetrizer/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>In this post the  <em>antisymmetrizer operator</em> is officially defined.</p>
+
+<p>Those who have read the post on <a href="https://dylan.jayatilaka.net/">determinant
+wavefunctions</a> will be familiar with this
+operator. </p>
+
+<p>The reason to discuss it is to describe some of it’s properties which are
+important for evaluating many-electron integrals. Such integrals form the
+bread-and-butter of quantum chemistry — so knowing about the antisymmetrizer
+is important.</p>
+
+<h2 id="the-antisymmetrizer">The antisymmetrizer</h2>
+
+<p>The antisymmetrizer is so-called because when it is applied to an arbitrary
+function of labelled arguments, that function is changed into a new function
+which changes sign whenever those arguments are swapped.</p>
+
+<p>The antisymmetrizer operator is defined by</p>
+
+<script type="math/tex; mode=display">
+\mathscr{A}
+=
+\frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_u
+</script>
+
+<p>Notes:</p>
+
+<ul>
+  <li>
+    <p>The sum is over all permutations \( u \) of a set of integers
+\( { 1, \ldots, N } \).</p>
+  </li>
+  <li>
+    <p>\( P_u \) is an operator which permutes those integer labels in any
+expression which follows. For example, \( P_u \) might be the elementary
+permutation \( (1 2) \) which swaps labels 1 and 2, although there
+may be more complicated permutations such as the cycle \( (1 2 3) \).
+See wikpedia <a href="http://en.wikipedia.org/wiki/Permutation">here</a>
+for more information. </p>
+  </li>
+  <li>
+    <p>The number of terms in the summation is \( N! \).</p>
+  </li>
+  <li>
+    <p>\( \epsilon_u \) is a number which is either +1 or -1 called the
+<em>signature</em>, <em>sign</em> or <em>paity</em> of the permutation \( P_u \). It
+is +1 (or -1) if \( P_u \) can be decomposed into a sequence of even
+(rrespectively, odd) elementary permutations or <em>swaps</em> . It is <em>not</em> at all
+obvious that any permutation may be decomposed as either even or odd. 
+If you are interested, several proofs of this fact are given in
+<a href="http://en.wikipedia.org/wiki/Parity_of_a_permutation">wikipedia</a>. 
+The quantity \( \epsilon_u \) is also called the
+<a href="http://en.wikipedia.org/wiki/Levi-Civita_symbol">Levi-Civita symbol</a>
+which may be familiar to some of you.</p>
+  </li>
+</ul>
+
+<h2 id="making-functions-antisymmetric">Making functions antisymmetric</h2>
+
+<p>Suppose we have an arbitrary function \( f(\B{x}_1,\ldots,\B{x}_n) \). 
+Then the function</p>
+
+<script type="math/tex; mode=display">
+F(\B{x}_1 \ldots \B{x}_n)
+=
+\mathscr{A}\, 
+f(\B{x}_1 \ldots \B{x}_n)
+</script>
+
+<p>is antisymmetric, i.e.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+   F(\ldots \B{x}_j \ldots \B{x}_i \dots)
+= -F(\ldots \B{x}_i \ldots \B{x}_j \dots)
+\ \ \mbox{for } i<j<N.
+ %]]></script>
+
+<p>Proof:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+F(\ldots, \B{x}_j \ldots \B{x}_i \dots)
+= & P_{(i j)} F \\
+= & P_{(i j)} \frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_u f \\
+= & \frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_{(i j)} P_u f \\
+= & \frac{1}{\sqrt{N!}} \sum_v^{N!} (-\epsilon_u) P_v f \ \ \mbox{where } P_v = P_{(i j)} P_u \\
+= & - F
+\end{align}
+ %]]></script>
+
+<p>Remarks: The only tricky part is the penultimate line. There, we used two
+facts. First, that the product of two permutations is another permutation \(
+P_v \). This should be obvious, but actually follows from the fact that
+permutations form a <a href="">mathematical group</a>. Second, since \( P_v \) has one
+extra swap compared to \( P_u \) its signature 
+\( \epsilon_v = -\epsilon_u \).</p>
+
+<p>We have shown that the antisymmetrizer \( \mathscr{A} \) makes any function
+which it is applied to antisymmetric.</p>
+
+<h2 id="the-antisymmetrizer-is-hermitian">The antisymmetrizer is Hermitian</h2>
+
+<p>The antisymmetrizer is Hermitian if</p>
+
+<script type="math/tex; mode=display">
+\braket{\Phi_I}{\mathscr{A}^\dagger\, \Phi_J}
+\equiv
+\braket{\mathscr{A}\, \Phi_I}{\Phi_J}
+=
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+</script>
+
+<p>Proof:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\braket{\mathscr{A}\Phi_I}{\Phi_J}
+= &
+\int
+(\mathscr{A} \Phi_I)^* \Phi_J d\B{x}
+&& \s{by definition}
+\\
+= &
+\int
+(\mathscr{A} \Phi_I^*) \Phi_J d\B{x}
+&& \s{$\mathscr{A}$ unaffected by conjugation}
+\\
+= &
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+(P_u \Phi_I^*(\B{x})) \Phi_J(\B{x}) d\B{x}
+&& \s{ substitute $\mathscr{A}$ definition}
+\\
+= &
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+\Phi_I^*(\B{y}) (P_u^{-1} \Phi_J(\B{y}) d\B{y})
+&& \s{variable substitution $\B{y} = P_u \B{x}$}
+\\
+= &
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+\Phi_I^* (P_u^{-1} \Phi_J) d\B{y}
+&& \s{$d\B{y}= d\B{y}_1 \ldots d\B{y}_N$ is symmetric}
+\\
+= &
+\frac{1}{\sqrt{N!}}
+\sum_w^{N!} \epsilon_w
+\int
+\Phi_I^* (P_w \Phi_J) d\B{y}
+&& \s{substiute $P_w=P_u^{-1}$; and $\epsilon_w=\epsilon_u$}
+\\
+= &
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+&& \
+\end{align}
+ %]]></script>
+
+<p>Remark: In an ( N_D \)-dimensional finite dimensional space
+\( V = \mbox{span}\, (\Phi_I ; I=1,\ldots,M) \) the adjoint
+\( \mathscr{A}^\dagger \) is also called the “hermitian conjugate”.
+In quantum chemistry we usually deal with finite dimensional spaces, so 
+the terms “self-adjoint” and “hermitian” are equivalent.</p>
+
+<h2 id="antisymmetrizers-are-nearly-idempotent">Antisymmetrizers are (nearly) idempotent</h2>
+
+<p>The following theorem holds:</p>
+
+<script type="math/tex; mode=display">
+\mathscr{A}^2 = \sqrt{N!} \mathscr{A}
+</script>
+
+<p>Proof:</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/the-determinant-wavefunction/" class="btn" title="The determinant wavefunction">Previous article</a>
+      
+      
+        <a href="//localhost:4000/articles/determinant-matrix-elements/" class="btn" title="Determinant matrix elelemnts">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

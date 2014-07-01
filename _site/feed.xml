@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-06-29T23:38:47+08:00</updated>
+<updated>2014-07-01T15:35:52+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -191,6 +191,302 @@ they &lt;em&gt;are&lt;/em&gt;. For them, these arguments will not apply.&lt;/p&g
 
   
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/god-or-not/&quot;&gt;God or not?&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 30, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Determinant matrix elelemnts]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/determinant-matrix-elements/"/>
+  <id>http://localhost:4000/articles/determinant-matrix-elements</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-14T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Matrix%20element" term="Matrix element" /><category scheme="http://localhost:4000/tags/#determinant" term="determinant" /><category scheme="http://localhost:4000/tags/#one-electron%20operator" term="one-electron operator" /><category scheme="http://localhost:4000/tags/#two-electron%20operator" term="two-electron operator" />
+  <content type="html">
+  
+    &lt;p&gt;Now in quantum chemistry we often want to do integrals like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\braopket{\mathscr{A}’ \Phi_I}{M}{\mathscr{A} \Phi_J}
+=
+\int
+(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) d\mathbf{x}_1\ldots\mathbf{x}_N
+&lt;/script&gt;
+
+&lt;p&gt;The integration in this matrix element is over electronic coordinates
+\( \mathbf{x}_i \) and the functions \( \Phi_K \) are usually &lt;em&gt;symmetric&lt;/em&gt;
+functions of those same coordinates. \( M \) is some kind of operator —
+perhaps a function of one or more of those coordinates, or derivatives of those
+coordinates.&lt;/p&gt;
+
+&lt;p&gt;Such an integral is generically called a “matrix elements”.&lt;/p&gt;
+
+&lt;p&gt;The reason for that matrix elements are important is they allows to 
+convert a partial differential equation, such as the Schrodinger equation,
+into a matrix equation involving numbers. Matrix equations involving
+numbers are much easier to solve in computers.&lt;/p&gt;
+
+&lt;p&gt;Look at the above matrix element. you can see that it involves products of two
+antisymmetrizers. (It should be clear that these antisymmetrizers only “operate”
+on the electron coordinates in the functions \( \Phi_K \) immediately to
+their right). We need to be able to evaluate such products. We can use some
+results from a previous post to obtain the required results.&lt;/p&gt;
+
+&lt;h2 id=&quot;matrix-elemnts-between-determinant-wavefunctions&quot;&gt;Matrix elemnts between determinant wavefunctions&lt;/h2&gt;
+
+&lt;p&gt;The following theorem holds:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathscr{A}’\Phi_I M \mathscr{A} \Phi_J = \Phi_I \sum_w^{N!} M \epsilon_w P_w \Phi_J
+&lt;/script&gt;
+
+&lt;p&gt;The importance of this theorem is it allows to remove one of the antisymmetrizers
+on the left, thus replacing a summation of \( ()N!)^2 \) terms into one involving
+only \( N! \) permutations — and these permutations only apply to the
+function on the right. Note also that the \( N! \) has disappeared.&lt;/p&gt;
+
+&lt;p&gt;The proof is relatively easy an depends only on the group property of
+permutations, especially that the left coset of the whole group is itself.
+However, you don’t really need to know what a coset is to follow this proof.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\mathscr{A}’\Phi_I \mathscr{A} \Phi_J 
+= &amp;
+(N!)^{-1}
+\sum_v^{N!} \epsilon_v P_v \Phi_I
+M
+\sum_u^{N!} \epsilon_u P_u \Phi_J
+\\
+= &amp;
+(N!)^{-1}
+\sum_v^{N!} P^{-1}_v P_v \Phi_I
+M
+\sum_u^{N!} (\epsilon_v\epsilon_u) (P^{-1}_v P_u) \Phi_J
+\\
+= &amp;
+(N!)^{-1}
+\sum_v^{N!} \Phi_I
+M
+\sum_w^{N!} \epsilon_w P_w \Phi_J
+\\
+= &amp;
+Phi_I
+M
+\sum_w^{N!} \epsilon_w P_w \Phi_J
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/determinant-matrix-elements/&quot;&gt;Determinant matrix elelemnts&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 14, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The antisymmetrizer]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/the-antisymmetrizer/"/>
+  <id>http://localhost:4000/articles/the-antisymmetrizer</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-13T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#antisymmetrizer" term="antisymmetrizer" /><category scheme="http://localhost:4000/tags/#permutations" term="permutations" /><category scheme="http://localhost:4000/tags/#pauli%20principle" term="pauli principle" /><category scheme="http://localhost:4000/tags/#wavefunction" term="wavefunction" /><category scheme="http://localhost:4000/tags/#determinant" term="determinant" />
+  <content type="html">
+  
+    &lt;p&gt;In this post the  &lt;em&gt;antisymmetrizer operator&lt;/em&gt; is officially defined.&lt;/p&gt;
+
+&lt;p&gt;Those who have read the post on &lt;a href=&quot;https://dylan.jayatilaka.net/&quot;&gt;determinant
+wavefunctions&lt;/a&gt; will be familiar with this
+operator. &lt;/p&gt;
+
+&lt;p&gt;The reason to discuss it is to describe some of it’s properties which are
+important for evaluating many-electron integrals. Such integrals form the
+bread-and-butter of quantum chemistry — so knowing about the antisymmetrizer
+is important.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-antisymmetrizer&quot;&gt;The antisymmetrizer&lt;/h2&gt;
+
+&lt;p&gt;The antisymmetrizer is so-called because when it is applied to an arbitrary
+function of labelled arguments, that function is changed into a new function
+which changes sign whenever those arguments are swapped.&lt;/p&gt;
+
+&lt;p&gt;The antisymmetrizer operator is defined by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathscr{A}
+=
+\frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_u
+&lt;/script&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The sum is over all permutations \( u \) of a set of integers
+\( { 1, \ldots, N } \).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( P_u \) is an operator which permutes those integer labels in any
+expression which follows. For example, \( P_u \) might be the elementary
+permutation \( (1 2) \) which swaps labels 1 and 2, although there
+may be more complicated permutations such as the cycle \( (1 2 3) \).
+See wikpedia &lt;a href=&quot;http://en.wikipedia.org/wiki/Permutation&quot;&gt;here&lt;/a&gt;
+for more information. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The number of terms in the summation is \( N! \).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( \epsilon_u \) is a number which is either +1 or -1 called the
+&lt;em&gt;signature&lt;/em&gt;, &lt;em&gt;sign&lt;/em&gt; or &lt;em&gt;paity&lt;/em&gt; of the permutation \( P_u \). It
+is +1 (or -1) if \( P_u \) can be decomposed into a sequence of even
+(rrespectively, odd) elementary permutations or &lt;em&gt;swaps&lt;/em&gt; . It is &lt;em&gt;not&lt;/em&gt; at all
+obvious that any permutation may be decomposed as either even or odd. 
+If you are interested, several proofs of this fact are given in
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Parity_of_a_permutation&quot;&gt;wikipedia&lt;/a&gt;. 
+The quantity \( \epsilon_u \) is also called the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Levi-Civita_symbol&quot;&gt;Levi-Civita symbol&lt;/a&gt;
+which may be familiar to some of you.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;making-functions-antisymmetric&quot;&gt;Making functions antisymmetric&lt;/h2&gt;
+
+&lt;p&gt;Suppose we have an arbitrary function \( f(\B{x}_1,\ldots,\B{x}_n) \). 
+Then the function&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+F(\B{x}_1 \ldots \B{x}_n)
+=
+\mathscr{A}\, 
+f(\B{x}_1 \ldots \B{x}_n)
+&lt;/script&gt;
+
+&lt;p&gt;is antisymmetric, i.e.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+   F(\ldots \B{x}_j \ldots \B{x}_i \dots)
+= -F(\ldots \B{x}_i \ldots \B{x}_j \dots)
+\ \ \mbox{for } i&lt;j&lt;N.
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Proof:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+F(\ldots, \B{x}_j \ldots \B{x}_i \dots)
+= &amp; P_{(i j)} F \\
+= &amp; P_{(i j)} \frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_u f \\
+= &amp; \frac{1}{\sqrt{N!}} \sum_u^{N!} \epsilon_u P_{(i j)} P_u f \\
+= &amp; \frac{1}{\sqrt{N!}} \sum_v^{N!} (-\epsilon_u) P_v f \ \ \mbox{where } P_v = P_{(i j)} P_u \\
+= &amp; - F
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Remarks: The only tricky part is the penultimate line. There, we used two
+facts. First, that the product of two permutations is another permutation \(
+P_v \). This should be obvious, but actually follows from the fact that
+permutations form a &lt;a href=&quot;&quot;&gt;mathematical group&lt;/a&gt;. Second, since \( P_v \) has one
+extra swap compared to \( P_u \) its signature 
+\( \epsilon_v = -\epsilon_u \).&lt;/p&gt;
+
+&lt;p&gt;We have shown that the antisymmetrizer \( \mathscr{A} \) makes any function
+which it is applied to antisymmetric.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-antisymmetrizer-is-hermitian&quot;&gt;The antisymmetrizer is Hermitian&lt;/h2&gt;
+
+&lt;p&gt;The antisymmetrizer is Hermitian if&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\braket{\Phi_I}{\mathscr{A}^\dagger\, \Phi_J}
+\equiv
+\braket{\mathscr{A}\, \Phi_I}{\Phi_J}
+=
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+&lt;/script&gt;
+
+&lt;p&gt;Proof:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\braket{\mathscr{A}\Phi_I}{\Phi_J}
+= &amp;
+\int
+(\mathscr{A} \Phi_I)^* \Phi_J d\B{x}
+&amp;&amp; \s{by definition}
+\\
+= &amp;
+\int
+(\mathscr{A} \Phi_I^*) \Phi_J d\B{x}
+&amp;&amp; \s{$\mathscr{A}$ unaffected by conjugation}
+\\
+= &amp;
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+(P_u \Phi_I^*(\B{x})) \Phi_J(\B{x}) d\B{x}
+&amp;&amp; \s{ substitute $\mathscr{A}$ definition}
+\\
+= &amp;
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+\Phi_I^*(\B{y}) (P_u^{-1} \Phi_J(\B{y}) d\B{y})
+&amp;&amp; \s{variable substitution $\B{y} = P_u \B{x}$}
+\\
+= &amp;
+\frac{1}{\sqrt{N!}}
+\sum_u^{N!} \epsilon_u
+\int
+\Phi_I^* (P_u^{-1} \Phi_J) d\B{y}
+&amp;&amp; \s{$d\B{y}= d\B{y}_1 \ldots d\B{y}_N$ is symmetric}
+\\
+= &amp;
+\frac{1}{\sqrt{N!}}
+\sum_w^{N!} \epsilon_w
+\int
+\Phi_I^* (P_w \Phi_J) d\B{y}
+&amp;&amp; \s{substiute $P_w=P_u^{-1}$; and $\epsilon_w=\epsilon_u$}
+\\
+= &amp;
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+&amp;&amp; \
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Remark: In an ( N_D \)-dimensional finite dimensional space
+\( V = \mbox{span}\, (\Phi_I ; I=1,\ldots,M) \) the adjoint
+\( \mathscr{A}^\dagger \) is also called the “hermitian conjugate”.
+In quantum chemistry we usually deal with finite dimensional spaces, so 
+the terms “self-adjoint” and “hermitian” are equivalent.&lt;/p&gt;
+
+&lt;h2 id=&quot;antisymmetrizers-are-nearly-idempotent&quot;&gt;Antisymmetrizers are (nearly) idempotent&lt;/h2&gt;
+
+&lt;p&gt;The following theorem holds:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\mathscr{A}^2 = \sqrt{N!} \mathscr{A}
+&lt;/script&gt;
+
+&lt;p&gt;Proof:&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/the-antisymmetrizer/&quot;&gt;The antisymmetrizer&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 13, 2014.&lt;/p&gt;</content>
 </entry>
 
 

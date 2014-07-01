@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Write an MP2 program &#8211; That Blog by Dylan</title>
-<meta name="description" content="programming, quantum chemistry, MP2">
-<meta name="keywords" content="programming, MP2, quantum chemistry, Foo">
+<title>Determinant matrix elelemnts &#8211; That Blog by Dylan</title>
+<meta name="description" content="Matrix elements of many-electron operators between determinant wavefunctions">
+<meta name="keywords" content="Matrix element, determinant, one-electron operator, two-electron operator">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Write an MP2 program">
-<meta property="og:description" content="programming, quantum chemistry, MP2">
-<meta property="og:url" content="//localhost:4000/articles/write-an-mp2-program/">
+<meta property="og:title" content="Determinant matrix elelemnts">
+<meta property="og:description" content="Matrix elements of many-electron operators between determinant wavefunctions">
+<meta property="og:url" content="//localhost:4000/articles/determinant-matrix-elements/">
 <meta property="og:site_name" content="That Blog by Dylan">
 
 
 
 
 
-<link rel="canonical" href="//localhost:4000/articles/write-an-mp2-program/">
+<link rel="canonical" href="//localhost:4000/articles/determinant-matrix-elements/">
 <link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
 
 
@@ -132,143 +132,104 @@ MathJax.Hub.Config({
 
 <div id="main" role="main">
   <article class="hentry">
-    <img src="//localhost:4000/images/so-simple-sample-image-3.jpg" class="entry-feature-image" alt="Write an MP2 program" ><p class="image-credit">Photo Credit: <a href="http://mademistakes.com">Michael Rose</a>
+    <img src="//localhost:4000/images/rene-magritte-decalcomania.jpg" class="entry-feature-image" alt="Determinant matrix elelemnts" ><p class="image-credit">Photo Credit: <a href="http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201">Rene Magritte - Decalcomania</a>
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="//localhost:4000/tags/#programming" title="Pages tagged programming">programming</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#MP2" title="Pages tagged MP2">MP2</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#quantum chemistry" title="Pages tagged quantum chemistry">quantum chemistry</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Foo" title="Pages tagged Foo">Foo</a></span>
+        <span class="entry-tags"><a href="//localhost:4000/tags/#Matrix element" title="Pages tagged Matrix element">Matrix element</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#determinant" title="Pages tagged determinant">determinant</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#one-electron operator" title="Pages tagged one-electron operator">one-electron operator</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#two-electron operator" title="Pages tagged two-electron operator">two-electron operator</a></span>
         
-          <h1 class="entry-title">Write an MP2 program</h1>
+          <h1 class="entry-title">Determinant matrix elelemnts</h1>
         
       </header>
       <footer class="entry-meta">
         <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
         <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
-        <span class="entry-date date published"><time datetime="2014-06-11T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 11, 2014</time></span>
+        <span class="entry-date date published"><time datetime="2014-06-14T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 14, 2014</time></span>
         <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
         
-        <span><a href="//localhost:4000/articles/write-an-mp2-program/" rel="bookmark" title="Write an MP2 program"><i class="icon-link"></i> Permalink</a></span>
+        <span><a href="//localhost:4000/articles/determinant-matrix-elements/" rel="bookmark" title="Determinant matrix elelemnts"><i class="icon-link"></i> Permalink</a></span>
         
         <span class="social-share-facebook">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/write-an-mp2-program/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/determinant-matrix-elements/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
         <span class="social-share-twitter">
-            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Write an MP2 program&url=//localhost:4000/articles/write-an-mp2-program/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Determinant matrix elelemnts&url=//localhost:4000/articles/determinant-matrix-elements/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
         <span class="social-share-googleplus">
-            <a href="https://plus.google.com/share?url=//localhost:4000/articles/write-an-mp2-program/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/determinant-matrix-elements/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
             <!-- /.social-share -->
       </footer>
       <div class="entry-content">
-        <p>First some theory.</p>
-
-<p>Well, not theory but the relevant formulas.</p>
-
-<p>According to Head-Gordon, Pople and Frisch (1988) CPL 153 p. 503 the formula
-for the MP2 correlation energy is</p>
+        <p>Now in quantum chemistry we often want to do integrals like this:</p>
 
 <script type="math/tex; mode=display">
-E_\textrm{MP2} =
-\frac{1}{2}
-\sum_{i,j,a,b}
-\frac{2(ia|jb)^2 + [(ia|jb)-(ib|ja)]^2}{\epsilon_i + \epsilon_j - \epsilon_a - \epsilon_b}.
+\braopket{\mathscr{A}’ \Phi_I}{M}{\mathscr{A} \Phi_J}
+=
+\int
+(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) d\mathbf{x}_1\ldots\mathbf{x}_N
 </script>
 
-<p>Here the \( \epsilon_p \) are molecular orbital energies, 
-and the indices \( i \) and \( j \) stand for 
-occupied molecular orbitals \( \phi_i \) and \( \phi_j \), 
-while indices \( a \) and \( b \) stand for unoccupied orbitals
-\( \phi_a \) and \( \phi_b \). The two electron integrals are</p>
+<p>The integration in this matrix element is over electronic coordinates
+\( \mathbf{x}_i \) and the functions \( \Phi_K \) are usually <em>symmetric</em>
+functions of those same coordinates. \( M \) is some kind of operator —
+perhaps a function of one or more of those coordinates, or derivatives of those
+coordinates.</p>
+
+<p>Such an integral is generically called a “matrix elements”.</p>
+
+<p>The reason for that matrix elements are important is they allows to 
+convert a partial differential equation, such as the Schrodinger equation,
+into a matrix equation involving numbers. Matrix equations involving
+numbers are much easier to solve in computers.</p>
+
+<p>Look at the above matrix element. you can see that it involves products of two
+antisymmetrizers. (It should be clear that these antisymmetrizers only “operate”
+on the electron coordinates in the functions \( \Phi_K \) immediately to
+their right). We need to be able to evaluate such products. We can use some
+results from a previous post to obtain the required results.</p>
+
+<h2 id="matrix-elemnts-between-determinant-wavefunctions">Matrix elemnts between determinant wavefunctions</h2>
+
+<p>The following theorem holds:</p>
 
 <script type="math/tex; mode=display">
-(pq|rs) = \int \phi_p(1)\phi_q(1) r_{12}^{-1} \phi_r(2) \phi_s(2)
+\mathscr{A}’\Phi_I M \mathscr{A} \Phi_J = \Phi_I \sum_w^{N!} M \epsilon_w P_w \Phi_J
 </script>
 
-<p>These are obtained from the atomic orbital integrals \( (\mu\nu|\kappa\lambda) \)
-through a “four index transform”</p>
+<p>The importance of this theorem is it allows to remove one of the antisymmetrizers
+on the left, thus replacing a summation of \( ()N!)^2 \) terms into one involving
+only \( N! \) permutations — and these permutations only apply to the
+function on the right. Note also that the \( N! \) has disappeared.</p>
 
-<script type="math/tex; mode=display">
-(pq|rs) = 
-\sum_{\mu,\nu,\kappa,\lambda}
-          (\mu\nu|\kappa\lambda) c_{\mu p} c_{\nu q} c_{\kappa r} c_{\lambda s}.
-</script>
+<p>The proof is relatively easy an depends only on the group property of
+permutations, especially that the left coset of the whole group is itself.
+However, you don’t really need to know what a coset is to follow this proof.</p>
 
-<p>The coefficients \( \textbf{c} \) are the matrix of the molecular orbital
-coefficients in the atomic orbital basis while. It seems we don’t actually need
-these if we have the corresponding molecular orbital energies.</p>
+<script type="math/tex; mode=display">% <![CDATA[
 
-<h2 id="get-ready">Get ready</h2>
-
-<p>To write the program we need to locate where the integrals are. In a
-typical program made by scientists there is no “integrated development
-environment”. Therefore in unix you would use the <code>grep</code> command with the
-word <code>integral</code> in the <code>foofiles/</code> source directory. If you try that you will
-get a lot of output. On reflection this is unreasonable: much of quantum
-chemistry has to do with integrals. The output can be “pioed”
-through the <code>less</code> pager</p>
-
-<p><code>
-   cd foofiles
-   grep integral | less
-</code></p>
-
-<p>After searching you come across the routines <code>.FOCK:make_ERI_integrals(v)</code>.
-Investigating further in the <code>molecule.fock.foo</code> file we see from the
-documentation that this <code>v</code>  is declared as a a four dimensional array 
-<code>v :: MAT4{REAL}</code> </p>
-
-<p>```</p>
-
-<p>make_MO_ERI_integrals(v)
-   ! Calculate “v” the electron repulsion integrals (ERI’s) in the MO basis
-     v :: MAT4{REAL}, OUT
-     …
-```</p>
-
-<p>Clearly <code>v</code> holds the two electron electron repulsion integrals (ERIs).
-()In a practical program there would be too many of these integrals to
-hold in an array, but we do it here just for teaching purposes).</p>
-
-<h2 id="housekeeping">Housekeeping</h2>
-
-<p>In a perfect world we would expect to call the routine above, just as we
-did in the in the “Hello World” program. The routine would simply work and
-returned the integrals. If we <em>actually</em> do that, our program will crash. </p>
-
-<p>Why?</p>
-
-<p>Because there is some “set-up” to do. For example, </p>
-
-<ul>
-  <li>
-    <p>What molecule do we want to treat? </p>
-  </li>
-  <li>
-    <p>What basis set do to use? </p>
-  </li>
-  <li>
-    <p>We should do an SCF calculation beforehand for the orbitals and energies!
-()If you are reading previous posts, you may recall that the orbital energies
-are stored in a variable <code>orbital_energies</code>).</p>
-  </li>
-</ul>
-
-<p>So we want to add our MP2 calculation program to the end of a standard SCF calculation. 
-We can find an appropriate input file from the tests/<code> folder. The test job in folder
-</code>h2o_rhf_cc-pVDZ<code> is fine. The </code>stdin<code> file from this folder can be copied to the
-</code>tonto<code> folder or wherever you want to</code> run the program.</p>
-
-<h2 id="starting-to-write">Starting to write</h2>
-
-<p>To write the program it is always good to have a starting template.
-Since we actually need to run an SCF calculation beforehand we shouldwe should start by modifying the
-<code>run_molecule.exe</code> program. That, of course is in the <code>run_molecule.foo</code> file.</p>
-
-<p>So we start by adding our code to the end of that program. We should probably rename in to
-something like <code>run_molecule_mp2.foo</code> before starting.</p>
-
-<h2 id="the-answer">The Answer</h2>
-
-<p>At this point I should give you answer. </p>
-
-<p>But perhaps you can do this as an exercise?</p>
+\begin{align}
+\mathscr{A}’\Phi_I \mathscr{A} \Phi_J 
+= &
+(N!)^{-1}
+\sum_v^{N!} \epsilon_v P_v \Phi_I
+M
+\sum_u^{N!} \epsilon_u P_u \Phi_J
+\\
+= &
+(N!)^{-1}
+\sum_v^{N!} P^{-1}_v P_v \Phi_I
+M
+\sum_u^{N!} (\epsilon_v\epsilon_u) (P^{-1}_v P_u) \Phi_J
+\\
+= &
+(N!)^{-1}
+\sum_v^{N!} \Phi_I
+M
+\sum_w^{N!} \epsilon_w P_w \Phi_J
+\\
+= &
+Phi_I
+M
+\sum_w^{N!} \epsilon_w P_w \Phi_J
+\end{align}
+ %]]></script>
 
 
         
@@ -276,10 +237,10 @@ something like <code>run_molecule_mp2.foo</code> before starting.</p>
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/hello-world-program-in-tonto/" class="btn" title="Hello World">Previous article</a>
+        <a href="//localhost:4000/articles/the-antisymmetrizer/" class="btn" title="The antisymmetrizer">Previous article</a>
       
       
-        <a href="//localhost:4000/articles/the-determinant-wavefunction/" class="btn" title="The determinant wavefunction">Next article</a>
+        <a href="//localhost:4000/articles/god-or-not/" class="btn" title="God or not?">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>

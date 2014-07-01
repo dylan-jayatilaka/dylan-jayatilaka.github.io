@@ -56,8 +56,32 @@
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
 
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\mbox{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1]
+        }
+    }
+});
+</script>
 <script type="text/javascript"
-    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
 </script>
 
 </head>
@@ -167,13 +191,25 @@
      
     	<li><a href="#Foo">Foo <span>1</span></a></li>
      
-    	<li><a href="#wavefunction">wavefunction <span>1</span></a></li>
+    	<li><a href="#wavefunction">wavefunction <span>2</span></a></li>
      
-    	<li><a href="#determinant">determinant <span>1</span></a></li>
+    	<li><a href="#determinant">determinant <span>3</span></a></li>
      
     	<li><a href="#Hartree-Fock">Hartree-Fock <span>1</span></a></li>
      
     	<li><a href="#DFT">DFT <span>1</span></a></li>
+     
+    	<li><a href="#antisymmetrizer">antisymmetrizer <span>1</span></a></li>
+     
+    	<li><a href="#permutations">permutations <span>1</span></a></li>
+     
+    	<li><a href="#pauli principle">pauli principle <span>1</span></a></li>
+     
+    	<li><a href="#Matrix element">Matrix element <span>1</span></a></li>
+     
+    	<li><a href="#one-electron operator">one-electron operator <span>1</span></a></li>
+     
+    	<li><a href="#two-electron operator">two-electron operator <span>1</span></a></li>
      
     	<li><a href="#god">god <span>1</span></a></li>
      
@@ -554,6 +590,12 @@
 		
 			
 			
+			<li><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer<span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></li>
+			
+			
+		
+			
+			
 			<li><a href="//localhost:4000/articles/the-determinant-wavefunction/">The determinant wavefunction<span class="entry-date"><time datetime="2014-06-12T00:00:00+08:00">June 12, 2014</time></span></a></li>
 			
 			
@@ -565,6 +607,18 @@
 	<h2 id="determinant">determinant</h2>
 	<ul class="post-list">
 		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/determinant-matrix-elements/">Determinant matrix elelemnts<span class="entry-date"><time datetime="2014-06-14T00:00:00+08:00">June 14, 2014</time></span></a></li>
+			
+			
+		
+			
+			
+			<li><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer<span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></li>
+			
+			
 		
 			
 			
@@ -597,6 +651,90 @@
 			
 			
 			<li><a href="//localhost:4000/articles/the-determinant-wavefunction/">The determinant wavefunction<span class="entry-date"><time datetime="2014-06-12T00:00:00+08:00">June 12, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="antisymmetrizer">antisymmetrizer</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer<span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="permutations">permutations</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer<span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="pauli principle">pauli principle</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer<span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="Matrix element">Matrix element</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/determinant-matrix-elements/">Determinant matrix elelemnts<span class="entry-date"><time datetime="2014-06-14T00:00:00+08:00">June 14, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="one-electron operator">one-electron operator</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/determinant-matrix-elements/">Determinant matrix elelemnts<span class="entry-date"><time datetime="2014-06-14T00:00:00+08:00">June 14, 2014</time></span></a></li>
+			
+			
+		
+		
+		
+	</ul>
+ 
+	<h2 id="two-electron operator">two-electron operator</h2>
+	<ul class="post-list">
+		  
+		
+			
+			
+			<li><a href="//localhost:4000/articles/determinant-matrix-elements/">Determinant matrix elelemnts<span class="entry-date"><time datetime="2014-06-14T00:00:00+08:00">June 14, 2014</time></span></a></li>
 			
 			
 		
