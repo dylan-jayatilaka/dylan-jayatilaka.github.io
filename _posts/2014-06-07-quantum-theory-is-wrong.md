@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Quatum theory is wrong"
-description: "quatum theory"
+title: "Quantum theory is wrong"
+description: "quantum theory"
 category: articles
 tags: [quatum mechanics, measurement, measurement, models]
 modified: 2014-06-07
@@ -117,9 +117,9 @@ Implicit in these is _always_ the model. Always.
 
 ## Einstein’s quote
 
-At this point I present a quite remarkable exchange between Einstein and
-Heisenberg, which the latter included in his memoirs. It clearly
-illustrates what I have been trying to say.
+At this point I should present a quite remarkable exchange between Einstein and
+Heisenberg, which the latter included in his memoirs. It clearly illustrates
+what I have been trying to say. But it will have to wait for another post.
 
 ## The bright side
 
