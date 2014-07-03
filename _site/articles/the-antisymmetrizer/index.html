@@ -159,14 +159,18 @@ MathJax.Hub.Config({
       <div class="entry-content">
         <p>In this post the  <em>antisymmetrizer operator</em> is officially defined.</p>
 
-<p>Those who have read the post on <a href="https://dylan.jayatilaka.net/">determinant
-wavefunctions</a> will be familiar with this
-operator. </p>
+<p>Those who read the 
+<a href="https://dylan.jayatilaka.net/articles/the-determinant-wavefunction/">determinant wavefunctions post</a>
+will already be familiar with this operator.</p>
 
-<p>The reason to discuss it is to describe some of it’s properties which are
+<p>I discuss it again here in order to describe more of it’s properties, which are
 important for evaluating many-electron integrals. Such integrals form the
 bread-and-butter of quantum chemistry — so knowing about the antisymmetrizer
 is important.</p>
+
+<p>More important for me is that the “antisymmetric” nature of electrons is one of
+the puzzling and amazing things about quantum mechanics itself. It’s just so
+cool and weird!</p>
 
 <h2 id="the-antisymmetrizer">The antisymmetrizer</h2>
 
@@ -195,7 +199,7 @@ expression which follows. For example, \( P_u \) might be the elementary
 permutation \( (1 2) \) which swaps labels 1 and 2, although there
 may be more complicated permutations such as the cycle \( (1 2 3) \).
 See wikpedia <a href="http://en.wikipedia.org/wiki/Permutation">here</a>
-for more information. </p>
+for more information.</p>
   </li>
   <li>
     <p>The number of terms in the summation is \( N! \).</p>
@@ -205,9 +209,9 @@ for more information. </p>
 <em>signature</em>, <em>sign</em> or <em>paity</em> of the permutation \( P_u \). It
 is +1 (or -1) if \( P_u \) can be decomposed into a sequence of even
 (rrespectively, odd) elementary permutations or <em>swaps</em> . It is <em>not</em> at all
-obvious that any permutation may be decomposed as either even or odd. 
+obvious that any permutation may be decomposed as either even or odd.
 If you are interested, several proofs of this fact are given in
-<a href="http://en.wikipedia.org/wiki/Parity_of_a_permutation">wikipedia</a>. 
+<a href="http://en.wikipedia.org/wiki/Parity_of_a_permutation">wikipedia</a>.
 The quantity \( \epsilon_u \) is also called the
 <a href="http://en.wikipedia.org/wiki/Levi-Civita_symbol">Levi-Civita symbol</a>
 which may be familiar to some of you.</p>
@@ -216,17 +220,10 @@ which may be familiar to some of you.</p>
 
 <h2 id="making-functions-antisymmetric">Making functions antisymmetric</h2>
 
-<p>Suppose we have an arbitrary function \( f(\B{x}_1,\ldots,\B{x}_n) \). 
-Then the function</p>
+<p>We have the following theorem:</p>
 
-<script type="math/tex; mode=display">
-F(\B{x}_1 \ldots \B{x}_n)
-=
-\mathscr{A}\, 
-f(\B{x}_1 \ldots \B{x}_n)
-</script>
-
-<p>is antisymmetric, i.e.</p>
+<p>The function \( F(\B{x}_1 \ldots \B{x}_n) = \mathscr{A}\, f(\B{x}_1 \ldots \B{x}_n) \)
+is antisymmetric, i.e.</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
@@ -250,25 +247,27 @@ F(\ldots, \B{x}_j \ldots \B{x}_i \dots)
  %]]></script>
 
 <p>Remarks: The only tricky part is the penultimate line. There, we used two
-facts. First, that the product of two permutations is another permutation \(
-P_v \). This should be obvious, but actually follows from the fact that
-permutations form a <a href="">mathematical group</a>. Second, since \( P_v \) has one
-extra swap compared to \( P_u \) its signature 
-\( \epsilon_v = -\epsilon_u \).</p>
+facts. First, that the product of two permutations is another permutation 
+\( P_v\). This should be obvious, but actually follows from the fact that
+permutations form a <a href="http://en.wikipedia.org/wiki/Group_(mathematics)">mathematical group</a>. 
+Second, since \( P_v \) has one extra swap compared to \( P_u \) its
+signature \( \epsilon_v = -\epsilon_u \).</p>
 
 <p>We have shown that the antisymmetrizer \( \mathscr{A} \) makes any function
 which it is applied to antisymmetric.</p>
 
 <h2 id="the-antisymmetrizer-is-hermitian">The antisymmetrizer is Hermitian</h2>
 
-<p>The antisymmetrizer is Hermitian if</p>
+<p>The antisymmetrizer is Hermitian if \( \mathscr{A}^\dagger = \mathscr{A} \),
+which means that for any functions \( \Phi_I \) and \( \Phi_J \)
+that these operators are allowed to “act” on we must have</p>
 
 <script type="math/tex; mode=display">
 \braket{\Phi_I}{\mathscr{A}^\dagger\, \Phi_J}
 \equiv
 \braket{\mathscr{A}\, \Phi_I}{\Phi_J}
 =
-\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}.
 </script>
 
 <p>Proof:</p>
@@ -321,11 +320,13 @@ which it is applied to antisymmetric.</p>
 \end{align}
  %]]></script>
 
-<p>Remark: In an ( N_D \)-dimensional finite dimensional space
+<p>Remark: In an \( M \)-dimensional <em>finite</em> dimensional space
 \( V = \mbox{span}\, (\Phi_I ; I=1,\ldots,M) \) the adjoint
 \( \mathscr{A}^\dagger \) is also called the “hermitian conjugate”.
-In quantum chemistry we usually deal with finite dimensional spaces, so 
-the terms “self-adjoint” and “hermitian” are equivalent.</p>
+In quantum chemistry we usually deal with finite dimensional spaces, so
+the terms “self-adjoint” and “hermitian” are equivalent. To be honest
+I am no sure of the relevance of infinite dimensional spaces
+in any practical calculation.</p>
 
 <h2 id="antisymmetrizers-are-nearly-idempotent">Antisymmetrizers are (nearly) idempotent</h2>
 
@@ -335,7 +336,53 @@ the terms “self-adjoint” and “hermitian” are equivalent.</p>
 \mathscr{A}^2 = \sqrt{N!} \mathscr{A}
 </script>
 
+<p>In other words, antisymmetrizing a function which is already antisymmetric
+doesn’t change it from being antisymmetric (except for a factor).</p>
+
+<p>Note: An operators which obeys \( P^2 = P \) is called an <em>idempotent</em> or
+<em>projection</em> operator. In our case \( (1/sqrt{N!}) \mathscr{A} \) would be
+idempotent.</p>
+
 <p>Proof:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\mathscr{A}^2
+= &
+\frac{1}{N!}
+(\sum_u^{N!} \epsilon_u P_u)
+(\sum_v^{N!} \epsilon_v P_v)
+&&
+\s{ substitute $\mathscr{A}$ definitions}
+\\
+= &
+\frac{1}{N!}
+\sum_u^{N!}
+\sum_v^{N!}
+(\epsilon_u \epsilon_v) (P_u P_v)
+&&
+\
+\\
+= &
+\frac{1}{N!}
+\sum_u^{N!}
+\sum_w^{N!} \epsilon_w P_w
+&&
+\s{ substitute $P_w = P_u P_v$ for fixed $u$}
+\\
+= &
+\frac{\sqrt{N!}}{N!}
+\sum_u^{N!} \mathscr{A}
+&&
+\
+\\
+= &
+\sqrt{N!} \mathscr{A}
+&&
+\s{constant sum $u$ gives factor $N!$}
+\end{align}
+ %]]></script>
 
 
         
@@ -346,7 +393,7 @@ the terms “self-adjoint” and “hermitian” are equivalent.</p>
         <a href="//localhost:4000/articles/the-determinant-wavefunction/" class="btn" title="The determinant wavefunction">Previous article</a>
       
       
-        <a href="//localhost:4000/articles/determinant-matrix-elements/" class="btn" title="Determinant matrix elelemnts">Next article</a>
+        <a href="//localhost:4000/articles/determinant-matrix-elements/" class="btn" title="Determinant matrix elements">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>

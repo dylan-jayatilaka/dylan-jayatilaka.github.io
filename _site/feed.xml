@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-07-01T15:35:52+08:00</updated>
+<updated>2014-07-03T11:55:04+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -195,7 +195,7 @@ they &lt;em&gt;are&lt;/em&gt;. For them, these arguments will not apply.&lt;/p&g
 
 
 <entry>
-  <title type="html"><![CDATA[Determinant matrix elelemnts]]></title>
+  <title type="html"><![CDATA[Determinant matrix elements]]></title>
   <link rel="alternate" type="text/html" href="http://localhost:4000/articles/determinant-matrix-elements/"/>
   <id>http://localhost:4000/articles/determinant-matrix-elements</id>
   <updated>201-06-07T00:00:00-00:00</updated>
@@ -285,7 +285,7 @@ M
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/determinant-matrix-elements/&quot;&gt;Determinant matrix elelemnts&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/determinant-matrix-elements/&quot;&gt;Determinant matrix elements&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -306,14 +306,18 @@ M
   
     &lt;p&gt;In this post the  &lt;em&gt;antisymmetrizer operator&lt;/em&gt; is officially defined.&lt;/p&gt;
 
-&lt;p&gt;Those who have read the post on &lt;a href=&quot;https://dylan.jayatilaka.net/&quot;&gt;determinant
-wavefunctions&lt;/a&gt; will be familiar with this
-operator. &lt;/p&gt;
+&lt;p&gt;Those who read the 
+&lt;a href=&quot;https://dylan.jayatilaka.net/articles/the-determinant-wavefunction/&quot;&gt;determinant wavefunctions post&lt;/a&gt;
+will already be familiar with this operator.&lt;/p&gt;
 
-&lt;p&gt;The reason to discuss it is to describe some of it’s properties which are
+&lt;p&gt;I discuss it again here in order to describe more of it’s properties, which are
 important for evaluating many-electron integrals. Such integrals form the
 bread-and-butter of quantum chemistry — so knowing about the antisymmetrizer
 is important.&lt;/p&gt;
+
+&lt;p&gt;More important for me is that the “antisymmetric” nature of electrons is one of
+the puzzling and amazing things about quantum mechanics itself. It’s just so
+cool and weird!&lt;/p&gt;
 
 &lt;h2 id=&quot;the-antisymmetrizer&quot;&gt;The antisymmetrizer&lt;/h2&gt;
 
@@ -342,7 +346,7 @@ expression which follows. For example, \( P_u \) might be the elementary
 permutation \( (1 2) \) which swaps labels 1 and 2, although there
 may be more complicated permutations such as the cycle \( (1 2 3) \).
 See wikpedia &lt;a href=&quot;http://en.wikipedia.org/wiki/Permutation&quot;&gt;here&lt;/a&gt;
-for more information. &lt;/p&gt;
+for more information.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The number of terms in the summation is \( N! \).&lt;/p&gt;
@@ -352,9 +356,9 @@ for more information. &lt;/p&gt;
 &lt;em&gt;signature&lt;/em&gt;, &lt;em&gt;sign&lt;/em&gt; or &lt;em&gt;paity&lt;/em&gt; of the permutation \( P_u \). It
 is +1 (or -1) if \( P_u \) can be decomposed into a sequence of even
 (rrespectively, odd) elementary permutations or &lt;em&gt;swaps&lt;/em&gt; . It is &lt;em&gt;not&lt;/em&gt; at all
-obvious that any permutation may be decomposed as either even or odd. 
+obvious that any permutation may be decomposed as either even or odd.
 If you are interested, several proofs of this fact are given in
-&lt;a href=&quot;http://en.wikipedia.org/wiki/Parity_of_a_permutation&quot;&gt;wikipedia&lt;/a&gt;. 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Parity_of_a_permutation&quot;&gt;wikipedia&lt;/a&gt;.
 The quantity \( \epsilon_u \) is also called the
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Levi-Civita_symbol&quot;&gt;Levi-Civita symbol&lt;/a&gt;
 which may be familiar to some of you.&lt;/p&gt;
@@ -363,17 +367,10 @@ which may be familiar to some of you.&lt;/p&gt;
 
 &lt;h2 id=&quot;making-functions-antisymmetric&quot;&gt;Making functions antisymmetric&lt;/h2&gt;
 
-&lt;p&gt;Suppose we have an arbitrary function \( f(\B{x}_1,\ldots,\B{x}_n) \). 
-Then the function&lt;/p&gt;
+&lt;p&gt;We have the following theorem:&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-F(\B{x}_1 \ldots \B{x}_n)
-=
-\mathscr{A}\, 
-f(\B{x}_1 \ldots \B{x}_n)
-&lt;/script&gt;
-
-&lt;p&gt;is antisymmetric, i.e.&lt;/p&gt;
+&lt;p&gt;The function \( F(\B{x}_1 \ldots \B{x}_n) = \mathscr{A}\, f(\B{x}_1 \ldots \B{x}_n) \)
+is antisymmetric, i.e.&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
@@ -397,25 +394,27 @@ F(\ldots, \B{x}_j \ldots \B{x}_i \dots)
  %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Remarks: The only tricky part is the penultimate line. There, we used two
-facts. First, that the product of two permutations is another permutation \(
-P_v \). This should be obvious, but actually follows from the fact that
-permutations form a &lt;a href=&quot;&quot;&gt;mathematical group&lt;/a&gt;. Second, since \( P_v \) has one
-extra swap compared to \( P_u \) its signature 
-\( \epsilon_v = -\epsilon_u \).&lt;/p&gt;
+facts. First, that the product of two permutations is another permutation 
+\( P_v\). This should be obvious, but actually follows from the fact that
+permutations form a &lt;a href=&quot;http://en.wikipedia.org/wiki/Group_(mathematics)&quot;&gt;mathematical group&lt;/a&gt;. 
+Second, since \( P_v \) has one extra swap compared to \( P_u \) its
+signature \( \epsilon_v = -\epsilon_u \).&lt;/p&gt;
 
 &lt;p&gt;We have shown that the antisymmetrizer \( \mathscr{A} \) makes any function
 which it is applied to antisymmetric.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-antisymmetrizer-is-hermitian&quot;&gt;The antisymmetrizer is Hermitian&lt;/h2&gt;
 
-&lt;p&gt;The antisymmetrizer is Hermitian if&lt;/p&gt;
+&lt;p&gt;The antisymmetrizer is Hermitian if \( \mathscr{A}^\dagger = \mathscr{A} \),
+which means that for any functions \( \Phi_I \) and \( \Phi_J \)
+that these operators are allowed to “act” on we must have&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \braket{\Phi_I}{\mathscr{A}^\dagger\, \Phi_J}
 \equiv
 \braket{\mathscr{A}\, \Phi_I}{\Phi_J}
 =
-\braket{\Phi_I}{\mathscr{A}\, \Phi_J}
+\braket{\Phi_I}{\mathscr{A}\, \Phi_J}.
 &lt;/script&gt;
 
 &lt;p&gt;Proof:&lt;/p&gt;
@@ -468,11 +467,13 @@ which it is applied to antisymmetric.&lt;/p&gt;
 \end{align}
  %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;Remark: In an ( N_D \)-dimensional finite dimensional space
+&lt;p&gt;Remark: In an \( M \)-dimensional &lt;em&gt;finite&lt;/em&gt; dimensional space
 \( V = \mbox{span}\, (\Phi_I ; I=1,\ldots,M) \) the adjoint
 \( \mathscr{A}^\dagger \) is also called the “hermitian conjugate”.
-In quantum chemistry we usually deal with finite dimensional spaces, so 
-the terms “self-adjoint” and “hermitian” are equivalent.&lt;/p&gt;
+In quantum chemistry we usually deal with finite dimensional spaces, so
+the terms “self-adjoint” and “hermitian” are equivalent. To be honest
+I am no sure of the relevance of infinite dimensional spaces
+in any practical calculation.&lt;/p&gt;
 
 &lt;h2 id=&quot;antisymmetrizers-are-nearly-idempotent&quot;&gt;Antisymmetrizers are (nearly) idempotent&lt;/h2&gt;
 
@@ -482,7 +483,53 @@ the terms “self-adjoint” and “hermitian” are equivalent.&lt;/p&gt;
 \mathscr{A}^2 = \sqrt{N!} \mathscr{A}
 &lt;/script&gt;
 
+&lt;p&gt;In other words, antisymmetrizing a function which is already antisymmetric
+doesn’t change it from being antisymmetric (except for a factor).&lt;/p&gt;
+
+&lt;p&gt;Note: An operators which obeys \( P^2 = P \) is called an &lt;em&gt;idempotent&lt;/em&gt; or
+&lt;em&gt;projection&lt;/em&gt; operator. In our case \( (1/sqrt{N!}) \mathscr{A} \) would be
+idempotent.&lt;/p&gt;
+
 &lt;p&gt;Proof:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\mathscr{A}^2
+= &amp;
+\frac{1}{N!}
+(\sum_u^{N!} \epsilon_u P_u)
+(\sum_v^{N!} \epsilon_v P_v)
+&amp;&amp;
+\s{ substitute $\mathscr{A}$ definitions}
+\\
+= &amp;
+\frac{1}{N!}
+\sum_u^{N!}
+\sum_v^{N!}
+(\epsilon_u \epsilon_v) (P_u P_v)
+&amp;&amp;
+\
+\\
+= &amp;
+\frac{1}{N!}
+\sum_u^{N!}
+\sum_w^{N!} \epsilon_w P_w
+&amp;&amp;
+\s{ substitute $P_w = P_u P_v$ for fixed $u$}
+\\
+= &amp;
+\frac{\sqrt{N!}}{N!}
+\sum_u^{N!} \mathscr{A}
+&amp;&amp;
+\
+\\
+= &amp;
+\sqrt{N!} \mathscr{A}
+&amp;&amp;
+\s{constant sum $u$ gives factor $N!$}
+\end{align}
+ %]]&gt;&lt;/script&gt;
 
 
   
