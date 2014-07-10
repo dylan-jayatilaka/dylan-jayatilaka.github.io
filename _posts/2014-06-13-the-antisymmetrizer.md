@@ -15,8 +15,8 @@ share: true
 
 In this post the  _antisymmetrizer operator_ is officially defined.
 
-Those who read the 
-[determinant wavefunctions post](https://dylan.jayatilaka.net/articles/the-determinant-wavefunction/)
+Those who read the
+[determinant wavefunctions post](http://dylan-jayatilaka/articles/the-determinant-wavefunction)
 will already be familiar with this operator.
 
 I discuss it again here in order to describe more of it’s properties, which are
@@ -102,6 +102,26 @@ signature \\( \epsilon_v = -\epsilon_u \\).
 
 We have shown that the antisymmetrizer \\( \mathscr{A} \\) makes any function
 which it is applied to antisymmetric.
+
+## The antisymmetrizer makes determinant wavefunctions
+
+If you read the 
+[previous post](http://dylan-jayatilaka/articles/the-detereminant-wavefunction)
+you will see that the antisymmetrizer makes determinant wavefunctions:
+
+$$
+\mathscr{A}\phi_1(\B{x}_1)\ldots\phi_N(\B{x}_N)
+=
+\frac{1}{\sqrt{N!}}
+\textrm{det}\,
+\left|
+\begin{array}{lll}
+\phi_1(\textrm{x}_1)          & \ldots & \phi_1(\textbf{x}_N) \\
+\vdots                        & \ddots & \vdots          \\
+\phi_N(\textrm{x}_1) & \ldots & \phi_N(\textrm{x}_N)
+\end{array}
+\right|.
+$$
 
 ## The antisymmetrizer is Hermitian
 

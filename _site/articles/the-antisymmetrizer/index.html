@@ -159,8 +159,8 @@ MathJax.Hub.Config({
       <div class="entry-content">
         <p>In this post the  <em>antisymmetrizer operator</em> is officially defined.</p>
 
-<p>Those who read the 
-<a href="https://dylan.jayatilaka.net/articles/the-determinant-wavefunction/">determinant wavefunctions post</a>
+<p>Those who read the
+<a href="http://dylan-jayatilaka/articles/the-determinant-wavefunction">determinant wavefunctions post</a>
 will already be familiar with this operator.</p>
 
 <p>I discuss it again here in order to describe more of it’s properties, which are
@@ -256,6 +256,27 @@ signature \( \epsilon_v = -\epsilon_u \).</p>
 <p>We have shown that the antisymmetrizer \( \mathscr{A} \) makes any function
 which it is applied to antisymmetric.</p>
 
+<h2 id="the-antisymmetrizer-makes-determinant-wavefunctions">The antisymmetrizer makes determinant wavefunctions</h2>
+
+<p>If you read the 
+<a href="http://dylan-jayatilaka/articles/the-detereminant-wavefunction">previous post</a>
+you will see that the antisymmetrizer makes determinant wavefunctions:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\mathscr{A}\phi_1(\B{x}_1)\ldots\phi_N(\B{x}_N)
+=
+\frac{1}{\sqrt{N!}}
+\textrm{det}\,
+\left|
+\begin{array}{lll}
+\phi_1(\textrm{x}_1)          & \ldots & \phi_1(\textbf{x}_N) \\
+\vdots                        & \ddots & \vdots          \\
+\phi_N(\textrm{x}_1) & \ldots & \phi_N(\textrm{x}_N)
+\end{array}
+\right|.
+ %]]></script>
+
 <h2 id="the-antisymmetrizer-is-hermitian">The antisymmetrizer is Hermitian</h2>
 
 <p>The antisymmetrizer is Hermitian if \( \mathscr{A}^\dagger = \mathscr{A} \),
@@ -298,7 +319,7 @@ that these operators are allowed to “act” on we must have</p>
 \sum_u^{N!} \epsilon_u
 \int
 \Phi_I^*(\B{y}) (P_u^{-1} \Phi_J(\B{y}) d\B{y})
-&& \s{variable substitution $\B{y} = P_u \B{x}$}
+&& \s{substitute $\B{y} = P_u \B{x}$}
 \\
 = &
 \frac{1}{\sqrt{N!}}
@@ -340,7 +361,7 @@ in any practical calculation.</p>
 doesn’t change it from being antisymmetric (except for a factor).</p>
 
 <p>Note: An operators which obeys \( P^2 = P \) is called an <em>idempotent</em> or
-<em>projection</em> operator. In our case \( (1/sqrt{N!}) \mathscr{A} \) would be
+<em>projection</em> operator. In our case \( (1/\sqrt{N!}) \mathscr{A} \) would be
 idempotent.</p>
 
 <p>Proof:</p>

@@ -15,7 +15,7 @@ share: true
 
 This is what the “Hello World” program looks like in Tonto
 
-~~~ 
+{% highlight ruby %}
    program run_HELLO_WORLD
 
       implicit none
@@ -44,7 +44,7 @@ This is what the “Hello World” program looks like in Tonto
       TONTO_DESTROY
 
    end
-~~~
+{% endhighlight %}
 
 To compile the program type `make run_hello_world.exe`.
 
@@ -53,7 +53,9 @@ Other points to note:
 * The program name includes a `run_` prefix before the name `HELLO_WORLD` all
   in capitals. This is requied.
 
-* Comments appear after an exclamation mark
+* Comments appear after an exclamation mark. (Note: The highlighting of code
+  within comments, and in the code is not always correct because I use the
+  ruby language highlighter for the moment).
 
 * There is a lot of “set up”  and "clean up” which occurs, controlled via
   macro commands such as `TONTO_START` and `TONTO_DESTROY` respectively. These

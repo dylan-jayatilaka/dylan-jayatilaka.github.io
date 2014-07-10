@@ -159,35 +159,35 @@ MathJax.Hub.Config({
       <div class="entry-content">
         <p>This is what the “Hello World” program looks like in Tonto</p>
 
-<pre><code>   program run_HELLO_WORLD
+<div class="highlight"><pre><code class="ruby">   <span class="n">program</span> <span class="n">run_HELLO_WORLD</span>
 
-      implicit none
+      <span class="n">implicit</span> <span class="n">none</span>
 
-      ! Macro to create Tonto system object
-      ! Start MPI-parallel stuff too (if needed)
-      TONTO_CREATE
+      <span class="o">!</span> <span class="no">Macro</span> <span class="n">to</span> <span class="n">create</span> <span class="no">Tonto</span> <span class="nb">system</span> <span class="n">object</span>
+      <span class="o">!</span> <span class="no">Start</span> <span class="no">MPI</span><span class="o">-</span><span class="n">parallel</span> <span class="n">stuff</span> <span class="n">too</span> <span class="p">(</span><span class="k">if</span> <span class="n">needed</span><span class="p">)</span>
+      <span class="no">TONTO_CREATE</span>
 
-      ! Start timer
-      std_time.start_timing
+      <span class="o">!</span> <span class="no">Start</span> <span class="n">timer</span>
+      <span class="n">std_time</span><span class="o">.</span><span class="n">start_timing</span>
 
-      ! Initialise standard I/O.
-      stdout.create_stdout
-      stdout.open
+      <span class="o">!</span> <span class="no">Initialise</span> <span class="n">standard</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="o">.</span>
+      <span class="n">stdout</span><span class="o">.</span><span class="n">create_stdout</span>
+      <span class="n">stdout</span><span class="o">.</span><span class="n">open</span>
 
-      ! Do it
-      stdout.text(“Hello World”)
+      <span class="o">!</span> <span class="no">Do</span> <span class="n">it</span>
+      <span class="n">stdout</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="err">“</span><span class="no">Hello</span> <span class="no">World</span><span class="err">”</span><span class="p">)</span>
 
-      ! Memory report
-      TONTO_REPORT
+      <span class="o">!</span> <span class="no">Memory</span> <span class="n">report</span>
+      <span class="no">TONTO_REPORT</span>
 
-      ! Clean-up files
-      stdout.destroy
+      <span class="o">!</span> <span class="no">Clean</span><span class="o">-</span><span class="n">up</span> <span class="n">files</span>
+      <span class="n">stdout</span><span class="o">.</span><span class="n">destroy</span>
 
-      ! Clean-up tonto system
-      TONTO_DESTROY
+      <span class="o">!</span> <span class="no">Clean</span><span class="o">-</span><span class="n">up</span> <span class="n">tonto</span> <span class="nb">system</span>
+      <span class="no">TONTO_DESTROY</span>
 
-   end
-</code></pre>
+   <span class="k">end</span>
+</code></pre></div>
 
 <p>To compile the program type <code>make run_hello_world.exe</code>.</p>
 
@@ -199,7 +199,9 @@ MathJax.Hub.Config({
 in capitals. This is requied.</p>
   </li>
   <li>
-    <p>Comments appear after an exclamation mark</p>
+    <p>Comments appear after an exclamation mark. (Note: The highlighting of code
+within comments, and in the code is not always correct because I use the
+ruby language highlighter for the moment).</p>
   </li>
   <li>
     <p>There is a lot of “set up”  and “clean up” which occurs, controlled via

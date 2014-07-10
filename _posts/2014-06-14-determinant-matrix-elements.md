@@ -14,79 +14,79 @@ share: true
 ---
 
 
-Now in quantum chemistry we often want to do integrals like this:
+In quantum chemistry we often want to do integrals like this:
 
 $$
-\braopket{\mathscr{A}’ \Phi_I}{M}{\mathscr{A} \Phi_J}
+\braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
 =
 \int
-(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) d\mathbf{x}_1\ldots\mathbf{x}_N
+(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) \, d\B{x}
 $$
+
+This integral is generically called a “matrix element”, and specifically
+it is a “determinant matrix element”.
 
 The integration in this matrix element is over electronic coordinates
-\\( \mathbf{x}_i \\) and the functions \\( \Phi_K \\) are usually *symmetric*
-functions of those same coordinates. \\( M \\) is some kind of operator ---
-perhaps a function of one or more of those coordinates, or derivatives of those
-coordinates.
+The functions \\( \Phi_K = \phi_{k_1}(\B{x_1})\ldots\phi(\B{x}_N) \\)
+are Hartree orbital products.
+\\( M \\) is some kind of operator --- perhaps a function of one or more of
+those coordinates, or derivatives of those coordinates --- which importantly
+is symmetric in the electron coordinates, since all electrons are indistinguishable.
+(Read [here](http://dylan-jayatilaka.net/articles/the-determinant-wavefunction)
+  and [here](http://dylan-jayatilaka.net/articles/the-antisymmetrizer) to know more).
 
-Such an integral is generically called a “matrix elements”.
+Now you can see that the determinant matrix element above involves products of
+two antisymmetrizers \\( \mathscr{A} \\). The parentheses make clear that these
+antisymmetrizers only “operate” on the electron coordinates in the functions
+\\( \Phi_K \\) immediately to their right.
 
-The reason for that matrix elements are important is they allows to 
+## Why are (determinant) matrix elements important?
+
+The reason for that matrix elements are important is they allows to
 convert a partial differential equation, such as the Schrodinger equation,
 into a matrix equation involving numbers. Matrix equations involving
-numbers are much easier to solve in computers.
+numbers are much easier to solve on computers.
 
-Look at the above matrix element. you can see that it involves products of two
-antisymmetrizers. (It should be clear that these antisymmetrizers only “operate”
-on the electron coordinates in the functions \\( \Phi_K \\) immediately to
-their right). We need to be able to evaluate such products. We can use some
-results from a previous post to obtain the required results.
+The reason for that determinant matrix elements are important is that
+a determinant is the simplest reasonable model wavefunction for a
+group of electrons.
 
-## Matrix elemnts between determinant wavefunctions
+Clearly, we need to be able to work out or simplify this matrix element
+in order to do numerical calculations.
 
-The following theorem holds:
+## Matrix elements between determinant wavefunctions
 
-$$
-\mathscr{A}’\Phi_I M \mathscr{A} \Phi_J = \Phi_I \sum_w^{N!} M \epsilon_w P_w \Phi_J
-$$
-
-The importance of this theorem is it allows to remove one of the antisymmetrizers
-on the left, thus replacing a summation of \\( ()N!)^2 \\) terms into one involving
-only \\( N! \\) permutations --- and these permutations only apply to the
-function on the right. Note also that the \\( N! \\) has disappeared.
-
-The proof is relatively easy an depends only on the group property of
-permutations, especially that the left coset of the whole group is itself.
-However, you don’t really need to know what a coset is to follow this proof.
+Luckily we can use
+[previous results](http://dylan-jayatilaka.net/articles/the-antisymmetrizer)
+showing that the antisymmetrizeris hermitian, and that a product of two
+antisymmetrizers is idempotent i.e.
 
 $$
 \begin{align}
-\mathscr{A}’\Phi_I \mathscr{A} \Phi_J 
+\braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
 = &
-(N!)^{-1}
-\sum_v^{N!} \epsilon_v P_v \Phi_I
-M
-\sum_u^{N!} \epsilon_u P_u \Phi_J
+\braket{\Phi_I}{\mathscr{A} M \mathscr{A} \Phi_J}
+&&
+\s{$\mathscr{A}$ is hermitian}
 \\
 = &
-(N!)^{-1}
-\sum_v^{N!} P^{-1}_v P_v \Phi_I
-M
-\sum_u^{N!} (\epsilon_v\epsilon_u) (P^{-1}_v P_u) \Phi_J
+\braket{\Phi_I}{M \mathscr{A}^2 \Phi_J}
+&&
+\s{$M$ is symmetric}
 \\
 = &
-(N!)^{-1}
-\sum_v^{N!} \Phi_I
-M
-\sum_w^{N!} \epsilon_w P_w \Phi_J
+\sqrt{N!}
+\braket{\Phi_I}{M \mathscr{A} \Phi_J}
+&&
+\s{$\mathscr{A}$ is nearly idempotent}
 \\
 = &
-Phi_I
-M
-\sum_w^{N!} \epsilon_w P_w \Phi_J
+\int \Phi_I(\B{x})^*\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
 \end{align}
 $$
 
+To make further progress we need to make certain assumptions about the
+operator \\( M \\).
 
 
 

@@ -214,13 +214,11 @@ Investigating further in the <code>molecule.fock.foo</code> file we see from the
 documentation that this <code>v</code>  is declared as a a four dimensional array 
 <code>v :: MAT4{REAL}</code> </p>
 
-<p>```</p>
-
-<p>make_MO_ERI_integrals(v)
-   ! Calculate “v” the electron repulsion integrals (ERI’s) in the MO basis
-     v :: MAT4{REAL}, OUT
-     …
-```</p>
+<div class="highlight"><pre><code class="ruby">   <span class="n">make_MO_ERI_integrals</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+   <span class="o">!</span> <span class="no">Calculate</span> <span class="s2">&quot;v&quot;</span> <span class="n">the</span> <span class="n">electron</span> <span class="n">repulsion</span> <span class="n">integrals</span> <span class="p">(</span><span class="no">ERI</span><span class="err">&#39;</span><span class="n">s</span><span class="p">)</span> <span class="k">in</span> <span class="n">the</span> <span class="no">MO</span> <span class="n">basis</span>
+     <span class="n">v</span> <span class="o">::</span> <span class="no">MAT4</span><span class="p">{</span><span class="no">REAL</span><span class="p">},</span> <span class="no">OUT</span>
+     <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</code></pre></div>
 
 <p>Clearly <code>v</code> holds the two electron electron repulsion integrals (ERIs).
 ()In a practical program there would be too many of these integrals to

@@ -70,13 +70,12 @@ Investigating further in the `molecule.fock.foo` file we see from the
 documentation that this `v`  is declared as a a four dimensional array 
 `v :: MAT4{REAL}` 
 
-```
-
+{% highlight ruby %}
    make_MO_ERI_integrals(v)
    ! Calculate "v" the electron repulsion integrals (ERI's) in the MO basis
      v :: MAT4{REAL}, OUT
      ...
-```
+{% endhighlight %}
 
 Clearly `v` holds the two electron electron repulsion integrals (ERIs).
 ()In a practical program there would be too many of these integrals to

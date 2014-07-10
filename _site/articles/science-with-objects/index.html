@@ -182,14 +182,14 @@ together these routines we have defined a class.</p>
 <p>The example code snippets below demonstrate a near universal notation,
 called “dot notation”, which I illustrate on numbers:</p>
 
-<pre><code class="language-fortran">   a,b :: INT
+<div class="highlight"><pre><code class="ruby">   <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="o">::</span> <span class="no">INT</span>
 
-   a = 1
-   a.plus(1)
+   <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+   <span class="n">a</span><span class="o">.</span><span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-   b = 2
-   b.times(3)
-</code></pre>
+   <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+   <span class="n">b</span><span class="o">.</span><span class="n">times</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
 
 <p>Here the variable <code>a</code> is set to <code>1</code>. <code>a</code> and <code>b</code> are integer variables
 as seen by the declaration <code>a,b :: INT</code>.  Then a message is sent to it
@@ -204,19 +204,19 @@ performed.</p>
 
 <p>All of this might seem rather trivial. But consider this example:</p>
 
-<pre><code class="language-fortran">   m :: MAT{REAL}(3,3)
-   eigenvalues  :: VEC{REAL}(3)
-   eigenvectors :: MAT{REAL}(3,3)
-   i,j :: INT
+<div class="highlight"><pre><code class="ruby">   <span class="n">m</span> <span class="o">::</span> <span class="no">MAT</span><span class="p">{</span><span class="no">REAL</span><span class="p">}(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">eigenvalues</span>  <span class="o">::</span> <span class="no">VEC</span><span class="p">{</span><span class="no">REAL</span><span class="p">}(</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">eigenvectors</span> <span class="o">::</span> <span class="no">MAT</span><span class="p">{</span><span class="no">REAL</span><span class="p">}(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+   <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">::</span> <span class="no">INT</span>
 
-   do i = 1,3
-   do j = 1,3
-      m(i,j) = i + j
-   end
-   end
+   <span class="k">do</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span>
+   <span class="k">do</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span>
+      <span class="n">m</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span>
+   <span class="k">end</span>
+   <span class="k">end</span>
 
-   m.solve_eigenproblem(eigenvalues,eigenvectors)
-</code></pre>
+   <span class="n">m</span><span class="o">.</span><span class="n">solve_eigenproblem</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">,</span><span class="n">eigenvectors</span><span class="p">)</span>
+</code></pre></div>
 
 <p>Look closely.</p>
 
@@ -246,38 +246,38 @@ It is slightly changed from the Tonto code base. It is written in the
 <code>Foo</code> language, as are all the above examples. This is a big leap from
 the previous examples, but you know enough to unravel it.</p>
 
-<pre><code class="language-fortran">   usual_scf ::: recursive
-   ! Do an SCF calculation. The .molecular_orbitals,
-   ! .orbital_energies, and .density_matrix are produced as results.
-      self :: MOLECULE
+<div class="highlight"><pre><code class="ruby">   <span class="n">usual_scf</span> <span class="o">::</span><span class="p">:</span> <span class="n">recursive</span>
+   <span class="o">!</span> <span class="no">Do</span> <span class="n">an</span> <span class="no">SCF</span> <span class="n">calculation</span><span class="o">.</span> <span class="no">The</span> <span class="o">.</span><span class="n">molecular_orbitals</span><span class="p">,</span>
+   <span class="o">!</span> <span class="o">.</span><span class="n">orbital_energies</span><span class="p">,</span> <span class="ow">and</span> <span class="o">.</span><span class="n">density_matrix</span> <span class="n">are</span> <span class="n">produced</span> <span class="n">as</span> <span class="n">results</span><span class="o">.</span>
+      <span class="nb">self</span> <span class="o">::</span> <span class="no">MOLECULE</span>
 
-   ENSURE(self.basis_info_made,"no basis info")
-   ENSURE(self.atom.created,   "no atom list")
-   ENSURE(self.scfdata.created,"no scfdata")
+   <span class="no">ENSURE</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">basis_info_made</span><span class="p">,</span><span class="s2">&quot;no basis info&quot;</span><span class="p">)</span>
+   <span class="no">ENSURE</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">created</span><span class="p">,</span>   <span class="s2">&quot;no atom list&quot;</span><span class="p">)</span>
+   <span class="no">ENSURE</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">scfdata</span><span class="o">.</span><span class="n">created</span><span class="p">,</span><span class="s2">&quot;no scfdata&quot;</span><span class="p">)</span>
 
-      self.initialize_scf
+      <span class="nb">self</span><span class="o">.</span><span class="n">initialize_scf</span>
 
-      self.put_scf_banner_and_options
-      self.put_scf_table_header
+      <span class="nb">self</span><span class="o">.</span><span class="n">put_scf_banner_and_options</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">put_scf_table_header</span>
 
-      do
+      <span class="k">do</span>
 
-         self.update_molecular_orbitals
-         self.make_scf_density_matrix
-         self.make_fock_matrix
-         self.update_scfdata
-         self.update_scfdata_error
-         self.put_scf_table_body
+         <span class="nb">self</span><span class="o">.</span><span class="n">update_molecular_orbitals</span>
+         <span class="nb">self</span><span class="o">.</span><span class="n">make_scf_density_matrix</span>
+         <span class="nb">self</span><span class="o">.</span><span class="n">make_fock_matrix</span>
+         <span class="nb">self</span><span class="o">.</span><span class="n">update_scfdata</span>
+         <span class="nb">self</span><span class="o">.</span><span class="n">update_scfdata_error</span>
+         <span class="nb">self</span><span class="o">.</span><span class="n">put_scf_table_body</span>
 
-         if (self.scfdata.scf_done) exit
+         <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">scfdata</span><span class="o">.</span><span class="n">scf_done</span><span class="p">)</span> <span class="nb">exit</span>
 
-      end
+      <span class="k">end</span>
 
-      self.put_scf_results
-      self.cleanup_scf
+      <span class="nb">self</span><span class="o">.</span><span class="n">put_scf_results</span>
+      <span class="nb">self</span><span class="o">.</span><span class="n">cleanup_scf</span>
 
-   end
-</code></pre>
+   <span class="k">end</span>
+</code></pre></div>
 
 <p>Look carefully.</p>
 
@@ -314,18 +314,18 @@ routine. In other words, to the routine called <code>usual_scf</code> requires
 <code>self</code> as an argument. In Fortran it might be called like this in
 another part of the library:</p>
 
-<pre><code class="language-fortran">   usual_scf(self)
-</code></pre>
+<div class="highlight"><pre><code class="ruby">   <span class="n">usual_scf</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+</code></pre></div>
 
 <p>In actual fact is called like this</p>
 
-<pre><code class="language-fortran">   self.usual_scf
-</code></pre>
+<div class="highlight"><pre><code class="ruby">   <span class="nb">self</span><span class="o">.</span><span class="n">usual_scf</span>
+</code></pre></div>
 
 <p>or even more succinctly like this</p>
 
-<pre><code class="language-fortran">   .usual_scf
-</code></pre>
+<div class="highlight"><pre><code class="ruby">   <span class="o">.</span><span class="n">usual_scf</span>
+</code></pre></div>
 
 <p>Pause on this a moment. I am saying that <code>self</code> is the object to which the
 message <code>usual_scf</code> is passed to. That is, the SCF calculation is
@@ -339,38 +339,38 @@ from anything this leads to less typing.</p>
 <p>Let’s rewrite the above SCF routine without the unnecessary <code>self.</code>
 prefix.</p>
 
-<pre><code class="language-fortran">   usual_scf ::: recursive
-   ! Do an SCF calculation. The .molecular_orbitals,
-   ! .orbital_energies, and .density_matrix are produced as results.
-      self :: MOLECULE
+<div class="highlight"><pre><code class="ruby">   <span class="n">usual_scf</span> <span class="o">::</span><span class="p">:</span> <span class="n">recursive</span>
+   <span class="o">!</span> <span class="no">Do</span> <span class="n">an</span> <span class="no">SCF</span> <span class="n">calculation</span><span class="o">.</span> <span class="no">The</span> <span class="o">.</span><span class="n">molecular_orbitals</span><span class="p">,</span>
+   <span class="o">!</span> <span class="o">.</span><span class="n">orbital_energies</span><span class="p">,</span> <span class="ow">and</span> <span class="o">.</span><span class="n">density_matrix</span> <span class="n">are</span> <span class="n">produced</span> <span class="n">as</span> <span class="n">results</span><span class="o">.</span>
+      <span class="nb">self</span> <span class="o">::</span> <span class="no">MOLECULE</span>
 
-   ENSURE(.basis_info_made,"no basis info")
-   ENSURE(.atom.created,   "no atom list")
-   ENSURE(.scfdata.created,"no scfdata")
+   <span class="no">ENSURE</span><span class="p">(</span><span class="o">.</span><span class="n">basis_info_made</span><span class="p">,</span><span class="s2">&quot;no basis info&quot;</span><span class="p">)</span>
+   <span class="no">ENSURE</span><span class="p">(</span><span class="o">.</span><span class="n">atom</span><span class="o">.</span><span class="n">created</span><span class="p">,</span>   <span class="s2">&quot;no atom list&quot;</span><span class="p">)</span>
+   <span class="no">ENSURE</span><span class="p">(</span><span class="o">.</span><span class="n">scfdata</span><span class="o">.</span><span class="n">created</span><span class="p">,</span><span class="s2">&quot;no scfdata&quot;</span><span class="p">)</span>
 
-      .initialize_scf
+      <span class="o">.</span><span class="n">initialize_scf</span>
 
-      .put_scf_banner_and_options
-      .put_scf_table_header
+      <span class="o">.</span><span class="n">put_scf_banner_and_options</span>
+      <span class="o">.</span><span class="n">put_scf_table_header</span>
 
-      do
+      <span class="k">do</span>
 
-         .update_molecular_orbitals
-         .make_scf_density_matrix
-         .make_fock_matrix
-         .update_scfdata
-         .update_scfdata_error
-         .put_scf_table_body
+         <span class="o">.</span><span class="n">update_molecular_orbitals</span>
+         <span class="o">.</span><span class="n">make_scf_density_matrix</span>
+         <span class="o">.</span><span class="n">make_fock_matrix</span>
+         <span class="o">.</span><span class="n">update_scfdata</span>
+         <span class="o">.</span><span class="n">update_scfdata_error</span>
+         <span class="o">.</span><span class="n">put_scf_table_body</span>
 
-         if (.scfdata.scf_done) exit
+         <span class="k">if</span> <span class="p">(</span><span class="o">.</span><span class="n">scfdata</span><span class="o">.</span><span class="n">scf_done</span><span class="p">)</span> <span class="nb">exit</span>
 
-      end
+      <span class="k">end</span>
 
-      .put_scf_results
-      .cleanup_scf
+      <span class="o">.</span><span class="n">put_scf_results</span>
+      <span class="o">.</span><span class="n">cleanup_scf</span>
 
-   end
-</code></pre>
+   <span class="k">end</span>
+</code></pre></div>
 
 <p>Now the routine reads like a dot-point list of things to do. It is
 really extremely readable. Indeed, It may seem hard to believe that this
@@ -395,16 +395,16 @@ example.</p>
 <code>types.foo</code> file. (We don’t actually need to do thisbecause complex
 numbers are built-in, but this is an exercise)</p>
 
-<pre><code class="language-fortran">begin type COMPLEX_NUMBER
+<div class="highlight"><pre><code class="ruby"><span class="k">begin</span> <span class="n">type</span> <span class="no">COMPLEX_NUMBER</span>
 
-   a :: REAL
-   ! The real part
+   <span class="n">a</span> <span class="o">::</span> <span class="no">REAL</span>
+   <span class="o">!</span> <span class="no">The</span> <span class="n">real</span> <span class="n">part</span>
 
-   b :: REAL
-   ! The complex part
+   <span class="n">b</span> <span class="o">::</span> <span class="no">REAL</span>
+   <span class="o">!</span> <span class="no">The</span> <span class="n">complex</span> <span class="n">part</span>
 
-end type
-</code></pre>
+<span class="k">end</span> <span class="n">type</span>
+</code></pre></div>
 
 <p>Now you know how to define a <strong>derived type</strong> comprised of built-in
 types, in this case two <code>REAL</code> number types. A derived type may be
@@ -413,27 +413,27 @@ comparised of any previously defined derived type or built-in type.</p>
 <p>What is the purpose of the following method? I will tell you that the
 rouine is not correct. Can you find the bug?</p>
 
-<pre><code class="language-fortran">module COMPLEX_NUMBER
+<div class="highlight"><pre><code class="ruby"><span class="k">module</span> <span class="nn">COMPLEX_NUMBER</span>
 
-contains
+<span class="n">contains</span>
 
-   to_product_with(z2) result (res)
-   ! What do I do?
+   <span class="n">to_product_with</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span> <span class="n">result</span> <span class="p">(</span><span class="n">res</span><span class="p">)</span>
+   <span class="o">!</span> <span class="no">What</span> <span class="k">do</span> <span class="n">I</span> <span class="k">do</span><span class="p">?</span>
 
-      self :: IN
-      z2 :: COMPLEX_NUMBER, IN
-      res :: COMPLEX_NUMBER
+      <span class="nb">self</span> <span class="o">::</span> <span class="no">IN</span>
+      <span class="n">z2</span> <span class="o">::</span> <span class="no">COMPLEX_NUMBER</span><span class="p">,</span> <span class="no">IN</span>
+      <span class="n">res</span> <span class="o">::</span> <span class="no">COMPLEX_NUMBER</span>
 
-      z_1 :: COMPLEX_NUMBER
+      <span class="n">z_1</span> <span class="o">::</span> <span class="no">COMPLEX_NUMBER</span>
 
-      z_1   = self
-      res.a = z1.a z2.a + z1.b z2.b
-      res.b = z1.a z2.b + z1.b z2.a
+      <span class="n">z_1</span>   <span class="o">=</span> <span class="nb">self</span>
+      <span class="n">res</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">z1</span><span class="o">.</span><span class="n">a</span> <span class="n">z2</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">z1</span><span class="o">.</span><span class="n">b</span> <span class="n">z2</span><span class="o">.</span><span class="n">b</span>
+      <span class="n">res</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">z1</span><span class="o">.</span><span class="n">a</span> <span class="n">z2</span><span class="o">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">z1</span><span class="o">.</span><span class="n">b</span> <span class="n">z2</span><span class="o">.</span><span class="n">a</span>
 
-   end
+   <span class="k">end</span>
 
-end
-</code></pre>
+<span class="k">end</span>
+</code></pre></div>
 
 <h2 id="what-all-the-fuss-is-about">What all the fuss is about</h2>
 

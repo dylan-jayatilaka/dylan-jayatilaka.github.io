@@ -36,7 +36,7 @@ together these routines we have defined a class.
 The example code snippets below demonstrate a near universal notation,
 called “dot notation”, which I illustrate on numbers:
 
-~~~ fortran
+{% highlight ruby %}
    a,b :: INT
 
    a = 1
@@ -44,7 +44,7 @@ called “dot notation”, which I illustrate on numbers:
 
    b = 2
    b.times(3)
-~~~
+{% endhighlight %}
 
 Here the variable `a` is set to `1`. `a` and `b` are integer variables
 as seen by the declaration `a,b :: INT`.  Then a message is sent to it
@@ -59,7 +59,7 @@ performed.
 
 All of this might seem rather trivial. But consider this example:
 
-~~~ fortran
+{% highlight ruby %}
    m :: MAT{REAL}(3,3)
    eigenvalues  :: VEC{REAL}(3)
    eigenvectors :: MAT{REAL}(3,3)
@@ -72,7 +72,7 @@ All of this might seem rather trivial. But consider this example:
    end
 
    m.solve_eigenproblem(eigenvalues,eigenvectors)
-~~~
+{% endhighlight %}
 
 Look closely.
 
@@ -102,7 +102,7 @@ It is slightly changed from the Tonto code base. It is written in the
 `Foo` language, as are all the above examples. This is a big leap from
 the previous examples, but you know enough to unravel it.
 
-~~~ fortran
+{% highlight ruby %}
    usual_scf ::: recursive
    ! Do an SCF calculation. The .molecular_orbitals,
    ! .orbital_energies, and .density_matrix are produced as results.
@@ -134,7 +134,7 @@ the previous examples, but you know enough to unravel it.
       self.cleanup_scf
 
    end
-~~~
+{% endhighlight %}
 
 Look carefully.
 
@@ -171,21 +171,21 @@ routine. In other words, to the routine called `usual_scf` requires
 `self` as an argument. In Fortran it might be called like this in
 another part of the library:
 
-~~~ fortran
+{% highlight ruby %}
    usual_scf(self)
-~~~
+{% endhighlight %}
 
 In actual fact is called like this
 
-~~~ fortran
+{% highlight ruby %}
    self.usual_scf
-~~~
+{% endhighlight %}
 
 or even more succinctly like this
 
-~~~ fortran
+{% highlight ruby %}
    .usual_scf
-~~~
+{% endhighlight %}
 
 Pause on this a moment. I am saying that `self` is the object to which the
 message `usual_scf` is passed to. That is, the SCF calculation is
@@ -199,7 +199,7 @@ from anything this leads to less typing.
 Let’s rewrite the above SCF routine without the unnecessary `self.`
 prefix.
 
-~~~ fortran
+{% highlight ruby %}
    usual_scf ::: recursive
    ! Do an SCF calculation. The .molecular_orbitals,
    ! .orbital_energies, and .density_matrix are produced as results.
@@ -231,7 +231,7 @@ prefix.
       .cleanup_scf
 
    end
-~~~
+{% endhighlight %}
 
 Now the routine reads like a dot-point list of things to do. It is
 really extremely readable. Indeed, It may seem hard to believe that this
@@ -256,7 +256,7 @@ We are going to define a complex number type, as follows, in the
 `types.foo` file. (We don’t actually need to do thisbecause complex
 numbers are built-in, but this is an exercise)
 
-~~~ fortran
+{% highlight ruby %}
 begin type COMPLEX_NUMBER
 
    a :: REAL
@@ -266,7 +266,7 @@ begin type COMPLEX_NUMBER
    ! The complex part
 
 end type
-~~~
+{% endhighlight %}
 
 Now you know how to define a **derived type** comprised of built-in
 types, in this case two `REAL` number types. A derived type may be
@@ -275,7 +275,7 @@ comparised of any previously defined derived type or built-in type.
 What is the purpose of the following method? I will tell you that the
 rouine is not correct. Can you find the bug?
 
-~~~ fortran
+{% highlight ruby %}
 module COMPLEX_NUMBER
 
 contains
@@ -296,7 +296,7 @@ contains
    end
 
 end
-~~~
+{% endhighlight %}
 
 ## What all the fuss is about
 
