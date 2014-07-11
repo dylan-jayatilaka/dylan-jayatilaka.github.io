@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-07-10T14:25:01+08:00</updated>
+<updated>2014-07-11T10:31:08+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -207,6 +207,87 @@ arguments will not apply.&lt;/p&gt;
 
 
 <entry>
+  <title type="html"><![CDATA[Convert a one-electron into a two-electron term]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/convert-a-one-electron-into-two-electron-term/"/>
+  <id>http://localhost:4000/articles/convert-a-one-electron-into-two-electron-term</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-15T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Matrix%20element" term="Matrix element" /><category scheme="http://localhost:4000/tags/#one-electron%20operator" term="one-electron operator" /><category scheme="http://localhost:4000/tags/#two-electron%20operator" term="two-electron operator" />
+  <content type="html">
+  
+    &lt;p&gt;In quantum chemistry the Hamiltonian is usually split into a
+one-electron term and a two-electron term,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+H &amp; = h^{(1)} + h^{(2)}
+\\
+  &amp; = \sum\sub{i=1}^N h(\B{x}\sub{i}) +
+  \frac{1}{2}
+  \sum\sub{i=1}^N 
+  \sum\sub{\stackrel{j=1}{j\neq i}}^N v(\B{x}\sub{i},\B{x}\sub{j})
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;It has always seemed to me a bit silly to do this, because the one-electron
+term can be converted into a two-electron term by the following trick:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+h^{(1)} =
+\frac{1}{N}
+\sum\sub{i=1}^N \sum\sub{j=1}^N  \left( h(\B{x}\sub{i}) + h(\B{x}\sub{j}) \right).
+&lt;/script&gt;
+
+&lt;p&gt;The sum is over all electrons \( N \). Now the one electron term has been
+written as a two electron term, and it can be incorporated into the “normal”
+two-electron term. The matrix elements of this “converted” one-electron term in
+the atomic orbital basis are&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+(\mu\nu|h^{(1)}|\kappa\lambda) =
+  h\sub{\mu\nu} S\sub{\kappa\lambda}
++ S\sub{\mu\nu} h\sub{\kappa\lambda}.
+&lt;/script&gt;
+
+&lt;p&gt;Here \( \B{h} \) and \( \B{S} \) are the usual core and overlap matrices,
+respectively. It is easy to include them into the normal two electron
+integrals, since these matrices are usually be stored in the memory of the
+computer.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-is-the-trick-useful&quot;&gt;When is the trick useful?&lt;/h2&gt;
+
+&lt;p&gt;This trick becomes very useful when dealing with correlated methods.
+In that case, we need to worry about one-electron matrix elements
+at all, which considerably simplifies the equations. Also, the
+terms pertaining to “single excitations” in the correlated methods
+may effectively be combined with, or derived from, the “double excitations”.
+Effectively, the correlated methods only need to worry about double
+excitations. &lt;/p&gt;
+
+&lt;p&gt;Pretty cool, huh?&lt;/p&gt;
+
+&lt;h2 id=&quot;caveat&quot;&gt;Caveat&lt;/h2&gt;
+
+&lt;p&gt;Note: this does not help when you want to consider specific subterms
+involving single excitations, as in the CCSD(T) theory. In that case,
+using this trick, we would obtain these triples corrections as part
+of the CCSD(Q) method. In view of the way that the one electron terms
+actually “belong” to the two electron terms, perhaps this is actually
+a theoretically more satisfactory theory—if not actually more practical.&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/convert-a-one-electron-into-two-electron-term/&quot;&gt;Convert a one-electron into a two-electron term&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 15, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[Determinant matrix elements]]></title>
   <link rel="alternate" type="text/html" href="http://localhost:4000/articles/determinant-matrix-elements/"/>
   <id>http://localhost:4000/articles/determinant-matrix-elements</id>
@@ -227,14 +308,14 @@ arguments will not apply.&lt;/p&gt;
 \braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
 =
 \int
-(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) \, d\B{x}
+(\mathscr{A} \Phi_I)^\star  M (\mathscr{A} \Phi_J) \, d\B{x}
 &lt;/script&gt;
 
 &lt;p&gt;This integral is generically called a “matrix element”, and specifically
 it is a “determinant matrix element”.&lt;/p&gt;
 
 &lt;p&gt;The integration in this matrix element is over electronic coordinates
-The functions \( \Phi_K = \phi_{k_1}(\B{x_1})\ldots\phi(\B{x}_N) \)
+The functions \( \Phi_K = \phi\sub{k_1}(\B{x_1})\ldots\phi(\B{x}\sub{N}) \)
 are Hartree orbital products.
 \( M \) is some kind of operator — perhaps a function of one or more of
 those coordinates, or derivatives of those coordinates — which importantly
@@ -289,7 +370,7 @@ antisymmetrizers is idempotent i.e.&lt;/p&gt;
 \s{$\mathscr{A}$ is nearly idempotent}
 \\
 = &amp;
-\int \Phi_I(\B{x})^*\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
+\int \Phi_I(\B{x})^\star\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
 \end{align}
  %]]&gt;&lt;/script&gt;
 

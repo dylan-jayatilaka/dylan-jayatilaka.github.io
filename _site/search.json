@@ -9,6 +9,14 @@
 		} ,
 	
 		{
+		  "title"      : "Convert a one-electron into a two-electron term",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/",
+		  "date"       : "2014-06-15 00:00:00 +0800",
+		  "shortdate"  : "June 15, 2014"
+		} ,
+	
+		{
 		  "title"      : "Determinant matrix elements",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/determinant-matrix-elements/",

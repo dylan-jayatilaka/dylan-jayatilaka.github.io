@@ -20,14 +20,14 @@ $$
 \braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
 =
 \int
-(\mathscr{A} \Phi_I)^*  M (\mathscr{A} \Phi_J) \, d\B{x}
+(\mathscr{A} \Phi_I)^\star  M (\mathscr{A} \Phi_J) \, d\B{x}
 $$
 
 This integral is generically called a “matrix element”, and specifically
 it is a “determinant matrix element”.
 
 The integration in this matrix element is over electronic coordinates
-The functions \\( \Phi_K = \phi_{k_1}(\B{x_1})\ldots\phi(\B{x}_N) \\)
+The functions \\( \Phi_K = \phi\sub{k_1}(\B{x_1})\ldots\phi(\B{x}\sub{N}) \\)
 are Hartree orbital products.
 \\( M \\) is some kind of operator --- perhaps a function of one or more of
 those coordinates, or derivatives of those coordinates --- which importantly
@@ -81,7 +81,7 @@ $$
 \s{$\mathscr{A}$ is nearly idempotent}
 \\
 = &
-\int \Phi_I(\B{x})^*\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
+\int \Phi_I(\B{x})^\star\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
 \end{align}
 $$
 

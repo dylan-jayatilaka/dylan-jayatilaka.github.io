@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Determinant matrix elements &#8211; That Blog by Dylan</title>
-<meta name="description" content="Matrix elements of many-electron operators between determinant wavefunctions">
-<meta name="keywords" content="Matrix element, determinant, one-electron operator, two-electron operator">
+<title>Convert a one-electron into a two-electron term &#8211; That Blog by Dylan</title>
+<meta name="description" content="Convert a one into two electron term">
+<meta name="keywords" content="Matrix element, one-electron operator, two-electron operator">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Determinant matrix elements">
-<meta property="og:description" content="Matrix elements of many-electron operators between determinant wavefunctions">
-<meta property="og:url" content="//localhost:4000/articles/determinant-matrix-elements/">
+<meta property="og:title" content="Convert a one-electron into a two-electron term">
+<meta property="og:description" content="Convert a one into two electron term">
+<meta property="og:url" content="//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/">
 <meta property="og:site_name" content="That Blog by Dylan">
 
 
 
 
 
-<link rel="canonical" href="//localhost:4000/articles/determinant-matrix-elements/">
+<link rel="canonical" href="//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/">
 <link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
 
 
@@ -138,116 +138,101 @@ MathJax.Hub.Config({
 
 <div id="main" role="main">
   <article class="hentry">
-    <img src="//localhost:4000/images/samuel-monnier-patternmond.jpg" class="entry-feature-image" alt="Determinant matrix elements" ><p class="image-credit">Photo Credit: <a href="http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201">Samuel Monnier</a>
+    <img src="//localhost:4000/images/samuel-monnier-patternmond.jpg" class="entry-feature-image" alt="Convert a one-electron into a two-electron term" ><p class="image-credit">Photo Credit: <a href="http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201">Samuel Monnier</a>
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"><a href="//localhost:4000/tags/#Matrix element" title="Pages tagged Matrix element">Matrix element</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#determinant" title="Pages tagged determinant">determinant</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#one-electron operator" title="Pages tagged one-electron operator">one-electron operator</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#two-electron operator" title="Pages tagged two-electron operator">two-electron operator</a></span>
+        <span class="entry-tags"><a href="//localhost:4000/tags/#Matrix element" title="Pages tagged Matrix element">Matrix element</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#one-electron operator" title="Pages tagged one-electron operator">one-electron operator</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#two-electron operator" title="Pages tagged two-electron operator">two-electron operator</a></span>
         
-          <h1 class="entry-title">Determinant matrix elements</h1>
+          <h1 class="entry-title">Convert a one-electron into a two-electron term</h1>
         
       </header>
       <footer class="entry-meta">
         <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
         <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
-        <span class="entry-date date published"><time datetime="2014-06-14T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 14, 2014</time></span>
+        <span class="entry-date date published"><time datetime="2014-06-15T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 15, 2014</time></span>
         <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
         
-        <span><a href="//localhost:4000/articles/determinant-matrix-elements/" rel="bookmark" title="Determinant matrix elements"><i class="icon-link"></i> Permalink</a></span>
+        <span><a href="//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/" rel="bookmark" title="Convert a one-electron into a two-electron term"><i class="icon-link"></i> Permalink</a></span>
         
         <span class="social-share-facebook">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/determinant-matrix-elements/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
         <span class="social-share-twitter">
-            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Determinant matrix elements&url=//localhost:4000/articles/determinant-matrix-elements/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Convert a one-electron into a two-electron term&url=//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
         <span class="social-share-googleplus">
-            <a href="https://plus.google.com/share?url=//localhost:4000/articles/determinant-matrix-elements/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
             <!-- /.social-share -->
       </footer>
       <div class="entry-content">
-        <p>In quantum chemistry we often want to do integrals like this:</p>
-
-<script type="math/tex; mode=display">
-\braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
-=
-\int
-(\mathscr{A} \Phi_I)^\star  M (\mathscr{A} \Phi_J) \, d\B{x}
-</script>
-
-<p>This integral is generically called a “matrix element”, and specifically
-it is a “determinant matrix element”.</p>
-
-<p>The integration in this matrix element is over electronic coordinates
-The functions \( \Phi_K = \phi\sub{k_1}(\B{x_1})\ldots\phi(\B{x}\sub{N}) \)
-are Hartree orbital products.
-\( M \) is some kind of operator — perhaps a function of one or more of
-those coordinates, or derivatives of those coordinates — which importantly
-is symmetric in the electron coordinates, since all electrons are indistinguishable.
-(Read <a href="http://dylan-jayatilaka.net/articles/the-determinant-wavefunction">here</a>
-  and <a href="http://dylan-jayatilaka.net/articles/the-antisymmetrizer">here</a> to know more).</p>
-
-<p>Now you can see that the determinant matrix element above involves products of
-two antisymmetrizers \( \mathscr{A} \). The parentheses make clear that these
-antisymmetrizers only “operate” on the electron coordinates in the functions
-\( \Phi_K \) immediately to their right.</p>
-
-<h2 id="why-are-determinant-matrix-elements-important">Why are (determinant) matrix elements important?</h2>
-
-<p>The reason for that matrix elements are important is they allows to
-convert a partial differential equation, such as the Schrodinger equation,
-into a matrix equation involving numbers. Matrix equations involving
-numbers are much easier to solve on computers.</p>
-
-<p>The reason for that determinant matrix elements are important is that
-a determinant is the simplest reasonable model wavefunction for a
-group of electrons.</p>
-
-<p>Clearly, we need to be able to work out or simplify this matrix element
-in order to do numerical calculations.</p>
-
-<h2 id="matrix-elements-between-determinant-wavefunctions">Matrix elements between determinant wavefunctions</h2>
-
-<p>Luckily we can use
-<a href="http://dylan-jayatilaka.net/articles/the-antisymmetrizer">previous results</a>
-showing that the antisymmetrizeris hermitian, and that a product of two
-antisymmetrizers is idempotent i.e.</p>
+        <p>In quantum chemistry the Hamiltonian is usually split into a
+one-electron term and a two-electron term,</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
-\braopket{\mathscr{A} \Phi_I}{M}{\mathscr{A} \Phi_J}
-= &
-\braket{\Phi_I}{\mathscr{A} M \mathscr{A} \Phi_J}
-&&
-\s{$\mathscr{A}$ is hermitian}
+H & = h^{(1)} + h^{(2)}
 \\
-= &
-\braket{\Phi_I}{M \mathscr{A}^2 \Phi_J}
-&&
-\s{$M$ is symmetric}
-\\
-= &
-\sqrt{N!}
-\braket{\Phi_I}{M \mathscr{A} \Phi_J}
-&&
-\s{$\mathscr{A}$ is nearly idempotent}
-\\
-= &
-\int \Phi_I(\B{x})^\star\,{M}\,\left(\sum_u \epsilon_u P_u \Phi_J(\B{x})\right)\,d\B{x}
+  & = \sum\sub{i=1}^N h(\B{x}\sub{i}) +
+  \frac{1}{2}
+  \sum\sub{i=1}^N 
+  \sum\sub{\stackrel{j=1}{j\neq i}}^N v(\B{x}\sub{i},\B{x}\sub{j})
 \end{align}
  %]]></script>
 
-<p>To make further progress we need to make certain assumptions about the
-operator \( M \).</p>
+<p>It has always seemed to me a bit silly to do this, because the one-electron
+term can be converted into a two-electron term by the following trick:</p>
 
+<script type="math/tex; mode=display">
+h^{(1)} =
+\frac{1}{N}
+\sum\sub{i=1}^N \sum\sub{j=1}^N  \left( h(\B{x}\sub{i}) + h(\B{x}\sub{j}) \right).
+</script>
+
+<p>The sum is over all electrons \( N \). Now the one electron term has been
+written as a two electron term, and it can be incorporated into the “normal”
+two-electron term. The matrix elements of this “converted” one-electron term in
+the atomic orbital basis are</p>
+
+<script type="math/tex; mode=display">
+(\mu\nu|h^{(1)}|\kappa\lambda) =
+  h\sub{\mu\nu} S\sub{\kappa\lambda}
++ S\sub{\mu\nu} h\sub{\kappa\lambda}.
+</script>
+
+<p>Here \( \B{h} \) and \( \B{S} \) are the usual core and overlap matrices,
+respectively. It is easy to include them into the normal two electron
+integrals, since these matrices are usually be stored in the memory of the
+computer.</p>
+
+<h2 id="when-is-the-trick-useful">When is the trick useful?</h2>
+
+<p>This trick becomes very useful when dealing with correlated methods.
+In that case, we need to worry about one-electron matrix elements
+at all, which considerably simplifies the equations. Also, the
+terms pertaining to “single excitations” in the correlated methods
+may effectively be combined with, or derived from, the “double excitations”.
+Effectively, the correlated methods only need to worry about double
+excitations. </p>
+
+<p>Pretty cool, huh?</p>
+
+<h2 id="caveat">Caveat</h2>
+
+<p>Note: this does not help when you want to consider specific subterms
+involving single excitations, as in the CCSD(T) theory. In that case,
+using this trick, we would obtain these triples corrections as part
+of the CCSD(Q) method. In view of the way that the one electron terms
+actually “belong” to the two electron terms, perhaps this is actually
+a theoretically more satisfactory theory—if not actually more practical.</p>
 
         
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/the-antisymmetrizer/" class="btn" title="The antisymmetrizer">Previous article</a>
+        <a href="//localhost:4000/articles/determinant-matrix-elements/" class="btn" title="Determinant matrix elements">Previous article</a>
       
       
-        <a href="//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/" class="btn" title="Convert a one-electron into a two-electron term">Next article</a>
+        <a href="//localhost:4000/articles/god-or-not/" class="btn" title="God or not?">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>

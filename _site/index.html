@@ -71,11 +71,17 @@ MathJax.Hub.Config({
             pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
             pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
             bra: ["{\\langle\\left. #1 \\right|}",1],
+            sub: ["_"],
+            star: ["*"],
             ket: ["{\\left| #1 \\right. \\rangle}",1],
             braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
             ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
             braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
-            expectation: ["{\\langle #1 \\rangle}",1]
+            expectation: ["{\\langle #1 \\rangle}",1],
+            subnote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            onenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            twonote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\end{array}}",2],
+            threenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\\\ \\text{\\sffamily#3}\\end{array}}",3]
         }
     }
 });
@@ -143,6 +149,8 @@ MathJax.Hub.Config({
  
   <li><article><a href="//localhost:4000/articles/god-or-not/">God or not? <span class="entry-date"><time datetime="2014-06-30T00:00:00+08:00">June 30, 2014</time></span></a></article></li>
  
+  <li><article><a href="//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/">Convert a one-electron into a two-electron term <span class="entry-date"><time datetime="2014-06-15T00:00:00+08:00">June 15, 2014</time></span></a></article></li>
+ 
   <li><article><a href="//localhost:4000/articles/determinant-matrix-elements/">Determinant matrix elements <span class="entry-date"><time datetime="2014-06-14T00:00:00+08:00">June 14, 2014</time></span></a></article></li>
  
   <li><article><a href="//localhost:4000/articles/the-antisymmetrizer/">The antisymmetrizer <span class="entry-date"><time datetime="2014-06-13T00:00:00+08:00">June 13, 2014</time></span></a></article></li>
@@ -158,8 +166,6 @@ MathJax.Hub.Config({
   <li><article><a href="//localhost:4000/articles/to-program-or-not/">To program or not <span class="entry-date"><time datetime="2014-06-08T00:00:00+08:00">June 08, 2014</time></span></a></article></li>
  
   <li><article><a href="//localhost:4000/articles/quantum-theory-is-wrong/">Quantum theory is wrong <span class="entry-date"><time datetime="2014-06-07T00:00:00+08:00">June 07, 2014</time></span></a></article></li>
- 
-  <li><article><a href="//localhost:4000/articles/big-bang/">Big Bang <span class="entry-date"><time datetime="2014-06-07T00:00:00+08:00">June 07, 2014</time></span></a></article></li>
 
 </ul>
       </div><!-- /.entry-content -->

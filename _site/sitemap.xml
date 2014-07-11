@@ -48,6 +48,10 @@
     </url>
     
     <url>
+        <loc>//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/determinant-matrix-elements/</loc>
     </url>
     
