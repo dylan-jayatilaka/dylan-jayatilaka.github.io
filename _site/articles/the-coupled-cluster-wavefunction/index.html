@@ -1,0 +1,461 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>The coupled cluster wavefunction &#8211; That Blog by Dylan</title>
+<meta name="description" content="The coupled cluster wavefunction">
+<meta name="keywords" content="Coupled cluster, exponential ansatz, size extensivity, separability">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The coupled cluster wavefunction">
+<meta property="og:description" content="The coupled cluster wavefunction">
+<meta property="og:url" content="//localhost:4000/articles/the-coupled-cluster-wavefunction/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/the-coupled-cluster-wavefunction/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\mbox{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            sub: ["_"],
+            star: ["*"],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1],
+            subnote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            onenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            twonote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\end{array}}",2],
+            threenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\\\ \\text{\\sffamily#3}\\end{array}}",3]
+        }
+    }
+});
+</script>
+<script type="text/javascript"
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/regina-valluzzi-transition-to-chaos.jpg" class="entry-feature-image" alt="The coupled cluster wavefunction" ><p class="image-credit">Photo Credit: <a href="http://nerdlypainter.blogspot.com.au/2011/03/archive-february-newsletter-featuring.html">Regina Valluzzi - Transition to Chaos</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#Coupled cluster" title="Pages tagged Coupled cluster">Coupled cluster</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#exponential ansatz" title="Pages tagged exponential ansatz">exponential ansatz</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#size extensivity" title="Pages tagged size extensivity">size extensivity</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#separability" title="Pages tagged separability">separability</a></span>
+        
+          <h1 class="entry-title">The coupled cluster wavefunction</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-06-16T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 16, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
+        
+        <span><a href="//localhost:4000/articles/the-coupled-cluster-wavefunction/" rel="bookmark" title="The coupled cluster wavefunction"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/the-coupled-cluster-wavefunction/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=The coupled cluster wavefunction&url=//localhost:4000/articles/the-coupled-cluster-wavefunction/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/the-coupled-cluster-wavefunction/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>The coupled cluster wavefunction provides one of the best general-purpose
+approximation schemes for the exact wavefunction.</p>
+
+<p>The coupled cluster wavefunction in an orthonormal basis has the form</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\Psi & = e^{T} \Phi  \\
+     & = (1 + T + \textstyle{\frac{1}{2}}T^2 + \textstyle{\frac{1}{6}}T^3 + \ldots) \Phi.
+\end{align}
+ %]]></script>
+
+<p>In the above equation:</p>
+
+<ul>
+  <li>
+    <p>\( \Phi \) is called the reference determinant, usually taken to be
+the Hartree-Fock determinant.</p>
+  </li>
+  <li>
+    <p>The exponential function is expanded in a power series.</p>
+  </li>
+  <li>
+    <p>The operator \( T = \sum_{n=1}^{N} T_n \) is a sum of excitation operators 
+\( T_n \) which for \( n = 1,2,3,\ldots \) successively produce
+single, double, triple \( \ldots \) replacements of the “occupied”
+spinorbitals in determinant \( \Phi \) with new “unoccupied” or “virtual”
+spinorbitals, like this:</p>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">
+T_n \Phi
+=
+\frac{1}{(n!)^2}
+\sum\sub{I\sub{1}\,\ldots\, I\sub{n}}^{N\sub{o}}
+\sum\sub{A\sub{1}\,\ldots\, A\sub{n}}^{N\sub{v}}
+   t\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1}\,\ldots\, A\sub{n}}
+\Phi\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1}\,\ldots\, A\sub{n}}
+</script>
+
+<ul>
+  <li>
+    <p>The quantities \( t\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1},\ldots,A\sub{n}} \)
+are called the cluster amplitudes and are the unknowns to be determined.</p>
+  </li>
+  <li>
+    <p>The operators \( T_1 \), \( T_2 \), \( T_3 \), \(\ldots \) commute with each other.</p>
+  </li>
+  <li>
+    <p>The coupled cluster wavefunction above is exact if an infinite and complete
+set of orbitals is used i.e. if \( N_v \) is infinite.</p>
+  </li>
+</ul>
+
+<h2 id="coupled-cluster-approximation-schemes">Coupled cluster approximation schemes</h2>
+
+<p>An obvious approximation scheme is (apart from using a finite basis set) to limit
+the number of excitation operators \( T_n \) used in the expansion of \( T \).</p>
+
+<p>In this way we get the following approximations:</p>
+
+<ul>
+  <li>
+    <p>Coupled cluster singles (CCS) if \( T = T_1 \). </p>
+
+    <ul>
+      <li>
+        <p>If the reference \( \Phi \) is taken to be a Hartree-Fock determinant
+(either for the ground or excited state) then this yields 
+\( t_I^A = 0 \). In other words there is only a trivial solution for the
+CCS equations if the Hartree-Fock determinant is the reference. </p>
+      </li>
+      <li>
+        <p>If the reference determinant is not the Hartree-Fock solution, the energy
+obtained will be higher. (Below I describe how the coefficients are
+determined).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Coupled cluster doubles (CCD) if \( T = T_2 \)</p>
+  </li>
+  <li>
+    <p>Coupled cluster singles and doubles (CCSD) if \( T = T_1 + T_2 \)</p>
+  </li>
+  <li>
+    <p>Coupled cluster singles, doubles and triples (CCSDT) if \( T = T_1 + T_2 + T_3 \)</p>
+  </li>
+  <li>
+    <p>Coupled cluster singles, doubles, triples and quadruples (CCSDTQ) if \( T = T_1 + T_2 + T_3 + T_4 \)</p>
+  </li>
+</ul>
+
+<h2 id="finding-the-coupled-cluster-energy-and-amplitudes">Finding the coupled cluster energy and amplitudes</h2>
+
+<p>To obtain the coupled cluster energy we substitute the corresponding
+wavefunction <em>ansatz</em> into the Schrodinger equation,</p>
+
+<script type="math/tex; mode=display">
+H e^T \Phi = E \Phi.
+</script>
+
+<p>Then we project or integrate this equation on the left with successively
+different subsituted determinants,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\braket{\Phi}{          H e^T \Phi} & = E \\
+\braket{\Phi_I^A}{      H e^T \Phi} & = 0 \\
+\braket{\Phi\sub{IJ}^{AB}}{H e^T \Phi} & = 0 \\
+\ldots &
+\end{align}
+ %]]></script>
+
+<p>The substituted determinants on the left are called “excited determinants” if
+the state \( \Phi \) is the grouds state Hartree-Fock determinant.
+The first and higher exictated determinants yield zero on the right hand side
+because the determinants with different spin orbitals in them are orthogonal.</p>
+
+<p>The most important thing to note is that if \( T_n \) is limited to a certain
+level of excitations, then we only need to project on the left hand side with
+determinants to the same level of excitation. This provides a set of non-linear
+equations which determine the amplitude coefficients and the first equation
+above provides an equation for the energy \( E \). Thus if we had 
+\( T_n = T_2 \) S only the double excited determinant equation above would be
+required.</p>
+
+<p>Of course we have to evaluate the rather complex matrix elements in these
+equations before obtaining a set of equations which are actually “programmable”
+in terms on integrals, but this is just an (important) technicality. </p>
+
+<h2 id="coupled-cluster-transformed-hamiltonian">Coupled cluster transformed Hamiltonian</h2>
+
+<p>There is an equivalent way to find the energy and the amplitudes, and it
+involves premultiplying the Schrodinger equation by \( e^{-T} \) beforehand,
+yeilding the equations</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\braket{\Phi}{    e^{-T}H e^T \Phi} & = E \\
+\braket{\Phi_I^A}{e^{-T}H e^T \Phi} & = 0 \\
+\braket{\Phi\sub{IJ}^{AB}}{e^{-T}H e^T \Phi} & = 0 \\
+\ldots &
+\end{align}
+ %]]></script>
+
+<p>It is a rather remarkable fact that the coupled cluster transformed Hamiltonian
+\( \tilde{H} = e^{-T}H e^T \Phi \) can be evaluated in closed form. We will
+have another post on this rather amazing fact.</p>
+
+<h2 id="the-elephant-in-the-room-why-is-an-exponential-function-used">The elephant in the room: Why is an exponential function used?</h2>
+
+<figure>
+   <img src="/images/elephant-in-the-room.jpg" />
+</figure>
+
+<p>The reason is that the energy of the coupled cluster wavefunction separates
+into a sum of subsystem energies when those systems are noninteracting i.e.</p>
+
+<script type="math/tex; mode=display">
+E[\Psi] = E_A[\Psi_A] + E_B[\Psi_A].
+</script>
+
+<p>This is called <em>size extensivity</em>. It implies that, for instance, the energy of
+\( n \) hydrogen molecules separated by a very large distance from each other
+will be equal to \( n \) times the energy of a single hydrogen molecule. This
+is clearly a very useful property to have!</p>
+
+<p>As stated, size extensivity follows from the exponential form of the wavefunction,</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\Psi & = e^{T} \Phi \\
+     & = e^{T_A+T_B} \Phi \\
+     & = e^{T_A}e^{T_B}\Phi
+\end{align}
+ %]]></script>
+
+<p>The final line follows from the fact that the excitation operators
+\( T_A \) and \( T_B \) operate on different sets of orbitals –
+those from the two separate systems – and so the operators commute.
+Now if the Hamiltonian splits into two parts for the subsystems,
+\( H = H_A + H_B \) antisymmetrization between the Hartree
+orbitals products can be ignored so that \( \Phi \approx \Phi_A\Phi_B \).
+This last point is a litlle bit tricky and I should write another post
+about it since it brings up interesting points about the
+Einstein-Poldolsky-Rosen (EPR) paradox. But if we assume that it holds,
+then it implies that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\Psi & = e^{T_A}e^{T_B}\Phi \\
+     & \approx e^{T_A}e^{T_B}\Phi_A\Phi_B \\
+     & = e^{T_A}\Phi_A e^{T_B}\Phi_B \\
+     & = \Psi_A \Psi_B
+\end{align}
+ %]]></script>
+
+<p>The <em>additivity</em> of the total energy follows from the <em>multiplicative</em>
+factorization of \( \Psi \) above.</p>
+
+<h2 id="why-isnt-separability-built-into-qm">Why isn’t separability built into QM?</h2>
+
+<p>Since the product form of the wavefunction is so essential to the separability
+of the wavefunction, I wonder why this behaviour isn’t in some way “built
+into” quantum mechanics from the start? After all, the fermion symmetry is
+built into the determinant form of the wavefunction; or equivalently,
+in second quantization, this same symmetry is built into the anticommutation
+relations of the fermion creation and annihilation operators.</p>
+
+<p>Perhaps, dear reader, you might like to think about this. Those who are brave
+may attempt to the paper by Arponen (1997) PRA 55 pl 2686 where he attempts
+to do just that. If you understand it please explain!</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/coupled-cluster-singles/" class="btn" title="Coupled cluster singles">Previous article</a>
+      
+      
+        <a href="//localhost:4000/articles/god-or-not/" class="btn" title="God or not?">Next article</a>
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

@@ -6,9 +6,9 @@ category: articles
 tags: [Matrix element, one-electron operator, two-electron operator]
 modified: 201-06-07
 image:
-  feature: samuel-monnier-patternmond.jpg
-  credit: Samuel Monnier
-  creditlink: http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201
+  feature: theodore-chasseriau-the-sisters.jpg
+  credit: Theodore Chasseriau - The Two Sisters
+  creditlink: http://upload.wikimedia.org/wikipedia/commons/7/79/Th%C3%A9odore_Chass%C3%A9riau_003.jpg
 comments: false
 share: true
 ---

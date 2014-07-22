@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-07-11T10:31:08+08:00</updated>
+<updated>2014-07-22T17:27:57+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -203,6 +203,338 @@ arguments will not apply.&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/god-or-not/&quot;&gt;God or not?&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 30, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[The coupled cluster wavefunction]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/the-coupled-cluster-wavefunction/"/>
+  <id>http://localhost:4000/articles/the-coupled-cluster-wavefunction</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-16T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#exponential%20ansatz" term="exponential ansatz" /><category scheme="http://localhost:4000/tags/#size%20extensivity" term="size extensivity" /><category scheme="http://localhost:4000/tags/#separability" term="separability" />
+  <content type="html">
+  
+    &lt;p&gt;The coupled cluster wavefunction provides one of the best general-purpose
+approximation schemes for the exact wavefunction.&lt;/p&gt;
+
+&lt;p&gt;The coupled cluster wavefunction in an orthonormal basis has the form&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = e^{T} \Phi  \\
+     &amp; = (1 + T + \textstyle{\frac{1}{2}}T^2 + \textstyle{\frac{1}{6}}T^3 + \ldots) \Phi.
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In the above equation:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( \Phi \) is called the reference determinant, usually taken to be
+the Hartree-Fock determinant.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The exponential function is expanded in a power series.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The operator \( T = \sum_{n=1}^{N} T_n \) is a sum of excitation operators 
+\( T_n \) which for \( n = 1,2,3,\ldots \) successively produce
+single, double, triple \( \ldots \) replacements of the “occupied”
+spinorbitals in determinant \( \Phi \) with new “unoccupied” or “virtual”
+spinorbitals, like this:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+T_n \Phi
+=
+\frac{1}{(n!)^2}
+\sum\sub{I\sub{1}\,\ldots\, I\sub{n}}^{N\sub{o}}
+\sum\sub{A\sub{1}\,\ldots\, A\sub{n}}^{N\sub{v}}
+   t\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1}\,\ldots\, A\sub{n}}
+\Phi\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1}\,\ldots\, A\sub{n}}
+&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The quantities \( t\sub{\, I\sub{1}\,\ldots\, I\sub{n}}^{A\sub{1},\ldots,A\sub{n}} \)
+are called the cluster amplitudes and are the unknowns to be determined.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The operators \( T_1 \), \( T_2 \), \( T_3 \), \(\ldots \) commute with each other.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The coupled cluster wavefunction above is exact if an infinite and complete
+set of orbitals is used i.e. if \( N_v \) is infinite.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;coupled-cluster-approximation-schemes&quot;&gt;Coupled cluster approximation schemes&lt;/h2&gt;
+
+&lt;p&gt;An obvious approximation scheme is (apart from using a finite basis set) to limit
+the number of excitation operators \( T_n \) used in the expansion of \( T \).&lt;/p&gt;
+
+&lt;p&gt;In this way we get the following approximations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coupled cluster singles (CCS) if \( T = T_1 \). &lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;If the reference \( \Phi \) is taken to be a Hartree-Fock determinant
+(either for the ground or excited state) then this yields 
+\( t_I^A = 0 \). In other words there is only a trivial solution for the
+CCS equations if the Hartree-Fock determinant is the reference. &lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;If the reference determinant is not the Hartree-Fock solution, the energy
+obtained will be higher. (Below I describe how the coefficients are
+determined).&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coupled cluster doubles (CCD) if \( T = T_2 \)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coupled cluster singles and doubles (CCSD) if \( T = T_1 + T_2 \)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coupled cluster singles, doubles and triples (CCSDT) if \( T = T_1 + T_2 + T_3 \)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Coupled cluster singles, doubles, triples and quadruples (CCSDTQ) if \( T = T_1 + T_2 + T_3 + T_4 \)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;finding-the-coupled-cluster-energy-and-amplitudes&quot;&gt;Finding the coupled cluster energy and amplitudes&lt;/h2&gt;
+
+&lt;p&gt;To obtain the coupled cluster energy we substitute the corresponding
+wavefunction &lt;em&gt;ansatz&lt;/em&gt; into the Schrodinger equation,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+H e^T \Phi = E \Phi.
+&lt;/script&gt;
+
+&lt;p&gt;Then we project or integrate this equation on the left with successively
+different subsituted determinants,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\braket{\Phi}{          H e^T \Phi} &amp; = E \\
+\braket{\Phi_I^A}{      H e^T \Phi} &amp; = 0 \\
+\braket{\Phi\sub{IJ}^{AB}}{H e^T \Phi} &amp; = 0 \\
+\ldots &amp;
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The substituted determinants on the left are called “excited determinants” if
+the state \( \Phi \) is the grouds state Hartree-Fock determinant.
+The first and higher exictated determinants yield zero on the right hand side
+because the determinants with different spin orbitals in them are orthogonal.&lt;/p&gt;
+
+&lt;p&gt;The most important thing to note is that if \( T_n \) is limited to a certain
+level of excitations, then we only need to project on the left hand side with
+determinants to the same level of excitation. This provides a set of non-linear
+equations which determine the amplitude coefficients and the first equation
+above provides an equation for the energy \( E \). Thus if we had 
+\( T_n = T_2 \) S only the double excited determinant equation above would be
+required.&lt;/p&gt;
+
+&lt;p&gt;Of course we have to evaluate the rather complex matrix elements in these
+equations before obtaining a set of equations which are actually “programmable”
+in terms on integrals, but this is just an (important) technicality. &lt;/p&gt;
+
+&lt;h2 id=&quot;coupled-cluster-transformed-hamiltonian&quot;&gt;Coupled cluster transformed Hamiltonian&lt;/h2&gt;
+
+&lt;p&gt;There is an equivalent way to find the energy and the amplitudes, and it
+involves premultiplying the Schrodinger equation by \( e^{-T} \) beforehand,
+yeilding the equations&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\braket{\Phi}{    e^{-T}H e^T \Phi} &amp; = E \\
+\braket{\Phi_I^A}{e^{-T}H e^T \Phi} &amp; = 0 \\
+\braket{\Phi\sub{IJ}^{AB}}{e^{-T}H e^T \Phi} &amp; = 0 \\
+\ldots &amp;
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;It is a rather remarkable fact that the coupled cluster transformed Hamiltonian
+\( \tilde{H} = e^{-T}H e^T \Phi \) can be evaluated in closed form. We will
+have another post on this rather amazing fact.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-elephant-in-the-room-why-is-an-exponential-function-used&quot;&gt;The elephant in the room: Why is an exponential function used?&lt;/h2&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/elephant-in-the-room.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The reason is that the energy of the coupled cluster wavefunction separates
+into a sum of subsystem energies when those systems are noninteracting i.e.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+E[\Psi] = E_A[\Psi_A] + E_B[\Psi_A].
+&lt;/script&gt;
+
+&lt;p&gt;This is called &lt;em&gt;size extensivity&lt;/em&gt;. It implies that, for instance, the energy of
+\( n \) hydrogen molecules separated by a very large distance from each other
+will be equal to \( n \) times the energy of a single hydrogen molecule. This
+is clearly a very useful property to have!&lt;/p&gt;
+
+&lt;p&gt;As stated, size extensivity follows from the exponential form of the wavefunction,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = e^{T} \Phi \\
+     &amp; = e^{T_A+T_B} \Phi \\
+     &amp; = e^{T_A}e^{T_B}\Phi
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The final line follows from the fact that the excitation operators
+\( T_A \) and \( T_B \) operate on different sets of orbitals –
+those from the two separate systems – and so the operators commute.
+Now if the Hamiltonian splits into two parts for the subsystems,
+\( H = H_A + H_B \) antisymmetrization between the Hartree
+orbitals products can be ignored so that \( \Phi \approx \Phi_A\Phi_B \).
+This last point is a litlle bit tricky and I should write another post
+about it since it brings up interesting points about the
+Einstein-Poldolsky-Rosen (EPR) paradox. But if we assume that it holds,
+then it implies that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = e^{T_A}e^{T_B}\Phi \\
+     &amp; \approx e^{T_A}e^{T_B}\Phi_A\Phi_B \\
+     &amp; = e^{T_A}\Phi_A e^{T_B}\Phi_B \\
+     &amp; = \Psi_A \Psi_B
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The &lt;em&gt;additivity&lt;/em&gt; of the total energy follows from the &lt;em&gt;multiplicative&lt;/em&gt;
+factorization of \( \Psi \) above.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-isnt-separability-built-into-qm&quot;&gt;Why isn’t separability built into QM?&lt;/h2&gt;
+
+&lt;p&gt;Since the product form of the wavefunction is so essential to the separability
+of the wavefunction, I wonder why this behaviour isn’t in some way “built
+into” quantum mechanics from the start? After all, the fermion symmetry is
+built into the determinant form of the wavefunction; or equivalently,
+in second quantization, this same symmetry is built into the anticommutation
+relations of the fermion creation and annihilation operators.&lt;/p&gt;
+
+&lt;p&gt;Perhaps, dear reader, you might like to think about this. Those who are brave
+may attempt to the paper by Arponen (1997) PRA 55 pl 2686 where he attempts
+to do just that. If you understand it please explain!&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/the-coupled-cluster-wavefunction/&quot;&gt;The coupled cluster wavefunction&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Coupled cluster singles]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-singles/"/>
+  <id>http://localhost:4000/articles/coupled-cluster-singles</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-16T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#singel%20excitation" term="singel excitation" /><category scheme="http://localhost:4000/tags/#Hartree-Fock" term="Hartree-Fock" />
+  <content type="html">
+  
+    &lt;p&gt;The coupled cluster single (CCS) wavefunction has the form&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = e^{T_1} \Phi \\
+     &amp; = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
+     &amp; = \prod_I  e^{\sum_I T_I^A ) \Phi \\
+     &amp; = \prod_I (1 + T_I^A\Phi_I^A).
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Here we have introduced the single excitation operator \( T_I^A \)
+which is defined by \( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} \).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-ccs-wavefunction-is-just-a-determinent-wavefunction&quot;&gt;The CCS wavefunction is just a determinent wavefunction&lt;/h2&gt;
+
+&lt;p&gt;We can carry out further simplifications to the equations above:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
+     &amp; = \prod_I  e^{\sum_I T_I^A ) \Phi \\
+     &amp; = \prod_I (1 + T_I^A\Phi_I^A).
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The second line follows from the properties of the exponential function.&lt;/p&gt;
+
+&lt;p&gt;The final line follows from the fact that \( (\sum_I T_I^A)^2 = 0) i.e.
+it is not possible to substitute spinorbital \( I \) more than once.&lt;/p&gt;
+
+&lt;p&gt;In fact, the final line can be written as an (unnormalized) single determinant
+\( \Phi’ \) made from new spinorbitals \( phi’\sub{I} \) like this,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Phi’ &amp; = \mathscr{A} \phi’\sub{1}       (\B{x}\sub{1}) \ldots
+                    \phi’\sub{N\sub{e}}(\B{x}\sub{N\sub{e}}) \\
+\phi’\sub{I} &amp; = \sum_A t_I^A
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Therefore the \( T_1 \) operator in the coupled cluster wavefunction
+causes a mixture of unoccupied spinorbitals into the reference orbitals.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-ccs-wavefunction-for-a-hf-reference-has-zero-amplitudes&quot;&gt;The CCS wavefunction for a HF reference has zero amplitudes&lt;/h2&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-singles/&quot;&gt;Coupled cluster singles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Coupled cluster doubles]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-doubles/"/>
+  <id>http://localhost:4000/articles/coupled-cluster-doubles</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-16T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#wavefunction" term="wavefunction" /><category scheme="http://localhost:4000/tags/#doubles%20wavefunction" term="doubles wavefunction" />
+  <content type="html">
+  
+    
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-doubles/&quot;&gt;Coupled cluster doubles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
 </entry>
 
 

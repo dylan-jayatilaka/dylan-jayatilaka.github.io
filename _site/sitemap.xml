@@ -48,6 +48,18 @@
     </url>
     
     <url>
+        <loc>//localhost:4000/articles/the-coupled-cluster-wavefunction/</loc>
+    </url>
+    
+    <url>
+        <loc>//localhost:4000/articles/coupled-cluster-singles/</loc>
+    </url>
+    
+    <url>
+        <loc>//localhost:4000/articles/coupled-cluster-doubles/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/</loc>
     </url>
     

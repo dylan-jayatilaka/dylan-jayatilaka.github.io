@@ -9,6 +9,30 @@
 		} ,
 	
 		{
+		  "title"      : "The coupled cluster wavefunction",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/the-coupled-cluster-wavefunction/",
+		  "date"       : "2014-06-16 00:00:00 +0800",
+		  "shortdate"  : "June 16, 2014"
+		} ,
+	
+		{
+		  "title"      : "Coupled cluster singles",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/coupled-cluster-singles/",
+		  "date"       : "2014-06-16 00:00:00 +0800",
+		  "shortdate"  : "June 16, 2014"
+		} ,
+	
+		{
+		  "title"      : "Coupled cluster doubles",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/coupled-cluster-doubles/",
+		  "date"       : "2014-06-16 00:00:00 +0800",
+		  "shortdate"  : "June 16, 2014"
+		} ,
+	
+		{
 		  "title"      : "Convert a one-electron into a two-electron term",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/convert-a-one-electron-into-two-electron-term/",
