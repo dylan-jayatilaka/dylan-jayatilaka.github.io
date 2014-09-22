@@ -9,25 +9,25 @@
 		} ,
 	
 		{
-		  "title"      : "The coupled cluster wavefunction",
+		  "title"      : "Coupled cluster doubles",
 		  "category"   : "articles",
-		  "url"        : "//localhost:4000/articles/the-coupled-cluster-wavefunction/",
-		  "date"       : "2014-06-16 00:00:00 +0800",
-		  "shortdate"  : "June 16, 2014"
+		  "url"        : "//localhost:4000/articles/coupled-cluster-doubles/",
+		  "date"       : "2014-06-18 00:00:00 +0800",
+		  "shortdate"  : "June 18, 2014"
 		} ,
 	
 		{
 		  "title"      : "Coupled cluster singles",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/coupled-cluster-singles/",
-		  "date"       : "2014-06-16 00:00:00 +0800",
-		  "shortdate"  : "June 16, 2014"
+		  "date"       : "2014-06-17 00:00:00 +0800",
+		  "shortdate"  : "June 17, 2014"
 		} ,
 	
 		{
-		  "title"      : "Coupled cluster doubles",
+		  "title"      : "The coupled cluster wavefunction",
 		  "category"   : "articles",
-		  "url"        : "//localhost:4000/articles/coupled-cluster-doubles/",
+		  "url"        : "//localhost:4000/articles/the-coupled-cluster-wavefunction/",
 		  "date"       : "2014-06-16 00:00:00 +0800",
 		  "shortdate"  : "June 16, 2014"
 		} ,

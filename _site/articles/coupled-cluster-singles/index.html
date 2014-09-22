@@ -149,26 +149,32 @@ MathJax.Hub.Config({
       <footer class="entry-meta">
         <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
         <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
-        <span class="entry-date date published"><time datetime="2014-06-16T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 16, 2014</time></span>
+        <span class="entry-date date published"><time datetime="2014-06-17T00:00:00+08:00"><i class="icon-calendar-empty"></i> June 17, 2014</time></span>
         <span class="entry-date date modified"><time datetime="201-06-07"><i class="icon-pencil"></i> June 07, 0201</time></span>
         
         <span><a href="//localhost:4000/articles/coupled-cluster-singles/" rel="bookmark" title="Coupled cluster singles"><i class="icon-link"></i> Permalink</a></span>
         
       </footer>
       <div class="entry-content">
-        <p>The coupled cluster single (CCS) wavefunction has the form</p>
+        <p>According to the previous notes the coupled cluster single (CCS) wavefunction 
+has the form</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<script type="math/tex; mode=display">
+\Psi = (\exp T_1) \Phi
+     = \exp \left( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A \right) \Phi
+</script>
 
-\begin{align}
-\Psi & = e^{T_1} \Phi \\
-     & = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
-     & = \prod_I  e^{\sum_I T_I^A ) \Phi \\
-     & = \prod_I (1 + T_I^A\Phi_I^A).
- %]]></script>
+<p>where the single excitation operator replaces spinorbital \( I \)
+in determinant \( \Phi \) (an occupied) with an orbital
+\( A \) which does not occur in \( \Phi \) (an unoccupied or virtual
+spoinorbital) i.e.</p>
 
-<p>Here we have introduced the single excitation operator \( T_I^A \)
-which is defined by \( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} \).</p>
+<script type="math/tex; mode=display">
+T_I^A \Phi = t_I^A \Phi_I^A.
+</script>
+
+<p>\( t_I^A \) is the amplitude associated with the singly
+excited determinant \( \Phi_I^A \).</p>
 
 <h2 id="the-ccs-wavefunction-is-just-a-determinent-wavefunction">The CCS wavefunction is just a determinent wavefunction</h2>
 
@@ -177,30 +183,42 @@ which is defined by \( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} \).</p>
 <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
-\Psi & = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
-     & = \prod_I  e^{\sum_I T_I^A ) \Phi \\
-     & = \prod_I (1 + T_I^A\Phi_I^A).
+\Psi & = \exp \left( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A \right) \Phi \\
+     & = \prod_I  \exp \left( \sum_I T_I^A \right) \Phi \\
+     & = \prod_I \left( 1 + T_I^A + \frac{1}{2} (T_I^A)^2 + \ldots \right) \Phi \\
+     & = \prod_I \left( 1 + t_I^A \Phi_I^A \right).
+\end{align}
  %]]></script>
 
-<p>The second line follows from the properties of the exponential function.</p>
+<p>The second and third lines follows from the definition of the exponential function.
+The final line follows from the fact that</p>
 
-<p>The final line follows from the fact that \( (\sum_I T_I^A)^2 = 0) i.e.
-it is not possible to substitute spinorbital \( I \) more than once.</p>
+<script type="math/tex; mode=display">
+(T_I^A)^2\Phi = (T_I^A)^3\Phi = \ldots = 0
+</script>
 
-<p>In fact, the final line can be written as an (unnormalized) single determinant
-\( \Phi’ \) made from new spinorbitals \( phi’\sub{I} \) like this,</p>
+<p>i.e. it is not possible to substitute spinorbital \( I \) more than once in
+determinant \( \Phi \).</p>
+
+<p>In fact, the final line can be written as an unnormalized single determinant
+\( \Phi’ \) made from new spinorbitals \( \phi’\sub{I} \) like this,</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
 \Phi’ & = \mathscr{A} \phi’\sub{1}       (\B{x}\sub{1}) \ldots
-                    \phi’\sub{N\sub{e}}(\B{x}\sub{N\sub{e}}) \\
-\phi’\sub{I} & = \sum_A t_I^A
+                      \phi’\sub{N\sub{e}}(\B{x}\sub{N\sub{e}}) \\
+\phi’\sub{I}(\B{x}) & = \phi_I(\B{x}) + \sum_A t_I^A \phi_A(\B{x})
 \end{align}
  %]]></script>
 
-<p>Therefore the \( T_1 \) operator in the coupled cluster wavefunction
-causes a mixture of unoccupied spinorbitals into the reference orbitals.</p>
+<p>(This follows from the column expansion rule for determinants)[http://en.wikipedia.org/wiki/Determinant].
+Therefore the \( T_1 \) operator in the coupled cluster wavefunction
+causes a mixture of unoccupied spinorbitals into the reference orbitals,</p>
+
+<script type="math/tex; mode=display">
+\Psi = (\exp T_1) \Phi = \Phi’.
+</script>
 
 <h2 id="the-ccs-wavefunction-for-a-hf-reference-has-zero-amplitudes">The CCS wavefunction for a HF reference has zero amplitudes</h2>
 
@@ -210,10 +228,10 @@ causes a mixture of unoccupied spinorbitals into the reference orbitals.</p>
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/coupled-cluster-doubles/" class="btn" title="Coupled cluster doubles">Previous article</a>
+        <a href="//localhost:4000/articles/the-coupled-cluster-wavefunction/" class="btn" title="The coupled cluster wavefunction">Previous article</a>
       
       
-        <a href="//localhost:4000/articles/the-coupled-cluster-wavefunction/" class="btn" title="The coupled cluster wavefunction">Next article</a>
+        <a href="//localhost:4000/articles/coupled-cluster-doubles/" class="btn" title="Coupled cluster doubles">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>

@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-07-22T17:27:57+08:00</updated>
+<updated>2014-09-22T13:35:32+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -203,6 +203,115 @@ arguments will not apply.&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/god-or-not/&quot;&gt;God or not?&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 30, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Coupled cluster doubles]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-doubles/"/>
+  <id>http://localhost:4000/articles/coupled-cluster-doubles</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-18T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#wavefunction" term="wavefunction" /><category scheme="http://localhost:4000/tags/#doubles%20wavefunction" term="doubles wavefunction" />
+  <content type="html">
+  
+    
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-doubles/&quot;&gt;Coupled cluster doubles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 18, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Coupled cluster singles]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-singles/"/>
+  <id>http://localhost:4000/articles/coupled-cluster-singles</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-06-17T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#singel%20excitation" term="singel excitation" /><category scheme="http://localhost:4000/tags/#Hartree-Fock" term="Hartree-Fock" />
+  <content type="html">
+  
+    &lt;p&gt;According to the previous notes the coupled cluster single (CCS) wavefunction 
+has the form&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Psi = (\exp T_1) \Phi
+     = \exp \left( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A \right) \Phi
+&lt;/script&gt;
+
+&lt;p&gt;where the single excitation operator replaces spinorbital \( I \)
+in determinant \( \Phi \) (an occupied) with an orbital
+\( A \) which does not occur in \( \Phi \) (an unoccupied or virtual
+spoinorbital) i.e.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+T_I^A \Phi = t_I^A \Phi_I^A.
+&lt;/script&gt;
+
+&lt;p&gt;\( t_I^A \) is the amplitude associated with the singly
+excited determinant \( \Phi_I^A \).&lt;/p&gt;
+
+&lt;h2 id=&quot;the-ccs-wavefunction-is-just-a-determinent-wavefunction&quot;&gt;The CCS wavefunction is just a determinent wavefunction&lt;/h2&gt;
+
+&lt;p&gt;We can carry out further simplifications to the equations above:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Psi &amp; = \exp \left( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A \right) \Phi \\
+     &amp; = \prod_I  \exp \left( \sum_I T_I^A \right) \Phi \\
+     &amp; = \prod_I \left( 1 + T_I^A + \frac{1}{2} (T_I^A)^2 + \ldots \right) \Phi \\
+     &amp; = \prod_I \left( 1 + t_I^A \Phi_I^A \right).
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The second and third lines follows from the definition of the exponential function.
+The final line follows from the fact that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+(T_I^A)^2\Phi = (T_I^A)^3\Phi = \ldots = 0
+&lt;/script&gt;
+
+&lt;p&gt;i.e. it is not possible to substitute spinorbital \( I \) more than once in
+determinant \( \Phi \).&lt;/p&gt;
+
+&lt;p&gt;In fact, the final line can be written as an unnormalized single determinant
+\( \Phi’ \) made from new spinorbitals \( \phi’\sub{I} \) like this,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\Phi’ &amp; = \mathscr{A} \phi’\sub{1}       (\B{x}\sub{1}) \ldots
+                      \phi’\sub{N\sub{e}}(\B{x}\sub{N\sub{e}}) \\
+\phi’\sub{I}(\B{x}) &amp; = \phi_I(\B{x}) + \sum_A t_I^A \phi_A(\B{x})
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;(This follows from the column expansion rule for determinants)[http://en.wikipedia.org/wiki/Determinant].
+Therefore the \( T_1 \) operator in the coupled cluster wavefunction
+causes a mixture of unoccupied spinorbitals into the reference orbitals,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Psi = (\exp T_1) \Phi = \Phi’.
+&lt;/script&gt;
+
+&lt;h2 id=&quot;the-ccs-wavefunction-for-a-hf-reference-has-zero-amplitudes&quot;&gt;The CCS wavefunction for a HF reference has zero amplitudes&lt;/h2&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-singles/&quot;&gt;Coupled cluster singles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 17, 2014.&lt;/p&gt;</content>
 </entry>
 
 
@@ -444,97 +553,6 @@ to do just that. If you understand it please explain!&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/the-coupled-cluster-wavefunction/&quot;&gt;The coupled cluster wavefunction&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Coupled cluster singles]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-singles/"/>
-  <id>http://localhost:4000/articles/coupled-cluster-singles</id>
-  <updated>201-06-07T00:00:00-00:00</updated>
-  <published>2014-06-16T00:00:00+08:00</published>
-  
-  <author>
-    <name>Dylan Jayatilaka</name>
-    <uri>http://localhost:4000</uri>
-    <email>dylan.jayatilaka@gmail.com</email>
-  </author>
-  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#singel%20excitation" term="singel excitation" /><category scheme="http://localhost:4000/tags/#Hartree-Fock" term="Hartree-Fock" />
-  <content type="html">
-  
-    &lt;p&gt;The coupled cluster single (CCS) wavefunction has the form&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-
-\begin{align}
-\Psi &amp; = e^{T_1} \Phi \\
-     &amp; = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
-     &amp; = \prod_I  e^{\sum_I T_I^A ) \Phi \\
-     &amp; = \prod_I (1 + T_I^A\Phi_I^A).
- %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Here we have introduced the single excitation operator \( T_I^A \)
-which is defined by \( \sum_I^{N\sub{o}} \sum_A^{N\sub{v}} \).&lt;/p&gt;
-
-&lt;h2 id=&quot;the-ccs-wavefunction-is-just-a-determinent-wavefunction&quot;&gt;The CCS wavefunction is just a determinent wavefunction&lt;/h2&gt;
-
-&lt;p&gt;We can carry out further simplifications to the equations above:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-
-\begin{align}
-\Psi &amp; = e^{\sum_I^{N\sub{o}} \sum_A^{N\sub{v}} T_I^A ) \Phi \\
-     &amp; = \prod_I  e^{\sum_I T_I^A ) \Phi \\
-     &amp; = \prod_I (1 + T_I^A\Phi_I^A).
- %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;The second line follows from the properties of the exponential function.&lt;/p&gt;
-
-&lt;p&gt;The final line follows from the fact that \( (\sum_I T_I^A)^2 = 0) i.e.
-it is not possible to substitute spinorbital \( I \) more than once.&lt;/p&gt;
-
-&lt;p&gt;In fact, the final line can be written as an (unnormalized) single determinant
-\( \Phi’ \) made from new spinorbitals \( phi’\sub{I} \) like this,&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-
-\begin{align}
-\Phi’ &amp; = \mathscr{A} \phi’\sub{1}       (\B{x}\sub{1}) \ldots
-                    \phi’\sub{N\sub{e}}(\B{x}\sub{N\sub{e}}) \\
-\phi’\sub{I} &amp; = \sum_A t_I^A
-\end{align}
- %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Therefore the \( T_1 \) operator in the coupled cluster wavefunction
-causes a mixture of unoccupied spinorbitals into the reference orbitals.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-ccs-wavefunction-for-a-hf-reference-has-zero-amplitudes&quot;&gt;The CCS wavefunction for a HF reference has zero amplitudes&lt;/h2&gt;
-
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-singles/&quot;&gt;Coupled cluster singles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Coupled cluster doubles]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/coupled-cluster-doubles/"/>
-  <id>http://localhost:4000/articles/coupled-cluster-doubles</id>
-  <updated>201-06-07T00:00:00-00:00</updated>
-  <published>2014-06-16T00:00:00+08:00</published>
-  
-  <author>
-    <name>Dylan Jayatilaka</name>
-    <uri>http://localhost:4000</uri>
-    <email>dylan.jayatilaka@gmail.com</email>
-  </author>
-  <category scheme="http://localhost:4000/tags/#Coupled%20cluster" term="Coupled cluster" /><category scheme="http://localhost:4000/tags/#wavefunction" term="wavefunction" /><category scheme="http://localhost:4000/tags/#doubles%20wavefunction" term="doubles wavefunction" />
-  <content type="html">
-  
-    
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/coupled-cluster-doubles/&quot;&gt;Coupled cluster doubles&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on June 16, 2014.&lt;/p&gt;</content>
 </entry>
 
 
