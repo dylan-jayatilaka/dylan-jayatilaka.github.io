@@ -1,0 +1,320 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Particles in boxes &#8211; That Blog by Dylan</title>
+<meta name="description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta name="keywords" content="chem2002, schrodinger equation, particle in a box">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Particles in boxes">
+<meta property="og:description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta property="og:url" content="//localhost:4000/articles/particles-in-boxes/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/particles-in-boxes/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\mbox{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            sub: ["_"],
+            star: ["*"],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1],
+            subnote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            onenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
+            twonote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\end{array}}",2],
+            threenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\\\ \\text{\\sffamily#3}\\end{array}}",3]
+        }
+    }
+});
+</script>
+<script type="text/javascript"
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/quantum-corral.png" class="entry-feature-image" alt="Particles in boxes" ><p class="image-credit">Photo Credit: <a href="http://www.sciencemag.org/content/262/5131/218.abstract?sid=9e2fb1df-03ed-44fe-bd4d-fbc6fdd5b720">Confinement of electrons to quantum corrals on a metal surface - Crommie, Lutz and Eigler (1993) Science 262, pp. 218-220</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#chem2002" title="Pages tagged chem2002">chem2002</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#schrodinger equation" title="Pages tagged schrodinger equation">schrodinger equation</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#particle in a box" title="Pages tagged particle in a box">particle in a box</a></span>
+        
+          <h1 class="entry-title">Particles in boxes</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-09-21T00:00:00+08:00"><i class="icon-calendar-empty"></i> September 21, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="2014-09-21"><i class="icon-pencil"></i> September 21, 2014</time></span>
+        
+        <span><a href="//localhost:4000/articles/particles-in-boxes/" rel="bookmark" title="Particles in boxes"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/particles-in-boxes/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Particles in boxes&url=//localhost:4000/articles/particles-in-boxes/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/particles-in-boxes/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>This is a post for my second year Phys Chem students, though it may be
+of interest to others.</p>
+
+<p>Here I explain how to solve the one dimensional Schrodinger equation for
+various potentials i.e. the classic particle-in-a-box models.</p>
+
+<p>The particle-in-a-box models are great for seeing in a simple way how
+QM works, and they have relevance:</p>
+
+<ul>
+  <li>
+    <p>For example, the images above show the probability density of surface
+electrons trapped in a circular box made of iron atoms placed on a copper
+surface by scanning tunneling microscopy (STM). The shapes of these waves are
+very much like those for an electron trapped in a disk.</p>
+  </li>
+  <li>
+    <p>The particle-on-a-ring model has also been used by my colleague
+Pierre-Francois Loos to develop <a href="http://arxiv.org/abs/1302.6661">insight into electron correlation</a></p>
+  </li>
+</ul>
+
+<p>For the students: </p>
+
+<p>Scattered through this post and at the end are some examples, questions, and
+exercises. You would be well advised to attempt them. Nudge-nudge wink-wink.</p>
+
+<h2 id="one-paragraph-review-of-qm">One paragraph review of QM</h2>
+
+<p>There are only two rules to quantum mechanics:</p>
+
+<ol>
+  <li><em>Any experimental measurement is represented by an operator</em>.
+    <ul>
+      <li>An operator is a function of the coordinates and momenta of the particles in the system.</li>
+      <li>The momenta are replaced by a derivatives with respect to the particle coordinates times
+\( -i\hbar/2m \) (where \( m \) is the mass of the particle and \( \hbar \) is
+Planck’s constant divided by \( 2\pi \) ).</li>
+      <li>Operators are sometimes represented by a symbol with a hat on top e.g. like \( \hat{A} \).
+Sometimes we forget the hat if it is clear it is an operator.</li>
+    </ul>
+  </li>
+  <li><em>The results of any experimental measurement must be an eigenvalue of that operator</em>
+    <ul>
+      <li>An eigenvalue of an operator \( \hat{A} \) is any real number \( a \) which
+obeys an <em>eigenvalue equation</em> i.e. \( \hat{A} \psi = a \psi \).</li>
+      <li>An eigenvalue equation is a <em>differential equation</em> i.e. an equation involving derivatives.
+The unknown quantities to be determined in this equation are the
+<em>wavefunction</em> \( \psi \) and the eigenvalue \( a \).</li>
+      <li>Since an experiment can yield a many differenet results, the corresponding eigenvalue equation
+for the operator for that experiment also has many different eigenvalues and solutions.
+Each eigenvalue \( a \) and its wavefunction \( \psi \) are paired together.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example. The momentum of an electron in one dimension is \( p = -i\frac{\hbar}{2 m_e} \frac{d}{dx} \)
+where \( m_e \) is the mass of the electron.</p>
+
+<p>Example. The momentum of a proton in three dimension is the vector </p>
+
+<script type="math/tex; mode=display">
+\B{p} = -i\frac{\hbar}{2 m_p} 
+\left()
+\begin{array}{c}
+\partial/\partial x \\
+\partial/\partial y \\
+\partial/\partial z \\
+\end{array}
+\right)
+</script>
+
+<p>where \( m_p \) is the mass of the proton.</p>
+
+<p>Example. The allowed experimental values \( a \) of the electron momentum in one dimension
+(moving freely) are determined by solving the following eigenvalue equation</p>
+
+<script type="math/tex; mode=display">
+\left( -i\frac{\hbar}{2 m_e} \frac{d}{dx} \right) \psi(x) = a \psi(x).
+</script>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/god-or-not/" class="btn" title="God or not?">Previous article</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

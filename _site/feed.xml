@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-09-22T13:35:32+08:00</updated>
+<updated>2014-09-23T09:50:53+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -20,10 +20,112 @@
 
 
 <entry>
+  <title type="html"><![CDATA[Particles in boxes]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/particles-in-boxes/"/>
+  <id>http://localhost:4000/articles/particles-in-boxes</id>
+  <updated>2014-09-21T00:00:00-00:00</updated>
+  <published>2014-09-21T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#schrodinger%20equation" term="schrodinger equation" /><category scheme="http://localhost:4000/tags/#particle%20in%20a%20box" term="particle in a box" />
+  <content type="html">
+  
+    &lt;p&gt;This is a post for my second year Phys Chem students, though it may be
+of interest to others.&lt;/p&gt;
+
+&lt;p&gt;Here I explain how to solve the one dimensional Schrodinger equation for
+various potentials i.e. the classic particle-in-a-box models.&lt;/p&gt;
+
+&lt;p&gt;The particle-in-a-box models are great for seeing in a simple way how
+QM works, and they have relevance:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For example, the images above show the probability density of surface
+electrons trapped in a circular box made of iron atoms placed on a copper
+surface by scanning tunneling microscopy (STM). The shapes of these waves are
+very much like those for an electron trapped in a disk.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The particle-on-a-ring model has also been used by my colleague
+Pierre-Francois Loos to develop &lt;a href=&quot;http://arxiv.org/abs/1302.6661&quot;&gt;insight into electron correlation&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the students: &lt;/p&gt;
+
+&lt;p&gt;Scattered through this post and at the end are some examples, questions, and
+exercises. You would be well advised to attempt them. Nudge-nudge wink-wink.&lt;/p&gt;
+
+&lt;h2 id=&quot;one-paragraph-review-of-qm&quot;&gt;One paragraph review of QM&lt;/h2&gt;
+
+&lt;p&gt;There are only two rules to quantum mechanics:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;Any experimental measurement is represented by an operator&lt;/em&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;An operator is a function of the coordinates and momenta of the particles in the system.&lt;/li&gt;
+      &lt;li&gt;The momenta are replaced by a derivatives with respect to the particle coordinates times
+\( -i\hbar/2m \) (where \( m \) is the mass of the particle and \( \hbar \) is
+Planck’s constant divided by \( 2\pi \) ).&lt;/li&gt;
+      &lt;li&gt;Operators are sometimes represented by a symbol with a hat on top e.g. like \( \hat{A} \).
+Sometimes we forget the hat if it is clear it is an operator.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;The results of any experimental measurement must be an eigenvalue of that operator&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;An eigenvalue of an operator \( \hat{A} \) is any real number \( a \) which
+obeys an &lt;em&gt;eigenvalue equation&lt;/em&gt; i.e. \( \hat{A} \psi = a \psi \).&lt;/li&gt;
+      &lt;li&gt;An eigenvalue equation is a &lt;em&gt;differential equation&lt;/em&gt; i.e. an equation involving derivatives.
+The unknown quantities to be determined in this equation are the
+&lt;em&gt;wavefunction&lt;/em&gt; \( \psi \) and the eigenvalue \( a \).&lt;/li&gt;
+      &lt;li&gt;Since an experiment can yield a many differenet results, the corresponding eigenvalue equation
+for the operator for that experiment also has many different eigenvalues and solutions.
+Each eigenvalue \( a \) and its wavefunction \( \psi \) are paired together.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Example. The momentum of an electron in one dimension is \( p = -i\frac{\hbar}{2 m_e} \frac{d}{dx} \)
+where \( m_e \) is the mass of the electron.&lt;/p&gt;
+
+&lt;p&gt;Example. The momentum of a proton in three dimension is the vector &lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\B{p} = -i\frac{\hbar}{2 m_p} 
+\left()
+\begin{array}{c}
+\partial/\partial x \\
+\partial/\partial y \\
+\partial/\partial z \\
+\end{array}
+\right)
+&lt;/script&gt;
+
+&lt;p&gt;where \( m_p \) is the mass of the proton.&lt;/p&gt;
+
+&lt;p&gt;Example. The allowed experimental values \( a \) of the electron momentum in one dimension
+(moving freely) are determined by solving the following eigenvalue equation&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\left( -i\frac{\hbar}{2 m_e} \frac{d}{dx} \right) \psi(x) = a \psi(x).
+&lt;/script&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/particles-in-boxes/&quot;&gt;Particles in boxes&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on September 21, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[God or not?]]></title>
   <link rel="alternate" type="text/html" href="http://localhost:4000/articles/god-or-not/"/>
   <id>http://localhost:4000/articles/god-or-not</id>
-  <updated>201-06-07T00:00:00-00:00</updated>
+  <updated>2014-06-07T00:00:00-00:00</updated>
   <published>2014-06-30T00:00:00+08:00</published>
   
   <author>

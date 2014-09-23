@@ -44,6 +44,10 @@
 
     
     <url>
+        <loc>//localhost:4000/articles/particles-in-boxes/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/god-or-not/</loc>
     </url>
     
