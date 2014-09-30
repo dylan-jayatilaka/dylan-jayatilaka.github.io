@@ -222,9 +222,9 @@ each particle. Hence it depends on the momentum of the electron \\( p_e \\) and
 the momentum of the proton \\( p_p \\). The total energy also depends of the
 electrical attraction between the proton and the electron which depends
 on the (inverse) distance between the two particles according to [Coulomb’s
-Law](). The distance between the two particles involves the
-coordinates of the electron and the proton, respectively \\( x_e \\)
-and \\( x_p \\).
+Law](http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge). 
+The distance between the two particles involves the coordinates of the electron
+and the proton, respectively \\( x_e \\) and \\( x_p \\).
 
 The allowed energies \\( E \\) for an electron and proton moving in one
 dimension are determined by the following eigenvalue equation:
