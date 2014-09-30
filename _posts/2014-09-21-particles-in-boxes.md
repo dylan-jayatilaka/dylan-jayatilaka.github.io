@@ -239,7 +239,7 @@ for the system, given by
 $$
 \begin{align}
 \hat{H} & = \frac{p^2_p}{2m_p} + \frac{p^2_e}{2m_e} + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
-        & = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\s{K.E. of proton}}
+        & = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\textrm{K.E. of proton}}
             \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\s{K.E. of electron}}
             \underbrace{-\frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|}}_{\s{electron-nuclues attraction energy}}
 \end{align}
