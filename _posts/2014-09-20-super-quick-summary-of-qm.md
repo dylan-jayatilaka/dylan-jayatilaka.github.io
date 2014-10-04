@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Super quick summary of QM"
+title: "Super quick summary of Quantum Mechanics"
 description: "Quick summary of quantum mechanics"
 category: articles
 tags: [chem2002, quantum mechanics, wavefunctions, operators, measurement, eigenvalues]
@@ -48,12 +48,14 @@ So let’s get started.
 
 ## The hyperphysics web site
 
-A really great web site which uses the concept-map idea
-and covers the material of the second-year Phys Chem QM
-lectures almost perfectly can be found
+A really great web site which takes the standard historical story of QM and
+uses the concept-map idea - and incidentally covers nearly exactly the same
+material as our Phys Chem QM lectures - can be found
 [here](http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html#quacon).
-Take a [click](http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html#quacon),
-I highly recommend it.
+Do take a [click](http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html#quacon).
+
+On the other hand, if you keep reading, we skip all that historical
+guff and get straight into it.
 
 ## The Rules of Quantum Mechanics
 
