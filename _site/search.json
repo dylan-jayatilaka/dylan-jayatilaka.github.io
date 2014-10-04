@@ -9,6 +9,14 @@
 		} ,
 	
 		{
+		  "title"      : "Super quick summary of QM",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/super-quick-summary-of-qm/",
+		  "date"       : "2014-09-20 00:00:00 +0800",
+		  "shortdate"  : "September 20, 2014"
+		} ,
+	
+		{
 		  "title"      : "God or not?",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/god-or-not/",

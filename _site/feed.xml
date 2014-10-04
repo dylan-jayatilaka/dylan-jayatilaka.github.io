@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-09-23T09:50:53+08:00</updated>
+<updated>2014-10-04T17:26:19+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -34,70 +34,376 @@
   <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#schrodinger%20equation" term="schrodinger equation" /><category scheme="http://localhost:4000/tags/#particle%20in%20a%20box" term="particle in a box" />
   <content type="html">
   
-    &lt;p&gt;This is a post for my second year Phys Chem students, though it may be
-of interest to others.&lt;/p&gt;
+    &lt;p&gt;This is a post for my second year Phys Chem students but it may have
+tidbits of interest to others.&lt;/p&gt;
 
-&lt;p&gt;Here I explain how to solve the one dimensional Schrodinger equation for
-various potentials i.e. the classic particle-in-a-box models.&lt;/p&gt;
+&lt;p&gt;Particle-in-a-box models are great for seeing how quantum works.&lt;/p&gt;
 
-&lt;p&gt;The particle-in-a-box models are great for seeing in a simple way how
-QM works, and they have relevance:&lt;/p&gt;
+&lt;p&gt;Particle-in-a-box models are not just toy models, either. For example:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;For example, the images above show the probability density of surface
-electrons trapped in a circular box made of iron atoms placed on a copper
-surface by scanning tunneling microscopy (STM). The shapes of these waves are
-very much like those for an electron trapped in a disk.&lt;/p&gt;
+    &lt;p&gt;The images above show the probability density waves of a surface electron
+trapped in a “ring” of iron atoms placed on a copper surface by &lt;a href=&quot;http://en.wikipedia.org/wiki/Scanning_tunneling_microscope&quot;&gt;scanning
+tunneling microscopy (STM)&lt;/a&gt;.
+The shapes of these waves are well modelled by an electron trapped in a
+disk-shaped box.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The particle-on-a-ring model has also been used by my colleague
-Pierre-Francois Loos to develop &lt;a href=&quot;http://arxiv.org/abs/1302.6661&quot;&gt;insight into electron correlation&lt;/a&gt;&lt;/p&gt;
+Pierre-Francois Loos to develop &lt;a href=&quot;http://arxiv.org/abs/1302.6661&quot;&gt;insight into electron correlation&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Later in this post I will show how such models can be used to calculate
+conduction of an electron “through” a series of barriers e.g. for
+designing nanoelectronic devices.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For the students: &lt;/p&gt;
+&lt;h2 id=&quot;for-students&quot;&gt;For students&lt;/h2&gt;
 
-&lt;p&gt;Scattered through this post and at the end are some examples, questions, and
-exercises. You would be well advised to attempt them. Nudge-nudge wink-wink.&lt;/p&gt;
+&lt;p&gt;To understand these notes you need to know basic calculus (derivatives and
+integrals) and you need to understand the basics of complex numbers. If you do
+not, bail out here, and come back after you know.&lt;/p&gt;
 
-&lt;h2 id=&quot;one-paragraph-review-of-qm&quot;&gt;One paragraph review of QM&lt;/h2&gt;
+&lt;p&gt;Scattered through this post are some questions. Carefully study these questions
+and their answers. The exam questions will be very similar, if not identical.&lt;/p&gt;
 
-&lt;p&gt;There are only two rules to quantum mechanics:&lt;/p&gt;
+&lt;p&gt;The later material on transmission through multiple barriers is not
+examinable and for interest only.&lt;/p&gt;
+
+&lt;h2 id=&quot;srategy-for-solving-particle-in-a-box-problems&quot;&gt;Srategy for solving particle-in-a-box problems&lt;/h2&gt;
+
+&lt;p&gt;Particle in a box problems are those for a single particle moving
+in one dimension subject to a piecewise constant potential energy i.e.
+a potential energy that looks like the following function:&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/piecewise-constant-potential.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;From looking at this picture you can see that the particle experiences
+different “constant” energies at different points along the axis.
+In this case the barrier&lt;/p&gt;
+
+&lt;p&gt;The strategy for solving these problems is always the same.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;em&gt;Any experimental measurement is represented by an operator&lt;/em&gt;.
+  &lt;li&gt;
+    &lt;p&gt;Write down the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian&quot;&gt;Hamiltonian&lt;/a&gt;
+for the problem and hence the Schrodinger equation for the unknown energies
+and wavefunctions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find the general solutions in each region where the potential is
+constant. The general solutions in each region are &lt;em&gt;always&lt;/em&gt; of the
+form \( \psi(x) = A e^{B x}\) where \( A \) and \(B\), \(C\) are
+(possibly complex) unknown constants to be found. For free or unbound
+particles \(B\) &lt;em&gt;must&lt;/em&gt; be complex. For bound electronts \(B\)
+must be real.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find as many of the unknown coefficients as possible by making sure that
+the solutions are continuous and smooth (see Rule 2 below). At the end
+of the problem there will be only one unknown constant which can
+be found by the normalization condition.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A pretty good graphic for illustrating this procedure is shown at the
+hyperphysics site here.&lt;/p&gt;
+
+&lt;p&gt;You probably have not seen quantum mechanics before and a freaking out.
+Don’t worry. Contrary to what you might have thought, you don’t yet know
+everything and you have to learn more. So relax and read the summarized
+key points on QM below and then see if you can do the questions below.&lt;/p&gt;
+
+&lt;h2 id=&quot;free-electron-in-one-dimension&quot;&gt;Free electron in one dimension&lt;/h2&gt;
+
+&lt;p&gt;Now we get to the meat.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/meat-on-the-bone.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Q9&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron moving freely in one dimension&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. The strategy for solving these problems was given above. The
+Schrodinger equation for the free particle was written down in Q5. But before
+applying this strategy and solving the equation let’s think what answer we
+might expect. Actually, since the electron can move freely, we would expect
+that it can have … any energy it likes … as long as it is positive. Also,
+we expect that an electron moving freely should be located … well, anywhere
+it likes … meaning to say that the probability of finding it at any position
+is equally likely.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;From Q5 the Schrodinger equation for the free electron is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+  -\frac{\hbar^2}{2m_e}\frac{d^2\psi}{dx^2} = E \psi
+&lt;/script&gt;
+
+&lt;p&gt;From the strategy we know the solution of this equation is always of the form
+\( \psi(x) = A e^{i k x} \). Note that the constant \( i k \) is explicitly
+complex, so that \( k \) is a real number. To find the unknown numbers
+\( A \) and \(k \) we substitute this general form into the
+left hand side of the equation and simplify:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\textrm{LHS}
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi(x) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} A e^{i k x} \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} A e^{i k x} \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} A (ik) e^{i k x} \\
+&amp; = -\frac{\hbar^2}{2 m_e} A (ik)^2 e^{i k x} \\
+&amp; =  \frac{\hbar^2}{2 m_e} k^2 A e^{i k x} \\
+&amp; =  \frac{\hbar^2 k^2}{2 m_e} \psi(x) \\
+&amp; =  E \psi(x) \\
+&amp; =  RHS
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This shows that \( \psi(x) = A e^{i k x} \) is indeed a solution of our
+Schrodinger equation provided that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+E = \frac{\hbar^2 k^2}{2 m_e}.
+&lt;/script&gt;
+
+&lt;p&gt;The problem is solved. Note that as we expected:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( E \) is positive regardless of whether the arbitrary
+constant \( k \) is positive or negative (since the square of an arbitrary
+number is always positive).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The probability of fiding the electron an any position is
+\( \psi^&lt;em&gt;(x)\psi(x) = A^&lt;/em&gt; e^{-i k x} A e^{i k x} = |A|^2 \) and
+does not depend on \( x \) i.e. the probability of finding
+the particle at one place or another is the same i.e. the particle
+is located everywhere with equal probability.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;Show that the free electron wavefunction has momentum \( \hbar k \)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stretegy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;To show this, we need to demonstrate that \( \psi(x) \) is an eigenfunction
+of momentum&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\hat{p} \psi(x) &amp; = -i \hbar \frac{d}{dx} e^{i k x}  \\
+                &amp; = -i \hbar (i k) e^{i k x} \\
+                &amp; = \hbar k e^{i k x}
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This is an eigenevlaue equation with eigenvalue \( \hbar k \). Apparently the
+momentum of a free electron \( p_e \) must equal \( \hbar k \)&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/particles-in-boxes/&quot;&gt;Particles in boxes&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on September 21, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Super quick summary of QM]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/super-quick-summary-of-qm/"/>
+  <id>http://localhost:4000/articles/super-quick-summary-of-qm</id>
+  <updated>2014-09-21T00:00:00-00:00</updated>
+  <published>2014-09-20T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#quantum%20mechanics" term="quantum mechanics" /><category scheme="http://localhost:4000/tags/#wavefunctions" term="wavefunctions" /><category scheme="http://localhost:4000/tags/#operators" term="operators" /><category scheme="http://localhost:4000/tags/#measurement" term="measurement" /><category scheme="http://localhost:4000/tags/#eigenvalues" term="eigenvalues" />
+  <content type="html">
+  
+    &lt;p&gt;This is a post for my second year Phys Chem students.&lt;/p&gt;
+
+&lt;p&gt;The purpose of this post is to write down briefly the main ideas and rules of
+Quantum mechanics.&lt;/p&gt;
+
+&lt;p&gt;Now Quantum mechanics is usually quite baffling and perhaps intruiguing
+when you first encounter it. On common question that is encountered is
+“Why do I need to know this?” or “So what?”.&lt;/p&gt;
+
+&lt;p&gt;Here is the answer.&lt;/p&gt;
+
+&lt;p&gt;You need to understand how quantum mechanics works because quantum
+mechanics allows you to in-principle calculate everything about chemistry
+(molecular properties, reaction rates) from equations &lt;a href=&quot;http://www.brainyquote.com/quotes/quotes/p/pauldirac279318.html&quot;&gt;without having to do
+experiments&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s big. &lt;/p&gt;
+
+&lt;p&gt;In my opinion, these days, every organic chemist should do a simple QM
+calculation to test out assumptions about their reaction scheme sites before
+going into the lab for some pain. Of course, these QM calcs are done on a
+computer - not with pen and paper. So you could just learn to use the
+program. But in that case you would have no idea how the calculations work i.e.
+you will be just a monkey.&lt;/p&gt;
+
+&lt;p&gt;No-one wants to employ a monkey.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/thoughtful-bonobo.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;So let’s get started.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-rules-of-quantum-mechanics&quot;&gt;The Rules of Quantum Mechanics&lt;/h2&gt;
+
+&lt;p&gt;There are only few rules to quantum mechanics.&lt;/p&gt;
+
+&lt;p&gt;But the rules do require some explanation.&lt;/p&gt;
+
+&lt;p&gt;Here they are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The state of a system is described by a wavefunction&lt;/strong&gt;&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;An operator is a function of the coordinates and momenta of the particles in the system.&lt;/li&gt;
-      &lt;li&gt;The momenta are replaced by a derivatives with respect to the particle coordinates times
-\( -i\hbar/2m \) (where \( m \) is the mass of the particle and \( \hbar \) is
-Planck’s constant divided by \( 2\pi \) ).&lt;/li&gt;
-      &lt;li&gt;Operators are sometimes represented by a symbol with a hat on top e.g. like \( \hat{A} \).
-Sometimes we forget the hat if it is clear it is an operator.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;The wavefunction is a function of the coordinates of the particles in the
+system. It is usually given the symbol \( \psi \)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;\( \psi \) must be continuous i.e. have no “gaps” in it&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;The derivative of \( \psi \) must also be continuous i.e. the
+wavefunction must be smooth (except at points where the interaction energy
+becomes infinite - so called singularities)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;\( \psi \) for bound ie. stable states must be normalizable
+i.e. \( \int |\psi|^2 \) must exist and must equal one; this is called
+normalization of the wavefunction. The reson is that \( |\psi(\B{x})|^2 \) 
+is the probability of finding the particles at given positions \(\B{x}\).&lt;/p&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;The results of any experimental measurement must be an eigenvalue of that operator&lt;/em&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Any experimental measurement is represented by an operator&lt;/strong&gt;&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;An eigenvalue of an operator \( \hat{A} \) is any real number \( a \) which
-obeys an &lt;em&gt;eigenvalue equation&lt;/em&gt; i.e. \( \hat{A} \psi = a \psi \).&lt;/li&gt;
-      &lt;li&gt;An eigenvalue equation is a &lt;em&gt;differential equation&lt;/em&gt; i.e. an equation involving derivatives.
-The unknown quantities to be determined in this equation are the
-&lt;em&gt;wavefunction&lt;/em&gt; \( \psi \) and the eigenvalue \( a \).&lt;/li&gt;
-      &lt;li&gt;Since an experiment can yield a many differenet results, the corresponding eigenvalue equation
-for the operator for that experiment also has many different eigenvalues and solutions.
-Each eigenvalue \( a \) and its wavefunction \( \psi \) are paired together.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;An &lt;a href=&quot;http://en.wikipedia.org/wiki/Operator_(physics)#Linear_operators_in_wave_mechanics&quot;&gt;operator&lt;/a&gt;
+is a function of the coordinates and momenta of the particles in the
+system.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;The momenta (which in classical mechanics is written as \( \B{p} \) and is equal
+to mass times velocity \( m\B{v}\)) is in quantum mechanics equal to a derivatives
+with respect to the particle coordinates times \( -i\hbar/2m \) where
+\( m \) is the mass of the particle and \( \hbar \) is Planck’s
+constant divided by \( 2\pi \). This is very different!&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Operators are sometimes represented by a symbol with a hat on top e.g. like \( \hat{A} \).
+Sometimes we forget the hat if it is clear it is an operator.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The result of any measurement is an eigenvalue of the operator describing
+the experiment, and after the measurement the system is completely described
+by the wavefunction corresponding to that eigenvalue&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;An eigenvalue of an operator \( \hat{A} \) is any real number \( a \) which
+obeys an &lt;a href=&quot;http://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors&quot;&gt;eigenvalue equation&lt;/a&gt;
+for that operator i.e. \( \hat{A} \psi = a \psi \).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;An eigenvalue equation is a
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Differential_equation&quot;&gt;differential equation&lt;/a&gt;
+i.e. an equation involving derivatives. The unknown quantities to be
+determined in this equation are the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Wave_function#Position-space_wave_function&quot;&gt;wavefunction&lt;/a&gt;
+\( \psi \) and the eigenvalue \( a \).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Example: The &lt;a href=&quot;&quot;&gt;Schrodinger equation&lt;/a&gt; \( \hat{H}\psi = E\psi \) is just
+the eigenvalue equation for the allowed energies \( E \) of the system,
+where \( \hat{H} \) is the energy operator or
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian&quot;&gt;Hamiltonian&lt;/a&gt;
+of the system. The Hamiltonian is (i) the sum of the kinetic energies
+\( \sum_i p_i^2/2 m_i \) of every particle and (ii) the potential energy
+of interaction \( V \) between the particles. The potential energy depends
+on the positions and momenta of the particles and has to be specified to
+you for each case.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;There may be many solutions to an eigenvalue equation but not all of them
+are unacceptable (see Rule 1)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Since an experiment can yield a many different results, the corresponding
+eigenvalue equation for the operator for that experiment also has many
+different eigenvalues and solutions. Each eigenvalue \( a \) and its
+wavefunction \( \psi \) are paired together.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;QM does not predict exactly &lt;em&gt;which&lt;/em&gt; eigenvalue is obtained from an
+experiment; but if \( \psi_i \) is the initial wavefunction before the
+experiment \( \hat{A} \) then QM &lt;em&gt;does&lt;/em&gt; predict&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;That the &lt;em&gt;probability&lt;/em&gt; of getting result \( a \) with wavefunction
+\( \psi_a \) is \( |\int \psi_a^* \psi_i|^2 \)&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;That the average of many experimental results is given by the
+&lt;a href=&quot;http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/expect.html&quot;&gt;expectation value&lt;/a&gt;
+\( \expectation{A} = \int \psi^*_i \hat{A} \psi_i \).&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Example. The momentum of an electron in one dimension is \( p = -i\frac{\hbar}{2 m_e} \frac{d}{dx} \)
-where \( m_e \) is the mass of the electron.&lt;/p&gt;
+&lt;h2 id=&quot;do-you-get-it-test-yourself&quot;&gt;Do you get it? Test yourself&lt;/h2&gt;
 
-&lt;p&gt;Example. The momentum of a proton in three dimension is the vector &lt;/p&gt;
+&lt;p&gt;The following are examples of questions that may be asked in the exam.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q1&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in one dimension&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Use rule 1 of quantum mechanics.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The momentum operator of an electron in one dimension is
+\( \hat{p} = -i\hbar \frac{d}{dx} \).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q2&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in three dimensions&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. To do this we have to realize that the momentum in three dimensions
+is a vector. So we have to write down a vector with three conponents. Each
+component is defined like in A1.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The momentum opertor is given by&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\B{p} = -i\frac{\hbar}{2 m_p} 
-\left()
+\hat{\B{p}} = -i \hbar
+\left(
 \begin{array}{c}
 \partial/\partial x \\
 \partial/\partial y \\
@@ -106,18 +412,193 @@ where \( m_e \) is the mass of the electron.&lt;/p&gt;
 \right)
 &lt;/script&gt;
 
-&lt;p&gt;where \( m_p \) is the mass of the proton.&lt;/p&gt;
+&lt;p&gt;Note&lt;/p&gt;
 
-&lt;p&gt;Example. The allowed experimental values \( a \) of the electron momentum in one dimension
-(moving freely) are determined by solving the following eigenvalue equation&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;A boldface symbol for \( \B{p} \) is used to represent a vector and therefore
+a boldface \( \hat{\B{p}} \) is vector of derivative operators, as you can see.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The partial derivative symbol \( \partial \) is used whenever there is
+more than one variable involved - like in thermodynamics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Note that sometimes the \( x \), \( y \) and \( z \) coordinates
+are written as \( r_1 \), \( r_2 \), \( r_3 \)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\left( -i\frac{\hbar}{2 m_e} \frac{d}{dx} \right) \psi(x) = a \psi(x).
+\hat{\B{p}} = -i \hbar
+\left(
+\begin{array}{c}
+\partial/\partial r_1 \\
+\partial/\partial r_2 \\
+\partial/\partial r_3 \\
+\end{array}
+\right)
 &lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Q3&lt;/strong&gt;. &lt;em&gt;Write down the definition of the angular momentum operator
+\( \hat{\B{l}} \) given that the angular momentum is defined by&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\B{l} = \B{r} \times \B{p} =
+\left(
+\begin{array}{c}
+r_2 p_3 - r_3 p_2 \\
+r_3 p_1 - r_1 p_3 \\
+r_1 p_2 - r_2 p_1
+\end{array}
+\right).
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Substitute the definition of the 3D momentum operator in (Q2) into the
+expression for \( \B{l} \).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The expression for the angular momentum operator is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{\B{l}} =
+-i\hbar
+\left(
+\begin{array}{c}
+r_2 \pd{}{r_3} - r_3 \pd{}{r_2} \\
+r_3 \pd{}{r_1} - r_1 \pd{}{r_3} \\
+r_1 \pd{}{r_2} - r_2 \pd{}{r_1}
+\end{array}
+\right)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Q4&lt;/strong&gt;. &lt;em&gt;Write down the equation which determines the experimental values of
+an electron’s momentum in one dimension.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Use rule 2 of quantum mechanics. Write down the eigenvalue equation
+for the momentum operator of the elctron.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed experimental values \( a \) of the electron momentum in one
+dimension are determined by solving the following eigenvalue equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\underbrace{\left( -i \hbar \frac{d}{dx} \right)}_{\hat{p}_e} \psi(x) = a \psi(x).
+&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Q5&lt;/strong&gt;. &lt;em&gt;Write down the equation which determines the experimental energies of an
+electron moving freely in one dimension. Note that the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Kinetic_energy#Newtonian_kinetic_energy&quot;&gt;(kinetic) energy of a free particle&lt;/a&gt;
+is given in terms its momentum by the equation \( p^2/2m \) where \( m \)
+is the mass of the particle.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A5&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. To do this question we need the formula for the energy in terms of
+the free electrons position and momentum. Luckily that is given to us. Next we
+do the usual substitution for the electron momentum. Then we use rule 2 and
+write down the eigenvalue equation.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed experimental energies \( E \) are obtained by solving
+the following eigenvalue equation,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H} \psi(x) = E \psi(x).
+&lt;/script&gt;
+
+&lt;p&gt;\( \hat{H} \) is the energy operator or &lt;em&gt;hamiltonian&lt;/em&gt; for the
+electron,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+  \hat{H} = \frac{\hat{p^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
+&lt;/script&gt;
+
+&lt;p&gt;The right hand side is obtained by substituting \( p = -i\hbar d/dx \).
+\(x \) and \( m_e \) are the position coordinate and mass of the electron,
+respectively.&lt;/p&gt;
+
+&lt;p&gt;Note:
+* To solve this equation to find the allowed energy values
+  \( E \) means we usually have to first find the unknown wave function
+  \( \psi(x) \).
+* The hamiltonian as a negative sign in it. However it generally has a positive
+  value (as energy should!) at any point in space because \( d^2\psi/dx^2 \)
+  is usually negative; it is generally positive but not always positive everywhere.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q6&lt;/strong&gt;. &lt;em&gt;Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. We need to write down the total energy of an electron and a proton
+in one dimension. The total energy is comprised of the kinetic energy of
+each particle. Hence it depends on the momentum of the electron \( p_e \) and
+the momentum of the proton \( p_p \). The total energy also depends of the
+electrical attraction between the proton and the electron which depends
+on the (inverse) distance between the two particles according to &lt;a href=&quot;http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge&quot;&gt;Coulomb’s
+Law&lt;/a&gt;.
+The distance between the two particles involves the coordinates of the electron
+and the proton, respectively \( x_e \) and \( x_p \).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed energies \( E \) for an electron and proton moving in one
+dimension are determined by the following eigenvalue equation:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H} \psi(x_p,x_e) = E \psi(x_p,x_e)
+&lt;/script&gt;
+
+&lt;p&gt;where \( \hat{H} \) is the total energy operator or Hamiltonian
+for the system, given by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{alignat}{4}
+\hat{H} &amp; = \frac{p^2_p}{2m_p}
+        &amp; + \frac{p^2_e}{2m_e} 
+        &amp; + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
+        &amp; = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\twonote{Kinetic energy}{of proton}} \ \
+        &amp;   \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\twonote{Kinetic energy}{of electron}} \ \
+        &amp;   \underbrace{-\frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|}}_{\twonote{Electron-nuclues}{attraction energy}}
+\end{alignat}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Q7&lt;/strong&gt;. &lt;em&gt;Is the equation \( \hat{P}^2 \psi = \hat{P}\psi \) an eigenvalue equation?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Recall the definition of an eigenvalue equation. Compare it to
+the above eigenvalue equation to see if they look similar.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. Yes it is an eigenvalue equation! Since, if we set \( \phi = \hat{P}\psi \)
+it can be written as \( \hat{P}\phi = \phi = 1\phi \). This is an eigenvalue
+equation for \( \phi \) with eigenvalue equal to 1. Note that any old operator
+will &lt;em&gt;not&lt;/em&gt; obey such an equation i.e. such an operator \( \hat{P} \) must be
+somewhat &lt;em&gt;special&lt;/em&gt; … if it even exists.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q8&lt;/strong&gt;. &lt;em&gt;Suppose we do an experiment for the total energy \( E_0 \) of a
+particle and the wavefunction is \( \psi_0 \) after the experiment.
+(i) What is the probability of measuring energy \( E_0 \) again, afterwards?
+(ii) What is the probability of measuring a different energy \( E_1 \) afterwards? 
+(iii) What is the average of many position measurements of the particle?
+Assume that the particle is one dimensional.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. For (i) refer to the last part of Rule 2 and note the normalization
+condition. For (ii), the result depends on (i), see below. For (iii) see the last
+part of Rule 2 and use the operator \( x \) for the particle pisition.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;(i) The probability of obtaining \( E_0 \) again is \( |\int \psi^*_0 \psi_0|^2 \).
+But this is equal to 1 for a bound state by the normalization condition. So we 
+would measure \( E_0 \) again the second time with probanility 1.&lt;/p&gt;
+
+&lt;p&gt;(ii) The probability of getting any other energy is zero since after the first
+energy measurement, we always keep getting \( E_0 \). Note: this implies
+that \( |\int \psi^*_0 \psi_1|^2 = 0 \), which can be proved to be true.
+The proof is beyond the scope of this course, but relies on the fact that
+the eigenvectors are orthogonal.&lt;/p&gt;
+
+&lt;p&gt;(iii) The position of a one dimensional particle is given by \( x \).
+We could put a “hat” on this to indicate it is an operator but it may
+be less confusing to leave it off. So the average of the psotion measurements
+is \( \expectation{x} = \int \psi_0 x \psi_0 \)&lt;/p&gt;
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/particles-in-boxes/&quot;&gt;Particles in boxes&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on September 21, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/super-quick-summary-of-qm/&quot;&gt;Super quick summary of QM&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on September 20, 2014.&lt;/p&gt;</content>
 </entry>
 
 

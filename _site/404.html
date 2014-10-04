@@ -62,7 +62,7 @@ MathJax.Hub.Config({
         extensions: [ "mhchem.js" ],
         Macros: {
             B: ["{\\mathbf{#1}}",1],
-            s: ["{\\mbox{#1}}",1],
+            s: ["{\\textrm{#1}}",1],
             cm: "{cm$^{-1}$}",
             etal: "{\\em et al.}",
             para: "{\\parallel}",
@@ -78,10 +78,10 @@ MathJax.Hub.Config({
             ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
             braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
             expectation: ["{\\langle #1 \\rangle}",1],
-            subnote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
-            onenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\end{array}}",1],
-            twonote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\end{array}}",2],
-            threenote: ["{\\blue\\scriptsize\\begin{array}{l}\\text{\\sffamily#1}\\\\ \\text{\\sffamily#2}\\\\ \\text{\\sffamily#3}\\end{array}}",3]
+            subnote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            onenote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            twonote:   ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\end{array}}",2],
+            threenote: ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\\\ \\s{#3}\\end{array}}",3]
         }
     }
 });

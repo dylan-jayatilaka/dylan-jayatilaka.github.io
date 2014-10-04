@@ -16,8 +16,9 @@ share: true
 This is a post for my second year Phys Chem students but it may have
 tidbits of interest to others.
 
-The particle-in-a-box models are great for seeing how
-QM works and remains relevant:
+Particle-in-a-box models are great for seeing how quantum works.
+
+Particle-in-a-box models are not just toy models, either. For example:
 
 * The images above show the probability density waves of a surface electron
   trapped in a “ring” of iron atoms placed on a copper surface by [scanning
@@ -28,296 +29,134 @@ QM works and remains relevant:
 * The particle-on-a-ring model has also been used by my colleague
   Pierre-Francois Loos to develop [insight into electron correlation](http://arxiv.org/abs/1302.6661).
 
+* Later in this post I will show how such models can be used to calculate
+  conduction of an electron “through” a series of barriers e.g. for
+  designing nanoelectronic devices.
+
 ## For students ##
 
-Scattered through this post and at the end are some examples and questions.
-The examples have answers. You would be well advised to study the answers and
-attempt the questions. Nudge-nudge wink-wink.
+To understand these notes you need to know basic calculus (derivatives and
+integrals) and you need to understand the basics of complex numbers. If you do
+not, bail out here, and come back after you know.
 
+Scattered through this post are some questions. Carefully study these questions
+and their answers. The exam questions will be very similar, if not identical.
 
-## Quick review of QM
+The later material on transmission through multiple barriers is not
+examinable and for interest only.
 
-There two main rules to quantum mechanics:
+## Srategy for solving particle-in-a-box problems
 
-1. **Any experimental measurement is represented by an operator**
+Particle in a box problems are those for a single particle moving
+in one dimension subject to a piecewise constant potential energy i.e.
+a potential energy that looks like the following function:
 
-   - An operator is a function of the coordinates and momenta of the particles in the system.
-   - The momenta are replaced by a derivatives with respect to the particle coordinates times
-     \\( -i\hbar/2m \\) (where \\( m \\) is the mass of the particle and \\( \hbar \\) is
-     Planck’s constant divided by \\( 2\pi \\) ).
-   - Operators are sometimes represented by a symbol with a hat on top e.g. like \\( \hat{A} \\).
-     Sometimes we forget the hat if it is clear it is an operator.
+<figure>
+   <img src="/images/piecewise-constant-potential.jpg">
+</figure>
 
-2. **The result of any measurement is an eigenvalue of the operator describing the experiment and
-     after the measurement the system is described by the wavefunction corresponding to that
-     eigenvalue**
+From looking at this picture you can see that the particle experiences
+different “constant” energies at different points along the axis.
+In this case the barrier
 
-   - An eigenvalue of an operator \\( \hat{A} \\) is any real number \\( a \\) which
-     obeys an *eigenvalue equation* i.e. \\( \hat{A} \psi = a \psi \\).
-   - An eigenvalue equation is a *differential equation* i.e. an equation involving derivatives.
-     The unknown quantities to be determined in this equation are the
-     *wavefunction* \\( \psi \\) and the eigenvalue \\( a \\).
-   - Since an experiment can yield a many differenet results, the corresponding eigenvalue equation
-     for the operator for that experiment also has many different eigenvalues and solutions.
-     Each eigenvalue \\( a \\) and its wavefunction \\( \psi \\) are paired together.
+The strategy for solving these problems is always the same.
 
-3. ** The value of any observable described by an operator \\( \hat{A} \\) is given by
-   its expectation value**.
+1. Write down the
+   [Hamiltonian](http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian)
+   for the problem and hence the Schrodinger equation for the unknown energies
+   and wavefunctions.
 
-   - The expectation value is a number given by the formula \\( \expectation{A} = \int \psi^* \hat{A} \psi \\)
+2. Find the general solutions in each region where the potential is
+   constant. The general solutions in each region are *always* of the
+   form \\( \psi(x) = A e^{B x}\\) where \\( A \\) and \\(B\\), \\(C\\) are
+   (possibly complex) unknown constants to be found. For free or unbound
+   particles \\(B\\) *must* be complex. For bound electronts \\(B\\)
+   must be real.
 
-## Examples
+3. Find as many of the unknown coefficients as possible by making sure that
+   the solutions are continuous and smooth (see Rule 2 below). At the end
+   of the problem there will be only one unknown constant which can
+   be found by the normalization condition.
 
-The following are examples of questions that may be asked in the exam.
+A pretty good graphic for illustrating this procedure is shown at the
+hyperphysics site here.
 
-**Q1**. *Write down the momentum operator of an electron in one dimension*
-
-**A1**.
-
-*Strategy*. Use rule 1 of quantum mechanics.
-
-The momentum operator of an electron in one dimension is
-\\( \hat{p} = -i\hbar \frac{d}{dx} \\).
-
-
-**Q2**. *Write down the momentum operator of an electron in three dimensions*
-
-**A2**.
-
-*Strategy*. To do this we have to realize that the momentum in three dimensions
-is a vector. So we have to write down a vector with three conponents. Each
-component is defined like in A1.
-
-The momentum opertor is given by
-
-$$
-\hat{\B{p}} = -i \hbar
-\left(
-\begin{array}{c}
-\partial/\partial x \\
-\partial/\partial y \\
-\partial/\partial z \\
-\end{array}
-\right)
-$$
-
-Note
-
-* A boldface symbol for \\( \B{p| \\) is used to represent a vector.
-
-* The partial derivative symbol \\( \partial \\) ius used whenever there is
-  more than one variable involved like in thermodynamics.
-
-* Also note that sometimes the \\( x \\), \\( y \\) and \\( z \\) coordinates
-  are written as \\( r_1 \\), \\( r_2 \\), \\( r_3 \\)
-
-$$
-\hat{\B{p}} = -i \hbar
-\left(
-\begin{array}{c}
-\partial/\partial r_1 \\
-\partial/\partial r_2 \\
-\partial/\partial r_3 \\
-\end{array}
-\right)
-$$
-
-**Q3**. *Write down the definition of the angular momentum operator
-\\( \hat{\B{l}} \\) given that the angular momentum is defined by*
-
-$$
-\B{l} = \B{r} \times \B{p} =
-\left(
-\begin{array}{c}
-r_2 p_3 - r_3 p_2 \\
-r_3 p_1 - r_1 p_3 \\
-r_1 p_2 - r_2 p_1
-\end{array}
-\right)
-$$
-
-**A3**.
-
-*Strategy*. Substitute the definition of the momentum operator (A2) into the
-expression for \\( \B{l} \\).
-
-The expression for the angular momentum operator is:
-$$
-\hat{\B{l}} =
--i\hbar
-\left(
-\begin{array}{c}
-r_2 \pd{}{r_3} - r_3 \pd{}{r_2} \\
-r_3 \pd{}{r_1} - r_1 \pd{}{r_3} \\
-r_1 \pd{}{r_2} - r_2 \pd{}{r_1}
-\end{array}
-\right)
-$$
-
-
-**Q4**. *Write down the equation which determines the experimental values of
-an electron’s momentum in one dimension.*
-
-**A4**.
-
-*Strategy*. Use rule 2 of quantum mechanics. Write down the eigenvalue equation
-for the momentum operator of the elctron.
-
-The allowed experimental values \\( a \\) of the electron momentum in one
-dimension are determined by solving the following eigenvalue equation:
-
-$$
-\underbrace{\left( -i \hbar \frac{d}{dx} \right)}_{\hat{p}_e} \psi(x) = a \psi(x).
-$$
-
-
-**Q5**. *Write down the equation which determines the experimental energies of an
-electron moving freely in one dimension. Note that the
-[(kinetic) energy of a free particle](http://en.wikipedia.org/wiki/Kinetic_energy#Newtonian_kinetic_energy)
-is given in terms its momentum by the equation \\( p^2/2m \\) where \\( m \\)
-is the mass of the particle.*
-
-**A5**.
-
-*Strategy*. To do this question we need the formula for the energy in terms of
-the free electrons position and momentum. Luckily that is given to us. Next we
-do the usual substitution for the electron momentum. Then we use rule 2 and
-write down the eigenvalue equation.
-
-The allowed experimental energies \\( E \\) are obtained by solving
-the following eigenvalue equation,
-
-$$
-\hat{H} \psi(x) = E \psi(x).
-$$
-
-\\( \hat{H} \\) is the energy operator or *hamiltonian* for the
-electron. Since the electron is free the hamiltonian is the same
-as the kinetic energy,
-
-$$
-  \hat{H} = \frac{p^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
-$$
-
-The right hand side is obtained by substituting \\( p = -i\hbar d/dx \\).
-\\(x \\) and \\( m_e \\) are the position coordinate and mass of the electron,
-respectively.
-
-Note:
-* To solve this equation to find the allowed energy values
-  \\( E \\) means we usually have to first find the unknown wave function
-  \\( \psi(x) \\).
-* The hamiltonian as a negative sign in it. However it generally has a positive
-  value (as energy should!) at any point in space because \\( d^2\psi/dx^2 \\)
-  is usually negative; it is generally positive but not always positive everywhere.
-
-
-**Q6**. *Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.*
-
-**A6**.
-
-*Strategy*. We need to write down the total energy of an electron and a proton
-in one dimension. The total energy is comprised of the kinetic energy of
-each particle. Hence it depends on the momentum of the electron \\( p_e \\) and
-the momentum of the proton \\( p_p \\). The total energy also depends of the
-electrical attraction between the proton and the electron which depends
-on the (inverse) distance between the two particles according to [Coulomb’s
-Law](http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge). 
-The distance between the two particles involves the coordinates of the electron
-and the proton, respectively \\( x_e \\) and \\( x_p \\).
-
-The allowed energies \\( E \\) for an electron and proton moving in one
-dimension are determined by the following eigenvalue equation:
-
-$$
-\hat{H} \psi(x_p,x_e) = E \psi(x_p,x_e)
-$$
-
-where \\( \hat{H} \\) is the total energy operator or *hamiltonian*
-for the system, given by
-
-$$
-\begin{align}
-\hat{H} & = \frac{p^2_p}{2m_p} + \frac{p^2_e}{2m_e} + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
-        & = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\textrm{K.E. of proton}}
-            \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\s{K.E. of electron}}
-            \underbrace{-\frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|}}_{\s{electron-nuclues attraction energy}}
-\end{align}
-$$
-
-
-**Q7**. *Is the equation \\( \hat{P}^2 \psi = \hat{P}\psi \\) an eigenvalue equation?*
-
-**A7**.
-
-*Strategy*. Recall the definition of an eigenvalue equation. Compare it to
-the above eigenvalue equation to see if they look similar.
-
-Yes it is an eigenvalue equation! Since, if we set \\( \phi = \hat{P}\psi \\)
-it can be written as \\( \hat{P}\phi = \phi = 1\phi \\). This is an eigenvalue
-equation for \\( \phi \\) with eigenvalue equal to 1. Note that any old operator
-will *not* obey such an equation i.e. such an operator \\( \hat{P} \\) must be
-somewhat *special* ... if it even exists.
+You probably have not seen quantum mechanics before and a freaking out.
+Don’t worry. Contrary to what you might have thought, you don’t yet know
+everything and you have to learn more. So relax and read the summarized
+key points on QM below and then see if you can do the questions below.
 
 ## Free electron in one dimension
 
-Let’s try and solve the equation for an electron moving freely (i.e. not
-subject to any forces) on the x axis, question Q 4.
+Now we get to the meat.
 
-Before solving the equation let’s think what answer we might expect. Actually, since
-the electron can move freely, we would expect that it can have ... any energy it likes,
-as long as it is positive.
+<figure>
+   <img src="/images/meat-on-the-bone.jpg">
+</figure>
 
-Now let’s do the problem. Look at the equation in Q 4. Notice that it has the
-form \\( \mbox{derivative of } \psi = C \psi \\) where \\( C \\) is a constant.
-The solution of this differential equation is an exponential (it looks like a
-first order kinetic equation). Based on this we try \\( \psi = A e^{B x} \\)
-(where \\( A \\) and \\( B \\) are arbitrary constants) into the eigenvalue
-equation. The left hand side becomes:
+**Q9**. *Solve the Schrodinger equation for an electron moving freely in one dimension*.
+
+*Strategy*. The strategy for solving these problems was given above. The
+Schrodinger equation for the free particle was written down in Q5. But before
+applying this strategy and solving the equation let’s think what answer we
+might expect. Actually, since the electron can move freely, we would expect
+that it can have ... any energy it likes ... as long as it is positive. Also,
+we expect that an electron moving freely should be located ... well, anywhere
+it likes ... meaning to say that the probability of finding it at any position
+is equally likely.
+
+*Answer*
+
+From Q5 the Schrodinger equation for the free electron is
+
+$$
+  -\frac{\hbar^2}{2m_e}\frac{d^2\psi}{dx^2} = E \psi
+$$
+
+From the strategy we know the solution of this equation is always of the form
+\\( \psi(x) = A e^{i k x} \\). Note that the constant \\( i k \\) is explicitly
+complex, so that \\( k \\) is a real number. To find the unknown numbers
+\\( A \\) and \\(k \\) we substitute this general form into the
+left hand side of the equation and simplify:
 
 $$
 \begin{align}
--\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi(x)
-& =
--\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} C e^{B x}
-\\
-& =
--\frac{\hbar^2}{2 m_e} C B^2 e^{B x}
-\\
-& =
--\frac{B^2\hbar^2}{2 m_e} \psi(x)
-\end{align}
+\textrm{LHS}
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi(x) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} A e^{i k x} \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} A e^{i k x} \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} A (ik) e^{i k x} \\
+& = -\frac{\hbar^2}{2 m_e} A (ik)^2 e^{i k x} \\
+& =  \frac{\hbar^2}{2 m_e} k^2 A e^{i k x} \\
+& =  \frac{\hbar^2 k^2}{2 m_e} \psi(x) \\
+& =  E \psi(x) \\
+& =  RHS
 $$
 
-In the second line we used the fact that \\( d^2/dx^2 e^{B x} = B^2 e^{B x} \\).
-Comparing this with the definition of an eigenvalue equation shows that
-our guess \\( \psi(x) = C e^{B x} \\) is a solution of the eigenvalue
-equation with energy
+This shows that \\( \psi(x) = A e^{i k x} \\) is indeed a solution of our
+Schrodinger equation provided that
 
 $$
-E = -\frac{B^2\hbar^2}{2 m_e}
+E = \frac{\hbar^2 k^2}{2 m_e}.
 $$
 
-How does this compare with our initial expectation? Well, since \\( k \\)
-is an arbitrary constant this shows that the energy can be any
-*negative* number. But this does not make sense! Energy must be positive!
+The problem is solved. Note that as we expected:
 
-In order to get a positive energy we should try and reverse the sign
-in the above equation. Luckily this is easy to do if we choose the
-constant \\( B \\) to be a purely complex number e.g. \\( B = i k \\)
-where \\( k \\) is a real number. Then the energy becomes positive and
-the solutions are
+* \\( E \\) is positive regardless of whether the arbitrary
+  constant \\( k \\) is positive or negative (since the square of an arbitrary
+  number is always positive).
 
-$$
-\begin{align}
-\psi(x) & = A e^{i k x}
-E       & = \frac{k^2\hbar^2}{2 m_e}
-\end{align}
-$$
+* The probability of fiding the electron an any position is
+  \\( \psi^*(x)\psi(x) = A^* e^{-i k x} A e^{i k x} = |A|^2 \\) and
+  does not depend on \\( x \\) i.e. the probability of finding
+  the particle at one place or another is the same i.e. the particle
+  is located everywhere with equal probability.
 
-Q 7. *Show that the free electron wavefunction has momentum \\( \hbar k \\)*
+**Q10**. *Show that the free electron wavefunction has momentum \\( \hbar k \\)*
 
-A 7.
+*Stretegy*
+
+*Answer*.
 
 To show this, we need to demonstrate that \\( \psi(x) \\) is an eigenfunction
 of momentum
@@ -330,31 +169,9 @@ $$
 \end{align}
 $$
 
-This is an eignevlaue equation with eigenvalue \\( \hbar k \\). Apparently the
+This is an eigenevlaue equation with eigenvalue \\( \hbar k \\). Apparently the
 momentum of a free electron \\( p_e \\) must equal \\( \hbar k \\)
 
-
-## Discussion of the free electron solutions
-
-We see that if we follow the rules of QM then the wavefunction for
-the free electron is a complex function. But is it a *wavefunction*?
-Does it look like a wave? According to de Moivre’s theorem we can write
-
-$$
-\psi(x) = A e^{i k x} = A \left( \cos (k x) + i \sin (k x) \right).
-$$
-
-So the complex function \\( \psi(x) \\) looks like a complex sum
-of sinusoidal waves. In fact, if this complex wave has wavelength
-\\( \lambda \\) it is easy to see that
-
-$$
-k = \frac{2\pi}{\lambda}
-$$
-
-because in the space of one wavelength from \\(x = 0 \\) until \\(x = \lambda \\)
-the argument of the \\( \cos \\) or \\( \sin \\) wave undergoes one circular
-cycle of angle \\( 2\pi \\).
 
 
 
