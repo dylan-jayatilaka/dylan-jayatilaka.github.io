@@ -20,7 +20,7 @@ Quantum mechanics.
 
 Now Quantum mechanics is usually quite baffling and perhaps intruiguing
 when you first encounter it. On common question that is encountered is
-“Why do I need to know this?” or “So what?”.
+“Why do I need to know this?” or more briefly “So what?”.
 
 Here is the answer.
 
@@ -46,6 +46,15 @@ No-one wants to employ a monkey.
 
 So let’s get started.
 
+## The hyperphysics web site
+
+A really great web site which uses the concept-map idea
+and covers the material of the second-year Phys Chem QM
+lectures almost perfectly can be found
+[here](http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html#quacon).
+Take a [click](http://hyperphysics.phy-astr.gsu.edu/hbase/quacon.html#quacon),
+I highly recommend it.
+
 ## The Rules of Quantum Mechanics
 
 There are only few rules to quantum mechanics.
@@ -65,7 +74,8 @@ Here they are:
      wavefunction must be smooth (except at points where the interaction energy
      becomes infinite - so called singularities)
 
-   - \\( \psi \\) for bound ie. stable states must be normalizable
+   - \\( \psi \\) for bound ie. stable states must be
+     [normalizable](http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/qm.html#c5)
      i.e. \\( \int |\psi|^2 \\) must exist and must equal one; this is called
      normalization of the wavefunction. The reson is that \\( |\psi(\B{x})|^2 \\) 
      is the probability of finding the particles at given positions \\(\B{x}\\).
