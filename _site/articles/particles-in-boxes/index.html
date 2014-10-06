@@ -210,9 +210,11 @@ study these questions and their answers. The exam questions will be very
 similar, if not identical.</p>
 
 <p>The later material on transmission through multiple barriers is not
-examinable and for interest only.</p>
+examinable. I present it because it could be useful if you are interested
+in, for example, modelling energy levels and conduction through molecules
+(Prof. George Koutsantonis is interested in making such “molecular wires”).</p>
 
-<h2 id="strategy-for-solving-particle-in-a-box-problems">Strategy for solving particle-in-a-box problems</h2>
+<h2 id="what-is-a-particle-in-a-box-problem">What is a particle-in-a-box problem?</h2>
 
 <p>Particle in a box problems are those for a single particle moving
 in one dimension subject to a piecewise constant potential energy i.e.
@@ -223,40 +225,81 @@ a potential energy that looks like the following function:</p>
 </figure>
 
 <p>From looking at this picture you can see that the particle experiences
-different “constant” energies at different points along the axis.
-In this case the barrier</p>
+different “constant” energies at different points along the axis. In fact,
+if we wanted to write this potential in “maths” it would be this:</p>
 
-<p>The strategy for solving these problems is always the same.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+
+V(x) =
+\left\{
+\begin{array}{cl}
+V_0 & \textrm{for } x<x_1     \\
+V_1 & \textrm{for } x_1<x<x_2 \\
+V_2 & \textrm{for } x>x_2
+\end{array}
+\right.
+ %]]></script>
+
+<p>In this case the article seems to encounter a kind of “step barrier”.
+Of course, other shapes for \( V(x) \) are possible and each leads
+to a different problem.</p>
+
+<h2 id="strategy-for-solving-particle-in-a-box-problems">Strategy for solving particle-in-a-box problems</h2>
+
+<p>The strategy for solving these one dimensional problems is always the same:</p>
 
 <ol>
   <li>
     <p>Write down the
 <a href="http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian">Hamiltonian</a>
-for the problem and hence the Schrodinger equation for the unknown energies
-and wavefunctions.</p>
+for the problem, </p>
+
+    <script type="math/tex; mode=display">
+\hat{H} = -\displaystyle\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
+</script>
+
+    <p>and hence the Schrodinger equation \( \hat{H}\psi = E\psi \) for the
+unknown energies \( E \) and unknown wavefunctions \( \psi \).</p>
   </li>
-  <li>Find the general solutions in each region where the potential is
-constant. The general solutions in each region are <em>always</em> of the
+  <li>
+    <p>Write down the general solution in each region where the potential is
+constant. The general solutions in each region is <em>always</em> of the
 form \( \psi(x) = A e^{B x}\) where \( A \) and \(B\), \(C\) are
 (possibly complex) unknown constants to be found. To save time you can
-learn these possible cases:
+learn these possible cases to be applied in different regions where
+the potential is constant:</p>
+
     <ul>
-      <li>For free or unbound particles \( \psi(x) = A e^{i k x} + B e^{-i k x} \).</li>
-      <li>For bound electrons where the energy of the particle is <em>less</em> than
-the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{-\alpha x} \).</li>
-      <li>For bound electrons where the energy of the particle is <em>greater</em> than
-the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).</li>
+      <li>
+        <p>For free or unbound particles \( \psi(x) = A e^{i k x} \).
+A free particle is one where the energy \( E \) is greater than the
+largest value of the potential \( V(x) \) i.e. the particle has enough
+energy to overcome any barrier.</p>
+      </li>
+      <li>
+        <p>For bound electrons where the energy of the particle is <em>less</em> than
+the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{+\beta x} \).</p>
+      </li>
+      <li>
+        <p>For bound electrons where the energy of the particle is <em>greater</em> than
+the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).</p>
+      </li>
     </ul>
   </li>
-  <li>Find as many of the unknown coefficients as possible by making sure that
-the solutions are continuous and smooth (see Rule 1 of quantum mechanics in
+  <li>
+    <p>Find the unknown constants in the wavefunction(s) by making sure that
+the solutions are continuous and smooth - see Rule 1 of quantum mechanics in
 the <a href="http://dylan-jayatilaka.net/articles/super-quick-summary-of-qm/`">previous post</a>. 
 At the end of the problem there will usually only one unknown constant left
-which can be found by the normalization condition if needed.</li>
+which can be found by the normalization condition if needed.</p>
+  </li>
 </ol>
 
 <p>A pretty good graphic for illustrating this procedure is shown at the
 <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/pfbox.html">hyperphysics site here</a>.</p>
+
+<p><strong>Q10</strong>. <em>What is the basic strategy for solving particle in a box problems?
+You do not need to list the possible general solutions for each case</em>.</p>
 
 <h2 id="free-electron-in-one-dimension">Free electron in one dimension</h2>
 
@@ -268,14 +311,16 @@ which can be found by the normalization condition if needed.</li>
 
 <p><strong>Q9</strong>. <em>Solve the Schrodinger equation for an electron moving freely in one dimension</em>.</p>
 
-<p><em>Strategy</em>. The strategy for solving these problems was given above. The
-Schrodinger equation for the free particle was written down in Q5 in the last
-post. But before applying this strategy and solving the equation let’s think
-what answer we might expect. Actually, since the electron can move freely, we
-would expect that it can have … any energy it likes … as long as it is
-positive. Also, we expect that an electron moving freely should be located …
-well, anywhere it likes … meaning to say that the probability of finding it
-at any position is equally likely.</p>
+<p><em>Strategy</em> </p>
+
+<p>The strategy for solving these problems was given above. The Schrodinger
+equation for the free particle was written down in Q5 in the last post. But
+before applying this strategy and solving the equation let’s think what answer
+we might expect. Actually, since the electron can move freely, we would expect
+that it can have … any energy it likes … as long as it is positive. Also,
+we expect that an electron moving freely should be located … well, anywhere
+it likes … meaning to say that the probability of finding it at any position
+is equally likely.</p>
 
 <p><em>Answer</em></p>
 
@@ -285,7 +330,7 @@ at any position is equally likely.</p>
   -\frac{\hbar^2}{2m_e}\frac{d^2\psi}{dx^2} = E \psi
 </script>
 
-<p>From the strategy we know the solution of this equation is always of the form
+<p>From the strategy we know a possible solution of this equation is
 \( \psi(x) = A e^{i k x} \). Note that the constant \( i k \) is explicitly
 complex, so that \( k \) is a real number. To find the unknown numbers
 \( A \) and \(k \) we substitute this general form into the
@@ -313,7 +358,32 @@ Schrodinger equation provided that</p>
 E = \frac{\hbar^2 k^2}{2 m_e}.
 </script>
 
-<p>The problem is solved. Note that as we expected:</p>
+<p>Actually, you can check that \( \psi(x) = B e^{-i k x} \) with the
+opposite value of \( k \) is also a solution to the same equation
+with the <em>same</em> energy. You can see this by doing the above algebra
+again with \( k \) replaced with \( - k \). Since the operator
+\( \hat{H} \) acts on each solution separately, you can see that</p>
+
+<script type="math/tex; mode=display">
+\psi(x) = A e^{i k x} + B e^{-i k x}.
+</script>
+
+<p>is <em>also</em> a solution. The meaning of these two different solutions
+is discussed in the next problem. But Q9 is now solved!</p>
+
+<p>Note:</p>
+
+<ul>
+  <li>The last equation illustrates an important point about quantum mechanics: if
+we have more than one solution, we can take a linear combination of them like
+above and still get the same solution! This is the idea behind 
+<a href="http://en.wikipedia.org/wiki/Orbital_hybridisation">hybrid atomic orbitals</a> 
+in the valence bond theory of chemical bonding. In that theory, linear
+combinations of (nearly equal energy) s and p orbitals are used to explain
+the geometry of bonding around a central atom.</li>
+</ul>
+
+<p>Note that as we expected:</p>
 
 <ul>
   <li>
@@ -330,14 +400,16 @@ is located everywhere with equal probability.</p>
   </li>
 </ul>
 
-<p><strong>Q10</strong>. <em>Show that the free electron wavefunction has momentum \( \hbar k \)</em></p>
+<p><strong>Q10</strong>. <em>Show that the free electron wavefunction \( \psi = A e^{i k x} \)
+has momentum \( \hbar k \)</em></p>
 
-<p><em>Strategy</em>. 
-According to the rules of QM, a wavefunction has a certain momentum if it is an
-eigenfunction of the corresponding operator. Hence we need to show that \(
-\psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).</p>
+<p><em>Strategy</em> </p>
 
-<p><em>Answer</em>.</p>
+<p>According to the rules of QM, a wavefunction has a certain momentum if it is an
+eigenfunction of the corresponding operator. Hence we need to show that 
+\( \psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).</p>
+
+<p><em>Answer</em></p>
 
 <p>We evaluate \( \hat{p}\psi(x) \) for the wavefunction in Q9:</p>
 
@@ -365,11 +437,16 @@ the normalization condition: normalization ony applied to bound states.</p>
 <h2 id="particle-in-a-box">Particle in a box</h2>
 
 <p><strong>Q11</strong>. <em>Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is inifite outside the box)</em>.</p>
+\( L \) which starts at the origin (the potential is infite outside the box)</em>.</p>
 
-<p><em>Strategy</em>. Draw a picture and apply the given strategy above.</p>
+<p><em>Strategy</em> </p>
 
-<p><em>Answer</em>.</p>
+<p>Draw a picture and apply the given strategy above. Note that the the
+wavefunction \( \psi(x) = 0 \) outside the box; if not we would get infinity
+appearing in the equation \( \hat{H}\psi(x) = E\psi(x) \) when \(x \) is
+outside the box.</p>
+
+<p><em>Answer</em></p>
 
 <p>The potential \( V(x) \) looks like below (along with the solutions which we
 have yet to find).</p>
@@ -391,7 +468,7 @@ equation we get</p>
 & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A \sin kx + B \cos kx \right) \\
 & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A k \cos kx - B k \sin kx \right) \\
 & = -\frac{\hbar^2}{2 m_e} \left(-A k^2 \sin kx - B k^2 \cos kx \right) \\
-& =  \frac{\hbar^2}{2 m_e} -k^2 \left(A \sin kx + B \cos kx \right) \\
+& =  \frac{\hbar^2}{2 m_e} k^2 \left(A \sin kx + B \cos kx \right) \\
 & =  \frac{\hbar^2 k^2}{2 m_e} \psi(x)
   =  E\, \psi(x) 
 \end{align}
@@ -406,34 +483,34 @@ E = \frac{\hbar^2 k^2}{2 m_e}.
 
 <p>In fact this solution would be acceptable as an answer to the “free particle”
 problem. The difference is now that we have to apply the boundary conditions on
-the wavefunction, which are from the picture</p>
+the wavefunction, which are from the picture:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
-\psi(0) & = 0 \\
-\psi(L) & = 0
+\psi(0) & = 0 \ \ \subnote{at $x = 0$}\\
+\psi(L) & = 0 \ \ \subnote{at $x = L$}
 \end{align}
  %]]></script>
 
 <ul>
   <li>
     <p>Substituting \( \psi(x) \) in the first equation above determines the value
-of the unknown constant \ ( B \) as follows:</p>
+of the unknown constant \( B \) as follows:</p>
 
     <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
 \psi(0) & = A \sin k 0 + B \cos k 0 \\
         & = A \sin 0 + B \cos 0 \\
-        & = A (0) + B (1) \\
+        & = A \times 0 + B \times 1 \\
         & = B \\
         & = 0
 \end{align}
  %]]></script>
 
     <p>Here we used the standard values of \( \sin 0 = 0 \) and \( \cos 0 = 1 \).
-Therefore we have figured out that \( \psi(x) = A \sin k x \). </p>
+Therefore we have figured out that \( \psi(x) = A \sin k x \).</p>
   </li>
   <li>
     <p>Now we apply the second boundary condition and see what we get:</p>
@@ -448,22 +525,24 @@ Therefore we have figured out that \( \psi(x) = A \sin k x \). </p>
  %]]></script>
 
     <p>This equation has solutions only when the angle \( k L = n \pi \) radians where
-\( n = 1, 2, \ldots \). The value \( n = 0 \) leads to a un unnormalizable
-wavefunction. Negative values for \( n \) are the same as positive values.</p>
+\( n = 1, 2, \ldots \). Note that the value \( n = 0 \) leads to a a wavefunction
+\( \psi(x) = 0 \) which has no area underneath it i.e. it is unnormalizable and therefore
+doesn’t obey the rules for an allowed wavefunction. Likewise although 
+\( n = -1, -2, -3, \ldots \) are also solutions of the above equation, they
+do not lead to different wavefunction solutions since 
+\( \psi(x) = \sin kx = \sin (-kx) \) due to the properties of the sine function.</p>
   </li>
 </ul>
 
-<p>There are no other boundary conditions to apply. We assume that \( \psi(x) = 0 \)
-if \( x \) is not between \( 0 \) and \( L \). But the last boundary condition
-equation gives a value for the unknown \( k \) constant which means it
-determines the allowed energy eigenvalues:</p>
+<p>The last boundary condition equation gives a value for the unknown \( k \)
+constant which means it determines the allowed energy eigenvalues:</p>
 
 <script type="math/tex; mode=display">
 E = \frac{\hbar^2 k^2}{2 m_e} 
-  = \frac{\hbar^2 (n \pi)^2}{2 m_e L^2}, \ \ n = 1, 2, 3, \ldots
+  = \frac{\hbar^2}{2 m_e}\frac{(n\pi)^2}{L^2}, \ \ n = 1, 2, 3, \ldots
 </script>
 
-<p>Corresponding to wavefunction \( \psi(x) = A \sin \frac{n \pi}{L} x \).</p>
+<p>Corresponding to wavefunction \( \psi(x) = A \sin \displaystyle\frac{n \pi}{L} x \).</p>
 
 <p>To find the unknown constant \( A \) we must normalize the wavefunction,</p>
 
@@ -476,7 +555,7 @@ E = \frac{\hbar^2 k^2}{2 m_e}
 <p>From which we get:</p>
 
 <script type="math/tex; mode=display">
-A  = \left( \int_0^L A^2 \sin^2 \frac{n\pi}{L} x \)^{1/2}
+A  = \left( \int_0^L \sin^2 \frac{n\pi}{L} x \right)^{1/2}
 </script>
 
 <p>We can evaluate this integral by looking up tables if we like.
@@ -485,8 +564,84 @@ The important thing is not the answer but <em>how</em> to get it.</p>
 <h2 id="particle-in-a-half-infinite-box">Particle in a half infinite box</h2>
 
 <p><strong>Q11</strong>. <em>Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is infinite to the left
-of the box)</em>.</p>
+\( L \) which starts at the origin. The potential is infinite to the left
+of the box, and has a given value \( V_0 \) to the right. The energy of the
+electron is less than \( V_0 \)</em>.</p>
+
+<p><em>Strategy</em>.</p>
+
+<p>First draw a picture of the potential. It looks similar like the previous
+question, except that to the right, the height of the box is \( V_0 \) and
+not infinite. The wavefunction to the left of the box is zero as explained
+in the previous question. There are two other wavefunctions \(\psi\sub\s{in} \) and
+\(\psi\sub\s{out}\) for the inside and outside of the box respectively. These
+two wavefunctions need to be “joined” at the boundary to make a “smooth”
+wavefunction. Inside the box, the wavefunction s the same as before,
+\( \psi\sub\s{in}(x) = A \sin k x \). Outside the box, according
+to strategy above, the wavefunction outside the box is
+\( \psi\sub\s{out}(x) = A e^{-\alpha x} + B e^{\alpha x} \).
+However the part \( B e^{\alpha X } \) gets bigger as \(x \) gets larger 
+and so if constant \( B \) is not zero the wavefunction would have an
+infinite area underneath it i.e. it would be unnormalizable.
+Therefore the wavefunction outside the box is
+\( \psi(x)\sub\s{out}(x) = A e^{-\alpha x} \). Now we substitute
+\(\psi\sub\s{in}\) and \(\psi\sub\s{out}\) into the Schrodinger equation
+and apply the boundary conditions to get the answer.</p>
+
+<p><em>Answer</em></p>
+
+<ul>
+  <li>
+    <p>Exactly as before, we substitut \( \psi\sub\s{in} \) into the
+Schrodinger equation to get</p>
+
+    <script type="math/tex; mode=display">
+E = \frac{\hbar^2 k^2}{2 m_e}      \ \ \subnote{inside the box}.
+</script>
+  </li>
+  <li>
+    <p>Outside the box i.e. for \( 0 &lt; x &lt; L \) we have a slightly different
+Schrodinger equation:</p>
+
+    <script type="math/tex; mode=display">
+\hat{H}\psi\sub\s{out}(x)
+= \left[ -frac{\hbar}^2}{2 m_e}\frac{d^2}{dx^2} + V_0\right] \psi\sub\s{out}(x)
+= E\, \psi\sub\s{out}(x)
+</script>
+
+    <p>Substituting \( \psi\sub\s{out}(x) = A e^{-\alpha x} \) into the LHS
+gives</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\textrm{LHS}
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi\sub\s{out}(x) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \left( A e^{-\alpha x}) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A e^{-alpha x} \right) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A (-\alpha) e^{-\alpha x} \right) \\
+& = -\frac{\hbar^2}{2 m_e} \left(A \alpha^2 e^{-a\lpha x}\right) \\
+& = -\frac{\hbar^2}{2 m_e} \alpha^2 \left( A e^{-\alpha x} \right) \\
+& = -\frac{\hbar^2 \alpha^2}{2 m_e} \psi\sub\s{out}(x)
+\end{align}
+ %]]></script>
+
+    <p>Therefore</p>
+
+    <script type="math/tex; mode=display">
+\hat{H}\psi\sub\s{out}(x)
+= \left[ -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} + V_0 \right] \psi\sub\s{out}(x)
+= \left[ -\frac{\hbar^2 \alpha^2}{2 m_e}         + V_0 \right] \psi(x)
+= E\,\psi\sub\s{out}(x).
+</script>
+
+    <p>So we get <em>another</em> equation for the energy,</p>
+
+    <script type="math/tex; mode=display">
+E = -\frac{\hbar^2 \alpha^2}{2 m_e} + V_0 \ \ \subnote{outside box}
+</script>
+  </li>
+</ul>
 
 
         

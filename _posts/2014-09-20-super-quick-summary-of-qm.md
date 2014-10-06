@@ -13,7 +13,7 @@ comments: false
 share: true
 ---
 
-This is a post for my second year Phys Chem students.
+This is a post for my second year Phys Chem students. 
 
 The purpose of this post is to write down briefly the main ideas and rules of
 Quantum mechanics.
@@ -39,18 +39,18 @@ calculation to test out assumptions about their reaction scheme sites before
 going into the lab for some pain. Of course, these QM calcs are done on a
 computer - not with pen and paper. So you could just learn to use the
 program. But in that case you would have no idea how the calculations work i.e.
-you will be just a monkey.
-
-No-one wants to employ a monkey.
+you will be just a monkey. No-one wants to employ a monkey.
 
 <figure>
    <img src="/images/thoughtful-bonobo.jpg">
 </figure>
 
-You probably have not seen quantum mechanics before and a freaking out. Don’t
-worry. Contrary to what you might have thought, you don’t yet know everything
-and you have to learn more. So relax. Afterwards, see if you can follow the
-questions and answers below.
+Now I know you probably have not seen quantum mechanics before. Probably
+you are freaking out. I want to say: Don’t worry. It’s hard but not that hard.
+Just remember: contrary to what you might have thought, you don’t yet know
+everything. You have to learn more. It’s normal to feel that way with new
+stuff. So relax. Afterwards, see if you can follow the questions and answers
+below. If you’re still confused come and see me.
 
 Let’s get started.
 
@@ -97,10 +97,16 @@ Here they are:
      system.
 
    - The momenta (which in classical mechanics is written as \\( \B{p} \\) and is equal
-     to mass times velocity \\( m\B{v}\\)) is in quantum mechanics equal to a derivatives
-     with respect to the particle coordinates times \\( -i\hbar/2m \\) where
-     \\( m \\) is the mass of the particle and \\( \hbar \\) is Planck’s
-     constant divided by \\( 2\pi \\). This is very different!
+     to mass times velocity \\(\B{p} = m\B{v}\\)) is in quantum mechanics equal to a derivatives
+     with respect to the particle coordinates times \\( i\hbar \\) where
+     \\( \hbar \\) is Planck’s constant divided by \\( 2\pi \\) 
+     i.e. in quantum mechanics 
+     
+     $$
+     \hat{p} = i\hbar \frac{d}{dx} \ \textrm{in 1 dimension}
+     $$
+     
+     This is very different to classical mechanics!
 
    - Operators are sometimes represented by a symbol with a hat on top e.g. like \\( \hat{A} \\).
      Sometimes we forget the hat if it is clear it is an operator.
@@ -125,7 +131,7 @@ Here they are:
      where \\( \hat{H} \\) is the energy operator or
      [Hamiltonian](http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian)
      of the system. The Hamiltonian is (i) the sum of the kinetic energies
-     \\( \sum_i p_i^2/2 m_i \\) of every particle and (ii) the potential energy
+     \\( \sum_i \hat{p}_i^2/2 m_i \\) of every particle and (ii) the potential energy
      of interaction \\( V \\) between the particles. The potential energy depends
      on the positions and momenta of the particles and has to be specified to
      you for each case.
@@ -155,19 +161,27 @@ The following are examples of questions that may be asked in the exam.
 
 **Q1**. *Write down the momentum operator of an electron in one dimension*
 
-*Strategy*. Use rule 1 of quantum mechanics.
+*Strategy*
 
-*Answer*. The momentum operator of an electron in one dimension is
+Use rule 1 of quantum mechanics.
+
+*Answer*
+
+The momentum operator of an electron in one dimension is
 \\( \hat{p} = -i\hbar \frac{d}{dx} \\).
 
 
 **Q2**. *Write down the momentum operator of an electron in three dimensions*
 
-*Strategy*. To do this we have to realize that the momentum in three dimensions
-is a vector. So we have to write down a vector with three conponents. Each
-component is defined like in A1.
+*Strategy*
 
-*Answer*. The momentum opertor is given by
+To do this we have to realize that the momentum in three dimensions is a
+vector. So we have to write down a vector with three conponents. Each component
+is defined like in A1.
+
+*Answer*
+
+The momentum opertor is given by
 
 $$
 \hat{\B{p}} = -i \hbar
@@ -180,7 +194,7 @@ $$
 \right)
 $$
 
-Note
+Note:
 
 * A boldface symbol for \\( \B{p} \\) is used to represent a vector and therefore
   a boldface \\( \hat{\B{p}} \\) is vector of derivative operators, as you can see.
@@ -216,10 +230,14 @@ r_1 p_2 - r_2 p_1
 \right).
 $$
 
-*Strategy*. Substitute the definition of the 3D momentum operator in (Q2) into the
+*Strategy*. 
+
+Substitute the definition of the 3D momentum operator in (Q2) into the
 expression for \\( \B{l} \\).
 
-*Answer*. The expression for the angular momentum operator is:
+*Answer*
+
+The expression for the angular momentum operator is:
 
 $$
 \hat{\B{l}} =
@@ -237,10 +255,14 @@ $$
 **Q4**. *Write down the equation which determines the experimental values of
 an electron’s momentum in one dimension.*
 
-*Strategy*. Use rule 2 of quantum mechanics. Write down the eigenvalue equation
-for the momentum operator of the elctron.
+*Strategy*
 
-*Answer*. The allowed experimental values \\( a \\) of the electron momentum in one
+Use Rule 2 of quantum mechanics. Write down the eigenvalue equation
+for the momentum operator of the electron.
+
+*Answer*
+
+The allowed experimental values \\( a \\) of the electron momentum in one
 dimension are determined by solving the following eigenvalue equation:
 
 $$
@@ -256,28 +278,32 @@ is the mass of the particle.*
 
 **A5**.
 
-*Strategy*. To do this question we need the formula for the energy in terms of
-the free electrons position and momentum. Luckily that is given to us. Next we
-do the usual substitution for the electron momentum. Then we use rule 2 and
-write down the eigenvalue equation.
+*Strategy*
 
-*Answer*. The allowed experimental energies \\( E \\) are obtained by solving
-the following eigenvalue equation,
+To do this question we need the formula for the energy in terms of the free
+electrons position and momentum. Luckily that is given to us. Next we do the
+usual substitution for the electron momentum. Then we use rule 2 and write down
+the eigenvalue equation.
+
+*Answer*
+
+The allowed experimental energies \\( E \\) are obtained by solving the
+following eigenvalue equation,
 
 $$
 \hat{H} \psi(x) = E \psi(x).
 $$
 
-\\( \hat{H} \\) is the energy operator or *hamiltonian* for the
+\\( \hat{H} \\) is the energy operator or *Hamiltonian* for the
 electron,
 
 $$
-  \hat{H} = \frac{\hat{p^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
+\hat{H} = \frac{\hat{p}^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
 $$
 
-The right hand side is obtained by substituting \\( p = -i\hbar d/dx \\).
-\\(x \\) and \\( m_e \\) are the position coordinate and mass of the electron,
-respectively.
+The right hand side is obtained by substituting \\( p = -i\hbar
+\displaystyle\frac{d}{dx} \\) and \\(x \\) and \\( m_e \\) are the position
+coordinate and mass of the electron, respectively.
 
 Note:
 * To solve this equation to find the allowed energy values
@@ -290,7 +316,9 @@ Note:
 
 **Q6**. *Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.*
 
-*Strategy*. We need to write down the total energy of an electron and a proton
+*Strategy*
+
+We need to write down the total energy of an electron and a proton
 in one dimension. The total energy is comprised of the kinetic energy of
 each particle. Hence it depends on the momentum of the electron \\( p_e \\) and
 the momentum of the proton \\( p_p \\). The total energy also depends of the
@@ -300,7 +328,9 @@ Law](http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potent
 The distance between the two particles involves the coordinates of the electron
 and the proton, respectively \\( x_e \\) and \\( x_p \\).
 
-*Answer*. The allowed energies \\( E \\) for an electron and proton moving in one
+*Answer*
+
+The allowed energies \\( E \\) for an electron and proton moving in one
 dimension are determined by the following eigenvalue equation:
 
 $$
@@ -311,7 +341,7 @@ where \\( \hat{H} \\) is the total energy operator or Hamiltonian
 for the system, given by
 
 $$
-\begin{alignat}{4}
+\begin{alignat}{5}
 \hat{H} & = \frac{p^2_p}{2m_p}
         & + \frac{p^2_e}{2m_e} 
         & + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
@@ -324,10 +354,14 @@ $$
 
 **Q7**. *Is the equation \\( \hat{P}^2 \psi = \hat{P}\psi \\) an eigenvalue equation?*
 
-*Strategy*. Recall the definition of an eigenvalue equation. Compare it to
+*Strategy*
+
+Recall the definition of an eigenvalue equation. Compare it to
 the above eigenvalue equation to see if they look similar.
 
-*Answer*. Yes it is an eigenvalue equation! Since, if we set \\( \phi = \hat{P}\psi \\)
+*Answer*
+
+Yes it is an eigenvalue equation! Since, if we set \\( \phi = \hat{P}\psi \\)
 it can be written as \\( \hat{P}\phi = \phi = 1\phi \\). This is an eigenvalue
 equation for \\( \phi \\) with eigenvalue equal to 1. Note that any old operator
 will *not* obey such an equation i.e. such an operator \\( \hat{P} \\) must be
@@ -340,27 +374,33 @@ particle and the wavefunction is \\( \psi_0 \\) after the experiment.
 (iii) What is the average of many position measurements of the particle?
 Assume that the particle is one dimensional.*
 
-*Strategy*. For (i) refer to the last part of Rule 2 and note the normalization
+*Strategy*
+
+For (i) refer to the last part of Rule 2 and note the normalization
 condition. For (ii), the result depends on (i), see below. For (iii) see the last
-part of Rule 2 and use the operator \\( x \\) for the particle pisition.
+part of Rule 2 and use the operator \\( x \\) for the particle position.
 
 
-*Answer*.
+*Answer*
 
-(i) The probability of obtaining \\( E_0 \\) again is \\( |\int \psi^*_0 \psi_0|^2 \\).
-But this is equal to 1 for a bound state by the normalization condition. So we 
-would measure \\( E_0 \\) again the second time with probanility 1.
+(i) The probability of obtaining \\( E_0 \\) again is \\( |\int \psi^\ast_0 \psi_0|^2 \\).
+But this is equal to 1 for a bound state by the normalization condition. So we
+would measure \\( E_0 \\) again the second time with probability 1. This is
+interesting. It says that once the first measurement is done the second
+measurement keeps the wavefunction in the same state. This is known as
+the [quantum Zeno effect](http://en.wikipedia.org/wiki/Quantum_Zeno_effect)
+and it has been shown experimentally to be true.
 
 (ii) The probability of getting any other energy is zero since after the first
 energy measurement, we always keep getting \\( E_0 \\). Note: this implies
-that \\( |\int \psi^*_0 \psi_1|^2 = 0 \\), which can be proved to be true.
+that \\( |\int \psi\sub{0}^\ast(x) \psi_1(x) dx|^2 = 0 \\), which can be proved to be true.
 The proof is beyond the scope of this course, but relies on the fact that
 the eigenvectors are orthogonal.
 
-(iii) The position of a one dimensional particle is given by \\( x \\).
+(iii) The position of a one dimensional particle is given by\( x \\).
 We could put a “hat” on this to indicate it is an operator but it may
-be less confusing to leave it off. So the average of the psotion measurements
-is \\( \expectation{x} = \int \psi_0 x \psi_0 \\)
+be less confusing to leave it off. So the average of the position measurements
+is \\( \expectation{x} = \int \psi_0(x)\, x\, \psi_0(x) dx \\)
 
 
 

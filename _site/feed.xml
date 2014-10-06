@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-06T11:39:40+08:00</updated>
+<updated>2014-10-06T16:36:06+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -81,9 +81,11 @@ study these questions and their answers. The exam questions will be very
 similar, if not identical.&lt;/p&gt;
 
 &lt;p&gt;The later material on transmission through multiple barriers is not
-examinable and for interest only.&lt;/p&gt;
+examinable. I present it because it could be useful if you are interested
+in, for example, modelling energy levels and conduction through molecules
+(Prof. George Koutsantonis is interested in making such “molecular wires”).&lt;/p&gt;
 
-&lt;h2 id=&quot;strategy-for-solving-particle-in-a-box-problems&quot;&gt;Strategy for solving particle-in-a-box problems&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-a-particle-in-a-box-problem&quot;&gt;What is a particle-in-a-box problem?&lt;/h2&gt;
 
 &lt;p&gt;Particle in a box problems are those for a single particle moving
 in one dimension subject to a piecewise constant potential energy i.e.
@@ -94,40 +96,81 @@ a potential energy that looks like the following function:&lt;/p&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;From looking at this picture you can see that the particle experiences
-different “constant” energies at different points along the axis.
-In this case the barrier&lt;/p&gt;
+different “constant” energies at different points along the axis. In fact,
+if we wanted to write this potential in “maths” it would be this:&lt;/p&gt;
 
-&lt;p&gt;The strategy for solving these problems is always the same.&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+V(x) =
+\left\{
+\begin{array}{cl}
+V_0 &amp; \textrm{for } x&lt;x_1     \\
+V_1 &amp; \textrm{for } x_1&lt;x&lt;x_2 \\
+V_2 &amp; \textrm{for } x&gt;x_2
+\end{array}
+\right.
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In this case the article seems to encounter a kind of “step barrier”.
+Of course, other shapes for \( V(x) \) are possible and each leads
+to a different problem.&lt;/p&gt;
+
+&lt;h2 id=&quot;strategy-for-solving-particle-in-a-box-problems&quot;&gt;Strategy for solving particle-in-a-box problems&lt;/h2&gt;
+
+&lt;p&gt;The strategy for solving these one dimensional problems is always the same:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;Write down the
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian&quot;&gt;Hamiltonian&lt;/a&gt;
-for the problem and hence the Schrodinger equation for the unknown energies
-and wavefunctions.&lt;/p&gt;
+for the problem, &lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H} = -\displaystyle\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
+&lt;/script&gt;
+
+    &lt;p&gt;and hence the Schrodinger equation \( \hat{H}\psi = E\psi \) for the
+unknown energies \( E \) and unknown wavefunctions \( \psi \).&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;Find the general solutions in each region where the potential is
-constant. The general solutions in each region are &lt;em&gt;always&lt;/em&gt; of the
+  &lt;li&gt;
+    &lt;p&gt;Write down the general solution in each region where the potential is
+constant. The general solutions in each region is &lt;em&gt;always&lt;/em&gt; of the
 form \( \psi(x) = A e^{B x}\) where \( A \) and \(B\), \(C\) are
 (possibly complex) unknown constants to be found. To save time you can
-learn these possible cases:
+learn these possible cases to be applied in different regions where
+the potential is constant:&lt;/p&gt;
+
     &lt;ul&gt;
-      &lt;li&gt;For free or unbound particles \( \psi(x) = A e^{i k x} + B e^{-i k x} \).&lt;/li&gt;
-      &lt;li&gt;For bound electrons where the energy of the particle is &lt;em&gt;less&lt;/em&gt; than
-the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{-\alpha x} \).&lt;/li&gt;
-      &lt;li&gt;For bound electrons where the energy of the particle is &lt;em&gt;greater&lt;/em&gt; than
-the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;For free or unbound particles \( \psi(x) = A e^{i k x} \).
+A free particle is one where the energy \( E \) is greater than the
+largest value of the potential \( V(x) \) i.e. the particle has enough
+energy to overcome any barrier.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;For bound electrons where the energy of the particle is &lt;em&gt;less&lt;/em&gt; than
+the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{+\beta x} \).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;For bound electrons where the energy of the particle is &lt;em&gt;greater&lt;/em&gt; than
+the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).&lt;/p&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;Find as many of the unknown coefficients as possible by making sure that
-the solutions are continuous and smooth (see Rule 1 of quantum mechanics in
+  &lt;li&gt;
+    &lt;p&gt;Find the unknown constants in the wavefunction(s) by making sure that
+the solutions are continuous and smooth - see Rule 1 of quantum mechanics in
 the &lt;a href=&quot;http://dylan-jayatilaka.net/articles/super-quick-summary-of-qm/`&quot;&gt;previous post&lt;/a&gt;. 
 At the end of the problem there will usually only one unknown constant left
-which can be found by the normalization condition if needed.&lt;/li&gt;
+which can be found by the normalization condition if needed.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;A pretty good graphic for illustrating this procedure is shown at the
 &lt;a href=&quot;http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/pfbox.html&quot;&gt;hyperphysics site here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;What is the basic strategy for solving particle in a box problems?
+You do not need to list the possible general solutions for each case&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;free-electron-in-one-dimension&quot;&gt;Free electron in one dimension&lt;/h2&gt;
 
@@ -139,14 +182,16 @@ which can be found by the normalization condition if needed.&lt;/li&gt;
 
 &lt;p&gt;&lt;strong&gt;Q9&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron moving freely in one dimension&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. The strategy for solving these problems was given above. The
-Schrodinger equation for the free particle was written down in Q5 in the last
-post. But before applying this strategy and solving the equation let’s think
-what answer we might expect. Actually, since the electron can move freely, we
-would expect that it can have … any energy it likes … as long as it is
-positive. Also, we expect that an electron moving freely should be located …
-well, anywhere it likes … meaning to say that the probability of finding it
-at any position is equally likely.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt; &lt;/p&gt;
+
+&lt;p&gt;The strategy for solving these problems was given above. The Schrodinger
+equation for the free particle was written down in Q5 in the last post. But
+before applying this strategy and solving the equation let’s think what answer
+we might expect. Actually, since the electron can move freely, we would expect
+that it can have … any energy it likes … as long as it is positive. Also,
+we expect that an electron moving freely should be located … well, anywhere
+it likes … meaning to say that the probability of finding it at any position
+is equally likely.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
@@ -156,7 +201,7 @@ at any position is equally likely.&lt;/p&gt;
   -\frac{\hbar^2}{2m_e}\frac{d^2\psi}{dx^2} = E \psi
 &lt;/script&gt;
 
-&lt;p&gt;From the strategy we know the solution of this equation is always of the form
+&lt;p&gt;From the strategy we know a possible solution of this equation is
 \( \psi(x) = A e^{i k x} \). Note that the constant \( i k \) is explicitly
 complex, so that \( k \) is a real number. To find the unknown numbers
 \( A \) and \(k \) we substitute this general form into the
@@ -184,7 +229,32 @@ Schrodinger equation provided that&lt;/p&gt;
 E = \frac{\hbar^2 k^2}{2 m_e}.
 &lt;/script&gt;
 
-&lt;p&gt;The problem is solved. Note that as we expected:&lt;/p&gt;
+&lt;p&gt;Actually, you can check that \( \psi(x) = B e^{-i k x} \) with the
+opposite value of \( k \) is also a solution to the same equation
+with the &lt;em&gt;same&lt;/em&gt; energy. You can see this by doing the above algebra
+again with \( k \) replaced with \( - k \). Since the operator
+\( \hat{H} \) acts on each solution separately, you can see that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\psi(x) = A e^{i k x} + B e^{-i k x}.
+&lt;/script&gt;
+
+&lt;p&gt;is &lt;em&gt;also&lt;/em&gt; a solution. The meaning of these two different solutions
+is discussed in the next problem. But Q9 is now solved!&lt;/p&gt;
+
+&lt;p&gt;Note:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The last equation illustrates an important point about quantum mechanics: if
+we have more than one solution, we can take a linear combination of them like
+above and still get the same solution! This is the idea behind 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Orbital_hybridisation&quot;&gt;hybrid atomic orbitals&lt;/a&gt; 
+in the valence bond theory of chemical bonding. In that theory, linear
+combinations of (nearly equal energy) s and p orbitals are used to explain
+the geometry of bonding around a central atom.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that as we expected:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -201,14 +271,16 @@ is located everywhere with equal probability.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;Show that the free electron wavefunction has momentum \( \hbar k \)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;Show that the free electron wavefunction \( \psi = A e^{i k x} \)
+has momentum \( \hbar k \)&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. 
-According to the rules of QM, a wavefunction has a certain momentum if it is an
-eigenfunction of the corresponding operator. Hence we need to show that \(
-\psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;According to the rules of QM, a wavefunction has a certain momentum if it is an
+eigenfunction of the corresponding operator. Hence we need to show that 
+\( \psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;We evaluate \( \hat{p}\psi(x) \) for the wavefunction in Q9:&lt;/p&gt;
 
@@ -236,11 +308,16 @@ the normalization condition: normalization ony applied to bound states.&lt;/p&gt
 &lt;h2 id=&quot;particle-in-a-box&quot;&gt;Particle in a box&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is inifite outside the box)&lt;/em&gt;.&lt;/p&gt;
+\( L \) which starts at the origin (the potential is infite outside the box)&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Draw a picture and apply the given strategy above.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt; &lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Draw a picture and apply the given strategy above. Note that the the
+wavefunction \( \psi(x) = 0 \) outside the box; if not we would get infinity
+appearing in the equation \( \hat{H}\psi(x) = E\psi(x) \) when \(x \) is
+outside the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The potential \( V(x) \) looks like below (along with the solutions which we
 have yet to find).&lt;/p&gt;
@@ -262,7 +339,7 @@ equation we get&lt;/p&gt;
 &amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A \sin kx + B \cos kx \right) \\
 &amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A k \cos kx - B k \sin kx \right) \\
 &amp; = -\frac{\hbar^2}{2 m_e} \left(-A k^2 \sin kx - B k^2 \cos kx \right) \\
-&amp; =  \frac{\hbar^2}{2 m_e} -k^2 \left(A \sin kx + B \cos kx \right) \\
+&amp; =  \frac{\hbar^2}{2 m_e} k^2 \left(A \sin kx + B \cos kx \right) \\
 &amp; =  \frac{\hbar^2 k^2}{2 m_e} \psi(x)
   =  E\, \psi(x) 
 \end{align}
@@ -277,34 +354,34 @@ E = \frac{\hbar^2 k^2}{2 m_e}.
 
 &lt;p&gt;In fact this solution would be acceptable as an answer to the “free particle”
 problem. The difference is now that we have to apply the boundary conditions on
-the wavefunction, which are from the picture&lt;/p&gt;
+the wavefunction, which are from the picture:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
-\psi(0) &amp; = 0 \\
-\psi(L) &amp; = 0
+\psi(0) &amp; = 0 \ \ \subnote{at $x = 0$}\\
+\psi(L) &amp; = 0 \ \ \subnote{at $x = L$}
 \end{align}
  %]]&gt;&lt;/script&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Substituting \( \psi(x) \) in the first equation above determines the value
-of the unknown constant \ ( B \) as follows:&lt;/p&gt;
+of the unknown constant \( B \) as follows:&lt;/p&gt;
 
     &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
 \begin{align}
 \psi(0) &amp; = A \sin k 0 + B \cos k 0 \\
         &amp; = A \sin 0 + B \cos 0 \\
-        &amp; = A (0) + B (1) \\
+        &amp; = A \times 0 + B \times 1 \\
         &amp; = B \\
         &amp; = 0
 \end{align}
  %]]&gt;&lt;/script&gt;
 
     &lt;p&gt;Here we used the standard values of \( \sin 0 = 0 \) and \( \cos 0 = 1 \).
-Therefore we have figured out that \( \psi(x) = A \sin k x \). &lt;/p&gt;
+Therefore we have figured out that \( \psi(x) = A \sin k x \).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Now we apply the second boundary condition and see what we get:&lt;/p&gt;
@@ -319,22 +396,24 @@ Therefore we have figured out that \( \psi(x) = A \sin k x \). &lt;/p&gt;
  %]]&gt;&lt;/script&gt;
 
     &lt;p&gt;This equation has solutions only when the angle \( k L = n \pi \) radians where
-\( n = 1, 2, \ldots \). The value \( n = 0 \) leads to a un unnormalizable
-wavefunction. Negative values for \( n \) are the same as positive values.&lt;/p&gt;
+\( n = 1, 2, \ldots \). Note that the value \( n = 0 \) leads to a a wavefunction
+\( \psi(x) = 0 \) which has no area underneath it i.e. it is unnormalizable and therefore
+doesn’t obey the rules for an allowed wavefunction. Likewise although 
+\( n = -1, -2, -3, \ldots \) are also solutions of the above equation, they
+do not lead to different wavefunction solutions since 
+\( \psi(x) = \sin kx = \sin (-kx) \) due to the properties of the sine function.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;There are no other boundary conditions to apply. We assume that \( \psi(x) = 0 \)
-if \( x \) is not between \( 0 \) and \( L \). But the last boundary condition
-equation gives a value for the unknown \( k \) constant which means it
-determines the allowed energy eigenvalues:&lt;/p&gt;
+&lt;p&gt;The last boundary condition equation gives a value for the unknown \( k \)
+constant which means it determines the allowed energy eigenvalues:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 E = \frac{\hbar^2 k^2}{2 m_e} 
-  = \frac{\hbar^2 (n \pi)^2}{2 m_e L^2}, \ \ n = 1, 2, 3, \ldots
+  = \frac{\hbar^2}{2 m_e}\frac{(n\pi)^2}{L^2}, \ \ n = 1, 2, 3, \ldots
 &lt;/script&gt;
 
-&lt;p&gt;Corresponding to wavefunction \( \psi(x) = A \sin \frac{n \pi}{L} x \).&lt;/p&gt;
+&lt;p&gt;Corresponding to wavefunction \( \psi(x) = A \sin \displaystyle\frac{n \pi}{L} x \).&lt;/p&gt;
 
 &lt;p&gt;To find the unknown constant \( A \) we must normalize the wavefunction,&lt;/p&gt;
 
@@ -347,7 +426,7 @@ E = \frac{\hbar^2 k^2}{2 m_e}
 &lt;p&gt;From which we get:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-A  = \left( \int_0^L A^2 \sin^2 \frac{n\pi}{L} x \)^{1/2}
+A  = \left( \int_0^L \sin^2 \frac{n\pi}{L} x \right)^{1/2}
 &lt;/script&gt;
 
 &lt;p&gt;We can evaluate this integral by looking up tables if we like.
@@ -356,8 +435,84 @@ The important thing is not the answer but &lt;em&gt;how&lt;/em&gt; to get it.&lt
 &lt;h2 id=&quot;particle-in-a-half-infinite-box&quot;&gt;Particle in a half infinite box&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is infinite to the left
-of the box)&lt;/em&gt;.&lt;/p&gt;
+\( L \) which starts at the origin. The potential is infinite to the left
+of the box, and has a given value \( V_0 \) to the right. The energy of the
+electron is less than \( V_0 \)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;First draw a picture of the potential. It looks similar like the previous
+question, except that to the right, the height of the box is \( V_0 \) and
+not infinite. The wavefunction to the left of the box is zero as explained
+in the previous question. There are two other wavefunctions \(\psi\sub\s{in} \) and
+\(\psi\sub\s{out}\) for the inside and outside of the box respectively. These
+two wavefunctions need to be “joined” at the boundary to make a “smooth”
+wavefunction. Inside the box, the wavefunction s the same as before,
+\( \psi\sub\s{in}(x) = A \sin k x \). Outside the box, according
+to strategy above, the wavefunction outside the box is
+\( \psi\sub\s{out}(x) = A e^{-\alpha x} + B e^{\alpha x} \).
+However the part \( B e^{\alpha X } \) gets bigger as \(x \) gets larger 
+and so if constant \( B \) is not zero the wavefunction would have an
+infinite area underneath it i.e. it would be unnormalizable.
+Therefore the wavefunction outside the box is
+\( \psi(x)\sub\s{out}(x) = A e^{-\alpha x} \). Now we substitute
+\(\psi\sub\s{in}\) and \(\psi\sub\s{out}\) into the Schrodinger equation
+and apply the boundary conditions to get the answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Exactly as before, we substitut \( \psi\sub\s{in} \) into the
+Schrodinger equation to get&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+E = \frac{\hbar^2 k^2}{2 m_e}      \ \ \subnote{inside the box}.
+&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Outside the box i.e. for \( 0 &amp;lt; x &amp;lt; L \) we have a slightly different
+Schrodinger equation:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H}\psi\sub\s{out}(x)
+= \left[ -frac{\hbar}^2}{2 m_e}\frac{d^2}{dx^2} + V_0\right] \psi\sub\s{out}(x)
+= E\, \psi\sub\s{out}(x)
+&lt;/script&gt;
+
+    &lt;p&gt;Substituting \( \psi\sub\s{out}(x) = A e^{-\alpha x} \) into the LHS
+gives&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\textrm{LHS}
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi\sub\s{out}(x) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \left( A e^{-\alpha x}) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A e^{-alpha x} \right) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A (-\alpha) e^{-\alpha x} \right) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \left(A \alpha^2 e^{-a\lpha x}\right) \\
+&amp; = -\frac{\hbar^2}{2 m_e} \alpha^2 \left( A e^{-\alpha x} \right) \\
+&amp; = -\frac{\hbar^2 \alpha^2}{2 m_e} \psi\sub\s{out}(x)
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+    &lt;p&gt;Therefore&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H}\psi\sub\s{out}(x)
+= \left[ -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} + V_0 \right] \psi\sub\s{out}(x)
+= \left[ -\frac{\hbar^2 \alpha^2}{2 m_e}         + V_0 \right] \psi(x)
+= E\,\psi\sub\s{out}(x).
+&lt;/script&gt;
+
+    &lt;p&gt;So we get &lt;em&gt;another&lt;/em&gt; equation for the energy,&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+E = -\frac{\hbar^2 \alpha^2}{2 m_e} + V_0 \ \ \subnote{outside box}
+&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 
   
@@ -380,7 +535,7 @@ of the box)&lt;/em&gt;.&lt;/p&gt;
   <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#quantum%20mechanics" term="quantum mechanics" /><category scheme="http://localhost:4000/tags/#wavefunctions" term="wavefunctions" /><category scheme="http://localhost:4000/tags/#operators" term="operators" /><category scheme="http://localhost:4000/tags/#measurement" term="measurement" /><category scheme="http://localhost:4000/tags/#eigenvalues" term="eigenvalues" />
   <content type="html">
   
-    &lt;p&gt;This is a post for my second year Phys Chem students.&lt;/p&gt;
+    &lt;p&gt;This is a post for my second year Phys Chem students. &lt;/p&gt;
 
 &lt;p&gt;The purpose of this post is to write down briefly the main ideas and rules of
 Quantum mechanics.&lt;/p&gt;
@@ -406,18 +561,18 @@ calculation to test out assumptions about their reaction scheme sites before
 going into the lab for some pain. Of course, these QM calcs are done on a
 computer - not with pen and paper. So you could just learn to use the
 program. But in that case you would have no idea how the calculations work i.e.
-you will be just a monkey.&lt;/p&gt;
-
-&lt;p&gt;No-one wants to employ a monkey.&lt;/p&gt;
+you will be just a monkey. No-one wants to employ a monkey.&lt;/p&gt;
 
 &lt;figure&gt;
    &lt;img src=&quot;/images/thoughtful-bonobo.jpg&quot; /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;You probably have not seen quantum mechanics before and a freaking out. Don’t
-worry. Contrary to what you might have thought, you don’t yet know everything
-and you have to learn more. So relax. Afterwards, see if you can follow the
-questions and answers below.&lt;/p&gt;
+&lt;p&gt;Now I know you probably have not seen quantum mechanics before. Probably
+you are freaking out. I want to say: Don’t worry. It’s hard but not that hard.
+Just remember: contrary to what you might have thought, you don’t yet know
+everything. You have to learn more. It’s normal to feel that way with new
+stuff. So relax. Afterwards, see if you can follow the questions and answers
+below. If you’re still confused come and see me.&lt;/p&gt;
 
 &lt;p&gt;Let’s get started.&lt;/p&gt;
 
@@ -477,10 +632,16 @@ system.&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;The momenta (which in classical mechanics is written as \( \B{p} \) and is equal
-to mass times velocity \( m\B{v}\)) is in quantum mechanics equal to a derivatives
-with respect to the particle coordinates times \( -i\hbar/2m \) where
-\( m \) is the mass of the particle and \( \hbar \) is Planck’s
-constant divided by \( 2\pi \). This is very different!&lt;/p&gt;
+to mass times velocity \(\B{p} = m\B{v}\)) is in quantum mechanics equal to a derivatives
+with respect to the particle coordinates times \( i\hbar \) where
+\( \hbar \) is Planck’s constant divided by \( 2\pi \) 
+i.e. in quantum mechanics &lt;/p&gt;
+
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{p} = i\hbar \frac{d}{dx} \ \textrm{in 1 dimension}
+&lt;/script&gt;
+
+        &lt;p&gt;This is very different to classical mechanics!&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Operators are sometimes represented by a symbol with a hat on top e.g. like \( \hat{A} \).
@@ -513,7 +674,7 @@ the eigenvalue equation for the allowed energies \( E \) of the system,
 where \( \hat{H} \) is the energy operator or
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian&quot;&gt;Hamiltonian&lt;/a&gt;
 of the system. The Hamiltonian is (i) the sum of the kinetic energies
-\( \sum_i p_i^2/2 m_i \) of every particle and (ii) the potential energy
+\( \sum_i \hat{p}_i^2/2 m_i \) of every particle and (ii) the potential energy
 of interaction \( V \) between the particles. The potential energy depends
 on the positions and momenta of the particles and has to be specified to
 you for each case.&lt;/p&gt;
@@ -555,18 +716,26 @@ experiment \( \hat{A} \) then QM &lt;em&gt;does&lt;/em&gt; predict&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q1&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in one dimension&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Use rule 1 of quantum mechanics.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The momentum operator of an electron in one dimension is
+&lt;p&gt;Use rule 1 of quantum mechanics.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The momentum operator of an electron in one dimension is
 \( \hat{p} = -i\hbar \frac{d}{dx} \).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q2&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in three dimensions&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. To do this we have to realize that the momentum in three dimensions
-is a vector. So we have to write down a vector with three conponents. Each
-component is defined like in A1.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The momentum opertor is given by&lt;/p&gt;
+&lt;p&gt;To do this we have to realize that the momentum in three dimensions is a
+vector. So we have to write down a vector with three conponents. Each component
+is defined like in A1.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The momentum opertor is given by&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \hat{\B{p}} = -i \hbar
@@ -579,7 +748,7 @@ component is defined like in A1.&lt;/p&gt;
 \right)
 &lt;/script&gt;
 
-&lt;p&gt;Note&lt;/p&gt;
+&lt;p&gt;Note:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -621,10 +790,14 @@ r_1 p_2 - r_2 p_1
 \right).
 &lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Substitute the definition of the 3D momentum operator in (Q2) into the
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;Substitute the definition of the 3D momentum operator in (Q2) into the
 expression for \( \B{l} \).&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The expression for the angular momentum operator is:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The expression for the angular momentum operator is:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \hat{\B{l}} =
@@ -641,10 +814,14 @@ r_1 \pd{}{r_2} - r_2 \pd{}{r_1}
 &lt;p&gt;&lt;strong&gt;Q4&lt;/strong&gt;. &lt;em&gt;Write down the equation which determines the experimental values of
 an electron’s momentum in one dimension.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Use rule 2 of quantum mechanics. Write down the eigenvalue equation
-for the momentum operator of the elctron.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed experimental values \( a \) of the electron momentum in one
+&lt;p&gt;Use Rule 2 of quantum mechanics. Write down the eigenvalue equation
+for the momentum operator of the electron.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The allowed experimental values \( a \) of the electron momentum in one
 dimension are determined by solving the following eigenvalue equation:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
@@ -659,28 +836,32 @@ is the mass of the particle.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;A5&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. To do this question we need the formula for the energy in terms of
-the free electrons position and momentum. Luckily that is given to us. Next we
-do the usual substitution for the electron momentum. Then we use rule 2 and
-write down the eigenvalue equation.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed experimental energies \( E \) are obtained by solving
-the following eigenvalue equation,&lt;/p&gt;
+&lt;p&gt;To do this question we need the formula for the energy in terms of the free
+electrons position and momentum. Luckily that is given to us. Next we do the
+usual substitution for the electron momentum. Then we use rule 2 and write down
+the eigenvalue equation.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The allowed experimental energies \( E \) are obtained by solving the
+following eigenvalue equation,&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \hat{H} \psi(x) = E \psi(x).
 &lt;/script&gt;
 
-&lt;p&gt;\( \hat{H} \) is the energy operator or &lt;em&gt;hamiltonian&lt;/em&gt; for the
+&lt;p&gt;\( \hat{H} \) is the energy operator or &lt;em&gt;Hamiltonian&lt;/em&gt; for the
 electron,&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-  \hat{H} = \frac{\hat{p^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
+\hat{H} = \frac{\hat{p}^2}{2m_e} = -\frac{\hbar^2}{2m_e}\frac{d^2}{dx^2}
 &lt;/script&gt;
 
-&lt;p&gt;The right hand side is obtained by substituting \( p = -i\hbar d/dx \).
-\(x \) and \( m_e \) are the position coordinate and mass of the electron,
-respectively.&lt;/p&gt;
+&lt;p&gt;The right hand side is obtained by substituting \( p = -i\hbar
+\displaystyle\frac{d}{dx} \) and \(x \) and \( m_e \) are the position
+coordinate and mass of the electron, respectively.&lt;/p&gt;
 
 &lt;p&gt;Note:
 * To solve this equation to find the allowed energy values
@@ -692,7 +873,9 @@ respectively.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q6&lt;/strong&gt;. &lt;em&gt;Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. We need to write down the total energy of an electron and a proton
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We need to write down the total energy of an electron and a proton
 in one dimension. The total energy is comprised of the kinetic energy of
 each particle. Hence it depends on the momentum of the electron \( p_e \) and
 the momentum of the proton \( p_p \). The total energy also depends of the
@@ -702,7 +885,9 @@ Law&lt;/a&gt;.
 The distance between the two particles involves the coordinates of the electron
 and the proton, respectively \( x_e \) and \( x_p \).&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. The allowed energies \( E \) for an electron and proton moving in one
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The allowed energies \( E \) for an electron and proton moving in one
 dimension are determined by the following eigenvalue equation:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
@@ -714,7 +899,7 @@ for the system, given by&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
-\begin{alignat}{4}
+\begin{alignat}{5}
 \hat{H} &amp; = \frac{p^2_p}{2m_p}
         &amp; + \frac{p^2_e}{2m_e} 
         &amp; + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
@@ -726,10 +911,14 @@ for the system, given by&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q7&lt;/strong&gt;. &lt;em&gt;Is the equation \( \hat{P}^2 \psi = \hat{P}\psi \) an eigenvalue equation?&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. Recall the definition of an eigenvalue equation. Compare it to
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Recall the definition of an eigenvalue equation. Compare it to
 the above eigenvalue equation to see if they look similar.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;. Yes it is an eigenvalue equation! Since, if we set \( \phi = \hat{P}\psi \)
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes it is an eigenvalue equation! Since, if we set \( \phi = \hat{P}\psi \)
 it can be written as \( \hat{P}\phi = \phi = 1\phi \). This is an eigenvalue
 equation for \( \phi \) with eigenvalue equal to 1. Note that any old operator
 will &lt;em&gt;not&lt;/em&gt; obey such an equation i.e. such an operator \( \hat{P} \) must be
@@ -742,26 +931,32 @@ particle and the wavefunction is \( \psi_0 \) after the experiment.
 (iii) What is the average of many position measurements of the particle?
 Assume that the particle is one dimensional.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. For (i) refer to the last part of Rule 2 and note the normalization
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For (i) refer to the last part of Rule 2 and note the normalization
 condition. For (ii), the result depends on (i), see below. For (iii) see the last
-part of Rule 2 and use the operator \( x \) for the particle pisition.&lt;/p&gt;
+part of Rule 2 and use the operator \( x \) for the particle position.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;(i) The probability of obtaining \( E_0 \) again is \( |\int \psi^*_0 \psi_0|^2 \).
-But this is equal to 1 for a bound state by the normalization condition. So we 
-would measure \( E_0 \) again the second time with probanility 1.&lt;/p&gt;
+&lt;p&gt;(i) The probability of obtaining \( E_0 \) again is \( |\int \psi^\ast_0 \psi_0|^2 \).
+But this is equal to 1 for a bound state by the normalization condition. So we
+would measure \( E_0 \) again the second time with probability 1. This is
+interesting. It says that once the first measurement is done the second
+measurement keeps the wavefunction in the same state. This is known as
+the &lt;a href=&quot;http://en.wikipedia.org/wiki/Quantum_Zeno_effect&quot;&gt;quantum Zeno effect&lt;/a&gt;
+and it has been shown experimentally to be true.&lt;/p&gt;
 
 &lt;p&gt;(ii) The probability of getting any other energy is zero since after the first
 energy measurement, we always keep getting \( E_0 \). Note: this implies
-that \( |\int \psi^*_0 \psi_1|^2 = 0 \), which can be proved to be true.
+that \( |\int \psi\sub{0}^\ast(x) \psi_1(x) dx|^2 = 0 \), which can be proved to be true.
 The proof is beyond the scope of this course, but relies on the fact that
 the eigenvectors are orthogonal.&lt;/p&gt;
 
-&lt;p&gt;(iii) The position of a one dimensional particle is given by \( x \).
+&lt;p&gt;(iii) The position of a one dimensional particle is given by( x \).
 We could put a “hat” on this to indicate it is an operator but it may
-be less confusing to leave it off. So the average of the psotion measurements
-is \( \expectation{x} = \int \psi_0 x \psi_0 \)&lt;/p&gt;
+be less confusing to leave it off. So the average of the position measurements
+is \( \expectation{x} = \int \psi_0(x)\, x\, \psi_0(x) dx \)&lt;/p&gt;
 
 
   
