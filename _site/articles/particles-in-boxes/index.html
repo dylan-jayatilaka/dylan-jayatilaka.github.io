@@ -191,17 +191,28 @@ designing nanoelectronic devices.</p>
 
 <h2 id="for-students">For students</h2>
 
-<p>To understand these notes you need to know basic calculus (derivatives and
-integrals) and you need to understand the basics of complex numbers. If you do
-not, bail out here, and come back after you know.</p>
+<p>To understand these notes you need to</p>
 
-<p>Scattered through this post are some questions. Carefully study these questions
-and their answers. The exam questions will be very similar, if not identical.</p>
+<ul>
+  <li>
+    <p>Know basic calculus (derivatives and integrals) and you need to understand
+the basics of complex numbers. If you do not, bail out here, and come back
+after you know.</p>
+  </li>
+  <li>
+    <p>Second, you should read the previous <a href="http://dylan-jayatilaka.net/articles/super-quick-summary-of-qm/">super quick intro to quantum
+mechanics</a></p>
+  </li>
+</ul>
+
+<p>Scattered through this and the previous post are some questions. Carefully
+study these questions and their answers. The exam questions will be very
+similar, if not identical.</p>
 
 <p>The later material on transmission through multiple barriers is not
 examinable and for interest only.</p>
 
-<h2 id="srategy-for-solving-particle-in-a-box-problems">Srategy for solving particle-in-a-box problems</h2>
+<h2 id="strategy-for-solving-particle-in-a-box-problems">Strategy for solving particle-in-a-box problems</h2>
 
 <p>Particle in a box problems are those for a single particle moving
 in one dimension subject to a piecewise constant potential energy i.e.
@@ -224,29 +235,28 @@ In this case the barrier</p>
 for the problem and hence the Schrodinger equation for the unknown energies
 and wavefunctions.</p>
   </li>
-  <li>
-    <p>Find the general solutions in each region where the potential is
+  <li>Find the general solutions in each region where the potential is
 constant. The general solutions in each region are <em>always</em> of the
 form \( \psi(x) = A e^{B x}\) where \( A \) and \(B\), \(C\) are
-(possibly complex) unknown constants to be found. For free or unbound
-particles \(B\) <em>must</em> be complex. For bound electronts \(B\)
-must be real.</p>
+(possibly complex) unknown constants to be found. To save time you can
+learn these possible cases:
+    <ul>
+      <li>For free or unbound particles \( \psi(x) = A e^{i k x} + B e^{-i k x} \).</li>
+      <li>For bound electrons where the energy of the particle is <em>less</em> than
+the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{-\alpha x} \).</li>
+      <li>For bound electrons where the energy of the particle is <em>greater</em> than
+the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).</li>
+    </ul>
   </li>
-  <li>
-    <p>Find as many of the unknown coefficients as possible by making sure that
-the solutions are continuous and smooth (see Rule 2 below). At the end
-of the problem there will be only one unknown constant which can
-be found by the normalization condition.</p>
-  </li>
+  <li>Find as many of the unknown coefficients as possible by making sure that
+the solutions are continuous and smooth (see Rule 1 of quantum mechanics in
+the <a href="http://dylan-jayatilaka.net/articles/super-quick-summary-of-qm/`">previous post</a>. 
+At the end of the problem there will usually only one unknown constant left
+which can be found by the normalization condition if needed.</li>
 </ol>
 
 <p>A pretty good graphic for illustrating this procedure is shown at the
-hyperphysics site here.</p>
-
-<p>You probably have not seen quantum mechanics before and a freaking out.
-Don’t worry. Contrary to what you might have thought, you don’t yet know
-everything and you have to learn more. So relax and read the summarized
-key points on QM below and then see if you can do the questions below.</p>
+<a href="http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/pfbox.html">hyperphysics site here</a>.</p>
 
 <h2 id="free-electron-in-one-dimension">Free electron in one dimension</h2>
 
@@ -259,13 +269,13 @@ key points on QM below and then see if you can do the questions below.</p>
 <p><strong>Q9</strong>. <em>Solve the Schrodinger equation for an electron moving freely in one dimension</em>.</p>
 
 <p><em>Strategy</em>. The strategy for solving these problems was given above. The
-Schrodinger equation for the free particle was written down in Q5. But before
-applying this strategy and solving the equation let’s think what answer we
-might expect. Actually, since the electron can move freely, we would expect
-that it can have … any energy it likes … as long as it is positive. Also,
-we expect that an electron moving freely should be located … well, anywhere
-it likes … meaning to say that the probability of finding it at any position
-is equally likely.</p>
+Schrodinger equation for the free particle was written down in Q5 in the last
+post. But before applying this strategy and solving the equation let’s think
+what answer we might expect. Actually, since the electron can move freely, we
+would expect that it can have … any energy it likes … as long as it is
+positive. Also, we expect that an electron moving freely should be located …
+well, anywhere it likes … meaning to say that the probability of finding it
+at any position is equally likely.</p>
 
 <p><em>Answer</em></p>
 
@@ -291,9 +301,9 @@ left hand side of the equation and simplify:</p>
 & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} A (ik) e^{i k x} \\
 & = -\frac{\hbar^2}{2 m_e} A (ik)^2 e^{i k x} \\
 & =  \frac{\hbar^2}{2 m_e} k^2 A e^{i k x} \\
-& =  \frac{\hbar^2 k^2}{2 m_e} \psi(x) \\
-& =  E \psi(x) \\
-& =  RHS
+& =  \frac{\hbar^2 k^2}{2 m_e} \psi(x)
+  =  E\, \psi(x) 
+\end{align}
  %]]></script>
 
 <p>This shows that \( \psi(x) = A e^{i k x} \) is indeed a solution of our
@@ -313,7 +323,7 @@ number is always positive).</p>
   </li>
   <li>
     <p>The probability of fiding the electron an any position is
-\( \psi^<em>(x)\psi(x) = A^</em> e^{-i k x} A e^{i k x} = |A|^2 \) and
+\( \psi^{\ast}(x) \psi(x) = A^{\ast} e^{-i k x} A e^{i k x} = |A|^2 \) and
 does not depend on \( x \) i.e. the probability of finding
 the particle at one place or another is the same i.e. the particle
 is located everywhere with equal probability.</p>
@@ -322,24 +332,161 @@ is located everywhere with equal probability.</p>
 
 <p><strong>Q10</strong>. <em>Show that the free electron wavefunction has momentum \( \hbar k \)</em></p>
 
-<p><em>Stretegy</em></p>
+<p><em>Strategy</em>. 
+According to the rules of QM, a wavefunction has a certain momentum if it is an
+eigenfunction of the corresponding operator. Hence we need to show that \(
+\psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).</p>
 
 <p><em>Answer</em>.</p>
 
-<p>To show this, we need to demonstrate that \( \psi(x) \) is an eigenfunction
-of momentum</p>
+<p>We evaluate \( \hat{p}\psi(x) \) for the wavefunction in Q9:</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
 \begin{align}
-\hat{p} \psi(x) & = -i \hbar \frac{d}{dx} e^{i k x}  \\
-                & = -i \hbar (i k) e^{i k x} \\
-                & = \hbar k e^{i k x}
+\hat{p} \psi(x) & = -i \hbar \frac{d}{dx} A e^{i k x}  \\
+                & = -i \hbar (i k) A e^{i k x} \\
+                & = \hbar k \psi(x)
 \end{align}
  %]]></script>
 
-<p>This is an eigenevlaue equation with eigenvalue \( \hbar k \). Apparently the
-momentum of a free electron \( p_e \) must equal \( \hbar k \)</p>
+<p>This is an eigenvalue equation with eigenvalue \( \hbar k \). Therefore the
+momentum of a free electron with wave function \( \psi(x) = e^{i k x} \)
+is \( \hbar k \). </p>
+
+<p>Note that there are two values of the momentum \( p_e = \pm \hbar k \)
+corresponding to the wavefunctions \( \psi(x) = e^{\pm i k x} \). The positive
+(or negative) values correspond to a wave moving in the positive (or negative)
+directions respectively.</p>
+
+<p>Note also that the unknown constant \( A \) can not be determined by
+the normalization condition: normalization ony applied to bound states.</p>
+
+<h2 id="particle-in-a-box">Particle in a box</h2>
+
+<p><strong>Q11</strong>. <em>Solve the Schrodinger equation for an electron in a box of length
+\( L \) which starts at the origin (the potential is inifite outside the box)</em>.</p>
+
+<p><em>Strategy</em>. Draw a picture and apply the given strategy above.</p>
+
+<p><em>Answer</em>.</p>
+
+<p>The potential \( V(x) \) looks like below (along with the solutions which we
+have yet to find).</p>
+
+<figure>
+   <img src="/images/p-in-infinite-box.jpg" />
+</figure>
+
+<p>According to the strategy we should try wavefunctions of the form
+\( \psi(x) = A \sin k x + B \cos k x \). Substituting in the Schrodinger
+equation we get</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\textrm{LHS}
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi(x) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \left( A \sin kx + B \cos kx \right) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A \sin kx + B \cos kx \right) \\
+& = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A k \cos kx - B k \sin kx \right) \\
+& = -\frac{\hbar^2}{2 m_e} \left(-A k^2 \sin kx - B k^2 \cos kx \right) \\
+& =  \frac{\hbar^2}{2 m_e} -k^2 \left(A \sin kx + B \cos kx \right) \\
+& =  \frac{\hbar^2 k^2}{2 m_e} \psi(x)
+  =  E\, \psi(x) 
+\end{align}
+ %]]></script>
+
+<p>So as before we see that \( \psi(x) = A \sin k x + B \cos k x \) is a solution
+of the Schrodinger equation with</p>
+
+<script type="math/tex; mode=display">
+E = \frac{\hbar^2 k^2}{2 m_e}.
+</script>
+
+<p>In fact this solution would be acceptable as an answer to the “free particle”
+problem. The difference is now that we have to apply the boundary conditions on
+the wavefunction, which are from the picture</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\psi(0) & = 0 \\
+\psi(L) & = 0
+\end{align}
+ %]]></script>
+
+<ul>
+  <li>
+    <p>Substituting \( \psi(x) \) in the first equation above determines the value
+of the unknown constant \ ( B \) as follows:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\psi(0) & = A \sin k 0 + B \cos k 0 \\
+        & = A \sin 0 + B \cos 0 \\
+        & = A (0) + B (1) \\
+        & = B \\
+        & = 0
+\end{align}
+ %]]></script>
+
+    <p>Here we used the standard values of \( \sin 0 = 0 \) and \( \cos 0 = 1 \).
+Therefore we have figured out that \( \psi(x) = A \sin k x \). </p>
+  </li>
+  <li>
+    <p>Now we apply the second boundary condition and see what we get:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\psi(L) & = A \sin k L \\
+        & = \sin k L \\
+        & = 0
+\end{align}
+ %]]></script>
+
+    <p>This equation has solutions only when the angle \( k L = n \pi \) radians where
+\( n = 1, 2, \ldots \). The value \( n = 0 \) leads to a un unnormalizable
+wavefunction. Negative values for \( n \) are the same as positive values.</p>
+  </li>
+</ul>
+
+<p>There are no other boundary conditions to apply. We assume that \( \psi(x) = 0 \)
+if \( x \) is not between \( 0 \) and \( L \). But the last boundary condition
+equation gives a value for the unknown \( k \) constant which means it
+determines the allowed energy eigenvalues:</p>
+
+<script type="math/tex; mode=display">
+E = \frac{\hbar^2 k^2}{2 m_e} 
+  = \frac{\hbar^2 (n \pi)^2}{2 m_e L^2}, \ \ n = 1, 2, 3, \ldots
+</script>
+
+<p>Corresponding to wavefunction \( \psi(x) = A \sin \frac{n \pi}{L} x \).</p>
+
+<p>To find the unknown constant \( A \) we must normalize the wavefunction,</p>
+
+<script type="math/tex; mode=display">
+\int_0^L \psi^\ast(x) \psi(x) dx
+  = \int_0^L A^2 \sin^2 \frac{n\pi}{L} x 
+  = 1
+</script>
+
+<p>From which we get:</p>
+
+<script type="math/tex; mode=display">
+A  = \left( \int_0^L A^2 \sin^2 \frac{n\pi}{L} x \)^{1/2}
+</script>
+
+<p>We can evaluate this integral by looking up tables if we like.
+The important thing is not the answer but <em>how</em> to get it.</p>
+
+<h2 id="particle-in-a-half-infinite-box">Particle in a half infinite box</h2>
+
+<p><strong>Q11</strong>. <em>Solve the Schrodinger equation for an electron in a box of length
+\( L \) which starts at the origin (the potential is infinite to the left
+of the box)</em>.</p>
 
 
         
@@ -347,7 +494,7 @@ momentum of a free electron \( p_e \) must equal \( \hbar k \)</p>
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="//localhost:4000/articles/super-quick-summary-of-qm/" class="btn" title="Super quick summary of QM">Previous article</a>
+        <a href="//localhost:4000/articles/super-quick-summary-of-qm/" class="btn" title="Super quick summary of Quantum Mechanics">Previous article</a>
       
       
     </nav><!-- /.pagination -->

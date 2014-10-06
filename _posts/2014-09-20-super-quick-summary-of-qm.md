@@ -18,18 +18,21 @@ This is a post for my second year Phys Chem students.
 The purpose of this post is to write down briefly the main ideas and rules of
 Quantum mechanics.
 
-Now Quantum mechanics is usually quite baffling and perhaps intruiguing
-when you first encounter it. On common question that is encountered is
-“Why do I need to know this?” or more briefly “So what?”.
+Now quantum mechanics is usually quite baffling and intruiguing
+when first encountered. It’s interpretation remains a hot topic
+even after a hundred years.
 
-Here is the answer.
+A common question that is encountered is “Why do I need to know about QM?” or
+more briefly “So what?”.
+
+Here is the answer for chemists.
 
 You need to understand how quantum mechanics works because quantum
 mechanics allows you to in-principle calculate everything about chemistry
 (molecular properties, reaction rates) from equations [without having to do
 experiments](http://www.brainyquote.com/quotes/quotes/p/pauldirac279318.html).
 
-That’s big. 
+That’s big.
 
 In my opinion, these days, every organic chemist should do a simple QM
 calculation to test out assumptions about their reaction scheme sites before
@@ -44,7 +47,12 @@ No-one wants to employ a monkey.
    <img src="/images/thoughtful-bonobo.jpg">
 </figure>
 
-So let’s get started.
+You probably have not seen quantum mechanics before and a freaking out. Don’t
+worry. Contrary to what you might have thought, you don’t yet know everything
+and you have to learn more. So relax. Afterwards, see if you can follow the
+questions and answers below.
+
+Let’s get started.
 
 ## The hyperphysics web site
 
