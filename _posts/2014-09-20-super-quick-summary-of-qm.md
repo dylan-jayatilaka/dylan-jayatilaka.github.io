@@ -19,7 +19,8 @@ The purpose of this post is to write down briefly the main ideas and Rules of
 Quantum mechanics.
 
 Now quantum mechanics is usually quite baffling and intruiguing
-when first encountered. It’s interpretation remains a hot topic
+when first encountered. It’s interpretation remains a 
+[hot topic](http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/)
 even after a hundred years.
 
 A common question that is encountered is “Why do I need to know about QM?” or
