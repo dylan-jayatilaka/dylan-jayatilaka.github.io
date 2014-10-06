@@ -382,17 +382,18 @@ First draw a picture of the potential. It looks similar like the previous
 question, except that to the right, the height of the box is \\( V_0 \\) and
 not infinite. The wavefunction to the left of the box is zero as explained
 in the previous question. There are two other wavefunctions \\(\psi\sub\s{in} \\) and
-\\(\psi\sub\s{out}\\) for the inside and outside of the box respectively. These
+\\(\psi\sub\s{out}\\) for the inside and outside (right) of the box respectively. These
 two wavefunctions need to be “joined” at the boundary to make a “smooth”
-wavefunction. Inside the box, the wavefunction s the same as before,
-\\( \psi\sub\s{in}(x) = A \sin k x \\). Outside the box, according
+wavefunction. Inside the box, the wavefunction is the same as before,
+\\( \psi\sub\s{in}(x) = A \sin k x \\). This satisfies the boundary
+condition \\( \psi\sub{in}(0) = 0 \\). Outside the box, according
 to strategy above, the wavefunction outside the box is
-\\( \psi\sub\s{out}(x) = A e^{-\alpha x} + B e^{\alpha x} \\).
-However the part \\( B e^{\alpha X } \\) gets bigger as \\(x \\) gets larger 
-and so if constant \\( B \\) is not zero the wavefunction would have an
+\\( \psi\sub\s{out}(x) = B e^{-\beta x} + C e^{\beta x} \\).
+However the part \\( C e^{\beta x } \\) gets bigger as \\(x \\) gets larger 
+and so if constant \\( C \\) is not zero the wavefunction would have an
 infinite area underneath it i.e. it would be unnormalizable.
 Therefore the wavefunction outside the box is
-\\( \psi(x)\sub\s{out}(x) = A e^{-\alpha x} \\). Now we substitute
+\\( \psi\sub\s{out}(x) = B e^{-\beta x} \\). Now we substitute
 \\(\psi\sub\s{in}\\) and \\(\psi\sub\s{out}\\) into the Schrodinger equation
 and apply the boundary conditions to get the answer.
 
@@ -410,23 +411,23 @@ and apply the boundary conditions to get the answer.
   
   $$
   \hat{H}\psi\sub\s{out}(x)
-  = \left[ -frac{\hbar}^2}{2 m_e}\frac{d^2}{dx^2} + V_0\right] \psi\sub\s{out}(x)
+  = \left[ -\frac{\hbar^2}{2 m_e}\frac{d^2}{dx^2} + V_0\right] \psi\sub\s{out}(x)
   = E\, \psi\sub\s{out}(x)
   $$
   
-  Substituting \\( \psi\sub\s{out}(x) = A e^{-\alpha x} \\) into the LHS
+  Substituting \\( \psi\sub\s{out}(x) = A e^{-\beta x} \\) into the LHS
   gives
   
   $$
   \begin{align}
   \textrm{LHS}
   & = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \psi\sub\s{out}(x) \\
-  & = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \left( A e^{-\alpha x}) \\
-  & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A e^{-alpha x} \right) \\
-  & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A (-\alpha) e^{-\alpha x} \right) \\
-  & = -\frac{\hbar^2}{2 m_e} \left(A \alpha^2 e^{-a\lpha x}\right) \\
-  & = -\frac{\hbar^2}{2 m_e} \alpha^2 \left( A e^{-\alpha x} \right) \\
-  & = -\frac{\hbar^2 \alpha^2}{2 m_e} \psi\sub\s{out}(x)
+  & = -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} \left( A e^{-\beta x} \right) \\
+  & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \frac{d}{dx} \left( A e^{-\beta x} \right) \\
+  & = -\frac{\hbar^2}{2 m_e} \frac{d}{dx} \left(A (-\beta) e^{-\beta x} \right) \\
+  & = -\frac{\hbar^2}{2 m_e} \left(A (-\beta)^2 e^{-\beta x}\right) \\
+  & = -\frac{\hbar^2}{2 m_e} \beta^2 \left( A e^{-\beta x} \right) \\
+  & = -\frac{\hbar^2 \beta^2}{2 m_e} \psi\sub\s{out}(x)
   \end{align}
   $$
   
@@ -435,15 +436,83 @@ and apply the boundary conditions to get the answer.
   $$
   \hat{H}\psi\sub\s{out}(x)
   = \left[ -\frac{\hbar^2}{2 m_e} \frac{d^2}{dx^2} + V_0 \right] \psi\sub\s{out}(x)
-  = \left[ -\frac{\hbar^2 \alpha^2}{2 m_e}         + V_0 \right] \psi(x)
+  = \left[ -\frac{\hbar^2 \beta^2}{2 m_e}         + V_0 \right] \psi(x)
   = E\,\psi\sub\s{out}(x).
   $$
   
   So we get *another* equation for the energy,
   
   $$
-  E = -\frac{\hbar^2 \alpha^2}{2 m_e} + V_0 \ \ \subnote{outside box}
+  E = -\frac{\hbar^2 \beta^2}{2 m_e} + V_0 \ \ \subnote{outside box}
   $$
+
+Now we can equate our two energy formula to get an expression
+for \\( \beta \\) in terms of \\( E \\) (and hence \\( k \\),
+if we want to)
+
+$$
+\begin{align}
+E                              & = -\frac{\hbar^2 \beta^2}{2 m_e} + V_0 \\
+\frac{\hbar^2 \beta^2}{2 m_e} & = V_0 - E \\
+\beta^2                       & = \frac{2 m_e}{\hbar^2} (V_0-E) \\
+\beta                         & = \left( \frac{2 m_e}{\hbar^2} (V_0-E) \right)^{1/2} \\
+\beta                         & = \left( \frac{2 m_e V_0}{\hbar^2} - k^2 \right)^{1/2} \\
+\end{align}
+$$
+
+Now we need to apply the boundary conditions, which are:
+
+$$
+\begin{align}
+\psi\sub{in}(L)  & = \psi\sub{out}(L) \\
+\psi\sub{in}’(L) & = \psi\sub{out}’(L).
+\end{align}
+$$
+
+The second condition is where the two derivatives of the wavefunction
+are supposed to match so the join is “smooth”. (The first condition
+assumes that the function is “unbroken” or “continuous”). 
+
+* The first condition gives
+
+  $$
+  A \sin k L = B e^{-\beta L}
+  $$
+
+* The second condition gives
+
+  $$
+  A k \cos k L = -B \beta e^{-\beta L}
+  $$
+
+We can eliminate the constants \\( A \\) and \\( B \\) by dividing the first
+equations by the second. The result is:
+
+$$
+k \tan k L = \frac{1}{\beta} = \left( \frac{2 m_e V_0}{\hbar^2} - k^2 \right)^{-1/2}
+$$
+
+This is an extremely difficult equation to solve in general.
+We have to use a computer. Also, we need to be given further
+information, like: what is the value of \\( V_0 \\)? We can
+simplify the problem a bit by using atomic units i.e.
+\\( \hbar = m_e = 1 \\) and assume \\( L = 1 \\) and \\( V_0 = 0.5 \\) in these
+units. Then we would get this equation:
+
+$$
+k \tan k = \left( 1 - k^2 \right)^{-1/2}
+$$
+
+If you really want to solve this go to Wolfram Alpha
+and type in \\( \texttt{k tan k = (1 - k^2)^(-1/2)} \\)
+and you will get the answer on line!
+
+
+
+
+
+
+
 
 
 
