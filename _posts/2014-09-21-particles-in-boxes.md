@@ -106,16 +106,26 @@ The strategy for solving these one dimensional problems is always the same:
    learn these possible cases to be applied in different regions where
    the potential is constant:
 
-   - For free or unbound particles \\( \boxed{\psi(x) = A e^{i k x}} \\).
-     A free particle is one where the energy \\( E \\) is greater than the
-     largest value of the potential \\( V(x) \\) i.e. the particle has enough
-     energy to overcome any barrier.
+   - \\( \boxed{\psi(x) = A e^{i k x}} \\) for free or unbound particles.
 
-   - For bound electrons where the energy of the particle is *less* than
-     the energy of the barrier, \\( \boxed{\psi(x) = A e^{-\alpha x} + B e^{+\beta x}} \\).
+     - A free particle is one where \\( V(x) = 0 \\).
 
-   - For bound electrons where the energy of the particle is *greater* than
-     the energy of the barrier, \\( \boxed{\psi(x) = A \sin kx + B \cos kx} \\).
+     - An unbound particle has energy \\( E \\) greater than the
+       largest value of the potential \\( V(x) \\) for any \\( x \\)
+       i.e. the particle has enough energy to overcome any barrier.
+
+     - A free particle is unbound, but an unbound particle is not
+       necessarily free.
+
+   - \\( \boxed{\psi(x) = A e^{-\alpha x} + B e^{+\beta x}} \\)
+     for electrons in a region where the energy of the particle \\( E \\)
+     is *less* than the value of the potential. This is called an
+     exponential decay region or barrier-penetration region of the wavefunction.
+
+   - \\( \boxed{\psi(x) = A \sin kx + B \cos kx} \\)
+     for electrons where the energy of the particle \\( E \\)
+     is *greater* than the value of the potential. This is called
+     an oscillatory region of the wavefunction.
 
 3. Find the unknown constants in the wavefunction(s) by making sure that
    the solutions are continuous and smooth - see Rule 1 of quantum mechanics in
@@ -546,14 +556,14 @@ Now we need to apply the boundary conditions, which are:
 
 $$
 \begin{align}
-\psi\sub{in}(L)  & = \psi\sub{out}(L) \\
-\psi\sub{in}’(L) & = \psi\sub{out}’(L).
+\psi\sub\s{in}(L)            & = \psi\sub\s{out}(L) \\
+\frac{\psi\sub\s{in}}{dx}(L) & = \frac{\psi\sub\s{out}}{dx}(L).
 \end{align}
 $$
 
-The second condition is where the two derivatives of the wavefunction
-are supposed to match so the join is “smooth”. (The first condition
-assumes that the function is “unbroken” or “continuous”).
+The first condition ensures that the wavefunctions are “unbroken” or “continuous”.
+The second condition ensures that the derivatives of the two wavefunction
+match so the join is “smooth”. 
 
 * The first condition gives
 

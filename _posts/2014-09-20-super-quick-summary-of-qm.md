@@ -28,7 +28,7 @@ more briefly “So what?”.
 Here is the answer for chemists.
 
 You need to understand how quantum mechanics works because quantum
-mechanics allows you to in-principle calculate everything about chemistry
+mechanics allows you to calculate everything about chemistry
 (molecular properties, reaction rates) from equations [without having to do
 experiments](http://www.brainyquote.com/quotes/quotes/p/pauldirac279318.html).
 
@@ -46,7 +46,7 @@ you will be just a monkey. No-one wants to employ a monkey.
 </figure>
 
 Now I know you probably have not seen quantum mechanics before. Probably
-you are freaking out. I want to say: Don’t worry. It’s hard but not that hard.
+you are freaking out. I want to say: Don’t Worry. QM is hard - but not *that* hard.
 Just remember: contrary to what you might have thought, you don’t yet know
 everything. You have to learn more. It’s normal to feel that way with new
 stuff. So relax. Afterwards, see if you can follow the questions and answers
@@ -163,6 +163,30 @@ But the rules do require some explanation, as you see!
 ## Do you get it? Test yourself
 
 The following are examples of questions that may be asked in the exam.
+
+**Q0**. *What are the main differences between classical mechanics and quantum mechanics?*
+
+*Answer*
+
+In classical mechanics every particle e.g. like an electron, proton, neutron has a
+definite position and a velocity. The way the classical particle moves is calculated using
+Newton’s Law. On the other hand, in quantum mechanics, particles usually *do
+not* have a definite position or velocity. That means in quantum mechanics
+particles are *spread out* and *dustributed* in space in some way. We can think
+of them as little wiggly waves. Such waves do *not* usually have a definite
+position. In order to describe the shape of these wiggly waves we need to use a
+*function* - specifically a *wavefunction*. An example might be 
+\\( \psi(x) = \sin x \\). Plotting out this function on a graph shows the
+wiggly wave of the quantum particle. The wavefunction describes everything you can 
+know about the quantum particle. The Schrodinger equation tells us the shape of the
+wavefunction which has a definite energy, for any given potential. Compare this
+again to a classical particle which can be descibed by only *six numbers* :
+three coordinates \\(x \\) \\( y\\) and \\(z\\) and three velocities \\(v_x\\),
+\\(v_y\\), and \\(v_z\\). By contrast, a quantum mechanical particle requires
+an *infinite number of numbers to describe it*. It requires the whole shape of
+the wavefunction in the plotted graph to be tabulated for you. Either that
+or you have to write a mathematical function such as \\( \psi(x) = \sin x \\) for 
+the wavefunction.
 
 **Q1**. *Write down the momentum operator of an electron in one dimension*
 
