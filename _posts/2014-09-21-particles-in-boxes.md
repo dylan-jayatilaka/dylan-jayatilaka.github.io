@@ -294,7 +294,7 @@ $$
 From which we get:
 
 $$
-A  = \left( \int_0^L A^2 \sin^2 \frac{n\pi}{L} x \right)^{1/2}
+A  = \left( \int_0^L \sin^2 \frac{n\pi}{L} x \right)^{1/2}
 $$
 
 We can evaluate this integral by looking up tables if we like.
@@ -303,8 +303,31 @@ The important thing is not the answer but *how* to get it.
 ## Particle in a half infinite box
 
 **Q11**. *Solve the Schrodinger equation for an electron in a box of length
-\\( L \\) which starts at the origin (the potential is infinite to the left
-of the box)*.
+\\( L \\) which starts at the origin. The potential is infinite to the left
+of the box, and has value \\( V_0 \\) to the right. The energy of the electron
+is less than \\( V_0 \\)*.
+
+*Strategy*. The picture for this problem looks exactly like the previous
+one except that to the right the height of the box is \\( V_0 \\). The
+solution inside the box has the same form as before 
+\\( \psi_{\textrm{in}}(x) = A \sin k x \\).
+According to the rules the solution outside the box is 
+\\( \psi(x) = A e^{-\alpha x} + B e^{\beta x} \\). However the part 
+\\( B e^{\beta X } \\) gets bigger as \\(x \\) gets larger and so the
+wavefunction is unnormalizable in that case. Therefore the wavefunction outside
+the box is \\( \psi(x)_{\textrm{out}}(x) = A e^{-\alpha x} \\).
+
+*Answer*
+
+By now you should be able to work out by substituting the above wavefunctions
+in the Schrodinger equation that, in the two regions
+
+$$
+\begin{align}
+E & = \frac{\hbar^2 k^2}{2 m_e}      \ \ \subnote{inside the box}\\
+E & = \frac{\hbar^2 \alpha^2}{2 m_e} \ \ \subnote{outside box} \\
+\end{align}
+$$
 
 
 
