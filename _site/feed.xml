@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-06T20:41:06+08:00</updated>
+<updated>2014-10-06T22:02:10+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -126,7 +126,9 @@ to a different problem.&lt;/p&gt;
 for the problem,&lt;/p&gt;
 
     &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\boxed{
 \hat{H} = -\displaystyle\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
+}
 &lt;/script&gt;
 
     &lt;p&gt;and hence the Schrodinger equation \( \hat{H}\psi = E\psi \) for the
@@ -142,18 +144,18 @@ the potential is constant:&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;
-        &lt;p&gt;For free or unbound particles \( \psi(x) = A e^{i k x} \).
+        &lt;p&gt;For free or unbound particles \( \boxed{\psi(x) = A e^{i k x}} \).
 A free particle is one where the energy \( E \) is greater than the
 largest value of the potential \( V(x) \) i.e. the particle has enough
 energy to overcome any barrier.&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;For bound electrons where the energy of the particle is &lt;em&gt;less&lt;/em&gt; than
-the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{+\beta x} \).&lt;/p&gt;
+the energy of the barrier, \( \boxed{\psi(x) = A e^{-\alpha x} + B e^{+\beta x}} \).&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;For bound electrons where the energy of the particle is &lt;em&gt;greater&lt;/em&gt; than
-the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).&lt;/p&gt;
+the energy of the barrier, \( \boxed{\psi(x) = A \sin kx + B \cos kx} \).&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -179,9 +181,9 @@ Schrodinger equation in each region where the potential is constant. Find the
 unknown constants in the different pieces of the wavefunction for each region
 by makeing sure that it is continuous and smooth.&lt;/p&gt;
 
-&lt;h2 id=&quot;free-electron-in-one-dimension&quot;&gt;Free electron in one dimension&lt;/h2&gt;
+&lt;h2 id=&quot;free-electron-in-one-dimension---otherwise-known-as-the-particle-not-in-a-box&quot;&gt;Free electron in one dimension - otherwise known as the particle &lt;em&gt;not&lt;/em&gt; in a box&lt;/h2&gt;
 
-&lt;p&gt;Now we get to the meat.&lt;/p&gt;
+&lt;p&gt;Now we get to the meat. Note that the meat is not in a box.&lt;/p&gt;
 
 &lt;figure&gt;
    &lt;img src=&quot;/images/meat-on-the-bone.jpg&quot; /&gt;
@@ -192,13 +194,13 @@ by makeing sure that it is continuous and smooth.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The strategy for solving these problems was given above. The Schrodinger
-equation for the free particle was written down in Q5 in the last post. But
-before applying this strategy and solving the equation let’s think what answer
-we might expect. Actually, since the electron can move freely, we would expect
-that it can have … any energy it likes … as long as it is positive. Also,
-we expect that an electron moving freely should be located … well, anywhere
-it likes … meaning to say that the probability of finding it at any position
-is equally likely.&lt;/p&gt;
+equation for the free particle was written down in Q5 in the last post. Basically
+a free particle means that \( V(x) = 0 \). But before applying the strategy
+and solving the equation let’s think what answer we might expect. Actually,
+since the electron can move freely, we would expect that it can have … any
+energy it likes … as long as it is positive. Also, we expect that an electron
+moving freely should be located … well, anywhere it likes … meaning to say
+that the probability of finding it at any position is equally likely.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
@@ -262,7 +264,7 @@ What is the meaning of these two wavefunctions?&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;According to the rules of QM, a wavefunction has a certain momentum if it is an
+&lt;p&gt;According to the Rules of QM, a wavefunction has a certain momentum if it is an
 eigenfunction of the corresponding operator. Hence we need to show that
 \( \psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).&lt;/p&gt;
 
@@ -305,7 +307,7 @@ negative momentum (i.e. moving to the left), assuming \( k&amp;gt;0 \).&lt;/p&gt
 
 &lt;p&gt;Note that the unknown constant \( A \) can not be determined by
 the normalization condition: recall that according to the Rules
-of quantum mechanics, normalization only applies to bound states.&lt;/p&gt;
+of QM, normalization only applies to bound states.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q12&lt;/strong&gt;. &lt;em&gt;Show that the wavefunction \( \psi = A e^{i k x} + B e^{-i k x} \)
 is also a solution to the free electron Schrodinger equation. Is this a
@@ -372,7 +374,7 @@ to maximize the bonding to &lt;em&gt;neighbouring&lt;/em&gt; atoms around a cent
 &lt;h2 id=&quot;particle-in-a-box&quot;&gt;Particle in a box&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Q13&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is infite outside the box)&lt;/em&gt;.&lt;/p&gt;
+\( L \) which starts at the origin (the potential is infinite outside the box)&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
@@ -383,8 +385,8 @@ outside the box.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;The potential \( V(x) \) looks like below (along with the solutions which we
-have yet to find).&lt;/p&gt;
+&lt;p&gt;The potential \( V(x) \) looks as shown below. Also shown are the solutions
+which we have yet to find.&lt;/p&gt;
 
 &lt;figure&gt;
    &lt;img src=&quot;/images/p-in-infinite-box.jpg&quot; /&gt;
@@ -529,6 +531,14 @@ the Schrodinger equation and apply the boundary conditions to get the answer.&lt
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the picture of the potential:&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/p-in-half-infinite-box.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Now let’s substitute in our general solutions for each region.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -706,9 +716,9 @@ quantum mechanics.&lt;/p&gt;
   <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#quantum%20mechanics" term="quantum mechanics" /><category scheme="http://localhost:4000/tags/#wavefunctions" term="wavefunctions" /><category scheme="http://localhost:4000/tags/#operators" term="operators" /><category scheme="http://localhost:4000/tags/#measurement" term="measurement" /><category scheme="http://localhost:4000/tags/#eigenvalues" term="eigenvalues" />
   <content type="html">
   
-    &lt;p&gt;This is a post for my second year Phys Chem students. &lt;/p&gt;
+    &lt;p&gt;This is a post for my second year Phys Chem students.&lt;/p&gt;
 
-&lt;p&gt;The purpose of this post is to write down briefly the main ideas and rules of
+&lt;p&gt;The purpose of this post is to write down briefly the main ideas and Rules of
 Quantum mechanics.&lt;/p&gt;
 
 &lt;p&gt;Now quantum mechanics is usually quite baffling and intruiguing
@@ -762,9 +772,7 @@ guff and get straight into it.&lt;/p&gt;
 
 &lt;p&gt;There are only few rules to quantum mechanics.&lt;/p&gt;
 
-&lt;p&gt;But the rules do require some explanation.&lt;/p&gt;
-
-&lt;p&gt;Here they are:&lt;/p&gt;
+&lt;p&gt;But the rules do require some explanation, as you see!&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
@@ -787,7 +795,7 @@ becomes infinite - so called singularities)&lt;/p&gt;
         &lt;p&gt;\( \psi \) for bound ie. stable states must be
 &lt;a href=&quot;http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/qm.html#c5&quot;&gt;normalizable&lt;/a&gt;
 i.e. \( \int |\psi|^2 \) must exist and must equal one; this is called
-normalization of the wavefunction. The reson is that \( |\psi(\B{x})|^2 \) 
+normalization of the wavefunction. The reason is that \( |\psi(\B{x})|^2 \)
 is the probability of finding the particles at given positions \(\B{x}\).&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -804,12 +812,14 @@ system.&lt;/p&gt;
       &lt;li&gt;
         &lt;p&gt;The momenta (which in classical mechanics is written as \( \B{p} \) and is equal
 to mass times velocity \(\B{p} = m\B{v}\)) is in quantum mechanics equal to a derivatives
-with respect to the particle coordinates times \( i\hbar \) where
-\( \hbar \) is Planck’s constant divided by \( 2\pi \) 
-i.e. in quantum mechanics &lt;/p&gt;
+with respect to the particle coordinates times \( i\hbar \) (where
+\( \hbar \) is Planck’s constant divided by \( 2\pi \) )
+i.e. in quantum mechanics:&lt;/p&gt;
 
         &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\hat{p} = i\hbar \frac{d}{dx} \ \textrm{in 1 dimension}
+\boxed{
+\hat{p} = -i\hbar \displaystyle\frac{d}{dx} \ \ldots \ \textrm{in 1 dimension}
+}
 &lt;/script&gt;
 
         &lt;p&gt;This is very different to classical mechanics!&lt;/p&gt;
@@ -842,13 +852,18 @@ determined in this equation are the
       &lt;li&gt;
         &lt;p&gt;Example: The &lt;a href=&quot;&quot;&gt;Schrodinger equation&lt;/a&gt; \( \hat{H}\psi = E\psi \) is just
 the eigenvalue equation for the allowed energies \( E \) of the system,
-where \( \hat{H} \) is the energy operator or
+where \( \hat{H} \) is the total energy operator or
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian&quot;&gt;Hamiltonian&lt;/a&gt;
-of the system. The Hamiltonian is (i) the sum of the kinetic energies
-\( \sum_i \hat{p}_i^2/2 m_i \) of every particle and (ii) the potential energy
-of interaction \( V \) between the particles. The potential energy depends
-on the positions and momenta of the particles and has to be specified to
-you for each case.&lt;/p&gt;
+of the system:&lt;/p&gt;
+
+        &lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\hat{H} = \underbrace{\sum_i \displaystyle\frac{\hat{p}_i^2}{2 m_i}}_{\twonote{Kinetic energy}{of all particles $i$}}
+        + \underbrace{V(\B{x}_1,\B{x}_2,\ldots)}_{\twonote{Potential energy }{of all particles}}
+&lt;/script&gt;
+
+        &lt;p&gt;The potential energy \( V \) depends on the positions and perhaps
+also the momenta of all the particles. It has to be specified to you for
+each problem.&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;There may be many solutions to an eigenvalue equation but not all of them
@@ -894,7 +909,7 @@ experiment \( \hat{A} \) then QM &lt;em&gt;does&lt;/em&gt; predict&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The momentum operator of an electron in one dimension is
-\( \hat{p} = -i\hbar \frac{d}{dx} \).&lt;/p&gt;
+\( \hat{p} = -i\hbar \displaystyle\frac{d}{dx} \).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q2&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in three dimensions&lt;/em&gt;&lt;/p&gt;
 
@@ -906,7 +921,7 @@ is defined like in A1.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;The momentum opertor is given by&lt;/p&gt;
+&lt;p&gt;The momentum operator is given by&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \hat{\B{p}} = -i \hbar
@@ -933,10 +948,8 @@ more than one variable involved - like in thermodynamics.&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;Note that sometimes the \( x \), \( y \) and \( z \) coordinates
 are written as \( r_1 \), \( r_2 \), \( r_3 \)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \hat{\B{p}} = -i \hbar
 \left(
 \begin{array}{c}
@@ -946,6 +959,17 @@ are written as \( r_1 \), \( r_2 \), \( r_3 \)&lt;/p&gt;
 \end{array}
 \right)
 &lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Even more briefly we can write &lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt; \hat{\B{p}} = -i \hbar \B{\nabla} &lt;/script&gt;
+
+    &lt;p&gt;The upside down triangle is called &lt;a href=&quot;http://en.wikipedia.org/wiki/Del&quot;&gt;nabla&lt;/a&gt; 
+and stands for the vector of derivatives in the three directions, as 
+already written above.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;Q3&lt;/strong&gt;. &lt;em&gt;Write down the definition of the angular momentum operator
 \( \hat{\B{l}} \) given that the angular momentum is defined by&lt;/em&gt;&lt;/p&gt;
@@ -961,7 +985,7 @@ r_1 p_2 - r_2 p_1
 \right).
 &lt;/script&gt;
 
-&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Substitute the definition of the 3D momentum operator in (Q2) into the
 expression for \( \B{l} \).&lt;/p&gt;
@@ -1011,7 +1035,7 @@ is the mass of the particle.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;To do this question we need the formula for the energy in terms of the free
 electrons position and momentum. Luckily that is given to us. Next we do the
-usual substitution for the electron momentum. Then we use rule 2 and write down
+usual substitution for the electron momentum. Then we use Rule 2 and write down
 the eigenvalue equation.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
@@ -1034,27 +1058,37 @@ electron,&lt;/p&gt;
 \displaystyle\frac{d}{dx} \) and \(x \) and \( m_e \) are the position
 coordinate and mass of the electron, respectively.&lt;/p&gt;
 
-&lt;p&gt;Note:
-* To solve this equation to find the allowed energy values
-  \( E \) means we usually have to first find the unknown wave function
-  \( \psi(x) \).
-* The hamiltonian as a negative sign in it. However it generally has a positive
-  value (as energy should!) at any point in space because \( d^2\psi/dx^2 \)
-  is usually negative; it is generally positive but not always positive everywhere.&lt;/p&gt;
+&lt;p&gt;Note:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Q6&lt;/strong&gt;. &lt;em&gt;Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;To solve this equation to find the allowed energy values
+\( E \) means we usually have to first find the unknown wave function
+\( \psi(x) \).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Hamiltonian has a negative sign in it. However it’s value  is generally
+positive (as energy should be) at any point in space because
+\( d^2\psi/dx^2 \) is usually negative; it is generally positive but
+not &lt;em&gt;always&lt;/em&gt; positive everywhere.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Q6&lt;/strong&gt;. &lt;em&gt;Write down the equation for the allowed energy levels of the hydrogen
+atom in one dimension. Assume that \( V(x) \) is given by the &lt;a href=&quot;http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge&quot;&gt;electrostatic potential energy&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;We need to write down the total energy of an electron and a proton
-in one dimension. The total energy is comprised of the kinetic energy of
+&lt;p&gt;We need to write down the total energy of an electron and a proton in one
+dimension. The total energy is comprised of the sum of the kinetic energy of
 each particle. Hence it depends on the momentum of the electron \( p_e \) and
 the momentum of the proton \( p_p \). The total energy also depends of the
 electrical attraction between the proton and the electron which depends
-on the (inverse) distance between the two particles according to &lt;a href=&quot;http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge&quot;&gt;Coulomb’s
-Law&lt;/a&gt;.
-The distance between the two particles involves the coordinates of the electron
-and the proton, respectively \( x_e \) and \( x_p \).&lt;/p&gt;
+on the (inverse) distance between the two particles according to
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge&quot;&gt;Coulomb’s Law&lt;/a&gt;
+as stated in the problem. The distance between the two particles is
+\( |x_p - x_e| \) and involves the coordinates of the electron and the
+proton, respectively \( x_e \) and \( x_p \).&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
@@ -1070,14 +1104,15 @@ for the system, given by&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
-\begin{alignat}{5}
+\begin{alignat*}{5}
 \hat{H} &amp; = \frac{p^2_p}{2m_p}
-        &amp; + \frac{p^2_e}{2m_e} 
+      &amp; &amp; + \frac{p^2_e}{2m_e}
         &amp; + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
         &amp; = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\twonote{Kinetic energy}{of proton}} \ \
-        &amp;   \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\twonote{Kinetic energy}{of electron}} \ \
+      &amp; &amp;   \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\twonote{Kinetic energy}{of electron}} \ \
         &amp;   \underbrace{-\frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|}}_{\twonote{Electron-nuclues}{attraction energy}}
-\end{alignat}
+        \\
+\end{alignat*}
  %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;&lt;strong&gt;Q7&lt;/strong&gt;. &lt;em&gt;Is the equation \( \hat{P}^2 \psi = \hat{P}\psi \) an eigenvalue equation?&lt;/em&gt;&lt;/p&gt;
@@ -1098,7 +1133,7 @@ somewhat &lt;em&gt;special&lt;/em&gt; … if it even exists.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Q8&lt;/strong&gt;. &lt;em&gt;Suppose we do an experiment for the total energy \( E_0 \) of a
 particle and the wavefunction is \( \psi_0 \) after the experiment.
 (i) What is the probability of measuring energy \( E_0 \) again, afterwards?
-(ii) What is the probability of measuring a different energy \( E_1 \) afterwards? 
+(ii) What is the probability of measuring a different energy \( E_1 \) afterwards?
 (iii) What is the average of many position measurements of the particle?
 Assume that the particle is one dimensional.&lt;/em&gt;&lt;/p&gt;
 

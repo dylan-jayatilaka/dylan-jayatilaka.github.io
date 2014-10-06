@@ -255,7 +255,9 @@ to a different problem.</p>
 for the problem,</p>
 
     <script type="math/tex; mode=display">
+\boxed{
 \hat{H} = -\displaystyle\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
+}
 </script>
 
     <p>and hence the Schrodinger equation \( \hat{H}\psi = E\psi \) for the
@@ -271,18 +273,18 @@ the potential is constant:</p>
 
     <ul>
       <li>
-        <p>For free or unbound particles \( \psi(x) = A e^{i k x} \).
+        <p>For free or unbound particles \( \boxed{\psi(x) = A e^{i k x}} \).
 A free particle is one where the energy \( E \) is greater than the
 largest value of the potential \( V(x) \) i.e. the particle has enough
 energy to overcome any barrier.</p>
       </li>
       <li>
         <p>For bound electrons where the energy of the particle is <em>less</em> than
-the energy of the barrier, \( \psi(x) = A e^{-\alpha x} + B e^{+\beta x} \).</p>
+the energy of the barrier, \( \boxed{\psi(x) = A e^{-\alpha x} + B e^{+\beta x}} \).</p>
       </li>
       <li>
         <p>For bound electrons where the energy of the particle is <em>greater</em> than
-the energy of the barrier, \( \psi(x) = A \sin kx + B \cos kx \).</p>
+the energy of the barrier, \( \boxed{\psi(x) = A \sin kx + B \cos kx} \).</p>
       </li>
     </ul>
   </li>
@@ -308,9 +310,9 @@ Schrodinger equation in each region where the potential is constant. Find the
 unknown constants in the different pieces of the wavefunction for each region
 by makeing sure that it is continuous and smooth.</p>
 
-<h2 id="free-electron-in-one-dimension">Free electron in one dimension</h2>
+<h2 id="free-electron-in-one-dimension---otherwise-known-as-the-particle-not-in-a-box">Free electron in one dimension - otherwise known as the particle <em>not</em> in a box</h2>
 
-<p>Now we get to the meat.</p>
+<p>Now we get to the meat. Note that the meat is not in a box.</p>
 
 <figure>
    <img src="/images/meat-on-the-bone.jpg" />
@@ -321,13 +323,13 @@ by makeing sure that it is continuous and smooth.</p>
 <p><em>Strategy</em></p>
 
 <p>The strategy for solving these problems was given above. The Schrodinger
-equation for the free particle was written down in Q5 in the last post. But
-before applying this strategy and solving the equation let’s think what answer
-we might expect. Actually, since the electron can move freely, we would expect
-that it can have … any energy it likes … as long as it is positive. Also,
-we expect that an electron moving freely should be located … well, anywhere
-it likes … meaning to say that the probability of finding it at any position
-is equally likely.</p>
+equation for the free particle was written down in Q5 in the last post. Basically
+a free particle means that \( V(x) = 0 \). But before applying the strategy
+and solving the equation let’s think what answer we might expect. Actually,
+since the electron can move freely, we would expect that it can have … any
+energy it likes … as long as it is positive. Also, we expect that an electron
+moving freely should be located … well, anywhere it likes … meaning to say
+that the probability of finding it at any position is equally likely.</p>
 
 <p><em>Answer</em></p>
 
@@ -391,7 +393,7 @@ What is the meaning of these two wavefunctions?</em></p>
 
 <p><em>Strategy</em></p>
 
-<p>According to the rules of QM, a wavefunction has a certain momentum if it is an
+<p>According to the Rules of QM, a wavefunction has a certain momentum if it is an
 eigenfunction of the corresponding operator. Hence we need to show that
 \( \psi(x) \) is an eigenfunction of the momentum \( \hat{p} \).</p>
 
@@ -434,7 +436,7 @@ negative momentum (i.e. moving to the left), assuming \( k&gt;0 \).</p>
 
 <p>Note that the unknown constant \( A \) can not be determined by
 the normalization condition: recall that according to the Rules
-of quantum mechanics, normalization only applies to bound states.</p>
+of QM, normalization only applies to bound states.</p>
 
 <p><strong>Q12</strong>. <em>Show that the wavefunction \( \psi = A e^{i k x} + B e^{-i k x} \)
 is also a solution to the free electron Schrodinger equation. Is this a
@@ -501,7 +503,7 @@ to maximize the bonding to <em>neighbouring</em> atoms around a central atom.</p
 <h2 id="particle-in-a-box">Particle in a box</h2>
 
 <p><strong>Q13</strong>. <em>Solve the Schrodinger equation for an electron in a box of length
-\( L \) which starts at the origin (the potential is infite outside the box)</em>.</p>
+\( L \) which starts at the origin (the potential is infinite outside the box)</em>.</p>
 
 <p><em>Strategy</em></p>
 
@@ -512,8 +514,8 @@ outside the box.</p>
 
 <p><em>Answer</em></p>
 
-<p>The potential \( V(x) \) looks like below (along with the solutions which we
-have yet to find).</p>
+<p>The potential \( V(x) \) looks as shown below. Also shown are the solutions
+which we have yet to find.</p>
 
 <figure>
    <img src="/images/p-in-infinite-box.jpg" />
@@ -658,6 +660,14 @@ the Schrodinger equation and apply the boundary conditions to get the answer.</l
 </ul>
 
 <p><em>Answer</em></p>
+
+<p>Here is the picture of the potential:</p>
+
+<figure>
+   <img src="/images/p-in-half-infinite-box.jpg" />
+</figure>
+
+<p>Now let’s substitute in our general solutions for each region.</p>
 
 <ul>
   <li>

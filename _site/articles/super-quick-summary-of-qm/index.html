@@ -163,9 +163,9 @@ MathJax.Hub.Config({
             <!-- /.social-share -->
       </footer>
       <div class="entry-content">
-        <p>This is a post for my second year Phys Chem students. </p>
+        <p>This is a post for my second year Phys Chem students.</p>
 
-<p>The purpose of this post is to write down briefly the main ideas and rules of
+<p>The purpose of this post is to write down briefly the main ideas and Rules of
 Quantum mechanics.</p>
 
 <p>Now quantum mechanics is usually quite baffling and intruiguing
@@ -219,9 +219,7 @@ guff and get straight into it.</p>
 
 <p>There are only few rules to quantum mechanics.</p>
 
-<p>But the rules do require some explanation.</p>
-
-<p>Here they are:</p>
+<p>But the rules do require some explanation, as you see!</p>
 
 <ol>
   <li>
@@ -244,7 +242,7 @@ becomes infinite - so called singularities)</p>
         <p>\( \psi \) for bound ie. stable states must be
 <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/qm.html#c5">normalizable</a>
 i.e. \( \int |\psi|^2 \) must exist and must equal one; this is called
-normalization of the wavefunction. The reson is that \( |\psi(\B{x})|^2 \) 
+normalization of the wavefunction. The reason is that \( |\psi(\B{x})|^2 \)
 is the probability of finding the particles at given positions \(\B{x}\).</p>
       </li>
     </ul>
@@ -261,12 +259,14 @@ system.</p>
       <li>
         <p>The momenta (which in classical mechanics is written as \( \B{p} \) and is equal
 to mass times velocity \(\B{p} = m\B{v}\)) is in quantum mechanics equal to a derivatives
-with respect to the particle coordinates times \( i\hbar \) where
-\( \hbar \) is Planck’s constant divided by \( 2\pi \) 
-i.e. in quantum mechanics </p>
+with respect to the particle coordinates times \( i\hbar \) (where
+\( \hbar \) is Planck’s constant divided by \( 2\pi \) )
+i.e. in quantum mechanics:</p>
 
         <script type="math/tex; mode=display">
-\hat{p} = i\hbar \frac{d}{dx} \ \textrm{in 1 dimension}
+\boxed{
+\hat{p} = -i\hbar \displaystyle\frac{d}{dx} \ \ldots \ \textrm{in 1 dimension}
+}
 </script>
 
         <p>This is very different to classical mechanics!</p>
@@ -299,13 +299,18 @@ determined in this equation are the
       <li>
         <p>Example: The <a href="">Schrodinger equation</a> \( \hat{H}\psi = E\psi \) is just
 the eigenvalue equation for the allowed energies \( E \) of the system,
-where \( \hat{H} \) is the energy operator or
+where \( \hat{H} \) is the total energy operator or
 <a href="http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)#The_Schr.C3.B6dinger_Hamiltonian">Hamiltonian</a>
-of the system. The Hamiltonian is (i) the sum of the kinetic energies
-\( \sum_i \hat{p}_i^2/2 m_i \) of every particle and (ii) the potential energy
-of interaction \( V \) between the particles. The potential energy depends
-on the positions and momenta of the particles and has to be specified to
-you for each case.</p>
+of the system:</p>
+
+        <script type="math/tex; mode=display">
+\hat{H} = \underbrace{\sum_i \displaystyle\frac{\hat{p}_i^2}{2 m_i}}_{\twonote{Kinetic energy}{of all particles $i$}}
+        + \underbrace{V(\B{x}_1,\B{x}_2,\ldots)}_{\twonote{Potential energy }{of all particles}}
+</script>
+
+        <p>The potential energy \( V \) depends on the positions and perhaps
+also the momenta of all the particles. It has to be specified to you for
+each problem.</p>
       </li>
       <li>
         <p>There may be many solutions to an eigenvalue equation but not all of them
@@ -351,7 +356,7 @@ experiment \( \hat{A} \) then QM <em>does</em> predict</p>
 <p><em>Answer</em></p>
 
 <p>The momentum operator of an electron in one dimension is
-\( \hat{p} = -i\hbar \frac{d}{dx} \).</p>
+\( \hat{p} = -i\hbar \displaystyle\frac{d}{dx} \).</p>
 
 <p><strong>Q2</strong>. <em>Write down the momentum operator of an electron in three dimensions</em></p>
 
@@ -363,7 +368,7 @@ is defined like in A1.</p>
 
 <p><em>Answer</em></p>
 
-<p>The momentum opertor is given by</p>
+<p>The momentum operator is given by</p>
 
 <script type="math/tex; mode=display">
 \hat{\B{p}} = -i \hbar
@@ -390,10 +395,8 @@ more than one variable involved - like in thermodynamics.</p>
   <li>
     <p>Note that sometimes the \( x \), \( y \) and \( z \) coordinates
 are written as \( r_1 \), \( r_2 \), \( r_3 \)</p>
-  </li>
-</ul>
 
-<script type="math/tex; mode=display">
+    <script type="math/tex; mode=display">
 \hat{\B{p}} = -i \hbar
 \left(
 \begin{array}{c}
@@ -403,6 +406,17 @@ are written as \( r_1 \), \( r_2 \), \( r_3 \)</p>
 \end{array}
 \right)
 </script>
+  </li>
+  <li>
+    <p>Even more briefly we can write </p>
+
+    <script type="math/tex; mode=display"> \hat{\B{p}} = -i \hbar \B{\nabla} </script>
+
+    <p>The upside down triangle is called <a href="http://en.wikipedia.org/wiki/Del">nabla</a> 
+and stands for the vector of derivatives in the three directions, as 
+already written above.</p>
+  </li>
+</ul>
 
 <p><strong>Q3</strong>. <em>Write down the definition of the angular momentum operator
 \( \hat{\B{l}} \) given that the angular momentum is defined by</em></p>
@@ -418,7 +432,7 @@ r_1 p_2 - r_2 p_1
 \right).
 </script>
 
-<p><em>Strategy</em>. </p>
+<p><em>Strategy</em>.</p>
 
 <p>Substitute the definition of the 3D momentum operator in (Q2) into the
 expression for \( \B{l} \).</p>
@@ -468,7 +482,7 @@ is the mass of the particle.</em></p>
 
 <p>To do this question we need the formula for the energy in terms of the free
 electrons position and momentum. Luckily that is given to us. Next we do the
-usual substitution for the electron momentum. Then we use rule 2 and write down
+usual substitution for the electron momentum. Then we use Rule 2 and write down
 the eigenvalue equation.</p>
 
 <p><em>Answer</em></p>
@@ -491,27 +505,37 @@ electron,</p>
 \displaystyle\frac{d}{dx} \) and \(x \) and \( m_e \) are the position
 coordinate and mass of the electron, respectively.</p>
 
-<p>Note:
-* To solve this equation to find the allowed energy values
-  \( E \) means we usually have to first find the unknown wave function
-  \( \psi(x) \).
-* The hamiltonian as a negative sign in it. However it generally has a positive
-  value (as energy should!) at any point in space because \( d^2\psi/dx^2 \)
-  is usually negative; it is generally positive but not always positive everywhere.</p>
+<p>Note:</p>
 
-<p><strong>Q6</strong>. <em>Write down the equation for the allowed energy levels of the hydrogen atom in one dimension.</em></p>
+<ul>
+  <li>
+    <p>To solve this equation to find the allowed energy values
+\( E \) means we usually have to first find the unknown wave function
+\( \psi(x) \).</p>
+  </li>
+  <li>
+    <p>The Hamiltonian has a negative sign in it. However it’s value  is generally
+positive (as energy should be) at any point in space because
+\( d^2\psi/dx^2 \) is usually negative; it is generally positive but
+not <em>always</em> positive everywhere.</p>
+  </li>
+</ul>
+
+<p><strong>Q6</strong>. <em>Write down the equation for the allowed energy levels of the hydrogen
+atom in one dimension. Assume that \( V(x) \) is given by the <a href="http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge">electrostatic potential energy</a>.</em></p>
 
 <p><em>Strategy</em></p>
 
-<p>We need to write down the total energy of an electron and a proton
-in one dimension. The total energy is comprised of the kinetic energy of
+<p>We need to write down the total energy of an electron and a proton in one
+dimension. The total energy is comprised of the sum of the kinetic energy of
 each particle. Hence it depends on the momentum of the electron \( p_e \) and
 the momentum of the proton \( p_p \). The total energy also depends of the
 electrical attraction between the proton and the electron which depends
-on the (inverse) distance between the two particles according to <a href="http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge">Coulomb’s
-Law</a>.
-The distance between the two particles involves the coordinates of the electron
-and the proton, respectively \( x_e \) and \( x_p \).</p>
+on the (inverse) distance between the two particles according to
+<a href="http://en.wikipedia.org/wiki/Electric_potential_energy#Electrostatic_potential_energy_of_one_point_charge">Coulomb’s Law</a>
+as stated in the problem. The distance between the two particles is
+\( |x_p - x_e| \) and involves the coordinates of the electron and the
+proton, respectively \( x_e \) and \( x_p \).</p>
 
 <p><em>Answer</em></p>
 
@@ -527,14 +551,15 @@ for the system, given by</p>
 
 <script type="math/tex; mode=display">% <![CDATA[
 
-\begin{alignat}{5}
+\begin{alignat*}{5}
 \hat{H} & = \frac{p^2_p}{2m_p}
-        & + \frac{p^2_e}{2m_e} 
+      & & + \frac{p^2_e}{2m_e}
         & + \frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|} \\
         & = \underbrace{-\frac{\hbar^2}{2m_p}\frac{d^2}{dx_p^2}}_{\twonote{Kinetic energy}{of proton}} \ \
-        &   \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\twonote{Kinetic energy}{of electron}} \ \
+      & &   \underbrace{-\frac{\hbar^2}{2m_e}\frac{d^2}{dx_e^2}}_{\twonote{Kinetic energy}{of electron}} \ \
         &   \underbrace{-\frac{1}{4\pi\epsilon_0}\frac{1}{|x_p - x_e|}}_{\twonote{Electron-nuclues}{attraction energy}}
-\end{alignat}
+        \\
+\end{alignat*}
  %]]></script>
 
 <p><strong>Q7</strong>. <em>Is the equation \( \hat{P}^2 \psi = \hat{P}\psi \) an eigenvalue equation?</em></p>
@@ -555,7 +580,7 @@ somewhat <em>special</em> … if it even exists.</p>
 <p><strong>Q8</strong>. <em>Suppose we do an experiment for the total energy \( E_0 \) of a
 particle and the wavefunction is \( \psi_0 \) after the experiment.
 (i) What is the probability of measuring energy \( E_0 \) again, afterwards?
-(ii) What is the probability of measuring a different energy \( E_1 \) afterwards? 
+(ii) What is the probability of measuring a different energy \( E_1 \) afterwards?
 (iii) What is the average of many position measurements of the particle?
 Assume that the particle is one dimensional.</em></p>
 
