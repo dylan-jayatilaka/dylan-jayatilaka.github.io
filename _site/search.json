@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/atomic-orbitals-and-chladni-figures/",
+		  "date"       : "2014-10-07 00:00:00 +0800",
+		  "shortdate"  : "October 07, 2014"
+		} ,
+	
+		{
 		  "title"      : "Particles in boxes",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/particles-in-boxes/",

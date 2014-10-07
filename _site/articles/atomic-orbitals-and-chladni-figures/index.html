@@ -1,0 +1,466 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics &#8211; That Blog by Dylan</title>
+<meta name="description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta name="keywords" content="chem2002, atomic orbitals, Chladni figures, vibrating drum, vibrating membrane, Faraday waves, Oscillons, Cymatics, Corn Starch, de Broglie, Bohm, Pilot wave theory, Quantum Mechanics">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics">
+<meta property="og:description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta property="og:url" content="//localhost:4000/articles/atomic-orbitals-and-chladni-figures/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/atomic-orbitals-and-chladni-figures/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\textrm{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            sub: ["_"],
+            star: ["*"],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1],
+            subnote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            onenote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            twonote:   ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\end{array}}",2],
+            threenote: ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\\\ \\s{#3}\\end{array}}",3]
+        }
+    }
+});
+</script>
+<script type="text/javascript"
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/linden-gledhill-multi-pink-mg-0293-cut.jpg" class="entry-feature-image" alt="Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics" ><p class="image-credit">Photo Credit: <a href="http://www.lindengledhill.com/paint-splash/f26qnsywhy54nd68ciygax2r9yxcqf">Paint Splash Multi Pink MG 0293 - Linden Gledhill Photography</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#chem2002" title="Pages tagged chem2002">chem2002</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#atomic orbitals" title="Pages tagged atomic orbitals">atomic orbitals</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Chladni figures" title="Pages tagged Chladni figures">Chladni figures</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#vibrating drum" title="Pages tagged vibrating drum">vibrating drum</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#vibrating membrane" title="Pages tagged vibrating membrane">vibrating membrane</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Faraday waves" title="Pages tagged Faraday waves">Faraday waves</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Oscillons" title="Pages tagged Oscillons">Oscillons</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Cymatics" title="Pages tagged Cymatics">Cymatics</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Corn Starch" title="Pages tagged Corn Starch">Corn Starch</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#de Broglie" title="Pages tagged de Broglie">de Broglie</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Bohm" title="Pages tagged Bohm">Bohm</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Pilot wave theory" title="Pages tagged Pilot wave theory">Pilot wave theory</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Quantum Mechanics" title="Pages tagged Quantum Mechanics">Quantum Mechanics</a></span>
+        
+          <h1 class="entry-title">Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-10-07T00:00:00+08:00"><i class="icon-calendar-empty"></i> October 07, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="2014-09-21"><i class="icon-pencil"></i> September 21, 2014</time></span>
+        
+        <span><a href="//localhost:4000/articles/atomic-orbitals-and-chladni-figures/" rel="bookmark" title="Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/atomic-orbitals-and-chladni-figures/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics&url=//localhost:4000/articles/atomic-orbitals-and-chladni-figures/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/atomic-orbitals-and-chladni-figures/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>Well this is no doubt my best effort for a blog title yet.</p>
+
+<p>You might think this is going to be the greatest
+<a href="http://en.wikipedia.org/wiki/Shaggy_dog_story">shaggy dog story yet</a>
+but hang with me, I reckon it will work.</p>
+
+<p>Anyway, the other day I was giving a lecture to my second year Phys Chem
+students on the hydrogen-like atomic orbitals (as you do). I can’t remember if
+it was because the projector failed or what, but I for some reason I felt like
+winging it. I guess I felt like explaining the shapes of the atomic orbitals by
+reference to something <em>real</em> – because the way they do it in textbooks is just
+so darned <em>abstract</em>.</p>
+
+<p>At this point I remembered the old
+<a href="http://en.wikipedia.org/wiki/Ernst_Chladni#Chladni_figures">Chladni figures</a>.</p>
+
+<p>I think I even made them once with my old electronics set.</p>
+
+<p>Anyway, the students had no idea what I was talking about – so off I went.</p>
+
+<h2 id="chladni-figures">Chladni figures</h2>
+
+<p>You see, the shapes of the atomic orbitals are not all that strange.</p>
+
+<p>You can see essentially the same kind of shapes when you sprinkle sand on a
+vibrating plate. A bloke called
+<a href="http://en.wikipedia.org/wiki/Ernst_Chladni">Ernst Chladni</a> (1756-1827) first
+made them by using a violin bow to make a metal plate vibrate, hence the name.</p>
+
+<p>Below you can see some of the complicated vibrating-sand patterns you can get
+on a circular plate. They sure are <a href="http://www.urbandictionary.com/define.php?term=Purrty">purrty</a>.
+If you want to see them actually appearing look
+<a href="http://www.youtube.com/watch?v=Qf0t4qIVWF4">here</a>.</p>
+
+<figure>
+   <img src="/images/chladni-figure-circular-plate-complex.jpg" />
+</figure>
+
+<h2 id="deja-vu">Deja vu</h2>
+
+<p>You might not believe it, but you have seen this stuff before.</p>
+
+<p>Let’s take a step back and look at some <em>simpler</em> Chlandi figures:</p>
+
+<figure>
+   <img src="/images/chladni-figure-circular-plate-simple.jpg" />
+</figure>
+
+<p>If you squint a bit, you will see that these vibrating patterns are
+actually quite similar to the atomic orbitals!</p>
+
+<ul>
+  <li>
+    <p>The first column corresponds to the s-type orbitals. They are all spherical
+(well, actually circular) in shape.</p>
+  </li>
+  <li>
+    <p>The next column has a node through the middle – just like the p orbitals.
+As we we go down the column we get extra circular nodes.</p>
+  </li>
+  <li>
+    <p>Likewise the third column has <em>two</em> nodes through the middle, as well
+as an increasing numbe of circular nodes – very much like the
+3d, 4d, 5d atomic orbitals.</p>
+  </li>
+</ul>
+
+<p>If you are a bit skeptical about all this, look at this web page
+at wikipedia which shows
+<a href="http://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane#Animations_of_several_vibration_modes">simulated animations of these figures</a>. These are images of a vibrating drum.
+Cool, huh? In these figures the s, p, d orbitals go across the page (1s, 2s,
+3s; 2p, 3p, 4p; 3d, 4d, 4d). Immediately below the 1s “orbital” you can see the
+p orbitals. <strong>This is so important for understanding that the
+alleged 2p orbital is reproduced below for further analysis</strong>.</p>
+
+<figure>
+   <img src="/images/chladni-figure-circular-plate-2p.gif" />
+</figure>
+
+<p>See the two “lobes” which vibrate up and down like a see-saw?</p>
+
+<p>These are just like the lobes of the 2p atomic orbital!</p>
+
+<p>This explains why you sometimes see one lobe marked with the + (plus)
+sign and the other markedwith the - (minus) sign. The signs have <em>nothing</em> to
+do with electric charge. Rather, they explain that the two lobes
+are vibrating <em>out of phase</em> — like a see saw.</p>
+
+<p>This is really important!</p>
+
+<p>Because: to get a strong chemical bond the waves from two different
+orbitals on two different atoms — they can be p orbitals or not —
+need to add up <em>in phase</em> . If not, there will be a net cancellation and the
+sum of the two vibrating orbitals will disappear. No vibration means no
+chemical bond. Make sense? This is what it means for two orbitals to
+“overlap” properly to form a chemical bond.</p>
+
+<p>I want to make this absolutely clear: you should think of 2p electrons
+vibrating in an atom just like the above picture. Think of a 2p electron as
+actually <em>being</em> this pulsating atomic orbital. It’s a great model!</p>
+
+<h2 id="the-pulsating-1s-orbital-jellyfish">The pulsating 1s-orbital jellyfish</h2>
+
+<p>Of course, in reality the electron is <em>not</em> a drum membrane. It is made of …
+electron stuff.</p>
+
+<p>More important, the electron inhabits three dimensional space
+(actually four, if you count spin, but that is another story) not two
+dimensions like a drum head.</p>
+
+<p>So in reality our 2p electron — in fact <em>any</em> electron — is a
+pulsating 3D object.</p>
+
+<p>I guess the closest you can get to an object like this is … a
+jellyfish! I imagine the jellyfish is a good model for the s-type atomic
+orbitals.</p>
+
+<figure>
+   <img src="/images/medusoid-jellyfish.jpg" />
+</figure>
+
+<h2 id="faradays-waves">Faraday’s waves</h2>
+
+<p>Of course, looking at sand on vibrating plates or drums is not the only
+way to visualize sound. (You might be surprised that there is actually a word
+for visualizing sound: it is called <a href="http://en.wikipedia.org/wiki/Cymatics">cymatics</a>).</p>
+
+<p>The next candidate that comes to mind is the old corn starch liquid — you
+know, that gloopy white stuff that you made as a kid, a
+<a href="http://en.wikipedia.org/wiki/Non-Newtonian_fluid">non-Newtonian fluid</a>,
+that gets harder when you hit it.</p>
+
+<p>Now the things is: with Chladni figures what we are seeing is all about the
+vibrating plate or drum skin. On the other hand, vibrations of gloopy
+corn-starch materials is more about the properties of those materials
+themselves.</p>
+
+<p>The wave shapes that appear in such materials are much more bizzare.</p>
+
+<p>If the frequency of vibration is high enough, we can often see
+“standing waves”. Such standing waves were described by
+<a href="http://en.wikipedia.org/wiki/Michael_Faraday">Michael Faraday</a> (1791-1867)
+and so are sometimes called <a href="http://en.wikipedia.org/wiki/Faraday_wave">Faraday waves</a>
+or more generally, <a href="http://en.wikipedia.org/wiki/Oscillon">oscillons</a>
+or <a href="http://en.wikipedia.org/wiki/Soliton">solitons</a>.</p>
+
+<p>Even more exotic, it is possible to generate “holes” in vibrating cornstarch
+that don’t disappear! These holes have interesting properties: they repel each
+other and sometimes form “bonded pairs”. At still higher frequency unstable
+“forests of gloop” – for want of a better description – start to “grow”. All
+this is too strange for words. Seeing is believing; check out the video below.</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/nq3ZjY0Uf-g" frameborder="0"></iframe>
+
+<h2 id="gloop-and-the-de-broglie-bohm-theory">Gloop and the de Broglie-Bohm theory</h2>
+
+<p>Remarkably, there is <em>another</em> connection between quantum mechanics and the
+gloopy viscous fluid which behaves strangely when vibrated.</p>
+
+<p>Pay attention now.</p>
+
+<p>Aficionados of quantum theory will know that it is a doubly dual theory.
+Not only is it a theory of
+<a href="http://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality">wave-particle duality</a>,
+but it is simultaneously one of the best and worst theories ever conceived!</p>
+
+<ul>
+  <li>
+    <p>It is one of the <em>best</em> theories because the precision and accuracy of its
+predictions are unsurpassed</p>
+  </li>
+  <li>
+    <p>It is one of the <em>worst</em> theories because, being a statistical theory, it
+doesn’t actually explain <em>why</em> it works. Consequently, there are a plethora
+of different <a href="http://en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics">interpretations</a>,
+of what it means. These interpretations range from the standard
+<a href="http://en.wikipedia.org/wiki/Copenhagen_interpretation">Copenhagen one</a>
+to the outlandish
+<a href="http://en.wikipedia.org/wiki/Many-worlds_interpretation">Parallel Universe</a> viewpoint.</p>
+  </li>
+</ul>
+
+<p>The <a href="http://en.wikipedia.org/wiki/De_Broglie%E2%80%93Bohm_theory">de Broglie-Bohm (dBB) interpretation of quantum
+mechanics</a> was one
+of the first which proved that it was even <em>possible</em> to have an alternative
+interpretation which was logically consistent. Unlike the standard interpretation,
+the dBB viewpoint asserts that there is an <em>actual particle</em> in quantum
+mechanics; yet it still manages to make exactly the same predictions
+as the regular interpretation.</p>
+
+<p>The idea behind he dBB theory is almost trivial: it is that the actual particle
+moves according to a nonlocal potential which is related to the
+wavefunction. This is why the theory is also called the 
+<a href="http://en.wikipedia.org/wiki/Pilot_wave">pilot wave theory</a>.
+The wavefunction itself still obeys the Schrodinger equation. The “random”
+results that are obtained in quantum experiments — for example the
+famous <a href="http://en.wikipedia.org/wiki/Double-slit_experiment#Interference_of_individual_particles">double slit experiment</a>
+where a diffraction pattern is “built up” one particle at a time on the
+detector screen — are controlled by variations in the initial conditions of
+the particle.</p>
+
+<p>(Lest you think the dBB theory is a somewhat useless, since anyway we have to
+solve the Schrodinger equation to use it, you should know that it is the basis
+of a very practical scheme for modelling chemical reactions, developed by
+<a href="http://en.wikipedia.org/wiki/Robert_E._Wyatt">Bob Wyatt</a>.
+See <a href="http://k2.chem.uh.edu/group/OldStuff/Papers/JCP-WB.pdf">here</a>.)</p>
+
+<p><strong>But what has all this to do with viscous vibrating gloop?</strong></p>
+
+<p>Prepare to be amazed.</p>
+
+<p>In the following video,
+<a href="http://www.msc.univ-paris-diderot.fr/spip.php?rubrique140">Yves Coudert</a> shows
+how a droplet suspended on a fast vibrating fluid, in this case silicone oil
+behaves almost identically to how one would expect in the dBB theory. In
+particular, Coudert demonstrates how one droplet — representing an electron
+for example — can move through a double slit and generate, one particle at a
+time, a diffraction pattern! By contrast, in the standard interpretation of
+quantum mechanics, the electron is supposed to go through <em>both</em> slits at once
+and diffract with itself. After looking at this video you might change your mind about
+the dBB interpretation.</p>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/W9yWv5dqSKk" frameborder="0"></iframe>
+
+<p>If you interested in reading more see the Euro Phys News article
+<a href="http://users.df.uba.ar/dasso/fis4_2do_cuat_2010/walker.pdf">here</a>.</p>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/particles-in-boxes/" class="btn" title="Particles in boxes">Previous article</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

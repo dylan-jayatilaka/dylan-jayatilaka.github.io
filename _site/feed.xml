@@ -10,13 +10,261 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-07T12:15:59+08:00</updated>
+<updated>2014-10-07T21:13:35+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
   <uri>http://localhost:4000/</uri>
   <email>dylan.jayatilaka@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/atomic-orbitals-and-chladni-figures/"/>
+  <id>http://localhost:4000/articles/atomic-orbitals-and-chladni-figures</id>
+  <updated>2014-09-21T00:00:00-00:00</updated>
+  <published>2014-10-07T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#chem2002" term="chem2002" /><category scheme="http://localhost:4000/tags/#atomic%20orbitals" term="atomic orbitals" /><category scheme="http://localhost:4000/tags/#Chladni%20figures" term="Chladni figures" /><category scheme="http://localhost:4000/tags/#vibrating%20drum" term="vibrating drum" /><category scheme="http://localhost:4000/tags/#vibrating%20membrane" term="vibrating membrane" /><category scheme="http://localhost:4000/tags/#Faraday%20waves" term="Faraday waves" /><category scheme="http://localhost:4000/tags/#Oscillons" term="Oscillons" /><category scheme="http://localhost:4000/tags/#Cymatics" term="Cymatics" /><category scheme="http://localhost:4000/tags/#Corn%20Starch" term="Corn Starch" /><category scheme="http://localhost:4000/tags/#de%20Broglie" term="de Broglie" /><category scheme="http://localhost:4000/tags/#Bohm" term="Bohm" /><category scheme="http://localhost:4000/tags/#Pilot%20wave%20theory" term="Pilot wave theory" /><category scheme="http://localhost:4000/tags/#Quantum%20Mechanics" term="Quantum Mechanics" />
+  <content type="html">
+  
+    &lt;p&gt;Well this is no doubt my best effort for a blog title yet.&lt;/p&gt;
+
+&lt;p&gt;You might think this is going to be the greatest
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Shaggy_dog_story&quot;&gt;shaggy dog story yet&lt;/a&gt;
+but hang with me, I reckon it will work.&lt;/p&gt;
+
+&lt;p&gt;Anyway, the other day I was giving a lecture to my second year Phys Chem
+students on the hydrogen-like atomic orbitals (as you do). I can’t remember if
+it was because the projector failed or what, but I for some reason I felt like
+winging it. I guess I felt like explaining the shapes of the atomic orbitals by
+reference to something &lt;em&gt;real&lt;/em&gt; – because the way they do it in textbooks is just
+so darned &lt;em&gt;abstract&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;At this point I remembered the old
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Ernst_Chladni#Chladni_figures&quot;&gt;Chladni figures&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I think I even made them once with my old electronics set.&lt;/p&gt;
+
+&lt;p&gt;Anyway, the students had no idea what I was talking about – so off I went.&lt;/p&gt;
+
+&lt;h2 id=&quot;chladni-figures&quot;&gt;Chladni figures&lt;/h2&gt;
+
+&lt;p&gt;You see, the shapes of the atomic orbitals are not all that strange.&lt;/p&gt;
+
+&lt;p&gt;You can see essentially the same kind of shapes when you sprinkle sand on a
+vibrating plate. A bloke called
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Ernst_Chladni&quot;&gt;Ernst Chladni&lt;/a&gt; (1756-1827) first
+made them by using a violin bow to make a metal plate vibrate, hence the name.&lt;/p&gt;
+
+&lt;p&gt;Below you can see some of the complicated vibrating-sand patterns you can get
+on a circular plate. They sure are &lt;a href=&quot;http://www.urbandictionary.com/define.php?term=Purrty&quot;&gt;purrty&lt;/a&gt;.
+If you want to see them actually appearing look
+&lt;a href=&quot;http://www.youtube.com/watch?v=Qf0t4qIVWF4&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/chladni-figure-circular-plate-complex.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;deja-vu&quot;&gt;Deja vu&lt;/h2&gt;
+
+&lt;p&gt;You might not believe it, but you have seen this stuff before.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a step back and look at some &lt;em&gt;simpler&lt;/em&gt; Chlandi figures:&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/chladni-figure-circular-plate-simple.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;If you squint a bit, you will see that these vibrating patterns are
+actually quite similar to the atomic orbitals!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The first column corresponds to the s-type orbitals. They are all spherical
+(well, actually circular) in shape.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The next column has a node through the middle – just like the p orbitals.
+As we we go down the column we get extra circular nodes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Likewise the third column has &lt;em&gt;two&lt;/em&gt; nodes through the middle, as well
+as an increasing numbe of circular nodes – very much like the
+3d, 4d, 5d atomic orbitals.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are a bit skeptical about all this, look at this web page
+at wikipedia which shows
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane#Animations_of_several_vibration_modes&quot;&gt;simulated animations of these figures&lt;/a&gt;. These are images of a vibrating drum.
+Cool, huh? In these figures the s, p, d orbitals go across the page (1s, 2s,
+3s; 2p, 3p, 4p; 3d, 4d, 4d). Immediately below the 1s “orbital” you can see the
+p orbitals. &lt;strong&gt;This is so important for understanding that the
+alleged 2p orbital is reproduced below for further analysis&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/chladni-figure-circular-plate-2p.gif&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;See the two “lobes” which vibrate up and down like a see-saw?&lt;/p&gt;
+
+&lt;p&gt;These are just like the lobes of the 2p atomic orbital!&lt;/p&gt;
+
+&lt;p&gt;This explains why you sometimes see one lobe marked with the + (plus)
+sign and the other markedwith the - (minus) sign. The signs have &lt;em&gt;nothing&lt;/em&gt; to
+do with electric charge. Rather, they explain that the two lobes
+are vibrating &lt;em&gt;out of phase&lt;/em&gt; — like a see saw.&lt;/p&gt;
+
+&lt;p&gt;This is really important!&lt;/p&gt;
+
+&lt;p&gt;Because: to get a strong chemical bond the waves from two different
+orbitals on two different atoms — they can be p orbitals or not —
+need to add up &lt;em&gt;in phase&lt;/em&gt; . If not, there will be a net cancellation and the
+sum of the two vibrating orbitals will disappear. No vibration means no
+chemical bond. Make sense? This is what it means for two orbitals to
+“overlap” properly to form a chemical bond.&lt;/p&gt;
+
+&lt;p&gt;I want to make this absolutely clear: you should think of 2p electrons
+vibrating in an atom just like the above picture. Think of a 2p electron as
+actually &lt;em&gt;being&lt;/em&gt; this pulsating atomic orbital. It’s a great model!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-pulsating-1s-orbital-jellyfish&quot;&gt;The pulsating 1s-orbital jellyfish&lt;/h2&gt;
+
+&lt;p&gt;Of course, in reality the electron is &lt;em&gt;not&lt;/em&gt; a drum membrane. It is made of …
+electron stuff.&lt;/p&gt;
+
+&lt;p&gt;More important, the electron inhabits three dimensional space
+(actually four, if you count spin, but that is another story) not two
+dimensions like a drum head.&lt;/p&gt;
+
+&lt;p&gt;So in reality our 2p electron — in fact &lt;em&gt;any&lt;/em&gt; electron — is a
+pulsating 3D object.&lt;/p&gt;
+
+&lt;p&gt;I guess the closest you can get to an object like this is … a
+jellyfish! I imagine the jellyfish is a good model for the s-type atomic
+orbitals.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/medusoid-jellyfish.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;faradays-waves&quot;&gt;Faraday’s waves&lt;/h2&gt;
+
+&lt;p&gt;Of course, looking at sand on vibrating plates or drums is not the only
+way to visualize sound. (You might be surprised that there is actually a word
+for visualizing sound: it is called &lt;a href=&quot;http://en.wikipedia.org/wiki/Cymatics&quot;&gt;cymatics&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The next candidate that comes to mind is the old corn starch liquid — you
+know, that gloopy white stuff that you made as a kid, a
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Non-Newtonian_fluid&quot;&gt;non-Newtonian fluid&lt;/a&gt;,
+that gets harder when you hit it.&lt;/p&gt;
+
+&lt;p&gt;Now the things is: with Chladni figures what we are seeing is all about the
+vibrating plate or drum skin. On the other hand, vibrations of gloopy
+corn-starch materials is more about the properties of those materials
+themselves.&lt;/p&gt;
+
+&lt;p&gt;The wave shapes that appear in such materials are much more bizzare.&lt;/p&gt;
+
+&lt;p&gt;If the frequency of vibration is high enough, we can often see
+“standing waves”. Such standing waves were described by
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Michael_Faraday&quot;&gt;Michael Faraday&lt;/a&gt; (1791-1867)
+and so are sometimes called &lt;a href=&quot;http://en.wikipedia.org/wiki/Faraday_wave&quot;&gt;Faraday waves&lt;/a&gt;
+or more generally, &lt;a href=&quot;http://en.wikipedia.org/wiki/Oscillon&quot;&gt;oscillons&lt;/a&gt;
+or &lt;a href=&quot;http://en.wikipedia.org/wiki/Soliton&quot;&gt;solitons&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Even more exotic, it is possible to generate “holes” in vibrating cornstarch
+that don’t disappear! These holes have interesting properties: they repel each
+other and sometimes form “bonded pairs”. At still higher frequency unstable
+“forests of gloop” – for want of a better description – start to “grow”. All
+this is too strange for words. Seeing is believing; check out the video below.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/nq3ZjY0Uf-g&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;gloop-and-the-de-broglie-bohm-theory&quot;&gt;Gloop and the de Broglie-Bohm theory&lt;/h2&gt;
+
+&lt;p&gt;Remarkably, there is &lt;em&gt;another&lt;/em&gt; connection between quantum mechanics and the
+gloopy viscous fluid which behaves strangely when vibrated.&lt;/p&gt;
+
+&lt;p&gt;Pay attention now.&lt;/p&gt;
+
+&lt;p&gt;Aficionados of quantum theory will know that it is a doubly dual theory.
+Not only is it a theory of
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality&quot;&gt;wave-particle duality&lt;/a&gt;,
+but it is simultaneously one of the best and worst theories ever conceived!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is one of the &lt;em&gt;best&lt;/em&gt; theories because the precision and accuracy of its
+predictions are unsurpassed&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is one of the &lt;em&gt;worst&lt;/em&gt; theories because, being a statistical theory, it
+doesn’t actually explain &lt;em&gt;why&lt;/em&gt; it works. Consequently, there are a plethora
+of different &lt;a href=&quot;http://en.wikipedia.org/wiki/Interpretations_of_quantum_mechanics&quot;&gt;interpretations&lt;/a&gt;,
+of what it means. These interpretations range from the standard
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Copenhagen_interpretation&quot;&gt;Copenhagen one&lt;/a&gt;
+to the outlandish
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Many-worlds_interpretation&quot;&gt;Parallel Universe&lt;/a&gt; viewpoint.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://en.wikipedia.org/wiki/De_Broglie%E2%80%93Bohm_theory&quot;&gt;de Broglie-Bohm (dBB) interpretation of quantum
+mechanics&lt;/a&gt; was one
+of the first which proved that it was even &lt;em&gt;possible&lt;/em&gt; to have an alternative
+interpretation which was logically consistent. Unlike the standard interpretation,
+the dBB viewpoint asserts that there is an &lt;em&gt;actual particle&lt;/em&gt; in quantum
+mechanics; yet it still manages to make exactly the same predictions
+as the regular interpretation.&lt;/p&gt;
+
+&lt;p&gt;The idea behind he dBB theory is almost trivial: it is that the actual particle
+moves according to a nonlocal potential which is related to the
+wavefunction. This is why the theory is also called the 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Pilot_wave&quot;&gt;pilot wave theory&lt;/a&gt;.
+The wavefunction itself still obeys the Schrodinger equation. The “random”
+results that are obtained in quantum experiments — for example the
+famous &lt;a href=&quot;http://en.wikipedia.org/wiki/Double-slit_experiment#Interference_of_individual_particles&quot;&gt;double slit experiment&lt;/a&gt;
+where a diffraction pattern is “built up” one particle at a time on the
+detector screen — are controlled by variations in the initial conditions of
+the particle.&lt;/p&gt;
+
+&lt;p&gt;(Lest you think the dBB theory is a somewhat useless, since anyway we have to
+solve the Schrodinger equation to use it, you should know that it is the basis
+of a very practical scheme for modelling chemical reactions, developed by
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Robert_E._Wyatt&quot;&gt;Bob Wyatt&lt;/a&gt;.
+See &lt;a href=&quot;http://k2.chem.uh.edu/group/OldStuff/Papers/JCP-WB.pdf&quot;&gt;here&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;But what has all this to do with viscous vibrating gloop?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Prepare to be amazed.&lt;/p&gt;
+
+&lt;p&gt;In the following video,
+&lt;a href=&quot;http://www.msc.univ-paris-diderot.fr/spip.php?rubrique140&quot;&gt;Yves Coudert&lt;/a&gt; shows
+how a droplet suspended on a fast vibrating fluid, in this case silicone oil
+behaves almost identically to how one would expect in the dBB theory. In
+particular, Coudert demonstrates how one droplet — representing an electron
+for example — can move through a double slit and generate, one particle at a
+time, a diffraction pattern! By contrast, in the standard interpretation of
+quantum mechanics, the electron is supposed to go through &lt;em&gt;both&lt;/em&gt; slits at once
+and diffract with itself. After looking at this video you might change your mind about
+the dBB interpretation.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/W9yWv5dqSKk&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you interested in reading more see the Euro Phys News article
+&lt;a href=&quot;http://users.df.uba.ar/dasso/fis4_2do_cuat_2010/walker.pdf&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/atomic-orbitals-and-chladni-figures/&quot;&gt;Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on October 07, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -356,8 +604,11 @@ solutions, their sum must also be i.e.&lt;/p&gt;
 
 &lt;p&gt;is &lt;em&gt;also&lt;/em&gt; a solution.&lt;/p&gt;
 
-&lt;p&gt;Is this a valid solution? On the face of it, yes. However, you can show
-the probability density for this wavefunction is&lt;/p&gt;
+&lt;p&gt;Is this a valid solution?&lt;/p&gt;
+
+&lt;p&gt;Well, yes.&lt;/p&gt;
+
+&lt;p&gt;However, you can show the probability density for this wavefunction is&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
@@ -369,11 +620,11 @@ the probability density for this wavefunction is&lt;/p&gt;
 
 &lt;p&gt;The last equality follows from noting that the cross terms are complex
 conjugates. Therefore this wavefunction &lt;em&gt;does not have a constant probability
-density&lt;/em&gt;. Perhaps it may not be an appropriate wavefunction -
-though I have not given an explicit rule to forbid it.&lt;/p&gt;
+density&lt;/em&gt;. There is no explicit rule to forbid such a wavefunction, but
+it does not quite agree with what we might have expected (see Q10).&lt;/p&gt;
 
-&lt;p&gt;This question nevertheless illustrates an important point about quantum
-mechanics:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This question illustrates a very important point about quantum
+mechanics:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;If we have more than one solution to the SChrodinger equation with
 the &lt;em&gt;same&lt;/em&gt; energy, then we can take a linear combination of these solutions,
@@ -408,9 +659,13 @@ which we have yet to find.&lt;/p&gt;
    &lt;img src=&quot;/images/p-in-infinite-box.jpg&quot; /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;According to the strategy we should try wavefunctions of the form
-\( \psi(x) = A \sin k x + B \cos k x \). Substituting in the Schrodinger
-equation we get&lt;/p&gt;
+&lt;p&gt;According to the strategy we should try wavefunctions of the form&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\psi(x) = A \sin k x + B \cos k x. 
+&lt;/script&gt;
+
+&lt;p&gt;Substituting in the Schrodinger equation we get&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
@@ -1041,8 +1296,8 @@ e^{ikx}
 &lt;/script&gt;
 
 &lt;p&gt;Note that the (probability) velocity opertor used above to calculate
-the probability flux is \(\hat{v} = \hat{p}/m \). It is just the
-momentum divided by the mass.&lt;/p&gt;
+the probability flux is the real part of \(\hat{v} = \hat{p}/m \). It is just
+the momentum divided by the mass.&lt;/p&gt;
 
 &lt;p&gt;We define the
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Transmission_coefficient&quot;&gt;transmission coefficient&lt;/a&gt; by&lt;/p&gt;
