@@ -26,9 +26,9 @@ Quantum mechanics is hard for two reasons. First, the ideas are strange.
 Second, it involves mathematics which is probably new to you. The double
 whammy is a killer.
 
-Still, some of you may find quantum mechanics intruiguing. You would not be
-alone. People still 
-[argue about it](http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/)
+Still, some of you may find quantum mechanics intriguing. If so, you would not
+be alone. People still
+[argue about it today](http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/)
 even after a hundred years.
 
 ## Why?
@@ -45,16 +45,18 @@ experiments](http://www.brainyquote.com/quotes/quotes/p/pauldirac279318.html).
 
 That’s big.
 
-In my opinion, these days, every organic chemist should do a simple QM
-calculation to test out assumptions about their reaction scheme sites before
-going into the lab for some pain. Of course, these QM calcs are done on a
-computer - not with pen and paper. So you could just learn to use the
-program. But in that case you would have no idea how the calculations work i.e.
-you will be just a monkey. No-one wants to employ a monkey.
+I reckon these days every organic chemist should do a simple QM calculation to
+test out their reaction schemes before going into the lab for some pain. Of
+course, these QM calcs are done on a computer - not with pen and paper. So you
+could just learn to use the program. But in that case you would have no idea
+how the calculations work i.e. you will be just a monkey. No one wants to
+employ a monkey. (We *will* teach you how to use these programs in third year).
 
 <figure>
-   <img src="/images/thoughtful-bonobo.jpg">
+   <img src="/images/small-thoughtful-bonobo.jpg">
 </figure>
+
+## Chill
 
 Now I know you probably have not seen quantum mechanics before. Probably
 you are freaking out. I want to say: Don’t Worry. QM is hard - but not *that* hard.
@@ -179,31 +181,43 @@ The following are examples of questions that may be asked in the exam.
 
 *Answer*
 
-In classical mechanics every particle e.g. like an electron, proton, neutron has a
-definite position and a velocity. The way the classical particle moves is calculated using
-Newton’s Law. On the other hand, in quantum mechanics, particles usually *do
-not* have a definite position or velocity. That means in quantum mechanics
-particles are *spread out* and *dustributed* in space in some way. We can think
-of them as little wiggly waves. Such waves do *not* usually have a definite
-position. In order to describe the shape of these wiggly waves we need to use a
-*function* - specifically a *wavefunction*. An example might be 
-\\( \psi(x) = \sin x \\). Plotting out this function on a graph shows the
-wiggly wave of the quantum particle. The wavefunction describes everything you can 
-know about the quantum particle. The Schrodinger equation tells us the shape of the
-wavefunction which has a definite energy, for any given potential. Compare this
-again to a classical particle which can be descibed by only *six numbers* :
-three coordinates \\(x \\) \\( y\\) and \\(z\\) and three velocities \\(v_x\\),
-\\(v_y\\), and \\(v_z\\). By contrast, a quantum mechanical particle requires
-an *infinite number of numbers to describe it*. It requires the whole shape of
-the wavefunction in the plotted graph to be tabulated for you. Either that
-or you have to write a mathematical function such as \\( \psi(x) = \sin x \\) for 
-the wavefunction.
+In classical mechanics every particle e.g. like an electron, proton, neutron
+has a definite position and a velocity. The way a classical particle moves is
+calculated by using
+[Newton’s Laws](http://en.wikipedia.org/wiki/Newton’s_laws_of_motion). On the
+other hand, in quantum mechanics, particles usually *do not* have a definite
+position or velocity. That means in quantum mechanics “particles” are
+notparticles at all! They are *spread out* and *dustributed* in space in some
+way.
+
+<figure>
+   <img src="/images/particles-vs-waves.jpg">
+</figure>
+
+We can think of quantum particles as little wiggly waves. Such waves do *not*
+usually have a definite position. In order to describe the shape of these
+wiggly waves we need to use a *function* - specifically a *wavefunction*. An
+example might be \\( \psi(x) = \sin x \\). Plotting out this function on a
+graph shows the wiggly wave of the quantum particle. The wavefunction describes
+everything you can know about the quantum particle. The Schrodinger equation
+tells us the shape of the wavefunction which has a definite energy.
+Compare this again to a classical particle which can be
+descibed by only *six numbers* : three coordinates \\(x \\), \\( y\\) and
+\\(z\\) and three velocities \\(v_x\\), \\(v_y\\), and \\(v_z\\). By contrast,
+a quantum mechanical particle requires an *infinite number of numbers to
+describe it*. It requires the whole shape of the wavefunction in the plotted
+graph to be tabulated for you. Either that, or you have to write a mathematical
+function such as \\( \psi(x) = \sin x \\) to describe its shape. That’s why
+the Schrodinger equation is not a normal equation but a 
+[differential equation](http://en.wikipedia.org/wiki/Differential_equation):
+this type of equation determines the *shape* of a function, unlike a normal
+*algebraic* equation which just uses *numbers* not *functions*.
 
 **Q1**. *Write down the momentum operator of an electron in one dimension*
 
 *Strategy*
 
-Use rule 1 of quantum mechanics.
+Use Rule 1 of quantum mechanics.
 
 *Answer*
 
@@ -217,7 +231,7 @@ The momentum operator of an electron in one dimension is
 
 To do this we have to realize that the momentum in three dimensions is a
 vector. So we have to write down a vector with three conponents. Each component
-is defined like in A1.
+is defined like in Q1.
 
 *Answer*
 

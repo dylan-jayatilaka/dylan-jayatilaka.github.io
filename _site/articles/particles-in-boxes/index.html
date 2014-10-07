@@ -402,7 +402,7 @@ is located everywhere with equal probability.</p>
   </li>
 </ul>
 
-<p><strong>Q11</strong>. 
+<p><strong>Q11</strong>.
 <em>Show that the free electron wavefunction \( \psi = A e^{i k x} \) has momentum \( \hbar k \).
 Show that the free electron wavefunction \( \psi = A e^{-i k x} \) has momentum \( -\hbar k \).
 What is the meaning of these two wavefunctions?</em></p>
@@ -502,13 +502,13 @@ density</em>. Perhaps it may not be an appropriate wavefunction -
 though I have not given an explicit rule to forbid it.</p>
 
 <p>This question nevertheless illustrates an important point about quantum
-mechanics: </p>
+mechanics:</p>
 
 <p>If we have more than one solution to the SChrodinger equation with
 the <em>same</em> energy, then we can take a linear combination of these solutions,
 like above with arbitrary constants \( A \) and \( B \), and get a different
 wavefunction with the energy! There are an inifinite number of such wavefunctions
-corresponding to the same energy - just choose different arbitrary constants. 
+corresponding to the same energy - just choose different arbitrary constants.
 This is the idea behind
 <a href="http://en.wikipedia.org/wiki/Orbital_hybridisation">hybrid atomic orbitals</a>
 in the valence bond theory of chemical bonding. In the hybrid atomic orbital
@@ -773,7 +773,7 @@ constant \( k \).</p>
 
 <p>The first condition ensures that the wavefunctions are “unbroken” or “continuous”.
 The second condition ensures that the derivatives of the two wavefunction
-match so the join is “smooth”. </p>
+match so the join is “smooth”.</p>
 
 <ul>
   <li>
@@ -817,7 +817,7 @@ k \cot k = -\left( 2 V_0 - k^2 \right)^{1/2}
 <p>All we need now is a value of \( V_0 \). Let’s take
 \( V_0 = 18 \). We can now solve this equation numerically.</p>
 
-<p>The easiest way to do it, go to the 
+<p>The easiest way to do it, go to the
 <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> web site and
 type in \( \texttt{k cot k = -(36 - k^2)^(1/2)} \). You will get two
 solutions: \( k = 2.679, 5.226 \). Cool!</p>
@@ -833,12 +833,407 @@ These values are indeed close to the solutions
 \( k = \pi, 2\pi, 3\pi, \ldots \). Everything seems to
 make sense!</p>
 
-<h2 id="congratulations">Congratulations</h2>
+<p>Below are the wavefunctions for a particular case of the half infinite box. You
+should be able to draw a sketch of these. See how the exponential part in the
+barrier ouside joins smoothly up with the sin wave part in the box?</p>
+
+<figure>
+   <img src="/images/psi-for-half-infinite-box.jpg" />
+</figure>
+
+<p>Note that the wavefunction is not zero inside the barrier. Therefore, <em>there is
+a non zero probability for it to be inside the barrier even though the particle
+does not have enough energy to go in</em>! If the particle were a person, this
+would be like saying that they could walk inside a wall!</p>
+
+<p>You can also see on these plots the solutions in the case where the energy of
+the particle is greater than the barrier height \( V_0 \). To get these
+solutions we have to assume a <em>different</em> general solution in that part and
+repeat the whole procedure above.</p>
+
+<h2 id="congratulations">Congratulations!</h2>
 
 <p>If you’ve got this far then congratulations! You understand the basics of
 quantum mechanics.</p>
 
-<h2 id="the-general-problem">The general problem</h2>
+<h2 id="tunneling-through-a-barrier">Tunneling through a barrier</h2>
+
+<p>The following is not for examination, but for <strong>interest only</strong>.</p>
+
+<p>(Hello? Is anyone out there? Or am I the only wierdo around?)</p>
+
+<p>This example illustrates the fact that, not only can a quantum particle exist
+inside a barrier, it can tunnel right through!</p>
+
+<p>To see this we solve the Schrodinger equation for this potential</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+V(x) =
+\left\{
+\begin{array}{ll}
+0,   & \hphantom{0<}x<0 \\
+V_0, &           0< x<a \\
+0,   & \textrm{otherwise}
+\end{array}
+\right.
+ %]]></script>
+
+<p>This is called a <em>barrier potential</em> as the picture below makes clear.</p>
+
+<figure>
+   <img src="/images/barrier-potential.jpg" />
+</figure>
+
+<p>As before, let’s consider the case \( E&lt;V_0 \) where the particle does not
+have enough classical energy to  penetrate the barrier. </p>
+
+<p>The general solutions in each region have the form:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\psi\sub\s{L} &= A_1 e^{ikx}     + B_1 e^{-ikx}       && \hphantom{0<}x<0 \\
+\psi\sub\s{M} &= C   e^{\beta x} + D e^{-\beta x}     && 0<x<a            \\
+\psi\sub\s{R} &= A_2 e^{ikx}     + B_2 e^{-ikx}       && \hphantom{0<}a<x
+\end{align}
+ %]]></script>
+
+<p>These are general wavefunctions in the left (L), middle (M) and right
+(R) regions. Plugging these into the Schrodinger equation we get</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+E     &= \frac{(\hbar k)^2}{2m}, \\
+V_0-E &= \frac{(\hbar \beta)^2}{2m}.
+\end{align}
+ %]]></script>
+
+<p>Now let’s deal with te boundary conditions. To ensure that the wavefunctions
+are continuous and smooth</p>
+
+<ul>
+  <li>
+    <p>The boundary conditions at \( x=0 \) give:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\psi\sub\s{L}(0) =\psi_\s{M}  &\implies &&
+\hphantom{(ik)}A_1 e^{ik0} + \hphantom{(-ik)}B_1 e^{-ik0}
+&=&\
+\hphantom{\beta} C e^{\beta 0} + \hphantom{(-\beta)} D e^{-\beta 0} \\
+\psi'\sub\s{L}(0)=\psi'_\s{M} &\implies &&
+A_1(ik) e^{ik0} + B_1(-ik) e^{-ik0}
+&=&
+C\beta e^{\beta 0} + D(-\beta) e^{-\beta 0}
+\end{align}
+ %]]></script>
+
+    <p>It is easier to write this as a matrix equation</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\underbrace{
+\left[
+\begin{array}{cc}
+1  &   1 \\
+ik & -ik
+\end{array}
+\right]
+}_{\B{M}_1}
+\left[
+\begin{array}{c}
+A_1 \\
+B_1
+\end{array}
+\right]
+=
+\underbrace{
+\left[
+\begin{array}{cc}
+1     &   1 \\
+\beta & -\beta
+\end{array}
+\right]
+}\sub{\B{M}\sub{2}}
+\left[
+\begin{array}{c}
+C  \\
+D
+\end{array}
+\right]
+ %]]></script>
+  </li>
+  <li>
+    <p>The boundary conditions at \(x=a\)  give:</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+
+\underbrace{
+\left[
+\begin{array}{cc}
+      e^{\beta a}  &        e^{-\beta a} \\
+\beta e^{\beta a}  & -\beta e^{-\beta a}
+\end{array}
+\right]
+}\sub{\B{M}\sub{3}}
+\left[
+\begin{array}{c}
+C   \\
+D
+\end{array}
+\right]
+=
+\underbrace{
+\left[
+\begin{array}{cc}
+e^{ika}   &   e^{-ika} \\
+ike^{ika} & -ike^{-ika}
+\end{array}
+\right]
+}\sub{\B{M}\sub{4}}
+\left[
+\begin{array}{c}
+A_2\\
+B_2
+\end{array}
+\right]
+ %]]></script>
+  </li>
+</ul>
+
+<p>The general solution to these equations will always have at least two
+unknown constants e.g. \(A_1\) describing momentum from the left or \(B_2\)
+describing momentum from the right.  The transmission and reflection
+characteristic relating the left wavefunction to the right
+wavefunction are given by the 
+<a href="http://en.wikipedia.org/wiki/Transfer-matrix_method_(optics)">transfer matrix</a> \(\B{P}\) 
+which is defined by</p>
+
+<script type="math/tex; mode=display">
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\B{P}
+\left[
+\begin{array}{c}
+A_2\\
+B_2
+\end{array}
+\right]
+</script>
+
+<p>From the above definitions we see that</p>
+
+<script type="math/tex; mode=display">
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\B{M}\sub{1}^{-1}
+\B{M}\sub{2}
+\left[
+\begin{array}{c}
+C \\
+D
+\end{array}
+\right]
+\ \ \text{ and }
+\left[
+\begin{array}{c}
+C  \\
+D
+\end{array}
+\right]
+=
+\B{M}\sub{3}^{-1}
+\B{M}\sub{4}
+\left[
+\begin{array}{c}
+A_2 \\
+B_2
+\end{array}
+\right]
+</script>
+
+<p>so that</p>
+
+<script type="math/tex; mode=display">
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\underbrace{
+\B{M}\sub{1}^{-1}
+\B{M}\sub{2}
+\B{M}\sub{3}^{-1}
+\B{M}\sub{4}
+}\sub{\B{P}}
+\left[
+\begin{array}{c}
+A_2 \\
+B_2
+\end{array}
+\right]
+</script>
+
+<p>After a lot of tedious algebra making use of standard formulas for
+inverting matrices, we get</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+P\sub{11} &=
+e^{ika}
+\left\{
+\cosh(\beta a) +\frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               -\frac{k}{\beta}
+                \right)
+\right\}
+\\
+P\sub{22} &=
+e^{-ika}
+\left\{
+\cosh(\beta a) -\frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               -\frac{k}{\beta}
+                \right)
+\right\}
+\\
+P\sub{12} &=
+e^{-ika}
+                \frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               +\frac{k}{\beta}
+                \right)
+\\
+P\sub{21} &=
+-e^{ika}
+                \frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               +\frac{k}{\beta}
+                \right)
+\end{align}
+ %]]></script>
+
+<p>Note: this transfer matrix method can be generalized to calculate
+transmission through any series of barriers—in case you ever need to
+do that for, say, nanotechnology applications. Of course, you would
+not do the algebra by hand, but set these equations up in a computer
+algebra program like <a href="http://www.wolframalpha.com/">Wolfram Alpha</a></p>
+
+<p>Now for some results. </p>
+
+<p>Assume there is only momentum coming from the left
+(\(A_1\neq 0\), \(B_1=0 \)) but none on the right
+(\(B_2=0\),  \(B_1\neq 0\)). The transmitted momentum flux to the right
+is then:</p>
+
+<script type="math/tex; mode=display">
+\Re
+\psi\sub\s{R}^\ast
+\frac{p}{m}
+\psi\sub\s{R}
+=
+\Re\
+A_2^\ast
+e^{-ikx}
+\frac{-i\hbar}{m}
+A_2^\ast
+e^{ikx}
+=
+|A_2|^2
+\frac{hk}{m}.
+</script>
+
+<p>We define the
+<a href="http://en.wikipedia.org/wiki/Transmission_coefficient">transmission coefficient</a> by</p>
+
+<script type="math/tex; mode=display">
+T = \frac{|A_2|^2}{|A_1|^2}
+  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \left| \frac{1}{P\sub{11}} \right|^2
+</script>
+
+<p>Likewise the 
+<a href="http://en.wikipedia.org/wiki/Transmission_coefficient">reflection coefficient</a> by
+is defined as</p>
+
+<script type="math/tex; mode=display">
+R = \frac{|B_1|^2}{|A_1|^2}
+  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \left| \frac{P_{21}}{P_{11}} \right|^2
+</script>
+
+<p>It may be verified (tediously hand, but easily with 
+<a href="http://www.wolframalpha.com/">Wolfram Alpha</a> that:</p>
+
+<script type="math/tex; mode=display">
+R + T = 1
+</script>
+
+<p>Plots of the transmission and reflection coefficient are shown in the
+following graphs (from the highly recommended textbook by Ballentine) assuming
+\(L=\hbar=1=2m=1\), for \(E=0.16\) and \(E=1.0\) respectively.</p>
+
+<figure>
+   <img src="/images/tunneling-wavefunction-E=016.jpg" />
+</figure>
+
+<figure>
+   <img src="/images/tunneling-wavefunction-E=100.jpg" />
+</figure>
+
+<p>The formula for the transmission coefficient is:</p>
+
+<script type="math/tex; mode=display">
+T =
+\left[
+1 + \frac{V_0^2\sinh^2(\beta a)}{4 E(V_0-E)}
+\right]^{-1}
+</script>
+
+<p>The transmission coefficient is plotted below:</p>
+
+<figure>
+   <img src="/images/tunneling-transmission-coefficient.pdf" />
+</figure>
+
+<p>Some comments:</p>
+
+<ul>
+  <li>
+    <p>\( \psi \) does not simply decrease in the barrier. However, \(|\psi|\)
+always decreases</p>
+  </li>
+  <li>
+    <p>\( \psi \) always has zero slop at the exit on the right hand side because
+\( |\psi|\) is constant on the right hand side</p>
+  </li>
+  <li>
+    <p>The particle can tunnel right through the barrier, as advertised.</p>
+  </li>
+  <li>
+    <p>The transmission coefficient decreases exponentially with thickness.</p>
+  </li>
+</ul>
 
 
         

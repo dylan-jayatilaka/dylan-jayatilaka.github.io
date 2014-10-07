@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-07T09:46:38+08:00</updated>
+<updated>2014-10-07T11:46:37+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -273,7 +273,7 @@ is located everywhere with equal probability.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;. 
+&lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;.
 &lt;em&gt;Show that the free electron wavefunction \( \psi = A e^{i k x} \) has momentum \( \hbar k \).
 Show that the free electron wavefunction \( \psi = A e^{-i k x} \) has momentum \( -\hbar k \).
 What is the meaning of these two wavefunctions?&lt;/em&gt;&lt;/p&gt;
@@ -373,13 +373,13 @@ density&lt;/em&gt;. Perhaps it may not be an appropriate wavefunction -
 though I have not given an explicit rule to forbid it.&lt;/p&gt;
 
 &lt;p&gt;This question nevertheless illustrates an important point about quantum
-mechanics: &lt;/p&gt;
+mechanics:&lt;/p&gt;
 
 &lt;p&gt;If we have more than one solution to the SChrodinger equation with
 the &lt;em&gt;same&lt;/em&gt; energy, then we can take a linear combination of these solutions,
 like above with arbitrary constants \( A \) and \( B \), and get a different
 wavefunction with the energy! There are an inifinite number of such wavefunctions
-corresponding to the same energy - just choose different arbitrary constants. 
+corresponding to the same energy - just choose different arbitrary constants.
 This is the idea behind
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Orbital_hybridisation&quot;&gt;hybrid atomic orbitals&lt;/a&gt;
 in the valence bond theory of chemical bonding. In the hybrid atomic orbital
@@ -644,7 +644,7 @@ constant \( k \).&lt;/p&gt;
 
 &lt;p&gt;The first condition ensures that the wavefunctions are “unbroken” or “continuous”.
 The second condition ensures that the derivatives of the two wavefunction
-match so the join is “smooth”. &lt;/p&gt;
+match so the join is “smooth”.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -688,7 +688,7 @@ k \cot k = -\left( 2 V_0 - k^2 \right)^{1/2}
 &lt;p&gt;All we need now is a value of \( V_0 \). Let’s take
 \( V_0 = 18 \). We can now solve this equation numerically.&lt;/p&gt;
 
-&lt;p&gt;The easiest way to do it, go to the 
+&lt;p&gt;The easiest way to do it, go to the
 &lt;a href=&quot;http://www.wolframalpha.com/&quot;&gt;Wolfram Alpha&lt;/a&gt; web site and
 type in \( \texttt{k cot k = -(36 - k^2)^(1/2)} \). You will get two
 solutions: \( k = 2.679, 5.226 \). Cool!&lt;/p&gt;
@@ -704,12 +704,407 @@ These values are indeed close to the solutions
 \( k = \pi, 2\pi, 3\pi, \ldots \). Everything seems to
 make sense!&lt;/p&gt;
 
-&lt;h2 id=&quot;congratulations&quot;&gt;Congratulations&lt;/h2&gt;
+&lt;p&gt;Below are the wavefunctions for a particular case of the half infinite box. You
+should be able to draw a sketch of these. See how the exponential part in the
+barrier ouside joins smoothly up with the sin wave part in the box?&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/psi-for-half-infinite-box.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note that the wavefunction is not zero inside the barrier. Therefore, &lt;em&gt;there is
+a non zero probability for it to be inside the barrier even though the particle
+does not have enough energy to go in&lt;/em&gt;! If the particle were a person, this
+would be like saying that they could walk inside a wall!&lt;/p&gt;
+
+&lt;p&gt;You can also see on these plots the solutions in the case where the energy of
+the particle is greater than the barrier height \( V_0 \). To get these
+solutions we have to assume a &lt;em&gt;different&lt;/em&gt; general solution in that part and
+repeat the whole procedure above.&lt;/p&gt;
+
+&lt;h2 id=&quot;congratulations&quot;&gt;Congratulations!&lt;/h2&gt;
 
 &lt;p&gt;If you’ve got this far then congratulations! You understand the basics of
 quantum mechanics.&lt;/p&gt;
 
-&lt;h2 id=&quot;the-general-problem&quot;&gt;The general problem&lt;/h2&gt;
+&lt;h2 id=&quot;tunneling-through-a-barrier&quot;&gt;Tunneling through a barrier&lt;/h2&gt;
+
+&lt;p&gt;The following is not for examination, but for &lt;strong&gt;interest only&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;(Hello? Is anyone out there? Or am I the only wierdo around?)&lt;/p&gt;
+
+&lt;p&gt;This example illustrates the fact that, not only can a quantum particle exist
+inside a barrier, it can tunnel right through!&lt;/p&gt;
+
+&lt;p&gt;To see this we solve the Schrodinger equation for this potential&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+V(x) =
+\left\{
+\begin{array}{ll}
+0,   &amp; \hphantom{0&lt;}x&lt;0 \\
+V_0, &amp;           0&lt; x&lt;a \\
+0,   &amp; \textrm{otherwise}
+\end{array}
+\right.
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This is called a &lt;em&gt;barrier potential&lt;/em&gt; as the picture below makes clear.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/barrier-potential.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As before, let’s consider the case \( E&amp;lt;V_0 \) where the particle does not
+have enough classical energy to  penetrate the barrier. &lt;/p&gt;
+
+&lt;p&gt;The general solutions in each region have the form:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\psi\sub\s{L} &amp;= A_1 e^{ikx}     + B_1 e^{-ikx}       &amp;&amp; \hphantom{0&lt;}x&lt;0 \\
+\psi\sub\s{M} &amp;= C   e^{\beta x} + D e^{-\beta x}     &amp;&amp; 0&lt;x&lt;a            \\
+\psi\sub\s{R} &amp;= A_2 e^{ikx}     + B_2 e^{-ikx}       &amp;&amp; \hphantom{0&lt;}a&lt;x
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;These are general wavefunctions in the left (L), middle (M) and right
+(R) regions. Plugging these into the Schrodinger equation we get&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+E     &amp;= \frac{(\hbar k)^2}{2m}, \\
+V_0-E &amp;= \frac{(\hbar \beta)^2}{2m}.
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now let’s deal with te boundary conditions. To ensure that the wavefunctions
+are continuous and smooth&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The boundary conditions at \( x=0 \) give:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\psi\sub\s{L}(0) =\psi_\s{M}  &amp;\implies &amp;&amp;
+\hphantom{(ik)}A_1 e^{ik0} + \hphantom{(-ik)}B_1 e^{-ik0}
+&amp;=&amp;\
+\hphantom{\beta} C e^{\beta 0} + \hphantom{(-\beta)} D e^{-\beta 0} \\
+\psi'\sub\s{L}(0)=\psi'_\s{M} &amp;\implies &amp;&amp;
+A_1(ik) e^{ik0} + B_1(-ik) e^{-ik0}
+&amp;=&amp;
+C\beta e^{\beta 0} + D(-\beta) e^{-\beta 0}
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+    &lt;p&gt;It is easier to write this as a matrix equation&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\underbrace{
+\left[
+\begin{array}{cc}
+1  &amp;   1 \\
+ik &amp; -ik
+\end{array}
+\right]
+}_{\B{M}_1}
+\left[
+\begin{array}{c}
+A_1 \\
+B_1
+\end{array}
+\right]
+=
+\underbrace{
+\left[
+\begin{array}{cc}
+1     &amp;   1 \\
+\beta &amp; -\beta
+\end{array}
+\right]
+}\sub{\B{M}\sub{2}}
+\left[
+\begin{array}{c}
+C  \\
+D
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The boundary conditions at \(x=a\)  give:&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\underbrace{
+\left[
+\begin{array}{cc}
+      e^{\beta a}  &amp;        e^{-\beta a} \\
+\beta e^{\beta a}  &amp; -\beta e^{-\beta a}
+\end{array}
+\right]
+}\sub{\B{M}\sub{3}}
+\left[
+\begin{array}{c}
+C   \\
+D
+\end{array}
+\right]
+=
+\underbrace{
+\left[
+\begin{array}{cc}
+e^{ika}   &amp;   e^{-ika} \\
+ike^{ika} &amp; -ike^{-ika}
+\end{array}
+\right]
+}\sub{\B{M}\sub{4}}
+\left[
+\begin{array}{c}
+A_2\\
+B_2
+\end{array}
+\right]
+ %]]&gt;&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The general solution to these equations will always have at least two
+unknown constants e.g. \(A_1\) describing momentum from the left or \(B_2\)
+describing momentum from the right.  The transmission and reflection
+characteristic relating the left wavefunction to the right
+wavefunction are given by the 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Transfer-matrix_method_(optics)&quot;&gt;transfer matrix&lt;/a&gt; \(\B{P}\) 
+which is defined by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\B{P}
+\left[
+\begin{array}{c}
+A_2\\
+B_2
+\end{array}
+\right]
+&lt;/script&gt;
+
+&lt;p&gt;From the above definitions we see that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\B{M}\sub{1}^{-1}
+\B{M}\sub{2}
+\left[
+\begin{array}{c}
+C \\
+D
+\end{array}
+\right]
+\ \ \text{ and }
+\left[
+\begin{array}{c}
+C  \\
+D
+\end{array}
+\right]
+=
+\B{M}\sub{3}^{-1}
+\B{M}\sub{4}
+\left[
+\begin{array}{c}
+A_2 \\
+B_2
+\end{array}
+\right]
+&lt;/script&gt;
+
+&lt;p&gt;so that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\left[
+\begin{array}{c}
+A_1\\
+B_1
+\end{array}
+\right]
+=
+\underbrace{
+\B{M}\sub{1}^{-1}
+\B{M}\sub{2}
+\B{M}\sub{3}^{-1}
+\B{M}\sub{4}
+}\sub{\B{P}}
+\left[
+\begin{array}{c}
+A_2 \\
+B_2
+\end{array}
+\right]
+&lt;/script&gt;
+
+&lt;p&gt;After a lot of tedious algebra making use of standard formulas for
+inverting matrices, we get&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+P\sub{11} &amp;=
+e^{ika}
+\left\{
+\cosh(\beta a) +\frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               -\frac{k}{\beta}
+                \right)
+\right\}
+\\
+P\sub{22} &amp;=
+e^{-ika}
+\left\{
+\cosh(\beta a) -\frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               -\frac{k}{\beta}
+                \right)
+\right\}
+\\
+P\sub{12} &amp;=
+e^{-ika}
+                \frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               +\frac{k}{\beta}
+                \right)
+\\
+P\sub{21} &amp;=
+-e^{ika}
+                \frac{i}{2}\sinh(\beta a)
+                \left(
+                \frac{\beta}{k}
+               +\frac{k}{\beta}
+                \right)
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Note: this transfer matrix method can be generalized to calculate
+transmission through any series of barriers—in case you ever need to
+do that for, say, nanotechnology applications. Of course, you would
+not do the algebra by hand, but set these equations up in a computer
+algebra program like &lt;a href=&quot;http://www.wolframalpha.com/&quot;&gt;Wolfram Alpha&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now for some results. &lt;/p&gt;
+
+&lt;p&gt;Assume there is only momentum coming from the left
+(\(A_1\neq 0\), \(B_1=0 \)) but none on the right
+(\(B_2=0\),  \(B_1\neq 0\)). The transmitted momentum flux to the right
+is then:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Re
+\psi\sub\s{R}^\ast
+\frac{p}{m}
+\psi\sub\s{R}
+=
+\Re\
+A_2^\ast
+e^{-ikx}
+\frac{-i\hbar}{m}
+A_2^\ast
+e^{ikx}
+=
+|A_2|^2
+\frac{hk}{m}.
+&lt;/script&gt;
+
+&lt;p&gt;We define the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Transmission_coefficient&quot;&gt;transmission coefficient&lt;/a&gt; by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+T = \frac{|A_2|^2}{|A_1|^2}
+  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \left| \frac{1}{P\sub{11}} \right|^2
+&lt;/script&gt;
+
+&lt;p&gt;Likewise the 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Transmission_coefficient&quot;&gt;reflection coefficient&lt;/a&gt; by
+is defined as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+R = \frac{|B_1|^2}{|A_1|^2}
+  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \left| \frac{P_{21}}{P_{11}} \right|^2
+&lt;/script&gt;
+
+&lt;p&gt;It may be verified (tediously hand, but easily with 
+&lt;a href=&quot;http://www.wolframalpha.com/&quot;&gt;Wolfram Alpha&lt;/a&gt; that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+R + T = 1
+&lt;/script&gt;
+
+&lt;p&gt;Plots of the transmission and reflection coefficient are shown in the
+following graphs (from the highly recommended textbook by Ballentine) assuming
+\(L=\hbar=1=2m=1\), for \(E=0.16\) and \(E=1.0\) respectively.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/tunneling-wavefunction-E=016.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/tunneling-wavefunction-E=100.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The formula for the transmission coefficient is:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+T =
+\left[
+1 + \frac{V_0^2\sinh^2(\beta a)}{4 E(V_0-E)}
+\right]^{-1}
+&lt;/script&gt;
+
+&lt;p&gt;The transmission coefficient is plotted below:&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/tunneling-transmission-coefficient.pdf&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Some comments:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( \psi \) does not simply decrease in the barrier. However, \(|\psi|\)
+always decreases&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;\( \psi \) always has zero slop at the exit on the right hand side because
+\( |\psi|\) is constant on the right hand side&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The particle can tunnel right through the barrier, as advertised.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The transmission coefficient decreases exponentially with thickness.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 
   
@@ -745,9 +1140,9 @@ Quantum mechanics.&lt;/p&gt;
 Second, it involves mathematics which is probably new to you. The double
 whammy is a killer.&lt;/p&gt;
 
-&lt;p&gt;Still, some of you may find quantum mechanics intruiguing. You would not be
-alone. People still 
-&lt;a href=&quot;http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/&quot;&gt;argue about it&lt;/a&gt;
+&lt;p&gt;Still, some of you may find quantum mechanics intriguing. If so, you would not
+be alone. People still
+&lt;a href=&quot;http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/&quot;&gt;argue about it today&lt;/a&gt;
 even after a hundred years.&lt;/p&gt;
 
 &lt;h2 id=&quot;why&quot;&gt;Why?&lt;/h2&gt;
@@ -764,16 +1159,18 @@ experiments&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;That’s big.&lt;/p&gt;
 
-&lt;p&gt;In my opinion, these days, every organic chemist should do a simple QM
-calculation to test out assumptions about their reaction scheme sites before
-going into the lab for some pain. Of course, these QM calcs are done on a
-computer - not with pen and paper. So you could just learn to use the
-program. But in that case you would have no idea how the calculations work i.e.
-you will be just a monkey. No-one wants to employ a monkey.&lt;/p&gt;
+&lt;p&gt;I reckon these days every organic chemist should do a simple QM calculation to
+test out their reaction schemes before going into the lab for some pain. Of
+course, these QM calcs are done on a computer - not with pen and paper. So you
+could just learn to use the program. But in that case you would have no idea
+how the calculations work i.e. you will be just a monkey. No one wants to
+employ a monkey. (We &lt;em&gt;will&lt;/em&gt; teach you how to use these programs in third year).&lt;/p&gt;
 
 &lt;figure&gt;
-   &lt;img src=&quot;/images/thoughtful-bonobo.jpg&quot; /&gt;
+   &lt;img src=&quot;/images/small-thoughtful-bonobo.jpg&quot; /&gt;
 &lt;/figure&gt;
+
+&lt;h2 id=&quot;chill&quot;&gt;Chill&lt;/h2&gt;
 
 &lt;p&gt;Now I know you probably have not seen quantum mechanics before. Probably
 you are freaking out. I want to say: Don’t Worry. QM is hard - but not &lt;em&gt;that&lt;/em&gt; hard.
@@ -931,31 +1328,43 @@ experiment \( \hat{A} \) then QM &lt;em&gt;does&lt;/em&gt; predict&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;In classical mechanics every particle e.g. like an electron, proton, neutron has a
-definite position and a velocity. The way the classical particle moves is calculated using
-Newton’s Law. On the other hand, in quantum mechanics, particles usually &lt;em&gt;do
-not&lt;/em&gt; have a definite position or velocity. That means in quantum mechanics
-particles are &lt;em&gt;spread out&lt;/em&gt; and &lt;em&gt;dustributed&lt;/em&gt; in space in some way. We can think
-of them as little wiggly waves. Such waves do &lt;em&gt;not&lt;/em&gt; usually have a definite
-position. In order to describe the shape of these wiggly waves we need to use a
-&lt;em&gt;function&lt;/em&gt; - specifically a &lt;em&gt;wavefunction&lt;/em&gt;. An example might be 
-\( \psi(x) = \sin x \). Plotting out this function on a graph shows the
-wiggly wave of the quantum particle. The wavefunction describes everything you can 
-know about the quantum particle. The Schrodinger equation tells us the shape of the
-wavefunction which has a definite energy, for any given potential. Compare this
-again to a classical particle which can be descibed by only &lt;em&gt;six numbers&lt;/em&gt; :
-three coordinates \(x \) \( y\) and \(z\) and three velocities \(v_x\),
-\(v_y\), and \(v_z\). By contrast, a quantum mechanical particle requires
-an &lt;em&gt;infinite number of numbers to describe it&lt;/em&gt;. It requires the whole shape of
-the wavefunction in the plotted graph to be tabulated for you. Either that
-or you have to write a mathematical function such as \( \psi(x) = \sin x \) for 
-the wavefunction.&lt;/p&gt;
+&lt;p&gt;In classical mechanics every particle e.g. like an electron, proton, neutron
+has a definite position and a velocity. The way a classical particle moves is
+calculated by using
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Newton’s_laws_of_motion&quot;&gt;Newton’s Laws&lt;/a&gt;. On the
+other hand, in quantum mechanics, particles usually &lt;em&gt;do not&lt;/em&gt; have a definite
+position or velocity. That means in quantum mechanics “particles” are
+notparticles at all! They are &lt;em&gt;spread out&lt;/em&gt; and &lt;em&gt;dustributed&lt;/em&gt; in space in some
+way.&lt;/p&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/particles-vs-waves.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;We can think of quantum particles as little wiggly waves. Such waves do &lt;em&gt;not&lt;/em&gt;
+usually have a definite position. In order to describe the shape of these
+wiggly waves we need to use a &lt;em&gt;function&lt;/em&gt; - specifically a &lt;em&gt;wavefunction&lt;/em&gt;. An
+example might be \( \psi(x) = \sin x \). Plotting out this function on a
+graph shows the wiggly wave of the quantum particle. The wavefunction describes
+everything you can know about the quantum particle. The Schrodinger equation
+tells us the shape of the wavefunction which has a definite energy.
+Compare this again to a classical particle which can be
+descibed by only &lt;em&gt;six numbers&lt;/em&gt; : three coordinates \(x \), \( y\) and
+\(z\) and three velocities \(v_x\), \(v_y\), and \(v_z\). By contrast,
+a quantum mechanical particle requires an &lt;em&gt;infinite number of numbers to
+describe it&lt;/em&gt;. It requires the whole shape of the wavefunction in the plotted
+graph to be tabulated for you. Either that, or you have to write a mathematical
+function such as \( \psi(x) = \sin x \) to describe its shape. That’s why
+the Schrodinger equation is not a normal equation but a 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Differential_equation&quot;&gt;differential equation&lt;/a&gt;:
+this type of equation determines the &lt;em&gt;shape&lt;/em&gt; of a function, unlike a normal
+&lt;em&gt;algebraic&lt;/em&gt; equation which just uses &lt;em&gt;numbers&lt;/em&gt; not &lt;em&gt;functions&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Q1&lt;/strong&gt;. &lt;em&gt;Write down the momentum operator of an electron in one dimension&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Use rule 1 of quantum mechanics.&lt;/p&gt;
+&lt;p&gt;Use Rule 1 of quantum mechanics.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
@@ -968,7 +1377,7 @@ the wavefunction.&lt;/p&gt;
 
 &lt;p&gt;To do this we have to realize that the momentum in three dimensions is a
 vector. So we have to write down a vector with three conponents. Each component
-is defined like in A1.&lt;/p&gt;
+is defined like in Q1.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
