@@ -691,10 +691,10 @@ V_0-E &= \frac{(\hbar \beta)^2}{2m}.
 \end{align}
 $$
 
-Now let’s deal with te boundary conditions. To ensure that the wavefunctions
-are continuous and smooth
+Now let’s deal with the boundary conditions. To ensure that the wavefunctions
+are continuous and smooth:
 
-* The boundary conditions at \\( x=0 \\) give:
+* The boundary conditions at \\( x=0 \\) are:
 
   $$
   \begin{align}
@@ -743,7 +743,7 @@ are continuous and smooth
   \right]
   $$
 
-* The boundary conditions at \\(x=a\\)  give:
+* The boundary conditions at \\(x=a\\)  are:
 
   $$
   \underbrace{
@@ -917,32 +917,40 @@ Now for some results.
 
 Assume there is only momentum coming from the left
 (\\(A_1\neq 0\\), \\(B_1=0 \\)) but none on the right
-(\\(B_2=0\\),  \\(B_1\neq 0\\)). The transmitted momentum flux to the right
-is then:
+(\\(B_2=0\\),  \\(B_1\neq 0\\)). The transmitted probability
+flux to the right is then:
 
 $$
-\Re
+\textrm{Re}
+\left(
 \psi\sub\s{R}^\ast
-\frac{p}{m}
+\frac{\hat{p}}{m}
 \psi\sub\s{R}
+\right)
 =
-\Re\
+\textrm{Re}
+\left(
 A_2^\ast
 e^{-ikx}
 \frac{-i\hbar}{m}
-A_2^\ast
+A_2
 e^{ikx}
+\right)
 =
 |A_2|^2
 \frac{hk}{m}.
 $$
+
+Note that the (probability) velocity opertor used above to calculate
+the probability flux is the real part of \\(\hat{v} = \hat{p}/m \\). It is just
+the momentum divided by the mass.
 
 We define the
 [transmission coefficient](http://en.wikipedia.org/wiki/Transmission_coefficient) by
 
 $$
 T = \frac{|A_2|^2}{|A_1|^2}
-  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \frac{\s{Transmitted flux}}{\s{Incident flux}}
   = \left| \frac{1}{P\sub{11}} \right|^2
 $$
 
@@ -952,7 +960,7 @@ is defined as
 
 $$
 R = \frac{|B_1|^2}{|A_1|^2}
-  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \frac{\s{Transmitted flux}}{\s{Incident flux}}
   = \left| \frac{P_{21}}{P_{11}} \right|^2
 $$
 
@@ -987,7 +995,7 @@ $$
 The transmission coefficient is plotted below:
 
 <figure>
-   <img src="/images/tunneling-transmission-coefficient.pdf">
+   <img src="/images/tunneling-transmission-coefficient.jpg">
 </figure>
 
 Some comments:

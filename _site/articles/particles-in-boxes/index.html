@@ -910,12 +910,12 @@ V_0-E &= \frac{(\hbar \beta)^2}{2m}.
 \end{align}
  %]]></script>
 
-<p>Now let’s deal with te boundary conditions. To ensure that the wavefunctions
-are continuous and smooth</p>
+<p>Now let’s deal with the boundary conditions. To ensure that the wavefunctions
+are continuous and smooth:</p>
 
 <ul>
   <li>
-    <p>The boundary conditions at \( x=0 \) give:</p>
+    <p>The boundary conditions at \( x=0 \) are:</p>
 
     <script type="math/tex; mode=display">% <![CDATA[
 
@@ -967,7 +967,7 @@ D
  %]]></script>
   </li>
   <li>
-    <p>The boundary conditions at \(x=a\)  give:</p>
+    <p>The boundary conditions at \(x=a\)  are:</p>
 
     <script type="math/tex; mode=display">% <![CDATA[
 
@@ -1135,40 +1135,50 @@ P\sub{21} &=
 
 <p>Note: this transfer matrix method can be generalized to calculate
 transmission through any series of barriers—in case you ever need to
-do that for, say, nanotechnology applications. Of course, you would
+do that for, say, nanotechnology applications. </p>
+
+<p>Of course, you would
 not do the algebra by hand, but set these equations up in a computer
 algebra program like <a href="http://www.wolframalpha.com/">Wolfram Alpha</a></p>
 
-<p>Now for some results. </p>
+<p>Now for some results.</p>
 
 <p>Assume there is only momentum coming from the left
 (\(A_1\neq 0\), \(B_1=0 \)) but none on the right
-(\(B_2=0\),  \(B_1\neq 0\)). The transmitted momentum flux to the right
-is then:</p>
+(\(B_2=0\),  \(B_1\neq 0\)). The transmitted probability
+flux to the right is then:</p>
 
 <script type="math/tex; mode=display">
-\Re
+\textrm{Re}
+\left(
 \psi\sub\s{R}^\ast
-\frac{p}{m}
+\frac{\hat{p}}{m}
 \psi\sub\s{R}
+\right)
 =
-\Re\
+\textrm{Re}
+\left(
 A_2^\ast
 e^{-ikx}
 \frac{-i\hbar}{m}
-A_2^\ast
+A_2
 e^{ikx}
+\right)
 =
 |A_2|^2
 \frac{hk}{m}.
 </script>
+
+<p>Note that the (probability) velocity opertor used above to calculate
+the probability flux is \(\hat{v} = \hat{p}/m \). It is just the
+momentum divided by the mass.</p>
 
 <p>We define the
 <a href="http://en.wikipedia.org/wiki/Transmission_coefficient">transmission coefficient</a> by</p>
 
 <script type="math/tex; mode=display">
 T = \frac{|A_2|^2}{|A_1|^2}
-  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \frac{\s{Transmitted flux}}{\s{Incident flux}}
   = \left| \frac{1}{P\sub{11}} \right|^2
 </script>
 
@@ -1178,7 +1188,7 @@ is defined as</p>
 
 <script type="math/tex; mode=display">
 R = \frac{|B_1|^2}{|A_1|^2}
-  = \frac{\s{Transmitted momentum}}{\s{Incident momentum}}
+  = \frac{\s{Transmitted flux}}{\s{Incident flux}}
   = \left| \frac{P_{21}}{P_{11}} \right|^2
 </script>
 
@@ -1213,7 +1223,7 @@ T =
 <p>The transmission coefficient is plotted below:</p>
 
 <figure>
-   <img src="/images/tunneling-transmission-coefficient.pdf" />
+   <img src="/images/tunneling-transmission-coefficient.jpg" />
 </figure>
 
 <p>Some comments:</p>
