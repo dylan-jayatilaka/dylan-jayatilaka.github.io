@@ -3,7 +3,7 @@ layout: post
 title: "Coupled cluster singles"
 description: "Coupled cluster singles wavefunction"
 category: articles
-tags: [Coupled cluster, singel excitation, Hartree-Fock]
+tags: [Coupled cluster, single excitation, Hartree-Fock]
 modified: 201-06-07
 image:
   feature: regina-valluzzi-transition-to-chaos.jpg
@@ -66,7 +66,7 @@ $$
 \end{align}
 $$
 
-(This follows from the column expansion rule for determinants)[http://en.wikipedia.org/wiki/Determinant].
+[This follows from the column expansion rule for determinants](http://en.wikipedia.org/wiki/Determinant).
 Therefore the \\( T_1 \\) operator in the coupled cluster wavefunction
 causes a mixture of unoccupied spinorbitals into the reference orbitals,
 

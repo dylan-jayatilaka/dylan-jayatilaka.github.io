@@ -48,6 +48,10 @@ This is what the “Hello World” program looks like in Tonto
 
 To compile the program type `make run_hello_world.exe`.
 
+Now, if this seems like a lot of work to print out “Hello World” remember that
+the Tonto library is fully self contained: there are no external libraries or
+dependencies, there are no hidden operations or code.
+
 Other points to note:
 
 * The program name includes a `run_` prefix before the name `HELLO_WORLD` all
@@ -72,8 +76,4 @@ Other points to note:
 
 * You can explicitly clean-up objects via `stdout.destroy` but you don’t
   have to. It may help in places where you want high efficiency.
-
-* If this seems like a lot of work remember that the Tonto library is
-  fully self contained: no external libraries are used and there are
-  no hidden operations or code.
 

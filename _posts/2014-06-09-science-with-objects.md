@@ -17,8 +17,8 @@ We’d better start with this definition of my own:
 
 > An object in computer science is a **collection of labeled data**
 > together with actions or **methods** you can perform on that data.
-> The methods are collected together in one place called a **class** or
-> **module**.
+> The methods are collected together and defined in one place called a
+> **class** or **module**.
 
 Sometimes methods are also called messages i.e. you pass messages to the
 object to ask it to perform an action. These methods or messages may
@@ -37,6 +37,7 @@ The example code snippets below demonstrate a near universal notation,
 called “dot notation”, which I illustrate on numbers:
 
 {% highlight ruby %}
+
    a,b :: INT
 
    a = 1
@@ -302,7 +303,7 @@ end
 
 This has been a long post but the key idea is just this:
 
-> The power of using objects lies in their organizing ability
+> The power of objects is in their organizing ability
 
 In particular
 

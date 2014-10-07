@@ -15,7 +15,9 @@ share: true
 
 Doing quantum chemistry or quantum crystallography means doing calculations.
 
-That leaves you with two choices: use some else’s program or write your own.
+That leaves you with two choices: 
+1. Use some else’s program, or 
+2. Write your own.
 
 Here I argue that you should write your own.
 

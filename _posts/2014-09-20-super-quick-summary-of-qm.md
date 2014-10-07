@@ -18,10 +18,20 @@ This is a post for my second year Phys Chem students.
 The purpose of this post is to write down briefly the main ideas and Rules of
 Quantum mechanics.
 
-Now quantum mechanics is usually quite baffling and intruiguing
-when first encountered. It’s interpretation remains a 
-[hot topic](http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/)
+<figure>
+   <img src="/images/rembrandt-moses-with-the-ten-commandments.jpg">
+</figure>
+
+Quantum mechanics is hard for two reasons. First, the ideas are strange.
+Second, it involves mathematics which is probably new to you. The double
+whammy is a killer.
+
+Still, some of you may find quantum mechanics intruiguing. You would not be
+alone. People still 
+[argue about it](http://dylan-jayatilaka.net/articles/quantum-theory-is-wrong/)
 even after a hundred years.
+
+## Why?
 
 A common question that is encountered is “Why do I need to know about QM?” or
 more briefly “So what?”.

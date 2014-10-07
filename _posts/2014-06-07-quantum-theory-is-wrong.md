@@ -25,9 +25,7 @@ is inscrutable? Surely this is just because it is mathematically complex?
 Whoever said the universe had to be simple? Isn’t it enough that it is
 _predictable_?
 
-I think that this claim is false.
-
-The story of quantum mechanics has not ended.
+I think that this claim is false: the story of quantum mechanics has not ended.
 
 In fact, quantum mechanics in its standard form is fundamentally flawed.
 In certain circumstances, as you will see, it *refuses* to make any predictions

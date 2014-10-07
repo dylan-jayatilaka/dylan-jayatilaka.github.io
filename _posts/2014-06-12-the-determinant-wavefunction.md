@@ -100,7 +100,7 @@ partner if we want the wavefunction to change sign. The result is
 ## Antisymmetric orbital-product wavefunction
 
 $$
-\Phi(textbf{x}_1\ldots\textbf{x}_{N})
+\Phi(\textbf{x}_1\ldots\textbf{x}_{N})
 =
 \frac{1}{\sqrt{N!}}
 \sum_u^{N!} \sigma_u P_u
