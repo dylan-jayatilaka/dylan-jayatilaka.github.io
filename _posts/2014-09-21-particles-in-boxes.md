@@ -296,8 +296,11 @@ $$
 
 is *also* a solution.
 
-Is this a valid solution? On the face of it, yes. However, you can show
-the probability density for this wavefunction is
+Is this a valid solution?
+
+Well, yes.
+
+However, you can show the probability density for this wavefunction is
 
 $$
 \begin{align}
@@ -308,11 +311,11 @@ $$
 
 The last equality follows from noting that the cross terms are complex
 conjugates. Therefore this wavefunction *does not have a constant probability
-density*. Perhaps it may not be an appropriate wavefunction -
-though I have not given an explicit rule to forbid it.
+density*. There is no explicit rule to forbid such a wavefunction, but
+it does not quite agree with what we might have expected (see Q10).
 
-This question nevertheless illustrates an important point about quantum
-mechanics:
+**This question illustrates a very important point about quantum
+mechanics:**
 
 If we have more than one solution to the SChrodinger equation with
 the *same* energy, then we can take a linear combination of these solutions,
@@ -348,8 +351,12 @@ which we have yet to find.
 </figure>
 
 According to the strategy we should try wavefunctions of the form
-\\( \psi(x) = A \sin k x + B \cos k x \\). Substituting in the Schrodinger
-equation we get
+
+$$
+\psi(x) = A \sin k x + B \cos k x. 
+$$
+
+Substituting in the Schrodinger equation we get
 
 $$
 \begin{align}
