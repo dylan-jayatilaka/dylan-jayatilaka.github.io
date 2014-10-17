@@ -187,6 +187,12 @@ The latter is the defining vector for the circulant matrix.
 
 ## Designing a Hamiltonian with a certain circulant structure
 
+By “designing” the matrix we mean choosing the energy eigenvalues
+for the Hamiltonian in order to achieve a desired circulant structure.
+We do not mean actually finding a real physical system with these
+eigenvalues. That is a much more difficult task alluded to in the
+introduction.
+
 This is actually fairly trivial. All that is requited is to take
 the inverse discrete Fourier transform of the defining vector of
 the circulant matrix.
