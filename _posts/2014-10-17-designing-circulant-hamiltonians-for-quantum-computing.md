@@ -14,38 +14,50 @@ share: true
 ---
 
 The other day [Jingbo Wang](http://www.uwa.edu.au/people/jingbo.wang) from our
-Physics department asked me about circulant Hamiltonians. 
+Physics department asked me about circulant Hamiltonians.
 
-I had previously come across circulant orbitals from the work of 
+I had previously come across circulant orbitals from the work of
 [Bob Parr](http://www.jstor.org/stable/10245).
 
-Circulant orbitals are basically non-canonical Hartree-Fock or density
-functional theory (DFT) orbitals which have been transformed unitarily in order
-to have a density as close as possible to the electron density divided by the
-number of electrons. The name arises from the fact that circulant orbitals
-transform the 
-[effective Hamiltonian](http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation) 
-into a Hermitian 
+Circulant orbitals are non-canonical Hartree-Fock or density functional theory
+(DFT) [molecular orbitals](http://en.wikipedia.org/wiki/Molecular_orbital)
+which have been transformed unitarily in order to have a density
+as close as possible to the electron density divided by the number of
+electrons. The name arises from the fact that circulant orbitals transform the
+[effective Hamiltonian](http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation)
+into a Hermitian
 [circulant matrix](http://en.wikipedia.org/wiki/Circulant_matrix) -- that is a matrix
 where the rows (or columns) are shifted by a unit cyclic permutation.
 
 I was told by Jingbo that such circulant Hamiltonians are really useful
-for performing quantum computations.
+for performing [quantum computations](http://en.wikipedia.org/wiki/Quantum_computer).
 
-The purpose of this blog is to trivially genralize the work of Bob Parr
+## What this is about
+
+The purpose of this blog is to trivially generalize the work of Bob Parr
 to show that *any* group of quantum states can be unitarily mixed to
-ensure that the Hamiltonian has a circulant structure. The structure
-depends only on the actual energies of the states involved.
+ensure that the Hamiltonian has a circulant structure in the new basis. The
+structure depends only on the actual energies of the states involved.
 
-In order to use the final result below in a practical way (at least!) two
-serious problems need to be addressed.
+There are two use cases for the final result:
 
-* How to design a molecule or system with appropriate excited state energies?
+* Given a general circulant matrix, what are the eigenavlues of a
+  physical system needed to construct it?
 
-* How to introduce a coherent excited state into the so-designed system at
-  an initial time, and probe it at a later time
+* Given a real system which gives certain eigenvalues, what circuant
+  matrix fesults from it, and can it be used to do any quantum computation?
 
-I was assured that these problems are soluble, but I am not so sure.
+In order actually *make* a real device (at least!) two serious problems need to
+be addressed:
+
+* How do we design a molecule or system with appropriate excited state energies?
+
+* How do we introduce a coherent excited state into the so-designed system at
+  an initial time, make sure errors and noise are corrected, and probe it at a
+  later time.
+
+I was assured that the error correction part of the second problem
+[is soluble](http://en.wikipedia.org/wiki/Quantum_error_correction).
 
 ## The circulant basis
 
@@ -106,7 +118,7 @@ $$
 $$
 
 Now there are two cases. When \\( I=J \\) the summand is always equal to one
-and the right hand side is equal to 1. When \\( I\]neq J \\) the summation
+and the right hand side is equal to 1. When \\( I\neq J \\) the summation
 is a geometric series with initial term 1 and ratio \\( \omega \\), so
 the sum is given by \\( (1-\omega^n)/(1-\omega) \\), which is zero since
 \\( \omega \\) is an \\(N\\)-th root of unity.
@@ -187,15 +199,14 @@ The latter is the defining vector for the circulant matrix.
 
 ## Designing a Hamiltonian with a certain circulant structure
 
-By “designing” the matrix we mean choosing the energy eigenvalues
-for the Hamiltonian in order to achieve a desired circulant structure.
-We do not mean actually finding a real physical system with these
-eigenvalues. That is a much more difficult task alluded to in the
-introduction.
+By “designing” the matrix we mean choosing the energy eigenvalues for the
+Hamiltonian in order to achieve a desired circulant structure. We do not mean
+actually finding a real physical system with these eigenvalues. That is a much
+more difficult task alluded to in the introduction.
 
-This is actually fairly trivial. All that is requited is to take
-the inverse discrete Fourier transform of the defining vector of
-the circulant matrix.
+Obtaining the eigenvalues associated with a given circulant matrix is actually
+fairly trivial. All that is requited is to take the inverse discrete Fourier
+transform of the defining vector of the circulant matrix.
 
 *Theorem*
 
@@ -232,9 +243,44 @@ E_m
 \end{align}
 $$
 
+## Where to now?
 
+I don’t really know, but here were some ideas from the discussion after the talk
+I gave in physics:
 
+1. Do some accurate [quantum chemical](http://en.wikipedia.org/wiki/Quantum_chemistry) 
+   calculations on real systems, find their energies \\( E_m \\) and from them
+   find the circulant matrix \\( H_K \\). Can anything be done with this
+   matrix? This approach seems a bit *ad hoc*.
 
+2. Take some examples of circulant matrices known to be useful for
+   quantum computing. Find the energy eigenvalues \\( E_m \\)
+   corresponding to this system. Try to construct a real system,
+   perhaps a real molecule, perhaps a quantum dot or other one dimensional
+   system with the required energy levels.
+
+   - An [earlier post](http://dylan-jayatilaka.net/articles/particles-in-boxes/)
+     shows how the eigenvalues of a one dimensional system can be
+     systematically computed, in general. This approach could be used
+     to rationally design such a “quantum line” system with the desired
+     eigenvalues.
+ 
+   - Alternatively, use approach 1. to develop some familiarity with the
+     type of systems giving rise to certain energy levels.
+ 
+   - Jingbo noted that, using localized basis functions, some Hamiltonians
+     *naturally* have a circulant structure e.g. benzene. One is reminded of the
+     [Huckel type theories](http://en.wikipedia.org/wiki/H%C3%BCckel_method).
+     Initially I agreed. However, I now think that the Hamiltonians with these
+     connectivities are *one electron effective Hamiltonians* -- they are not
+     actual real Hamiltonians which model the dynamics of real multi-electron
+     wavefunctions -- except possibly for the motion of one electron excited
+     from the highest occupied molecular orbital (HOMO). It is not clear that
+     the excited states of such effective systems will have the same circulant
+     structure. However, the idea deserves further consideration because it
+     could give insight into how the connectivity of atoms in a molecules 
+     affects its circulant structure. This could be probed by more accurate
+     quantum chemical calculations.
 
 
 
