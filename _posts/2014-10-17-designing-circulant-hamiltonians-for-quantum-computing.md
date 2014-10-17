@@ -47,9 +47,9 @@ serious problems need to be addressed.
 
 I was assured that these problems are soluble, but I am not so sure.
 
-## The ciculant basis
+## The circulant basis
 
-We begin by introducing the ciculant basis. It is a discrete Fourier
+We begin by introducing the circulant basis. It is a discrete Fourier
 transform of a set of system eigenstates.
 
 So: Let \\( \hat{H} \\) be some physical Hamiltonian with eigenstates
