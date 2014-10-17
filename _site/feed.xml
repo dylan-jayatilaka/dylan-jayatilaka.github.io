@@ -10,13 +10,255 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-07T21:13:35+08:00</updated>
+<updated>2014-10-17T12:33:15+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
   <uri>http://localhost:4000/</uri>
   <email>dylan.jayatilaka@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Designing circulant Hamiltonians for quantum computing]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/"/>
+  <id>http://localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing</id>
+  <updated>2014-09-21T00:00:00-00:00</updated>
+  <published>2014-10-17T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Circulant%20matrix" term="Circulant matrix" /><category scheme="http://localhost:4000/tags/#Quantum%20Computing" term="Quantum Computing" /><category scheme="http://localhost:4000/tags/#Unitary%20transformation" term="Unitary transformation" /><category scheme="http://localhost:4000/tags/#Discrete%20Fourier%20transform" term="Discrete Fourier transform" /><category scheme="http://localhost:4000/tags/#Parr" term="Parr" />
+  <content type="html">
+  
+    &lt;p&gt;The other day &lt;a href=&quot;http://www.uwa.edu.au/people/jingbo.wang&quot;&gt;Jingbo Wang&lt;/a&gt; from our
+Physics department asked me about circulant Hamiltonians. &lt;/p&gt;
+
+&lt;p&gt;I had previously come across circulant orbitals from the work of 
+&lt;a href=&quot;http://www.jstor.org/stable/10245&quot;&gt;Bob Parr&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Circulant orbitals are basically non-canonical Hartree-Fock or density
+functional theory (DFT) orbitals which have been transformed unitarily in order
+to have a density as close as possible to the electron density divided by the
+number of electrons. The name arises from the fact that circulant orbitals
+transform the 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation&quot;&gt;effective Hamiltonian&lt;/a&gt; 
+into a Hermitian 
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Circulant_matrix&quot;&gt;circulant matrix&lt;/a&gt; – that is a matrix
+where the rows (or columns) are shifted by a unit cyclic permutation.&lt;/p&gt;
+
+&lt;p&gt;I was told by Jingbo that such circulant Hamiltonians are really useful
+for performing quantum computations.&lt;/p&gt;
+
+&lt;p&gt;The purpose of this blog is to trivially genralize the work of Bob Parr
+to show that &lt;em&gt;any&lt;/em&gt; group of quantum states can be unitarily mixed to
+ensure that the Hamiltonian has a circulant structure. The structure
+depends only on the actual energies of the states involved.&lt;/p&gt;
+
+&lt;p&gt;In order to use the final result below in a practical way (at least!) two
+serious problems need to be addressed.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;How to design a molecule or system with appropriate excited state energies?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How to introduce a coherent excited state into the so-designed system at
+an initial time, and probe it at a later time&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I was assured that these problems are soluble, but I am not so sure.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-ciculant-basis&quot;&gt;The ciculant basis&lt;/h2&gt;
+
+&lt;p&gt;We begin by introducing the ciculant basis. It is a discrete Fourier
+transform of a set of system eigenstates.&lt;/p&gt;
+
+&lt;p&gt;So: Let \( \hat{H} \) be some physical Hamiltonian with eigenstates
+\( E_n\) and with corresponding orthonormal eigenstates \( \Psi_n \),
+\( n=1,\ldots,N \). Then we have as usual&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\braopket{\Psi_m}{\hat{H}}{\Psi_n} = \delta\sub{mn}
+&lt;/script&gt;
+
+&lt;p&gt;The circulant basis is &lt;em&gt;defined&lt;/em&gt; by the transformation&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\Phi_I
+=
+\frac{1}{\sqrt{N}}
+\sum\sub{l=1}^N \Psi_l \omega^{(I-1)(l-1)}, \ \ \ \omega = \exp(2\pi i/N)
+&lt;/script&gt;
+
+&lt;p&gt;In other words, \(\Phi_I\) is a discrete Fourier transform of a finite set
+of eigenstates. \( \omega \) is an \(N\)-th root of unity, \( \omega^N = 1 \).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The circulant transformation is unitary&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the definition of a unitary transformation is that is preserves
+orthonormality, we only need to show that the new basis \( \Phi_I \) is also
+orthonormal, i.e. that \( \braket{\Phi_I}{\Phi_J} = \delta\sub{IJ} \).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\braket{\Phi_I}{\Phi_J}
+&amp; =
+\frac{1}{N}
+\sum\sub{l=1}^N \sum\sub{m=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(m-1)}
+\underbrace{\braket{\Psi_l}{\Psi_m}}\sub{\delta\sub{lm}}
+\\
+&amp; =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(l-1)}
+\\
+&amp; =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{ (J-I)(l-1)}
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now there are two cases. When \( I=J \) the summand is always equal to one
+and the right hand side is equal to 1. When \( I]neq J \) the summation
+is a geometric series with initial term 1 and ratio \( \omega \), so
+the sum is given by \( (1-\omega^n)/(1-\omega) \), which is zero since
+\( \omega \) is an \(N\)-th root of unity.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-hamiltonian-in-the-circulant-basis&quot;&gt;The Hamiltonian in the circulant basis&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\boxed{
+H\sub{IJ}
+=
+\displaystyle
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{(J-I)(l-1)}
+E_l
+}
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Just substitute in the definitions for the circulant states.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+H\sub{IJ}
+&amp; =
+\frac{1}{N}
+\sum\sub{l=1}^N \sum\sub{m=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(m-1)}
+\underbrace{\braopket{\Psi_l}{\hat{H}}{\Psi_m}}\sub{E_l\delta\sub{lm}}
+\\
+&amp; =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{-(I-1)(l-1)}
+E_l
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;the-hamiltonian-in-the-circulant-basis-is-a-circulant-matrix&quot;&gt;The Hamiltonian in the circulant basis is a circulant matrix&lt;/h2&gt;
+
+&lt;p&gt;A &lt;a href=&quot;http://en.wikipedia.org/wiki/Circulant_matrix&quot;&gt;circulant matrix&lt;/a&gt; has rows
+(or columns) which are 1-cyclic permutations of the previous row (or column)
+e.g.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\left(
+\begin{array}{cccc}
+1 &amp; 2 &amp; 3 &amp; 4 \\
+4 &amp; 1 &amp; 2 &amp; 3 \\
+3 &amp; 4 &amp; 1 &amp; 2 \\
+2 &amp; 3 &amp; 4 &amp; 1 \\
+\end{array}
+\right)
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Or in other words \( H\sub{IJ} = H\sub{I+1,J+1} \) where the indices are
+taken modulo \( N \) the size of the matrix. The circulant matrix
+is actually only defined by one row or column.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Hamiltonian in the circulant basis is a circulant matrix&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Obvious by direct inspection. Also we define:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+H\sub{IJ} = \frac{1}{N} \sum\sub{l=1}^N \omega_l^{(K-1)(l-1)} E_l \equiv H\sub{K}
+&lt;/script&gt;
+
+&lt;p&gt;The latter is the defining vector for the circulant matrix.&lt;/p&gt;
+
+&lt;h2 id=&quot;designing-a-hamiltonian-with-a-certain-circulant-structure&quot;&gt;Designing a Hamiltonian with a certain circulant structure&lt;/h2&gt;
+
+&lt;p&gt;This is actually fairly trivial. All that is requited is to take
+the inverse discrete Fourier transform of the defining vector of
+the circulant matrix.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Theorem&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\boxed{
+E_m
+=
+\displaystyle
+\sum\sub{K=1}^N H\sub{K} \omega^{-(m-1)(K-1)}
+}
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Substitute the definition of the defining vector.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+\textrm{RHS}
+&amp; =
+\frac{1}{N}
+\sum\sub{K=1}^N \sum\sub{l=1}^N
+\omega^{ (K-1)(l-1)} E_l
+\omega^{-(m-1)(K-1)}
+\\
+&amp; =
+\frac{1}{N}
+\sum\sub{K=1}^N \sum\sub{l=1}^N
+\underbrace{\omega^{ (l-m)(K-1)}}\sub{N\delta\sub{lm}}
+E_l
+\\
+&amp; =
+E_m
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/&quot;&gt;Designing circulant Hamiltonians for quantum computing&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on October 17, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

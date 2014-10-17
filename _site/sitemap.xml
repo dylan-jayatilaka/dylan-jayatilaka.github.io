@@ -44,6 +44,10 @@
 
     
     <url>
+        <loc>//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/atomic-orbitals-and-chladni-figures/</loc>
     </url>
     

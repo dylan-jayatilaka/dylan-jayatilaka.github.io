@@ -1,0 +1,460 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Designing circulant Hamiltonians for quantum computing &#8211; That Blog by Dylan</title>
+<meta name="description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta name="keywords" content="Circulant matrix, Quantum Computing, Unitary transformation, Discrete Fourier transform, Parr">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing circulant Hamiltonians for quantum computing">
+<meta property="og:description" content="The Schrodinger equation is solved for several one dimensional cases">
+<meta property="og:url" content="//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/">
+<meta property="og:site_name" content="That Blog by Dylan">
+
+
+
+
+
+<link rel="canonical" href="//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/">
+<link href="//localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="That Blog by Dylan Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="//localhost:4000/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="//localhost:4000/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="//localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="//localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="//localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="//localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="//localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    TeX: {
+        extensions: [ "mhchem.js" ],
+        Macros: {
+            B: ["{\\mathbf{#1}}",1],
+            s: ["{\\textrm{#1}}",1],
+            cm: "{cm$^{-1}$}",
+            etal: "{\\em et al.}",
+            para: "{\\parallel}",
+            A: "{\\AA}",
+            eps: "{\\epsilon}",
+            pd: ["{\\frac{\\partial #1}{\\partial #2}}",2],
+            pdd: ["{\\frac{\\partial^2 #1}{\\partial #2 \\partial #3}}",3],
+            bra: ["{\\langle\\left. #1 \\right|}",1],
+            sub: ["_"],
+            star: ["*"],
+            ket: ["{\\left| #1 \\right. \\rangle}",1],
+            braket: ["{\\langle #1 \\left| #2 \\right. \\rangle}",2],
+            ketbra: ["{\\left| #1 \\right. \\rangle\\langle \\left. #2 \\right|}",2],
+            braopket: ["{\\langle #1 \\left| #2 \\right| #3 \\rangle}",3],
+            expectation: ["{\\langle #1 \\rangle}",1],
+            subnote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            onenote:   ["{\\begin{array}{l}\\s{#1}\\end{array}}",1],
+            twonote:   ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\end{array}}",2],
+            threenote: ["{\\begin{array}{l}\\s{#1}\\\\ \\s{#2}\\\\ \\s{#3}\\end{array}}",3]
+        }
+    }
+});
+</script>
+<script type="text/javascript"
+    src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_SVG">
+</script>
+
+</head>
+
+<body id="post">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop">
+	    <ul>
+	        
+			<li>
+				
+					<a href="//localhost:4000/about/">About</a>
+				
+			</li>
+	        
+			<li>
+				
+					<a href="/articles/">Articles</a>
+				
+			</li>
+	        
+	        <li><a href="//localhost:4000/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead">
+	
+		<div class="wrap">
+			<a href="//localhost:4000/" class="site-logo" rel="home" title="That Blog by Dylan"><img src="//localhost:4000/images/tonto-logo-circle.jpg" width="200" height="200" alt="That Blog by Dylan logo" class="animated bounceInDown"></a>
+		</div>
+	
+</header><!-- /.masthead -->
+
+
+
+<div id="main" role="main">
+  <article class="hentry">
+    <img src="//localhost:4000/images/samuel-monnier-patternmond.jpg" class="entry-feature-image" alt="Designing circulant Hamiltonians for quantum computing" ><p class="image-credit">Photo Credit: <a href="http://www.algorithmic-worlds.net/blog/blog.php?Post=20110201">Samuel Monnier</a>
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"><a href="//localhost:4000/tags/#Circulant matrix" title="Pages tagged Circulant matrix">Circulant matrix</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Quantum Computing" title="Pages tagged Quantum Computing">Quantum Computing</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Unitary transformation" title="Pages tagged Unitary transformation">Unitary transformation</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Discrete Fourier transform" title="Pages tagged Discrete Fourier transform">Discrete Fourier transform</a>&nbsp;&bull;&nbsp;<a href="//localhost:4000/tags/#Parr" title="Pages tagged Parr">Parr</a></span>
+        
+          <h1 class="entry-title">Designing circulant Hamiltonians for quantum computing</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="//localhost:4000/images/dylan-jayatilaka-avatar.jpg" alt="Dylan Jayatilaka photo" class="author-photo">
+        <span class="author vcard">By <span class="fn"><a href="//localhost:4000/about/" title="About Dylan Jayatilaka">Dylan Jayatilaka</a></span></span>
+        <span class="entry-date date published"><time datetime="2014-10-17T00:00:00+08:00"><i class="icon-calendar-empty"></i> October 17, 2014</time></span>
+        <span class="entry-date date modified"><time datetime="2014-09-21"><i class="icon-pencil"></i> September 21, 2014</time></span>
+        
+        <span><a href="//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/" rel="bookmark" title="Designing circulant Hamiltonians for quantum computing"><i class="icon-link"></i> Permalink</a></span>
+        
+        <span class="social-share-facebook">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/" title="Share on Facebook" itemprop="Facebook"><i class="icon-facebook-sign"></i> Like</a></span>
+        <span class="social-share-twitter">
+            <a href="https://twitter.com/intent/tweet?hashtags=articles&text=Designing circulant Hamiltonians for quantum computing&url=//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/&via=" title="Share on Twitter" itemprop="Twitter"><i class="icon-twitter-sign"></i> Tweet</a></span>
+        <span class="social-share-googleplus">
+            <a href="https://plus.google.com/share?url=//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/" title="Share on Google Plus" itemprop="GooglePlus"><i class="icon-google-plus-sign"></i> +1</a></span>
+            <!-- /.social-share -->
+      </footer>
+      <div class="entry-content">
+        <p>The other day <a href="http://www.uwa.edu.au/people/jingbo.wang">Jingbo Wang</a> from our
+Physics department asked me about circulant Hamiltonians. </p>
+
+<p>I had previously come across circulant orbitals from the work of 
+<a href="http://www.jstor.org/stable/10245">Bob Parr</a>.</p>
+
+<p>Circulant orbitals are basically non-canonical Hartree-Fock or density
+functional theory (DFT) orbitals which have been transformed unitarily in order
+to have a density as close as possible to the electron density divided by the
+number of electrons. The name arises from the fact that circulant orbitals
+transform the 
+<a href="http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation">effective Hamiltonian</a> 
+into a Hermitian 
+<a href="http://en.wikipedia.org/wiki/Circulant_matrix">circulant matrix</a> – that is a matrix
+where the rows (or columns) are shifted by a unit cyclic permutation.</p>
+
+<p>I was told by Jingbo that such circulant Hamiltonians are really useful
+for performing quantum computations.</p>
+
+<p>The purpose of this blog is to trivially genralize the work of Bob Parr
+to show that <em>any</em> group of quantum states can be unitarily mixed to
+ensure that the Hamiltonian has a circulant structure. The structure
+depends only on the actual energies of the states involved.</p>
+
+<p>In order to use the final result below in a practical way (at least!) two
+serious problems need to be addressed.</p>
+
+<ul>
+  <li>
+    <p>How to design a molecule or system with appropriate excited state energies?</p>
+  </li>
+  <li>
+    <p>How to introduce a coherent excited state into the so-designed system at
+an initial time, and probe it at a later time</p>
+  </li>
+</ul>
+
+<p>I was assured that these problems are soluble, but I am not so sure.</p>
+
+<h2 id="the-ciculant-basis">The ciculant basis</h2>
+
+<p>We begin by introducing the ciculant basis. It is a discrete Fourier
+transform of a set of system eigenstates.</p>
+
+<p>So: Let \( \hat{H} \) be some physical Hamiltonian with eigenstates
+\( E_n\) and with corresponding orthonormal eigenstates \( \Psi_n \),
+\( n=1,\ldots,N \). Then we have as usual</p>
+
+<script type="math/tex; mode=display">
+\braopket{\Psi_m}{\hat{H}}{\Psi_n} = \delta\sub{mn}
+</script>
+
+<p>The circulant basis is <em>defined</em> by the transformation</p>
+
+<script type="math/tex; mode=display">
+\Phi_I
+=
+\frac{1}{\sqrt{N}}
+\sum\sub{l=1}^N \Psi_l \omega^{(I-1)(l-1)}, \ \ \ \omega = \exp(2\pi i/N)
+</script>
+
+<p>In other words, \(\Phi_I\) is a discrete Fourier transform of a finite set
+of eigenstates. \( \omega \) is an \(N\)-th root of unity, \( \omega^N = 1 \).</p>
+
+<p><em>Theorem</em></p>
+
+<p>The circulant transformation is unitary</p>
+
+<p><em>Proof</em></p>
+
+<p>Since the definition of a unitary transformation is that is preserves
+orthonormality, we only need to show that the new basis \( \Phi_I \) is also
+orthonormal, i.e. that \( \braket{\Phi_I}{\Phi_J} = \delta\sub{IJ} \).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\braket{\Phi_I}{\Phi_J}
+& =
+\frac{1}{N}
+\sum\sub{l=1}^N \sum\sub{m=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(m-1)}
+\underbrace{\braket{\Psi_l}{\Psi_m}}\sub{\delta\sub{lm}}
+\\
+& =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(l-1)}
+\\
+& =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{ (J-I)(l-1)}
+\end{align}
+ %]]></script>
+
+<p>Now there are two cases. When \( I=J \) the summand is always equal to one
+and the right hand side is equal to 1. When \( I]neq J \) the summation
+is a geometric series with initial term 1 and ratio \( \omega \), so
+the sum is given by \( (1-\omega^n)/(1-\omega) \), which is zero since
+\( \omega \) is an \(N\)-th root of unity.</p>
+
+<h2 id="the-hamiltonian-in-the-circulant-basis">The Hamiltonian in the circulant basis</h2>
+
+<p><em>Theorem</em></p>
+
+<script type="math/tex; mode=display">
+\boxed{
+H\sub{IJ}
+=
+\displaystyle
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{(J-I)(l-1)}
+E_l
+}
+</script>
+
+<p><em>Proof</em></p>
+
+<p>Just substitute in the definitions for the circulant states.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+H\sub{IJ}
+& =
+\frac{1}{N}
+\sum\sub{l=1}^N \sum\sub{m=1}^N
+\omega^{-(I-1)(l-1)}
+\omega^{ (J-1)(m-1)}
+\underbrace{\braopket{\Psi_l}{\hat{H}}{\Psi_m}}\sub{E_l\delta\sub{lm}}
+\\
+& =
+\frac{1}{N}
+\sum\sub{l=1}^N
+\omega^{-(I-1)(l-1)}
+E_l
+\end{align}
+ %]]></script>
+
+<h2 id="the-hamiltonian-in-the-circulant-basis-is-a-circulant-matrix">The Hamiltonian in the circulant basis is a circulant matrix</h2>
+
+<p>A <a href="http://en.wikipedia.org/wiki/Circulant_matrix">circulant matrix</a> has rows
+(or columns) which are 1-cyclic permutations of the previous row (or column)
+e.g.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\left(
+\begin{array}{cccc}
+1 & 2 & 3 & 4 \\
+4 & 1 & 2 & 3 \\
+3 & 4 & 1 & 2 \\
+2 & 3 & 4 & 1 \\
+\end{array}
+\right)
+ %]]></script>
+
+<p>Or in other words \( H\sub{IJ} = H\sub{I+1,J+1} \) where the indices are
+taken modulo \( N \) the size of the matrix. The circulant matrix
+is actually only defined by one row or column.</p>
+
+<p><em>Theorem</em></p>
+
+<p>The Hamiltonian in the circulant basis is a circulant matrix</p>
+
+<p><em>Proof</em></p>
+
+<p>Obvious by direct inspection. Also we define:</p>
+
+<script type="math/tex; mode=display">
+H\sub{IJ} = \frac{1}{N} \sum\sub{l=1}^N \omega_l^{(K-1)(l-1)} E_l \equiv H\sub{K}
+</script>
+
+<p>The latter is the defining vector for the circulant matrix.</p>
+
+<h2 id="designing-a-hamiltonian-with-a-certain-circulant-structure">Designing a Hamiltonian with a certain circulant structure</h2>
+
+<p>This is actually fairly trivial. All that is requited is to take
+the inverse discrete Fourier transform of the defining vector of
+the circulant matrix.</p>
+
+<p><em>Theorem</em></p>
+
+<script type="math/tex; mode=display">
+\boxed{
+E_m
+=
+\displaystyle
+\sum\sub{K=1}^N H\sub{K} \omega^{-(m-1)(K-1)}
+}
+</script>
+
+<p><em>Proof</em></p>
+
+<p>Substitute the definition of the defining vector.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align}
+\textrm{RHS}
+& =
+\frac{1}{N}
+\sum\sub{K=1}^N \sum\sub{l=1}^N
+\omega^{ (K-1)(l-1)} E_l
+\omega^{-(m-1)(K-1)}
+\\
+& =
+\frac{1}{N}
+\sum\sub{K=1}^N \sum\sub{l=1}^N
+\underbrace{\omega^{ (l-m)(K-1)}}\sub{N\delta\sub{lm}}
+E_l
+\\
+& =
+E_m
+\end{align}
+ %]]></script>
+
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+        <a href="//localhost:4000/articles/atomic-orbitals-and-chladni-figures/" class="btn" title="Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics">Previous article</a>
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2014 Dylan Jayatilaka. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/so-simple/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="//localhost:4000/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '//localhost:4000/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>
