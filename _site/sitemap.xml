@@ -44,6 +44,10 @@
 
     
     <url>
+        <loc>//localhost:4000/articles/why-two-electrons-per-orbital/</loc>
+    </url>
+    
+    <url>
         <loc>//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/</loc>
     </url>
     

@@ -10,13 +10,202 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-17T12:33:15+08:00</updated>
+<updated>2014-10-22T12:27:36+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
   <uri>http://localhost:4000/</uri>
   <email>dylan.jayatilaka@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Why two electrons per orbital?]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/why-two-electrons-per-orbital/"/>
+  <id>http://localhost:4000/articles/why-two-electrons-per-orbital</id>
+  <updated>201-06-07T00:00:00-00:00</updated>
+  <published>2014-10-20T00:00:00+08:00</published>
+  
+  <author>
+    <name>Dylan Jayatilaka</name>
+    <uri>http://localhost:4000</uri>
+    <email>dylan.jayatilaka@gmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#CHEM2002" term="CHEM2002" /><category scheme="http://localhost:4000/tags/#electrons" term="electrons" /><category scheme="http://localhost:4000/tags/#spin" term="spin" /><category scheme="http://localhost:4000/tags/#pauli%20principle" term="pauli principle" />
+  <content type="html">
+  
+    &lt;p&gt;Electron are negatively charged and repel each other.&lt;/p&gt;
+
+&lt;p&gt;How is it possible that within atoms and molecules they suddenly turn
+schizophrenic and two of them occupy the same orbital?&lt;/p&gt;
+
+&lt;p&gt;Frankly, this is nuts.&lt;/p&gt;
+
+&lt;p&gt;I have never encountered a simple, vivid and correct explanation which makes
+this contradiction acceptable. On the contrary, in basic chemistry, we simply
+&lt;em&gt;assert&lt;/em&gt; that the electrons “fill-up” the orbitals that way with “opposite spin”.
+But how does tha &lt;em&gt;explain&lt;/em&gt; anything? What has spin got to do with any of this?&lt;/p&gt;
+
+&lt;h2 id=&quot;electrons-are-four-dimensional&quot;&gt;Electrons are four dimensional&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;The real answer is that electrons actually inhabit their own special four
+dimensional space&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;For electrons, this fourth dimension is special: unlike the three normal
+dimensions whose coordinates \( x \), \( y \) and \( z \) may take any
+value in the range \(-\infty \) to \( +\infty \), the extra fourth dimension
+is bound to the surface a &lt;em&gt;complex two dimensional circle&lt;/em&gt;. The fourth
+coordinate is actually a kind of “wrapped up” line; and like any circle
+it is described by two numbers, say \( a \) and \( b \) which are
+not independent but are restricted by the equation \( |a|^2 + |b|^2 = 1\).
+One could also think of the extra fourth dimension as comprised of
+two extra sub-dimensions.&lt;/p&gt;
+
+&lt;p&gt;In a later post I will show that this extra fourth dimension is used to
+describe how the wavefunction of the electron changes when it is rotated in
+three dimensional space. For this reason, the extra dimension is called the
+electron “spin”. Because this fourth dimension is unique to electrons, it is
+often called an &lt;em&gt;internal degree of freedom&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;In contrast, the \( x \), \( y \) and \(z \) coordinates which are common
+to all particles are &lt;em&gt;external degrees of freedom&lt;/em&gt;: these coordinates arise from
+&lt;em&gt;translating&lt;/em&gt; the particle in space.&lt;/p&gt;
+
+&lt;p&gt;As a matter of fact, every fundamental particle has its own private wrapped up “spin”
+dimension attached to it – although the “size” of this dimension (two in the case
+of an electron) may be different for different particles. For example, the photon
+has three spin components, two of which correspond to its &lt;em&gt;helicity&lt;/em&gt; which is used
+to describe its polarization. In all cases the extra private wrapped-up
+dimension describes how the particle behaves when it rotates, and so the extra
+dimension is always called spin.&lt;/p&gt;
+
+&lt;p&gt;Personally I think the distinction between internal and external degrees of freedom
+is not an important one. In either case, the particle coordinates are always used
+to describe how a partucles wavefunction changes when you translate or rotate it.
+It just so happens that translations are easier to describe than rotations.&lt;/p&gt;
+
+&lt;p&gt;All this is a lot to take in. It is worth reading the previous paragraphs again.
+To avoid any confusion, I should say that the fourth dimension we are talking
+about is &lt;em&gt;not&lt;/em&gt; the time dimension; spin is a completely different &lt;em&gt;additional&lt;/em&gt; dimension.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-it-makes-sense&quot;&gt;Why it makes sense&lt;/h2&gt;
+
+&lt;p&gt;That electrons have their own extra fourth dimension which is not immediately
+obvious except when you look at how they fill up orbitals.&lt;/p&gt;
+
+&lt;p&gt;It only &lt;em&gt;looks&lt;/em&gt; like there are two electrons per orbital.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In actual fact, each electron is in its own four dimensional *spin
+orbital&lt;/strong&gt;,.&lt;/p&gt;
+
+&lt;p&gt;A spin orbital is just a normal orbital three dimensional orbital
+(wavefunction) extended into the fourth dimension.&lt;/p&gt;
+
+&lt;p&gt;This notion allows us to explain why two electrons occupy an orbital and yet
+still repel each other: because of the fourth dimension, electrons can
+still get close to the positively charged nucleus to which they are attracted
+&lt;em&gt;provided they stay away from each other in the fourth dimension&lt;/em&gt; i.e. provided
+they are in different spin orbitals.&lt;/p&gt;
+
+&lt;p&gt;We represent this different location in the fourth direction by an
+up- or down-arrow corresponding to the fact that they are (more or less) on
+opposite side of the spin circle. But you already know about the up- and down-
+arrows. The difference is, now you know what those arrows actually &lt;em&gt;mean&lt;/em&gt; i.e.
+you can explain that idea without destroying everything that you previously knew
+about electrical charges and repulsion. That’s what meaning is: it allows you
+to explain things in terms of other things which you know to be “true”.&lt;/p&gt;
+
+&lt;p&gt;So the answer to the riddle “why do electrons occupy the same orbital”
+is that “they don’t”. They stay away from each other, while still maintaining
+their mutually close distance to the nucleus.&lt;/p&gt;
+
+&lt;p&gt;Without invoking the extra dimension, it is very hard to reconcile why
+electrons should actually occupy the same region of space.&lt;/p&gt;
+
+&lt;p&gt;And actually, the existence of these extra dimensions can be derived
+from the translational and rotational symmetries present in the laws of
+physics.&lt;/p&gt;
+
+&lt;h2 id=&quot;antisymmetry-and-electron-spin&quot;&gt;Antisymmetry and electron spin&lt;/h2&gt;
+
+&lt;p&gt;In a previous post we noted that the fact that particles are identical imposes
+a permutational symmetry on the joint wavefunction of those identical particles.
+Either the wavefunction reverses sign or it stays the same: if the former, the
+particle was called &lt;em&gt;fermion&lt;/em&gt; if the latter, a &lt;em&gt;boson&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;For fermions, the antisymmetry of the wavefunction was called the &lt;em&gt;Pauli principle&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In fact, all &lt;em&gt;matter-like&lt;/em&gt; particles must obey the antisymmetry principle, because
+the antisymmetry principle demands particles have a zero probability of
+occupying the same region of space. This is exactly as one would expect for
+“solid” particles: such particle simply can’t occupy the same space at any time
+(the same does not hold for bosons which have a symmetric wavefunction). In the case
+of electrons, we interpret “space” to mean the four dimensional space that the
+electrons &lt;strong&gt;really&lt;/strong&gt; occupy.&lt;/p&gt;
+
+&lt;p&gt;I bring all of this up only to underscore the notion that electron spin as an
+extra dimension is a way to reconcile how two otherwise identical electrons can
+&lt;strong&gt;not&lt;/strong&gt; be in the same region of 3 dimensional space and yet still be close to
+a nucleus in that same three dimensional space. The extra-dimension idea is
+consistent with Pauli’s antisymmetry principle.&lt;/p&gt;
+
+&lt;h2 id=&quot;spin-and-antisymmetry&quot;&gt;Spin and antisymmetry&lt;/h2&gt;
+
+&lt;p&gt;From this discussion, we see that the notion of spin (i.e  behaviour of a
+wavefunction under rotations) has something to do with &lt;em&gt;antisymmetry&lt;/em&gt; (i.e behaviour
+of wavefunctions when you swap coordinates of identical particles).&lt;/p&gt;
+
+&lt;p&gt;In fact, Pauli received the Nobel Prize for proving that, if a particle has
+a spin quantum number which is a half integer, a wavefunction involving two
+of those particles must reverse sign whenever the coordinates of those
+particles are swapped. This is known as the spin-statistics theorem and has to
+rank as one of the deepest proerties of the universe. The proof of this theorem
+is rather complicated and involves relativistic quantum mechanics and field theory.&lt;/p&gt;
+
+&lt;p&gt;In fact, I think the general view is that Pauli has not actually &lt;em&gt;proved&lt;/em&gt; this
+theorem but merely shown that it is &lt;em&gt;consistent&lt;/em&gt; with other important
+assumptions made in quantum mechanics. Ricjard Feynman was rather dissatisfied with
+Pauli’s proof, and I must admit, so am I!&lt;/p&gt;
+
+&lt;h2 id=&quot;a-vivid-example&quot;&gt;A vivid example&lt;/h2&gt;
+
+&lt;p&gt;All of this is rather abstract.&lt;/p&gt;
+
+&lt;p&gt;In the hopes of making the essential idea clearer in class, I have tried the
+following demonstration.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;I ask two boys to stand up in the same rows of the lecture theatre seats
+near the front – where the seats are never occupied – and move towards each
+other&lt;/strong&gt;. Of course, they are unable to pass each other. These two boys are
+supposed to represent two electrons of the same spin coordinate. Since they
+have the same spin coordinate they cannot “pass” each other (they are trapped
+between the rows).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/anders-krisar-by-christian-larsen-yatzer-2013.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Next I ask a boy and a girl in different but consecutive rows of
+seats to move towards each other&lt;/strong&gt;. When they are about to cross I shout out
+“stop”. At this point, the rest of the students (who are clustered at the
+back of the theatre) can see that the girl and the boy are roughly “on top”
+of each other. They &lt;em&gt;look&lt;/em&gt; as if they are occupying the same space, but are
+actually on different rows. This is exactly analogous to the case of two
+electrons with different spin being able to cohabit the same three dimensional
+position.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+   &lt;img src=&quot;/images/rene-magritte-les-liasons-dangerous-1935.jpg&quot; /&gt;
+&lt;/figure&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/why-two-electrons-per-orbital/&quot;&gt;Why two electrons per orbital?&lt;/a&gt; was originally published by Dylan Jayatilaka at &lt;a href=&quot;http://localhost:4000&quot;&gt;That Blog by Dylan&lt;/a&gt; on October 20, 2014.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -35,47 +224,64 @@
   <content type="html">
   
     &lt;p&gt;The other day &lt;a href=&quot;http://www.uwa.edu.au/people/jingbo.wang&quot;&gt;Jingbo Wang&lt;/a&gt; from our
-Physics department asked me about circulant Hamiltonians. &lt;/p&gt;
+Physics department asked me about circulant Hamiltonians.&lt;/p&gt;
 
-&lt;p&gt;I had previously come across circulant orbitals from the work of 
+&lt;p&gt;I had previously come across circulant orbitals from the work of
 &lt;a href=&quot;http://www.jstor.org/stable/10245&quot;&gt;Bob Parr&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Circulant orbitals are basically non-canonical Hartree-Fock or density
-functional theory (DFT) orbitals which have been transformed unitarily in order
-to have a density as close as possible to the electron density divided by the
-number of electrons. The name arises from the fact that circulant orbitals
-transform the 
-&lt;a href=&quot;http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation&quot;&gt;effective Hamiltonian&lt;/a&gt; 
-into a Hermitian 
+&lt;p&gt;Circulant orbitals are non-canonical Hartree-Fock or density functional theory
+(DFT) &lt;a href=&quot;http://en.wikipedia.org/wiki/Molecular_orbital&quot;&gt;molecular orbitals&lt;/a&gt;
+which have been transformed unitarily in order to have a density
+as close as possible to the electron density divided by the number of
+electrons. The name arises from the fact that circulant orbitals transform the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation&quot;&gt;effective Hamiltonian&lt;/a&gt;
+into a Hermitian
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Circulant_matrix&quot;&gt;circulant matrix&lt;/a&gt; – that is a matrix
 where the rows (or columns) are shifted by a unit cyclic permutation.&lt;/p&gt;
 
 &lt;p&gt;I was told by Jingbo that such circulant Hamiltonians are really useful
-for performing quantum computations.&lt;/p&gt;
+for performing &lt;a href=&quot;http://en.wikipedia.org/wiki/Quantum_computer&quot;&gt;quantum computations&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The purpose of this blog is to trivially genralize the work of Bob Parr
+&lt;h2 id=&quot;what-this-is-about&quot;&gt;What this is about&lt;/h2&gt;
+
+&lt;p&gt;The purpose of this blog is to trivially generalize the work of Bob Parr
 to show that &lt;em&gt;any&lt;/em&gt; group of quantum states can be unitarily mixed to
-ensure that the Hamiltonian has a circulant structure. The structure
-depends only on the actual energies of the states involved.&lt;/p&gt;
+ensure that the Hamiltonian has a circulant structure in the new basis. The
+structure depends only on the actual energies of the states involved.&lt;/p&gt;
 
-&lt;p&gt;In order to use the final result below in a practical way (at least!) two
-serious problems need to be addressed.&lt;/p&gt;
+&lt;p&gt;There are two use cases for the final result:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;How to design a molecule or system with appropriate excited state energies?&lt;/p&gt;
+    &lt;p&gt;Given a general circulant matrix, what are the eigenavlues of a
+physical system needed to construct it?&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;How to introduce a coherent excited state into the so-designed system at
-an initial time, and probe it at a later time&lt;/p&gt;
+    &lt;p&gt;Given a real system which gives certain eigenvalues, what circuant
+matrix fesults from it, and can it be used to do any quantum computation?&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I was assured that these problems are soluble, but I am not so sure.&lt;/p&gt;
+&lt;p&gt;In order actually &lt;em&gt;make&lt;/em&gt; a real device (at least!) two serious problems need to
+be addressed:&lt;/p&gt;
 
-&lt;h2 id=&quot;the-ciculant-basis&quot;&gt;The ciculant basis&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;How do we design a molecule or system with appropriate excited state energies?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;How do we introduce a coherent excited state into the so-designed system at
+an initial time, make sure errors and noise are corrected, and probe it at a
+later time.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;We begin by introducing the ciculant basis. It is a discrete Fourier
+&lt;p&gt;I was assured that the error correction part of the second problem
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Quantum_error_correction&quot;&gt;is soluble&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-circulant-basis&quot;&gt;The circulant basis&lt;/h2&gt;
+
+&lt;p&gt;We begin by introducing the circulant basis. It is a discrete Fourier
 transform of a set of system eigenstates.&lt;/p&gt;
 
 &lt;p&gt;So: Let \( \hat{H} \) be some physical Hamiltonian with eigenstates
@@ -133,7 +339,7 @@ orthonormal, i.e. that \( \braket{\Phi_I}{\Phi_J} = \delta\sub{IJ} \).&lt;/p&gt;
  %]]&gt;&lt;/script&gt;
 
 &lt;p&gt;Now there are two cases. When \( I=J \) the summand is always equal to one
-and the right hand side is equal to 1. When \( I]neq J \) the summation
+and the right hand side is equal to 1. When \( I\neq J \) the summation
 is a geometric series with initial term 1 and ratio \( \omega \), so
 the sum is given by \( (1-\omega^n)/(1-\omega) \), which is zero since
 \( \omega \) is an \(N\)-th root of unity.&lt;/p&gt;
@@ -215,9 +421,14 @@ H\sub{IJ} = \frac{1}{N} \sum\sub{l=1}^N \omega_l^{(K-1)(l-1)} E_l \equiv H\sub{K
 
 &lt;h2 id=&quot;designing-a-hamiltonian-with-a-certain-circulant-structure&quot;&gt;Designing a Hamiltonian with a certain circulant structure&lt;/h2&gt;
 
-&lt;p&gt;This is actually fairly trivial. All that is requited is to take
-the inverse discrete Fourier transform of the defining vector of
-the circulant matrix.&lt;/p&gt;
+&lt;p&gt;By “designing” the matrix we mean choosing the energy eigenvalues for the
+Hamiltonian in order to achieve a desired circulant structure. We do not mean
+actually finding a real physical system with these eigenvalues. That is a much
+more difficult task alluded to in the introduction.&lt;/p&gt;
+
+&lt;p&gt;Obtaining the eigenvalues associated with a given circulant matrix is actually
+fairly trivial. All that is requited is to take the inverse discrete Fourier
+transform of the defining vector of the circulant matrix.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Theorem&lt;/em&gt;&lt;/p&gt;
 
@@ -254,6 +465,56 @@ E_l
 E_m
 \end{align}
  %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;where-to-now&quot;&gt;Where to now?&lt;/h2&gt;
+
+&lt;p&gt;I don’t really know, but here were some ideas from the discussion after the talk
+I gave in physics:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do some accurate &lt;a href=&quot;http://en.wikipedia.org/wiki/Quantum_chemistry&quot;&gt;quantum chemical&lt;/a&gt; 
+calculations on real systems, find their energies \( E_m \) and from them
+find the circulant matrix \( H_K \). Can anything be done with this
+matrix? This approach seems a bit &lt;em&gt;ad hoc&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take some examples of circulant matrices known to be useful for
+quantum computing. Find the energy eigenvalues \( E_m \)
+corresponding to this system. Try to construct a real system,
+perhaps a real molecule, perhaps a quantum dot or other one dimensional
+system with the required energy levels.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;An &lt;a href=&quot;http://dylan-jayatilaka.net/articles/particles-in-boxes/&quot;&gt;earlier post&lt;/a&gt;
+shows how the eigenvalues of a one dimensional system can be
+systematically computed, in general. This approach could be used
+to rationally design such a “quantum line” system with the desired
+eigenvalues.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Alternatively, use approach 1. to develop some familiarity with the
+type of systems giving rise to certain energy levels.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Jingbo noted that, using localized basis functions, some Hamiltonians
+&lt;em&gt;naturally&lt;/em&gt; have a circulant structure e.g. benzene. One is reminded of the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/H%C3%BCckel_method&quot;&gt;Huckel type theories&lt;/a&gt;.
+Initially I agreed. However, I now think that the Hamiltonians with these
+connectivities are &lt;em&gt;one electron effective Hamiltonians&lt;/em&gt; – they are not
+actual real Hamiltonians which model the dynamics of real multi-electron
+wavefunctions – except possibly for the motion of one electron excited
+from the highest occupied molecular orbital (HOMO). It is not clear that
+the excited states of such effective systems will have the same circulant
+structure. However, the idea deserves further consideration because it
+could give insight into how the connectivity of atoms in a molecules 
+affects its circulant structure. This could be probed by more accurate
+quantum chemical calculations.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 
   

@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "Why two electrons per orbital?",
+		  "category"   : "articles",
+		  "url"        : "//localhost:4000/articles/why-two-electrons-per-orbital/",
+		  "date"       : "2014-10-20 00:00:00 +0800",
+		  "shortdate"  : "October 20, 2014"
+		} ,
+	
+		{
 		  "title"      : "Designing circulant Hamiltonians for quantum computing",
 		  "category"   : "articles",
 		  "url"        : "//localhost:4000/articles/designing-circulant-hamiltonians-for-quantum-computing/",

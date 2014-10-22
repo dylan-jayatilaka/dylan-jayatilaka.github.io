@@ -164,47 +164,64 @@ MathJax.Hub.Config({
       </footer>
       <div class="entry-content">
         <p>The other day <a href="http://www.uwa.edu.au/people/jingbo.wang">Jingbo Wang</a> from our
-Physics department asked me about circulant Hamiltonians. </p>
+Physics department asked me about circulant Hamiltonians.</p>
 
-<p>I had previously come across circulant orbitals from the work of 
+<p>I had previously come across circulant orbitals from the work of
 <a href="http://www.jstor.org/stable/10245">Bob Parr</a>.</p>
 
-<p>Circulant orbitals are basically non-canonical Hartree-Fock or density
-functional theory (DFT) orbitals which have been transformed unitarily in order
-to have a density as close as possible to the electron density divided by the
-number of electrons. The name arises from the fact that circulant orbitals
-transform the 
-<a href="http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation">effective Hamiltonian</a> 
-into a Hermitian 
+<p>Circulant orbitals are non-canonical Hartree-Fock or density functional theory
+(DFT) <a href="http://en.wikipedia.org/wiki/Molecular_orbital">molecular orbitals</a>
+which have been transformed unitarily in order to have a density
+as close as possible to the electron density divided by the number of
+electrons. The name arises from the fact that circulant orbitals transform the
+<a href="http://en.wikipedia.org/wiki/Hartree%E2%80%93Fock_method#Mathematical_formulation">effective Hamiltonian</a>
+into a Hermitian
 <a href="http://en.wikipedia.org/wiki/Circulant_matrix">circulant matrix</a> – that is a matrix
 where the rows (or columns) are shifted by a unit cyclic permutation.</p>
 
 <p>I was told by Jingbo that such circulant Hamiltonians are really useful
-for performing quantum computations.</p>
+for performing <a href="http://en.wikipedia.org/wiki/Quantum_computer">quantum computations</a>.</p>
 
-<p>The purpose of this blog is to trivially genralize the work of Bob Parr
+<h2 id="what-this-is-about">What this is about</h2>
+
+<p>The purpose of this blog is to trivially generalize the work of Bob Parr
 to show that <em>any</em> group of quantum states can be unitarily mixed to
-ensure that the Hamiltonian has a circulant structure. The structure
-depends only on the actual energies of the states involved.</p>
+ensure that the Hamiltonian has a circulant structure in the new basis. The
+structure depends only on the actual energies of the states involved.</p>
 
-<p>In order to use the final result below in a practical way (at least!) two
-serious problems need to be addressed.</p>
+<p>There are two use cases for the final result:</p>
 
 <ul>
   <li>
-    <p>How to design a molecule or system with appropriate excited state energies?</p>
+    <p>Given a general circulant matrix, what are the eigenavlues of a
+physical system needed to construct it?</p>
   </li>
   <li>
-    <p>How to introduce a coherent excited state into the so-designed system at
-an initial time, and probe it at a later time</p>
+    <p>Given a real system which gives certain eigenvalues, what circuant
+matrix fesults from it, and can it be used to do any quantum computation?</p>
   </li>
 </ul>
 
-<p>I was assured that these problems are soluble, but I am not so sure.</p>
+<p>In order actually <em>make</em> a real device (at least!) two serious problems need to
+be addressed:</p>
 
-<h2 id="the-ciculant-basis">The ciculant basis</h2>
+<ul>
+  <li>
+    <p>How do we design a molecule or system with appropriate excited state energies?</p>
+  </li>
+  <li>
+    <p>How do we introduce a coherent excited state into the so-designed system at
+an initial time, make sure errors and noise are corrected, and probe it at a
+later time.</p>
+  </li>
+</ul>
 
-<p>We begin by introducing the ciculant basis. It is a discrete Fourier
+<p>I was assured that the error correction part of the second problem
+<a href="http://en.wikipedia.org/wiki/Quantum_error_correction">is soluble</a>.</p>
+
+<h2 id="the-circulant-basis">The circulant basis</h2>
+
+<p>We begin by introducing the circulant basis. It is a discrete Fourier
 transform of a set of system eigenstates.</p>
 
 <p>So: Let \( \hat{H} \) be some physical Hamiltonian with eigenstates
@@ -262,7 +279,7 @@ orthonormal, i.e. that \( \braket{\Phi_I}{\Phi_J} = \delta\sub{IJ} \).</p>
  %]]></script>
 
 <p>Now there are two cases. When \( I=J \) the summand is always equal to one
-and the right hand side is equal to 1. When \( I]neq J \) the summation
+and the right hand side is equal to 1. When \( I\neq J \) the summation
 is a geometric series with initial term 1 and ratio \( \omega \), so
 the sum is given by \( (1-\omega^n)/(1-\omega) \), which is zero since
 \( \omega \) is an \(N\)-th root of unity.</p>
@@ -344,9 +361,14 @@ H\sub{IJ} = \frac{1}{N} \sum\sub{l=1}^N \omega_l^{(K-1)(l-1)} E_l \equiv H\sub{K
 
 <h2 id="designing-a-hamiltonian-with-a-certain-circulant-structure">Designing a Hamiltonian with a certain circulant structure</h2>
 
-<p>This is actually fairly trivial. All that is requited is to take
-the inverse discrete Fourier transform of the defining vector of
-the circulant matrix.</p>
+<p>By “designing” the matrix we mean choosing the energy eigenvalues for the
+Hamiltonian in order to achieve a desired circulant structure. We do not mean
+actually finding a real physical system with these eigenvalues. That is a much
+more difficult task alluded to in the introduction.</p>
+
+<p>Obtaining the eigenvalues associated with a given circulant matrix is actually
+fairly trivial. All that is requited is to take the inverse discrete Fourier
+transform of the defining vector of the circulant matrix.</p>
 
 <p><em>Theorem</em></p>
 
@@ -384,6 +406,56 @@ E_m
 \end{align}
  %]]></script>
 
+<h2 id="where-to-now">Where to now?</h2>
+
+<p>I don’t really know, but here were some ideas from the discussion after the talk
+I gave in physics:</p>
+
+<ol>
+  <li>
+    <p>Do some accurate <a href="http://en.wikipedia.org/wiki/Quantum_chemistry">quantum chemical</a> 
+calculations on real systems, find their energies \( E_m \) and from them
+find the circulant matrix \( H_K \). Can anything be done with this
+matrix? This approach seems a bit <em>ad hoc</em>.</p>
+  </li>
+  <li>
+    <p>Take some examples of circulant matrices known to be useful for
+quantum computing. Find the energy eigenvalues \( E_m \)
+corresponding to this system. Try to construct a real system,
+perhaps a real molecule, perhaps a quantum dot or other one dimensional
+system with the required energy levels.</p>
+
+    <ul>
+      <li>
+        <p>An <a href="http://dylan-jayatilaka.net/articles/particles-in-boxes/">earlier post</a>
+shows how the eigenvalues of a one dimensional system can be
+systematically computed, in general. This approach could be used
+to rationally design such a “quantum line” system with the desired
+eigenvalues.</p>
+      </li>
+      <li>
+        <p>Alternatively, use approach 1. to develop some familiarity with the
+type of systems giving rise to certain energy levels.</p>
+      </li>
+      <li>
+        <p>Jingbo noted that, using localized basis functions, some Hamiltonians
+<em>naturally</em> have a circulant structure e.g. benzene. One is reminded of the
+<a href="http://en.wikipedia.org/wiki/H%C3%BCckel_method">Huckel type theories</a>.
+Initially I agreed. However, I now think that the Hamiltonians with these
+connectivities are <em>one electron effective Hamiltonians</em> – they are not
+actual real Hamiltonians which model the dynamics of real multi-electron
+wavefunctions – except possibly for the motion of one electron excited
+from the highest occupied molecular orbital (HOMO). It is not clear that
+the excited states of such effective systems will have the same circulant
+structure. However, the idea deserves further consideration because it
+could give insight into how the connectivity of atoms in a molecules 
+affects its circulant structure. This could be probed by more accurate
+quantum chemical calculations.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
 
         
       </div><!-- /.entry-content -->
@@ -392,6 +464,8 @@ E_m
       
         <a href="//localhost:4000/articles/atomic-orbitals-and-chladni-figures/" class="btn" title="Atomic orbitals, Chladni figures, vibrating drums, Faraday waves, Oscillons and the de Broglie-Bohm theory of Quantum Mechanics">Previous article</a>
       
+      
+        <a href="//localhost:4000/articles/why-two-electrons-per-orbital/" class="btn" title="Why two electrons per orbital?">Next article</a>
       
     </nav><!-- /.pagination -->
   </article>
