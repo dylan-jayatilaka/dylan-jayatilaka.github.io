@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-22T12:27:36+08:00</updated>
+<updated>2014-10-23T10:44:49+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -31,7 +31,7 @@
     <uri>http://localhost:4000</uri>
     <email>dylan.jayatilaka@gmail.com</email>
   </author>
-  <category scheme="http://localhost:4000/tags/#CHEM2002" term="CHEM2002" /><category scheme="http://localhost:4000/tags/#electrons" term="electrons" /><category scheme="http://localhost:4000/tags/#spin" term="spin" /><category scheme="http://localhost:4000/tags/#pauli%20principle" term="pauli principle" />
+  <category scheme="http://localhost:4000/tags/#CHEM2002" term="CHEM2002" /><category scheme="http://localhost:4000/tags/#electrons" term="electrons" /><category scheme="http://localhost:4000/tags/#spin" term="spin" /><category scheme="http://localhost:4000/tags/#spinorbital" term="spinorbital" /><category scheme="http://localhost:4000/tags/#pauli%20principle" term="pauli principle" />
   <content type="html">
   
     &lt;p&gt;Electron are negatively charged and repel each other.&lt;/p&gt;
@@ -43,129 +43,212 @@ schizophrenic and two of them occupy the same orbital?&lt;/p&gt;
 
 &lt;p&gt;I have never encountered a simple, vivid and correct explanation which makes
 this contradiction acceptable. On the contrary, in basic chemistry, we simply
-&lt;em&gt;assert&lt;/em&gt; that the electrons “fill-up” the orbitals that way with “opposite spin”.
-But how does tha &lt;em&gt;explain&lt;/em&gt; anything? What has spin got to do with any of this?&lt;/p&gt;
+&lt;em&gt;assert&lt;/em&gt; that the electrons “fill-up” the orbitals that way with “opposite spin”.&lt;/p&gt;
+
+&lt;p&gt;But how does that &lt;em&gt;explain&lt;/em&gt; anything? &lt;/p&gt;
+
+&lt;p&gt;What has spin got to do with any of this?&lt;/p&gt;
 
 &lt;h2 id=&quot;electrons-are-four-dimensional&quot;&gt;Electrons are four dimensional&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;The real answer is that electrons actually inhabit their own special four
 dimensional space&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;For electrons, this fourth dimension is special: unlike the three normal
-dimensions whose coordinates \( x \), \( y \) and \( z \) may take any
+&lt;p&gt;This fourth dimension is special:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unlike normal 3D space where \( x \), \( y \) and \( z \) may take any
 value in the range \(-\infty \) to \( +\infty \), the extra fourth dimension
-is bound to the surface a &lt;em&gt;complex two dimensional circle&lt;/em&gt;. The fourth
-coordinate is actually a kind of “wrapped up” line; and like any circle
-it is described by two numbers, say \( a \) and \( b \) which are
-not independent but are restricted by the equation \( |a|^2 + |b|^2 = 1\).
-One could also think of the extra fourth dimension as comprised of
-two extra sub-dimensions.&lt;/p&gt;
+is bound to the surface a &lt;em&gt;complex two dimensional circle&lt;/em&gt;. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The fourth coordinate is actually a kind of “wrapped up” line; and like any
+circle it is described by two complex numbers, say \( a \) and \( b \).
+These numbers are not independent but are connected by the equation
+\( |a|^2 + |b|^2 = 1\).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Indeed, since the extra dimension is a circle, one should actually think of
+it as comprised of two sub-dimensions. The numbers \( a \) and \( b \)
+are its coordinates along two abstract unit-vector directions which we can call
+\( \ket{\uparrow} \) and \( \ket{\downarrow} \). This is just the same
+as the numbers \( x \), \( y \) and \(z\) describing distances along
+along the unit-vector axes \( \ket{\B{e}\sub{x}}\), \( \ket{\B{e}\sub{y}}\) 
+and \( \ket{\B{e}\sub{z}}\).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;In a later post I will show that this extra fourth dimension is used to
 describe how the wavefunction of the electron changes when it is rotated in
 three dimensional space. For this reason, the extra dimension is called the
-electron “spin”. Because this fourth dimension is unique to electrons, it is
-often called an &lt;em&gt;internal degree of freedom&lt;/em&gt;. &lt;/p&gt;
+electron &lt;a href=&quot;http://en.wikipedia.org/wiki/Spin_(physics)&quot;&gt;&lt;strong&gt;spin&lt;/strong&gt;&lt;/a&gt;. Because this
+fourth dimension is unique to electrons, it is often called an &lt;em&gt;internal degree
+of freedom&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;In contrast, the \( x \), \( y \) and \(z \) coordinates which are common
 to all particles are &lt;em&gt;external degrees of freedom&lt;/em&gt;: these coordinates arise from
 &lt;em&gt;translating&lt;/em&gt; the particle in space.&lt;/p&gt;
 
-&lt;p&gt;As a matter of fact, every fundamental particle has its own private wrapped up “spin”
-dimension attached to it – although the “size” of this dimension (two in the case
-of an electron) may be different for different particles. For example, the photon
-has three spin components, two of which correspond to its &lt;em&gt;helicity&lt;/em&gt; which is used
-to describe its polarization. In all cases the extra private wrapped-up
-dimension describes how the particle behaves when it rotates, and so the extra
-dimension is always called spin.&lt;/p&gt;
+&lt;p&gt;All this is a lot to take in; it is worth re-reading the previous paragraphs!&lt;/p&gt;
 
-&lt;p&gt;Personally I think the distinction between internal and external degrees of freedom
-is not an important one. In either case, the particle coordinates are always used
-to describe how a partucles wavefunction changes when you translate or rotate it.
-It just so happens that translations are easier to describe than rotations.&lt;/p&gt;
+&lt;p&gt;To avoid any confusion, I should say that the fourth dimension we are talking
+about is &lt;em&gt;not&lt;/em&gt; the time dimension; spin is a completely different &lt;em&gt;additional&lt;/em&gt;
+dimension. Time is a plain old dimension like the other three spatial coordinates.&lt;/p&gt;
 
-&lt;p&gt;All this is a lot to take in. It is worth reading the previous paragraphs again.
-To avoid any confusion, I should say that the fourth dimension we are talking
-about is &lt;em&gt;not&lt;/em&gt; the time dimension; spin is a completely different &lt;em&gt;additional&lt;/em&gt; dimension.&lt;/p&gt;
+&lt;h2 id=&quot;the-spin-of-other-particles&quot;&gt;The spin of other particles&lt;/h2&gt;
 
-&lt;h2 id=&quot;why-it-makes-sense&quot;&gt;Why it makes sense&lt;/h2&gt;
+&lt;p&gt;As a matter of fact, every fundamental particle has its own private wrapped up
+“spin” dimension attached to it – although the “size” of this dimension (two
+in the case of an electron) may be different for different particles.&lt;/p&gt;
 
-&lt;p&gt;That electrons have their own extra fourth dimension which is not immediately
-obvious except when you look at how they fill up orbitals.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For example, the photon has three spin components, two of which correspond to
+its &lt;em&gt;helicity&lt;/em&gt;, used to describe its polarization.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Protons and neutrons have an extra fourth dimension with two sub-dimensions,
+exactly like electrons.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;It only &lt;em&gt;looks&lt;/em&gt; like there are two electrons per orbital.&lt;/p&gt;
+&lt;p&gt;In any case the extra private wrapped-up dimension describes how the particle
+behaves when it rotates, and so the extra dimension is always called spin.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;In actual fact, each electron is in its own four dimensional *spin
-orbital&lt;/strong&gt;,.&lt;/p&gt;
+&lt;h2 id=&quot;why-are-spin-coordinates-so-different-to-position-coordinates&quot;&gt;Why are spin coordinates so different to position coordinates?&lt;/h2&gt;
 
-&lt;p&gt;A spin orbital is just a normal orbital three dimensional orbital
+&lt;p&gt;Why do all particles have the same \( x \), \( y \) and \( z \)
+coordinates to describe translation, but different coordinates to describe how
+they rotate? &lt;/p&gt;
+
+&lt;p&gt;Another way to ask this is: why are the external degrees of freedom always the
+same for every particle, but the internal degrees of freedom may be different?&lt;/p&gt;
+
+&lt;p&gt;The answer is that it just happens translations are easier to describe
+mathematically than rotations. There is only one way to describe translations for
+a wavefunction, and that is with three corrdinates. By contrast, since rotations
+are more complicated (I hope you agree!) the way an object can behave
+under rotations can possibly display more variation.&lt;/p&gt;
+
+&lt;p&gt;Personally I think the distinction between internal and external degrees of
+freedom is not an important one. In either case, the electrons “coordinates”,
+whatever they are, are used to describe how its &lt;em&gt;wavefunction changes when you
+translate or rotate it&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-i-cant-i-see-spin-like-position&quot;&gt;But I can’t I “see” spin like position!&lt;/h2&gt;
+
+&lt;p&gt;When you look at things, your eyes register different positions when
+an object has different \( x \), \(y \) and \( z\) coordinates when
+photons of arbitrary polarization scatters from that particle into your eyes.&lt;/p&gt;
+
+&lt;p&gt;If sources of light were generally available which could detect helically
+polarized light, and if our eyes were adapted to such polarized light,
+we might actually be able to “see” a particle differently according to what
+spin it has.&lt;/p&gt;
+
+&lt;p&gt;Sadly, our eyes do &lt;strong&gt;not&lt;/strong&gt; have this ability.&lt;/p&gt;
+
+&lt;p&gt;What luck that we have instruments to probe things where our eyes fail us!&lt;/p&gt;
+
+&lt;h2 id=&quot;why-the-extra-dimension-makes-sense&quot;&gt;Why the extra dimension makes sense&lt;/h2&gt;
+
+&lt;p&gt;Nevertheless, it is not immediately obvious that electrons have their own extra
+fourth dimension.&lt;/p&gt;
+
+&lt;p&gt;The evidence for it came from atomic electronic structure.&lt;/p&gt;
+
+&lt;p&gt;From an elementary perspective it seems as if the electrons just occupy the
+same orbital as they “fill up”. But it only &lt;em&gt;looks&lt;/em&gt; like there are two
+electrons per orbital.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;In actual fact, each electron is in its own four dimensional spinorbital&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A spinorbital is just a normal orbital three dimensional orbital
 (wavefunction) extended into the fourth dimension.&lt;/p&gt;
 
-&lt;p&gt;This notion allows us to explain why two electrons occupy an orbital and yet
-still repel each other: because of the fourth dimension, electrons can
-still get close to the positively charged nucleus to which they are attracted
-&lt;em&gt;provided they stay away from each other in the fourth dimension&lt;/em&gt; i.e. provided
-they are in different spin orbitals.&lt;/p&gt;
+&lt;p&gt;Now two key points:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The spinorbital notion allows to explain why two electrons occupy an orbital
+because an orbital is a 3D concept. It looks to us as if they are in the
+same orbital, but in fact they are in different spinorbitals. They are
+actually in different 4D “positions”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This spinorbital idea also allows to explain &lt;em&gt;why&lt;/em&gt; two electrons would even
+want to be in the same 3D orbital. The reason is that in this way they can
+both get close to the positively charged nucleus in 3D to which they are
+attracted. However, at the same time they can repel each other and keep away
+from each other &lt;em&gt;in the fourth dimension&lt;/em&gt; i.e. provided they are in
+different spinorbitals.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;We represent this different location in the fourth direction by an
 up- or down-arrow corresponding to the fact that they are (more or less) on
 opposite side of the spin circle. But you already know about the up- and down-
-arrows. The difference is, now you know what those arrows actually &lt;em&gt;mean&lt;/em&gt; i.e.
-you can explain that idea without destroying everything that you previously knew
-about electrical charges and repulsion. That’s what meaning is: it allows you
+arrows. The difference is, now you know what those arrows actually &lt;em&gt;mean&lt;/em&gt;.
 to explain things in terms of other things which you know to be “true”.&lt;/p&gt;
 
 &lt;p&gt;So the answer to the riddle “why do electrons occupy the same orbital”
 is that “they don’t”. They stay away from each other, while still maintaining
-their mutually close distance to the nucleus.&lt;/p&gt;
+their mutually close distance (in 3D space) to the positively charged nucleus.&lt;/p&gt;
 
 &lt;p&gt;Without invoking the extra dimension, it is very hard to reconcile why
-electrons should actually occupy the same region of space.&lt;/p&gt;
-
-&lt;p&gt;And actually, the existence of these extra dimensions can be derived
-from the translational and rotational symmetries present in the laws of
-physics.&lt;/p&gt;
+electrons should actually occupy the same region of space. In fact, it took
+Pauli quite some time to come to this conclusion himself.&lt;/p&gt;
 
 &lt;h2 id=&quot;antisymmetry-and-electron-spin&quot;&gt;Antisymmetry and electron spin&lt;/h2&gt;
 
-&lt;p&gt;In a previous post we noted that the fact that particles are identical imposes
-a permutational symmetry on the joint wavefunction of those identical particles.
-Either the wavefunction reverses sign or it stays the same: if the former, the
-particle was called &lt;em&gt;fermion&lt;/em&gt; if the latter, a &lt;em&gt;boson&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Previously we derived the fact that the wavefunction for identical particles 
+either reverses sign or stays the same: if the former, the particle was called
+&lt;em&gt;fermion&lt;/em&gt; if the latter, a &lt;em&gt;boson&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;For fermions, the antisymmetry of the wavefunction was called the &lt;em&gt;Pauli principle&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;For fermions, the change is sign or antisymmetry was called the &lt;em&gt;Pauli principle&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;In fact, all &lt;em&gt;matter-like&lt;/em&gt; particles must obey the antisymmetry principle, because
-the antisymmetry principle demands particles have a zero probability of
-occupying the same region of space. This is exactly as one would expect for
-“solid” particles: such particle simply can’t occupy the same space at any time
-(the same does not hold for bosons which have a symmetric wavefunction). In the case
-of electrons, we interpret “space” to mean the four dimensional space that the
-electrons &lt;strong&gt;really&lt;/strong&gt; occupy.&lt;/p&gt;
+&lt;p&gt;Now: rotating two electrons around their common midpoint is the same as swapping
+their positions. Swapping is more complicated than rotating when there are more
+than two electrons. &lt;/p&gt;
 
-&lt;p&gt;I bring all of this up only to underscore the notion that electron spin as an
-extra dimension is a way to reconcile how two otherwise identical electrons can
-&lt;strong&gt;not&lt;/strong&gt; be in the same region of 3 dimensional space and yet still be close to
-a nucleus in that same three dimensional space. The extra-dimension idea is
-consistent with Pauli’s antisymmetry principle.&lt;/p&gt;
+&lt;p&gt;Nevertheless, using the case of just two electrons, one might expect that there
+is a connection between a particles spin (i.e. how the wavefunction behaves
+when rotated) and whether it is a fermion or boson (i.e. how the wavefunction
+behaves when the coordinates are swapped).&lt;/p&gt;
 
-&lt;h2 id=&quot;spin-and-antisymmetry&quot;&gt;Spin and antisymmetry&lt;/h2&gt;
+&lt;p&gt;This is in fact the case.&lt;/p&gt;
 
-&lt;p&gt;From this discussion, we see that the notion of spin (i.e  behaviour of a
-wavefunction under rotations) has something to do with &lt;em&gt;antisymmetry&lt;/em&gt; (i.e behaviour
-of wavefunctions when you swap coordinates of identical particles).&lt;/p&gt;
+&lt;p&gt;Pauli received the Nobel Prize for proving that, if a particle has a spin
+quantum number which is a half integer, a wavefunction involving two of those
+particles must reverse sign whenever the coordinates of those particles are
+swapped. This is known as the
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Spin%E2%80%93statistics_theorem&quot;&gt;spin-statistics theorem&lt;/a&gt; 
+and it has to be one of the deep facts of the universe. T&lt;/p&gt;
 
-&lt;p&gt;In fact, Pauli received the Nobel Prize for proving that, if a particle has
-a spin quantum number which is a half integer, a wavefunction involving two
-of those particles must reverse sign whenever the coordinates of those
-particles are swapped. This is known as the spin-statistics theorem and has to
-rank as one of the deepest proerties of the universe. The proof of this theorem
-is rather complicated and involves relativistic quantum mechanics and field theory.&lt;/p&gt;
+&lt;p&gt;Unfortunately, the proof of this theorem by Pauli is rather complicated and it
+involves ideas from relativistic quantum mechanics and field theory.&lt;/p&gt;
 
-&lt;p&gt;In fact, I think the general view is that Pauli has not actually &lt;em&gt;proved&lt;/em&gt; this
-theorem but merely shown that it is &lt;em&gt;consistent&lt;/em&gt; with other important
-assumptions made in quantum mechanics. Ricjard Feynman was rather dissatisfied with
-Pauli’s proof, and I must admit, so am I!&lt;/p&gt;
+&lt;p&gt;I think the general view is that Pauli has &lt;strong&gt;not&lt;/strong&gt; actually proved this theorem
+but merely shown that it follows from other sensible assumptions made in
+quantum mechanics. This is a rather unsatisfactory state of affairs, and
+Richard Feynman said so.&lt;/p&gt;
+
+&lt;p&gt;Perhaps you can find an alternative, simple explanation?&lt;/p&gt;
+
+&lt;h2 id=&quot;matter-like-particles&quot;&gt;Matter-like particles&lt;/h2&gt;
+
+&lt;p&gt;In fact, all &lt;em&gt;matter-like&lt;/em&gt; particles must obey the antisymmetry principle.&lt;/p&gt;
+
+&lt;p&gt;That is because the antisymmetry principle demands particles have a zero
+probability of occupying the same region of space, exactly as one would
+expect for “solid” particles. Such solid particle simply &lt;em&gt;can’t&lt;/em&gt; occupy the
+same space at any time (remembering that by “space” we include the particles
+internal fourth dimension).&lt;/p&gt;
+
+&lt;p&gt;By contrast, it seems we can cross as many laser beams as we like, proving that
+the same does not hold for particles of light. We conclude that light particles
+must be bosons and that bosons are &lt;strong&gt;not&lt;/strong&gt; matter-like.&lt;/p&gt;
 
 &lt;h2 id=&quot;a-vivid-example&quot;&gt;A vivid example&lt;/h2&gt;
 
