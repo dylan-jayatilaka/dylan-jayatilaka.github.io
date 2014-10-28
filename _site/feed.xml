@@ -10,7 +10,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
 <link rel="alternate" type="text/html" href="http://localhost:4000/" />
-<updated>2014-10-23T10:44:49+08:00</updated>
+<updated>2014-10-28T09:46:57+08:00</updated>
 <id>http://localhost:4000/</id>
 <author>
   <name>Dylan Jayatilaka</name>
@@ -978,7 +978,9 @@ the potential is constant:&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;
-        &lt;p&gt;\( \boxed{\psi(x) = A e^{i k x}} \) for free or unbound particles.&lt;/p&gt;
+        &lt;p&gt;\( \boxed{\psi(x) = A e^{i k x}} \)
+or \( \boxed{\psi(x) = A e^{i k x} + B e^{-i k x}} \)
+for free or unbound particles.&lt;/p&gt;
 
         &lt;ul&gt;
           &lt;li&gt;
@@ -992,6 +994,10 @@ i.e. the particle has enough energy to overcome any barrier.&lt;/p&gt;
           &lt;li&gt;
             &lt;p&gt;A free particle is unbound, but an unbound particle is not
 necessarily free.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;The first solution is for free particle with a well defined momentum,
+the second solution does not have well defined momentum. See Q12 below.&lt;/p&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -1031,6 +1037,42 @@ Schrodinger equation in each region where the potential is constant. Find the
 unknown constants in the different pieces of the wavefunction for each region
 by makeing sure that it is continuous and smooth.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;Show that the most general solution for a free particle
+\( \psi(x) = A e^{i k x} + B e^{-i k x} \) is the same
+as the solution for a bound particle \( \psi(x) =C \sin kx + D \cos kx \)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;From the de Moivre formula \( e^{i k x} = \cos kx + i \sin kx \) it
+looks as if the first solution can be written using terms which look like
+those in the second. Therefore use de Moivre in the first and try to obtain the
+second. We will probably have to use the trig identities \( \cos (-kx) = \cos
+(kx) \) and \( \sin(-kx) = - \sin (kx) \).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+
+\begin{align}
+A e^{i k x} + B e^{-i k x}
+&amp; = A \left[ \cos (kx)  + i \sin (kx)  \right]
+  + B \left[ \cos (-kx) + i \sin (-kx) \right]
+\\
+&amp; = A \left[ \cos (kx)  + i \sin (kx) \right]
+  + B \left[ \cos (kx)  - i \sin (kx) \right]
+\\
+&amp; = (A+B) \cos (kx)  + i (A-B) \sin (kx)
+\end{align}
+ %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The last line is the same as \( C \cos kx + D \sin kx \) provided
+\( C = (A+B) \) and \( D = (A-B) \). &lt;/p&gt;
+
+&lt;p&gt;This shows that there is, actually, no mathematical difference between these
+general solutions. In fact, by choosing the constant \( k \) to be pure complex
+\( k’ = i k \) we can show that the general bound solutions are also equivalent.
+The main reason to use these different forms is that they are more convenient.&lt;/p&gt;
+
 &lt;h2 id=&quot;free-electron-in-one-dimension---otherwise-known-as-the-particle-not-in-a-box&quot;&gt;Free electron in one dimension - otherwise known as the particle &lt;em&gt;not&lt;/em&gt; in a box&lt;/h2&gt;
 
 &lt;p&gt;Now we get to the meat. Note that the meat is not in a box.&lt;/p&gt;
@@ -1039,7 +1081,7 @@ by makeing sure that it is continuous and smooth.&lt;/p&gt;
    &lt;img src=&quot;/images/meat-on-the-bone.jpg&quot; /&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Q10&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron moving freely in one dimension&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron moving freely in one dimension&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
 
@@ -1088,7 +1130,7 @@ Schrodinger equation provided that&lt;/p&gt;
 E = \frac{\hbar^2 k^2}{2 m_e}.
 &lt;/script&gt;
 
-&lt;p&gt;Q9 is now solved!&lt;/p&gt;
+&lt;p&gt;Q11 is now solved!&lt;/p&gt;
 
 &lt;p&gt;Note that, as we expected:&lt;/p&gt;
 
@@ -1107,7 +1149,7 @@ is located everywhere with equal probability.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Q11&lt;/strong&gt;.
+&lt;p&gt;&lt;strong&gt;Q12&lt;/strong&gt;.
 &lt;em&gt;Show that the free electron wavefunction \( \psi = A e^{i k x} \) has momentum \( \hbar k \).
 Show that the free electron wavefunction \( \psi = A e^{-i k x} \) has momentum \( -\hbar k \).
 What is the meaning of these two wavefunctions?&lt;/em&gt;&lt;/p&gt;
@@ -1120,7 +1162,7 @@ eigenfunction of the corresponding operator. Hence we need to show that
 
 &lt;p&gt;&lt;em&gt;Answer&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;We evaluate \( \hat{p}\psi(x) \) for the wavefunction in Q9:&lt;/p&gt;
+&lt;p&gt;We evaluate \( \hat{p}\psi(x) \) for the wavefunction in Q11&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 
@@ -1159,7 +1201,7 @@ negative momentum (i.e. moving to the left), assuming \( k&amp;gt;0 \).&lt;/p&gt
 the normalization condition: recall that according to the Rules
 of QM, normalization only applies to bound states.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Q12&lt;/strong&gt;. &lt;em&gt;Show that the wavefunction \( \psi = A e^{i k x} + B e^{-i k x} \)
+&lt;p&gt;&lt;strong&gt;Q13&lt;/strong&gt;. &lt;em&gt;Show that the wavefunction \( \psi = A e^{i k x} + B e^{-i k x} \)
 is also a solution to the free electron Schrodinger equation. Is this a
 valid wavefunction?&lt;/em&gt;&lt;/p&gt;
 
@@ -1207,7 +1249,7 @@ solutions, their sum must also be i.e.&lt;/p&gt;
 &lt;p&gt;The last equality follows from noting that the cross terms are complex
 conjugates. Therefore this wavefunction &lt;em&gt;does not have a constant probability
 density&lt;/em&gt;. There is no explicit rule to forbid such a wavefunction, but
-it does not quite agree with what we might have expected (see Q10).&lt;/p&gt;
+it does not quite agree with what we might have expected.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;This question illustrates a very important point about quantum
 mechanics:&lt;/strong&gt;&lt;/p&gt;
@@ -1226,7 +1268,7 @@ to maximize the bonding to &lt;em&gt;neighbouring&lt;/em&gt; atoms around a cent
 
 &lt;h2 id=&quot;particle-in-a-box&quot;&gt;Particle in a box&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Q13&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
+&lt;p&gt;&lt;strong&gt;Q14&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
 \( L \) which starts at the origin (the potential is infinite outside the box)&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Strategy&lt;/em&gt;&lt;/p&gt;
@@ -1357,7 +1399,7 @@ The important thing is not the answer but &lt;em&gt;how&lt;/em&gt; to get it.&lt
 
 &lt;h2 id=&quot;particle-in-a-half-infinite-box&quot;&gt;Particle in a half infinite box&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Q14&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
+&lt;p&gt;&lt;strong&gt;Q15&lt;/strong&gt;. &lt;em&gt;Solve the Schrodinger equation for an electron in a box of length
 \( L \) which starts at the origin. The potential is infinite to the left
 of the box, and has a given value \( V_0 \) to the right. The energy of the
 electron is less than \( V_0 \)&lt;/em&gt;.&lt;/p&gt;
@@ -2055,8 +2097,9 @@ guff and get straight into it.&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;
-        &lt;p&gt;The wavefunction is a function of the coordinates of the particles in the
-system. It is usually given the symbol \( \psi \)&lt;/p&gt;
+        &lt;p&gt;The wavefunction is a &lt;a href=&quot;http://en.wikipedia.org/wiki/Function_(mathematics)&quot;&gt;function&lt;/a&gt; 
+of the coordinates of the particles in the system. It is usually given the
+symbol \( \psi \)&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;\( \psi \) must be continuous i.e. have no “gaps” in it&lt;/p&gt;
@@ -2185,7 +2228,7 @@ calculated by using
 &lt;a href=&quot;http://en.wikipedia.org/wiki/Newton’s_laws_of_motion&quot;&gt;Newton’s Laws&lt;/a&gt;. On the
 other hand, in quantum mechanics, particles usually &lt;em&gt;do not&lt;/em&gt; have a definite
 position or velocity. That means in quantum mechanics “particles” are
-notparticles at all! They are &lt;em&gt;spread out&lt;/em&gt; and &lt;em&gt;dustributed&lt;/em&gt; in space in some
+notparticles at all! They are &lt;em&gt;spread out&lt;/em&gt; and &lt;em&gt;distributed&lt;/em&gt; in space in some
 way.&lt;/p&gt;
 
 &lt;figure&gt;
@@ -2203,7 +2246,7 @@ Compare this again to a classical particle which can be
 descibed by only &lt;em&gt;six numbers&lt;/em&gt; : three coordinates \(x \), \( y\) and
 \(z\) and three velocities \(v_x\), \(v_y\), and \(v_z\). By contrast,
 a quantum mechanical particle requires an &lt;em&gt;infinite number of numbers to
-describe it&lt;/em&gt;. It requires the whole shape of the wavefunction in the plotted
+describe it&lt;/em&gt; since it requires the whole shape of the wavefunction in the plotted
 graph to be tabulated for you. Either that, or you have to write a mathematical
 function such as \( \psi(x) = \sin x \) to describe its shape. That’s why
 the Schrodinger equation is not a normal equation but a 

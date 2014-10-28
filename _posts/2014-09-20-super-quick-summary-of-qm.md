@@ -86,8 +86,9 @@ But the rules do require some explanation, as you see!
 
 1. **The state of a system is described by a wavefunction**
 
-   - The wavefunction is a function of the coordinates of the particles in the
-     system. It is usually given the symbol \\( \psi \\)
+   - The wavefunction is a [function](http://en.wikipedia.org/wiki/Function_(mathematics)) 
+     of the coordinates of the particles in the system. It is usually given the
+     symbol \\( \psi \\)
 
    - \\( \psi \\) must be continuous i.e. have no “gaps” in it
 
@@ -187,7 +188,7 @@ calculated by using
 [Newton’s Laws](http://en.wikipedia.org/wiki/Newton’s_laws_of_motion). On the
 other hand, in quantum mechanics, particles usually *do not* have a definite
 position or velocity. That means in quantum mechanics “particles” are
-notparticles at all! They are *spread out* and *dustributed* in space in some
+notparticles at all! They are *spread out* and *distributed* in space in some
 way.
 
 <figure>
@@ -205,7 +206,7 @@ Compare this again to a classical particle which can be
 descibed by only *six numbers* : three coordinates \\(x \\), \\( y\\) and
 \\(z\\) and three velocities \\(v_x\\), \\(v_y\\), and \\(v_z\\). By contrast,
 a quantum mechanical particle requires an *infinite number of numbers to
-describe it*. It requires the whole shape of the wavefunction in the plotted
+describe it* since it requires the whole shape of the wavefunction in the plotted
 graph to be tabulated for you. Either that, or you have to write a mathematical
 function such as \\( \psi(x) = \sin x \\) to describe its shape. That’s why
 the Schrodinger equation is not a normal equation but a 

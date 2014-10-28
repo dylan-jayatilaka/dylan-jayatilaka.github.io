@@ -106,7 +106,9 @@ The strategy for solving these one dimensional problems is always the same:
    learn these possible cases to be applied in different regions where
    the potential is constant:
 
-   - \\( \boxed{\psi(x) = A e^{i k x}} \\) for free or unbound particles.
+   - \\( \boxed{\psi(x) = A e^{i k x}} \\)
+     or \\( \boxed{\psi(x) = A e^{i k x} + B e^{-i k x}} \\)
+     for free or unbound particles.
 
      - A free particle is one where \\( V(x) = 0 \\).
 
@@ -116,6 +118,9 @@ The strategy for solving these one dimensional problems is always the same:
 
      - A free particle is unbound, but an unbound particle is not
        necessarily free.
+
+     - The first solution is for free particle with a well defined momentum,
+       the second solution does not have well defined momentum. See Q12 below.
 
    - \\( \boxed{\psi(x) = A e^{-\alpha x} + B e^{+\beta x}} \\)
      for electrons in a region where the energy of the particle \\( E \\)
@@ -146,6 +151,42 @@ Schrodinger equation in each region where the potential is constant. Find the
 unknown constants in the different pieces of the wavefunction for each region
 by makeing sure that it is continuous and smooth.
 
+**Q10**. *Show that the most general solution for a free particle
+\\( \psi(x) = A e^{i k x} + B e^{-i k x} \\) is the same
+as the solution for a bound particle \\( \psi(x) =C \sin kx + D \cos kx \\)*
+
+*Strategy*
+
+From the de Moivre formula \\( e^{i k x} = \cos kx + i \sin kx \\) it
+looks as if the first solution can be written using terms which look like
+those in the second. Therefore use de Moivre in the first and try to obtain the
+second. We will probably have to use the trig identities \\( \cos (-kx) = \cos
+(kx) \\) and \\( \sin(-kx) = - \sin (kx) \\).
+
+*Answer*
+
+$$
+\begin{align}
+A e^{i k x} + B e^{-i k x}
+& = A \left[ \cos (kx)  + i \sin (kx)  \right]
+  + B \left[ \cos (-kx) + i \sin (-kx) \right]
+\\
+& = A \left[ \cos (kx)  + i \sin (kx) \right]
+  + B \left[ \cos (kx)  - i \sin (kx) \right]
+\\
+& = (A+B) \cos (kx)  + i (A-B) \sin (kx)
+\end{align}
+$$
+
+The last line is the same as \\( C \cos kx + D \sin kx \\) provided
+\\( C = (A+B) \\) and \\( D = (A-B) \\). 
+
+This shows that there is, actually, no mathematical difference between these
+general solutions. In fact, by choosing the constant \\( k \\) to be pure complex
+\\( k’ = i k \\) we can show that the general bound solutions are also equivalent.
+The main reason to use these different forms is that they are more convenient.
+
+
 ## Free electron in one dimension - otherwise known as the particle *not* in a box
 
 Now we get to the meat. Note that the meat is not in a box.
@@ -154,7 +195,7 @@ Now we get to the meat. Note that the meat is not in a box.
    <img src="/images/meat-on-the-bone.jpg">
 </figure>
 
-**Q10**. *Solve the Schrodinger equation for an electron moving freely in one dimension*.
+**Q11**. *Solve the Schrodinger equation for an electron moving freely in one dimension*.
 
 *Strategy*
 
@@ -202,7 +243,7 @@ $$
 E = \frac{\hbar^2 k^2}{2 m_e}.
 $$
 
-Q9 is now solved!
+Q11 is now solved!
 
 Note that, as we expected:
 
@@ -216,7 +257,7 @@ Note that, as we expected:
   the particle at one place or another is the same i.e. the particle
   is located everywhere with equal probability.
 
-**Q11**.
+**Q12**.
 *Show that the free electron wavefunction \\( \psi = A e^{i k x} \\) has momentum \\( \hbar k \\).
 Show that the free electron wavefunction \\( \psi = A e^{-i k x} \\) has momentum \\( -\hbar k \\).
 What is the meaning of these two wavefunctions?*
@@ -229,7 +270,7 @@ eigenfunction of the corresponding operator. Hence we need to show that
 
 *Answer*
 
-We evaluate \\( \hat{p}\psi(x) \\) for the wavefunction in Q9:
+We evaluate \\( \hat{p}\psi(x) \\) for the wavefunction in Q11
 
 $$
 \begin{align}
@@ -266,7 +307,7 @@ Note that the unknown constant \\( A \\) can not be determined by
 the normalization condition: recall that according to the Rules
 of QM, normalization only applies to bound states.
 
-**Q12**. *Show that the wavefunction \\( \psi = A e^{i k x} + B e^{-i k x} \\)
+**Q13**. *Show that the wavefunction \\( \psi = A e^{i k x} + B e^{-i k x} \\)
 is also a solution to the free electron Schrodinger equation. Is this a
 valid wavefunction?*
 
@@ -312,7 +353,7 @@ $$
 The last equality follows from noting that the cross terms are complex
 conjugates. Therefore this wavefunction *does not have a constant probability
 density*. There is no explicit rule to forbid such a wavefunction, but
-it does not quite agree with what we might have expected (see Q10).
+it does not quite agree with what we might have expected.
 
 **This question illustrates a very important point about quantum
 mechanics:**
@@ -331,7 +372,7 @@ to maximize the bonding to *neighbouring* atoms around a central atom.
 
 ## Particle in a box
 
-**Q13**. *Solve the Schrodinger equation for an electron in a box of length
+**Q14**. *Solve the Schrodinger equation for an electron in a box of length
 \\( L \\) which starts at the origin (the potential is infinite outside the box)*.
 
 *Strategy*
@@ -453,7 +494,7 @@ The important thing is not the answer but *how* to get it.
 
 ## Particle in a half infinite box
 
-**Q14**. *Solve the Schrodinger equation for an electron in a box of length
+**Q15**. *Solve the Schrodinger equation for an electron in a box of length
 \\( L \\) which starts at the origin. The potential is infinite to the left
 of the box, and has a given value \\( V_0 \\) to the right. The energy of the
 electron is less than \\( V_0 \\)*.
