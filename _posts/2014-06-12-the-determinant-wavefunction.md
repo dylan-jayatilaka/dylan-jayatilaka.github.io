@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "The determinant wavefunction"
+title: "The determinant wavefunction and identical particles"
 description: "The single determinant wavefunction is discussed"
 category: articles
 tags: [wavefunction, determinant, Hartree-Fock, DFT]
-modified: 201-06-07
+modified: 2014-11-04
 image:
   feature: samuel-monnier-patternmond.jpg
   credit: Samuel Monnier
@@ -14,9 +14,8 @@ share: true
 ---
 
 This article explains how the Pauli principle evolves naturally to
-the idea of a single determinant wavefunction. I don't explain
-or justify the Pauli principle itself! Nevertheless, we start
-with it as a reminder.
+the idea of a single determinant wavefunction and how that it turn
+comes from the idea of identical particles.
 
 ## Pauli principle
 
@@ -35,10 +34,48 @@ $$
       \textbf{x}_N)
 $$
 
-Pauli proved from quantum mechanics that this property holds for *any* set of
-identical *fermions*, and that any particle with half-integer spin is a fermion.
-He also showed that those of integer spin were *bosons*, and when the coordinates
-of identical bosons are swapped, their wavefunction *does not* change sign.
+Pauli proved from relativistic quantum mechanics that this property holds for
+*any* set of identical *fermions* i.e. any particle with half-integer spin.
+He also showed that for identical *bosons* -- particles with integer spin --
+swapping the coordinates does *not* change the sign pf the wavefunction.
+
+## Why is Pauli’s principle true?
+
+The real reason is not well understood: the famous physicist Richard Feynman
+certainly thought so.
+
+However, it **is** easy to **rationalize** the Pauli principle. Keep reading.
+
+As you know, the probability of finding two particles at positions
+\\( \B{x}\sub{1} \\) and \\( \B{x}\sub{2} \\) is given by
+
+$$
+P(\B{x}\sub{1},\B{x}\sub{2}) = |\Psi(\B{x}\sub{1},\B{x}\sub{2})|^2
+$$
+
+Now suppose the particles are identical. Then, if we swap their positions, we
+will not be able to tell that anything has happened. Therefore we expect
+that reversing the positions for identical particles leads to the *same* 
+probability,
+
+$$
+\begin{align}
+P(\B{x}\sub{1},\B{x}\sub{2}) &= P(\B{x}\sub{2},\B{x}\sub{1}) \\
+\textrm{i.e.} \ |\Psi(\B{x}\sub{2},\B{x}\sub{1})|^2 &= |\Psi(\B{x}\sub{1},\B{x}\sub{2})|^2.
+\end{align}
+$$
+
+Naively, the above equation has two solutions:
+
+$$
+\Psi(\B{x}\sub{2},\B{x}\sub{1}) = \pm\Psi(\B{x}\sub{1},\B{x}\sub{2}).
+$$
+
+The solution with the negative sign corresponds to fermions, while the positive
+sign corresponds to bosons. It is not too difficult to polish up this argument
+properly by introducing a Hermitian “coordinate swap” operator. Proving that
+the signs are related to spin is much harder.
+
 
 ## Hartree's orbital-product wavefunction
 
