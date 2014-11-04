@@ -4,7 +4,7 @@ title: "Why two electrons per orbital?"
 description: "The antisymmetrizer operator"
 category: articles
 tags: [CHEM2002, electrons, spin, spinorbital, pauli principle]
-modified: 201-06-07
+modified: 2014-11-04
 image:
   feature: rene-magritte-decalcomania.jpg
   credit: Rene Magritte - Decalcomania
@@ -44,13 +44,16 @@ This fourth dimension is special:
   These numbers are not independent but are connected by the equation
   \\( |a|^2 + |b|^2 = 1\\).
 
-*  Indeed, since the extra dimension is a circle, one should actually think of
-   it as comprised of two sub-dimensions. The numbers \\( a \\) and \\( b \\)
-   are its coordinates along two abstract unit-vector directions which we can call
-   \\( \ket{\uparrow} \\) and \\( \ket{\downarrow} \\). This is just the same
-   as the numbers \\( x \\), \\( y \\) and \\(z\\) describing distances along
-   along the unit-vector axes \\( \ket{\B{e}\sub{x}}\\), \\( \ket{\B{e}\sub{y}}\\) 
-   and \\( \ket{\B{e}\sub{z}}\\).
+* Indeed, since the extra dimension is a circle, one should actually think of
+  it as comprised of two sub-dimensions. The numbers \\( a \\) and \\( b \\)
+  are its coordinates along two abstract unit-vector directions which we usually
+  call \\( \ket{\uparrow} \\) and \\( \ket{\downarrow} \\) (though probably
+  should be called \\( \ket{\uparrow} \\) and \\(\ket{\rightarrow}\\)). 
+   
+* The spin coordinates \\( a \\) and \\( b \\) are analogous to the numbers 
+  \\( x \\), \\( y \\) and \\(z\\) describing distances along along the three
+  dimensional unit-vector axes \\( \ket{\B{e}\sub{x}}\\),
+  \\(\ket{\B{e}\sub{y}}\\) and \\( \ket{\B{e}\sub{z}}\\).
 
 In a later post I will show that this extra fourth dimension is used to
 describe how the wavefunction of the electron changes when it is rotated in
@@ -64,6 +67,8 @@ to all particles are *external degrees of freedom*: these coordinates arise from
 *translating* the particle in space.
 
 All this is a lot to take in; it is worth re-reading the previous paragraphs!
+
+## Time is not the fourth dimension!
 
 To avoid any confusion, I should say that the fourth dimension we are talking
 about is *not* the time dimension; spin is a completely different *additional*
@@ -104,7 +109,7 @@ freedom is not an important one. In either case, the electrons “coordinates”
 whatever they are, are used to describe how its *wavefunction changes when you
 translate or rotate it*.
 
-## But I can’t I “see” spin like position!
+## Why can’t we “see” spin like position?
 
 When you look at things, your eyes register different positions when
 an object has different \\( x \\), \\(y \\) and \\( z\\) coordinates when
@@ -145,15 +150,16 @@ Now two key points:
 2. This spinorbital idea also allows to explain *why* two electrons would even
    want to be in the same 3D orbital. The reason is that in this way they can
    both get close to the positively charged nucleus in 3D to which they are
-   attracted. However, at the same time they can repel each other and keep away
-   from each other *in the fourth dimension* i.e. provided they are in
-   different spinorbitals.
+   attracted. However, at the same time they are away from each other *in the
+   fourth dimension* if they are in different spinorbitals. (It is worth noting
+   that the electrical repulsion between the electrons is not reduced because the
+   electrons have a different fourth dimension, since repulsion operates only
+   in 3D)
 
 We represent this different location in the fourth direction by an
 up- or down-arrow corresponding to the fact that they are (more or less) on
-opposite side of the spin circle. But you already know about the up- and down-
-arrows. The difference is, now you know what those arrows actually *mean*.
-to explain things in terms of other things which you know to be “true”.
+different axes the spin circle. But you already know about the up- and down-
+arrows. 
 
 So the answer to the riddle “why do electrons occupy the same orbital”
 is that “they don’t”. They stay away from each other, while still maintaining
@@ -166,8 +172,8 @@ Pauli quite some time to come to this conclusion himself.
 ## Antisymmetry and electron spin
 
 Previously we derived the fact that the wavefunction for identical particles 
-either reverses sign or stays the same: if the former, the particle was called
-*fermion* if the latter, a *boson*.
+[either reverses sign or stays the same](http://dylan-jayatilaka.net/articles/the-determinant-wavefunction/).
+If the former, the particle was called *fermion* if the latter, a *boson*.
 
 For fermions, the change is sign or antisymmetry was called the *Pauli principle*.
 
@@ -195,7 +201,7 @@ involves ideas from relativistic quantum mechanics and field theory.
 I think the general view is that Pauli has **not** actually proved this theorem
 but merely shown that it follows from other sensible assumptions made in
 quantum mechanics. This is a rather unsatisfactory state of affairs, and
-Richard Feynman said so.
+[Richard Feynman](http://en.wikipedia.org/wiki/Richard_Feynman) said so.
 
 Perhaps you can find an alternative, simple explanation?
 
@@ -215,6 +221,12 @@ must be bosons and that bosons are **not** matter-like.
 
 ## A vivid example
 
+<figure class="half">
+    <img src="/images/anders-krisar-by-christian-larsen-yatzer-2013.jpg" alt="image">
+    <img src="/images/rene-magritte-les-liasons-dangerous-1935.jpg"      alt="image">
+    <figcaption>Untitled, Krisar (2013); Les Liasons Dangerous, Magritte (1935)</figcaption>
+</figure>
+
 All of this is rather abstract.
 
 In the hopes of making the essential idea clearer in class, I have tried the
@@ -227,10 +239,6 @@ following demonstration.
   have the same spin coordinate they cannot “pass” each other (they are trapped
   between the rows).
 
-<figure>
-   <img src="/images/anders-krisar-by-christian-larsen-yatzer-2013.jpg">
-</figure>
-
 * **Next I ask a boy and a girl in different but consecutive rows of
   seats to move towards each other**. When they are about to cross I shout out
   “stop”. At this point, the rest of the students (who are clustered at the
@@ -241,9 +249,6 @@ following demonstration.
   position.
 
 
-<figure>
-   <img src="/images/rene-magritte-les-liasons-dangerous-1935.jpg">
-</figure>
 
 
 
