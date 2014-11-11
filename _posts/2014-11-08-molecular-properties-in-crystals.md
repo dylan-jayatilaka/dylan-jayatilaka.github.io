@@ -190,12 +190,22 @@ we need \\( E\sub{I\alpha J\beta}({\color{red}\B{R}^c},{\color{red}\B{F}^c})\\)
 which may be evaluated by the following expansion
 
 $$
+\boxed{
 E\sub{I\alpha J\beta}({\color{red}\B{R}^c},{\color{red}\B{F}^c})
 =
-{\color{gree}E\sub{I\alpha J\beta}}({\color{red}\B{R}^c},\B{0})
+{\color{green}E\sub{I\alpha J\beta}}({\color{red}\B{R}^c},\B{0})
++
+{\color{green}\mu\sub{\delta,I\alpha J\beta}}({\color{red}\B{R}^c},\B{0})
+{\color{red} F^c\sub{\delta}}
+}
 $$
 
-## Harmonic frequencies?
+Note that the actual force constants involve coupling terms between the
+atom coordinates of the embedded molecule and those in the environment.
+Therefore the above formula is only a best first-order approximation for
+treating the molecule as a separate entity in the crystal. Intuitively
+one might expect that the lower frequency modes to be most affected
+by these separability considerations.
 
 ## Dipole derivatives from local fields
 
@@ -217,7 +227,7 @@ geometry at zero field strength gives,
 $$
 \boxed{
 {\color{green}E\sub{I\alpha}}({\color{red}\B{R}^c},\B{0})
-- \mu\sub{\delta, I\alpha}(\B{R}^c,\B{0}) {\color{red} F^c\sub{\delta}} = 0.
+- \mu\sub{\delta, I\alpha}({\color{red}\B{R}^c},\B{0}) {\color{red} F^c\sub{\delta}} = 0.
 }
 $$
 
@@ -276,62 +286,42 @@ The important thing to note is that this model reduces the number of unknown
 dipole derivatives to just \\( N_n \\) effective charges \\( q\sub{I} \\). With
 the translational and rotational conditions on the dipole derivatives, we now
 have an *overdetermined systems of equations* which can be solved by least
-squares.
-
-### ... Dipole derivatives bootstrapped from quantum chemistry
-
-Since quantum chemical quantities are used extensively in the above
-procedures, we might use the *calculated* the dipole moment derivatives
-to estimate the experimental values via a
-[regularization](http://en.wikipedia.org/wiki/Regularization_(mathematics))
-method, as follows.
-
-Suppose the quantum chemical dipole derivatives at zero field are
-\\( {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},\B{0}) \\)
-which differ from the corresponding experimental quantities by a
-*shift-correction* \\( \Delta\sub{\delta,I\alpha} \\), 
+squares. Without the translation and rotational constraints these equations read:
 
 $$
-\begin{align}
-{\color{red}\mu^c\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
-& =
-  {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
-+ \Delta\sub{\delta,I\alpha},
-\\
-{\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
-& =
- {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},\B{0})
--{\color{green}\alpha\sub{\delta\epsilon,I\alpha}}({\color{red} \B{R}^c},\B{0}) {\color{red} F^c\sub{\epsilon}}
-\end{align}
-$$
-
-We shall impose the regularization condition that these shifts should be as
-small possible, subject to the constraint on the dipole derivatives already
-derived. This leads to the following Lagrangian which must be minimized to
-obtain the shifts:
-
-$$
-\mathcal{L}(\B{\Delta})
+\boxed{
+\B{q}
 =
-\Delta\sub{\delta,I\alpha} \Delta\sub{\delta,I\alpha}
-+\lambda\sub{\delta,I\alpha}
-\left[
-  {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
-+ \Delta\sub{\delta,I\alpha},
-\right]
+\textrm{argmin}\sub{\B{q}}\,
+\displaystyle\sum\sub{I}
+\vert {\color{green}\B{E\sub{I}}}({\color{red}\B{R}^c},\B{0}) - q\sub{I} {\color{red} \B{F}^c} \vert^2.
+}
 $$
 
-Performing the minimization leads to a straightforwards set of linear equations
-for the unknown shifts.
+### ... Are the local fields reasonable?
+
+This can easily be tested by evaluating how different the predicted and
+actual forces are at the nuclear centers,
+
+$$
+\boxed{
+{\color{green}E\sub{I\alpha}}({\color{red}\B{R}^c},\B{0})
+\stackrel{\small ?}{=}
+{\color{green}\mu\sub{\delta, I}}({\color{red}\B{R}^c},\B{0}) {\color{red} F^c\sub{\delta}}
+}
+$$
 
 
 ## Acknowledgement
 
-Some of these ideas goes back to a memorable conversation with
+These notes grew directly out of a conversation with Sajesh Thomas
+and Marcus Kettner.
+
+Some of the ideas go back to a memorable conversation with
 [Kersti Hermansson](http://www.teoroo.kemi.uu.se/wp/?doing_wp_cron=1415592936.3213880062103271484375)
 at the third European Charge Density Meeting (ECDM) conference in
 [Sandbjerg Estate](http://en.wikipedia.org/wiki/Sandbjerg), where apart from
-this we discussed the islands around Stockholm in the summer.
+this we discussed the islands around Stockholm in the summer. 
 
 Of course, all of this is based on the ideas of
 [A. David Buckingham](http://dx.doi.org/10.1002/9780470143582.ch2), the
