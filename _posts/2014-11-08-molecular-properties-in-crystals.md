@@ -50,9 +50,9 @@ During beers last Friday night we came up with a solution based on a Taylor
 expansion of the energy. Using the quantum chemistry programs to obtain various
 energy derivatives, the outcome is that we can estimate
 
-* The molecular dipole moment derivatives (with additional assumptions),
-* The gas-phase molecular geometry,
-* The change in the force constants due to the external electric fields.
+* The gas-phase molecular geometry
+* The change in the force constants due to the external electric fields
+* The molecular dipole moment derivatives (with additional assumptions)
 
 ## Notation
 
@@ -64,7 +64,7 @@ energy surface \\( E(\B{R},\B{F}) \\):
 * \\( \B{R} = (R\sub{I\alpha}) \\) are the nuclear coordinates
 * \\( \B{F} = (F\sub{I\alpha}) \\) are the external electric fields
 * Capital roman letters \\( I, I=1\ldots N\sub{n} \\) refer to atom indices
-* Greek letters \\(\alpha, \alpha=1,2,3 \\) are cartesian coordinates
+* Greek letters \\(\alpha \\) are cartesian coordinates
 
 The coordinates \\(\color{red} \B{R}^c \\) and fields \\( \color{red}\B{F}^c \\) refer
 refer to experimental in-crystal cooordinates and fields, respectively.
@@ -77,28 +77,30 @@ Note that below we will always use:
 The coordinates \\( \B{R}^e \\) refers to gas phase equilibrium coordinates
 and are to be determined.
 
-To make the Taylor expansions easier to understand a repeated index
-summation convention in used
+To make the Taylor expansions less cluttered understand a
+[repeated index summation convention](http://en.wikipedia.org/wiki/Einstein_notation) 
+is used.
 
-Partial derivative symbols are eliminated as follows:
+For the same reason, partial derivative symbols are eliminated, as follows:
 
 * Positional derivatives of the molecular energy \\( E \\) are written as
 
 $$
 \begin{align}
-E\sub{I\alpha}
+{\color{green}E\sub{I\alpha}}
 & =
-\frac{\partial E}{\partial R\sub{I\alpha}} & & \textrm{Gradient/Force}
+\frac{\partial E}{\partial R\sub{I\alpha}} 
+& & {\onenote{Gradient/Force}}
 \\
-E\sub{I\alpha J\beta}
+{\color{green}E\sub{I\alpha J\beta}}
 & =
 \frac{\partial^2 E}{\partial R\sub{I\alpha}\partial R\sub{J\beta}}
-& & \textrm{Force constants}, \B{f} = ( E\sub{I\alpha J\beta} ) .
+& & {\small\onenote{Force constants}, \B{f} = ( E\sub{I\alpha J\beta}} ) .
 \\
-E\sub{I\alpha J\beta K\gamma}
+{\color{green}E\sub{I\alpha J\beta K\gamma}}
 & =
 \frac{\partial^3 E}{\partial R\sub{I\alpha}\partial R\sub{J\beta} \partial R\sub{K\gamma}}
-& & \textrm{Cubic force constants}
+& & \onenote{Cubic force constants}
 \end{align}
 $$
 
@@ -106,27 +108,50 @@ $$
 
 $$
 \begin{align}
-\mu\sub{\delta}
+{\color{green}\mu\sub{\delta}}
 & =
 - \frac{\partial E}{\partial F\sub{\delta}}
-& & \textrm{Dipole moment}, \B{\mu} = (\mu\sub{\delta})
+& & {\small\onenote{Dipole moment}, \B{\mu} = (\mu\sub{\delta})}
 \\
-\mu\sub{\delta, I\alpha}
+{\color{green}\mu\sub{\delta, I\alpha}}
 & =
 - \frac{\partial^2 E} {\partial F\sub{\delta} \partial R\sub{I\alpha}}
-& & \textrm{Dipole moment derivative/Atomic polar tensor}
+& & \twonote{Dipole moment derivative}{Atomic polar tensor}
 \\
-\mu\sub{\delta, I\alpha J\beta}
+{\color{green}\mu\sub{\delta, I\alpha J\beta}}
 & =
-- \frac{\partial^3 E} {\partial F\sub{\delta} \partial R\sub{I\alpha} \partial R\sub{J\beta}}
-& & \textrm{Dipole moment second derivative}
+- \frac{\partial^3 E}{\partial F\sub{\delta} \partial R\sub{I\alpha} \partial R\sub{J\beta}}
+& & \onenote{Dipole moment second derivative}
 \end{align}
 $$
+
+* Derivatives involving two electric fields are polarizability derivatives:
+
+$$
+\begin{align}
+{\color{green}\alpha\sub{\delta\epsilon}}
+& =
+- \frac{\partial^2 E}{\partial F\sub{\delta}F\sub{\epsilon}}
+& & {\small\onenote{polarizability}, \B{\alpha} = (\alpha\sub{\delta\epsilon})}
+\\
+{\color{green}\alpha\sub{\delta\epsilon, I\alpha}}
+& =
+- \frac{\partial^3 E} {\partial F\sub{\delta} \partial F\sub{\epsilon} \partial R\sub{I\alpha}}
+& & \onenote{Polarizability derivative}
+\end{align}
+$$
+
+*Importantly, all of these quantities may be evaluated using quantum chemistry
+program packages, if not directly, then by using finite differences*.
+
+Some of these quantities may also be estimated from experimental information
+using the input of quantum chemical information --- the essence of the
+original approach to the problems.
 
 
 ## Gas phase structure from crystal
 
-We can also expand \\( E\sub{I\alpha}({\color{red}\B{R}^c},{\color{red}
+We expand \\( E\sub{I\alpha}({\color{red}\B{R}^c},{\color{red}
 \B{F}^c}) \\) around the gas phase geometry with zero field,
 
 $$
@@ -148,22 +173,26 @@ $$
 \boxed{
   {\color{green}\mu\sub{\delta, I\alpha}}(\B{R}^e,\B{0}) {\color{red} F^c\sub{\delta}}
 + {\color{green}E\sub{I\alpha J\beta}}(\B{R}^e,\B{0}) {\color{red}R^c\sub{J\beta}}
-= {\color{green}E\sub{I\alpha J\beta}}(\B{R}^c,\B{0})
+= {\color{green}E\sub{I\alpha J\beta}}(\B{R}^e,\B{0})
   R^e\sub{J\beta}
 }
 $$
+
+Note that we could have chosen to expand around the experimental geometry.
+We chose to use the gas pjase geometry because quantum chemistry methods
+are much better validated under these conditions.
 
 ## Change in the harmonic frequency
 
 To evaluate the change in the harmonic frequency we need to estimate the force
 constant matrix at the crystal geometry when external fields are applied, i.e.
-we need \\( E\sub{I\alpha J\beta}({\color{red}\B{R}^c,{\color{red}\B{F}^c})\\).
-If we expand these force constants around the isolated molecule configuration,
+we need \\( E\sub{I\alpha J\beta}({\color{red}\B{R}^c},{\color{red}\B{F}^c})\\)
+which may be evaluated by the following expansion
 
 $$
-E\sub{I\alpha J\beta}(\B{R}^c,\B{F}^c)}sub{\B{0}}
+E\sub{I\alpha J\beta}({\color{red}\B{R}^c},{\color{red}\B{F}^c})
 =
-E\sub{I\alpha J\beta}(\B{R}^c,\B{F}^c)}sub{\B{0}]
+{\color{gree}E\sub{I\alpha J\beta}}({\color{red}\B{R}^c},\B{0})
 $$
 
 ## Harmonic frequencies?
@@ -183,7 +212,7 @@ E\sub{I\alpha}({\color{red}\B{R}^c},{\color{red} \B{F}^c}) = 0.
 $$
 
 Expanding the left hand side in a Taylor series around the crystal
-geometry and zero external field gives,
+geometry at zero field strength gives,
 
 $$
 \boxed{
@@ -193,17 +222,18 @@ $$
 $$
 
 These are \\( 3 N\sub{n} \\) equations in the \\( 9 N\sub{n} \\) unknown molecular
-dipole moment derivatives \\( \mu\sub{\delta I\alpha}(\B{R}^c,\B{0}) \\).
+dipole moment derivatives \\( \mu\sub{\delta, I\alpha}(\B{R}^c,\B{0}) \\).
 (Note that the dipole derivatives here pertain to the *experimental crystal
 geometry* not to the gas phase). Therefore it is not possible to determine
 these quantities  from a single experiment unless some of the unknown
 coefficients are known to be zero by symmetry --- for example the molecule is
-linear.
+linear or uncharged.
 
-### ... Further reduction in the number of unknowns
+### ... Reduction in the number of unknowns
 
-Actually, there are only \\( 9 N\sub{n} - 3 \\) unknown molecular dipole moment
-derivatives as the following argument shows:
+Actually, there are only \\( 9 N\sub{n} - 6 \\) unknown molecular dipole moment
+derivatives (or \\( 9 N\sub{n} - 5 \\) for linear molecules) as the following
+argument shows.
 
 For an uncharged molecule the dipole moment does not depend on the coordinate
 system i.e. \\( \B{\mu}(\B{R},\B{F}) = \B{\mu}(\B{R}+\B{\Delta},\B{F}) \\)
@@ -218,10 +248,12 @@ which provide three extra conditions on the dipole moment derivatives.
 A further three conditions could also be obtained (two for linear molecules)
 if the dipole moment of the molecule is known.
 
+These conditions should not be used if the molecule has acquired a charge.
+
 In order to determine the dipole moment derivatives some additional models
 are required to reduce the number of unknowns. 
 
-## Local charge model for dipole derivatives
+### ... Local charge model for dipole derivatives
 
 Suppose that the dipole moment in the molecule at different geometries is well
 modelled by fixed atomic charges \\( q_I \\) at each atomic site \\( I \\),
@@ -241,39 +273,56 @@ q\sub{I}^2 = \frac{1}{9} \mu\sub{\delta,I\alpha} \mu\sub{\delta,I\alpha}.
 $$
 
 The important thing to note is that this model reduces the number of unknown
-dipole derivatives to just \\( 3 N_n \\) numbers. With the translational
-and rotational conditions on the dipole derivatives, we now have an *overdetermined
-systems of equations* which can be solved by least squares.
+dipole derivatives to just \\( N_n \\) effective charges \\( q\sub{I} \\). With
+the translational and rotational conditions on the dipole derivatives, we now
+have an *overdetermined systems of equations* which can be solved by least
+squares.
 
-## Dipole derivatives bootstrapped from quantum chemistry
+### ... Dipole derivatives bootstrapped from quantum chemistry
 
 Since quantum chemical quantities are used extensively in the above
 procedures, we might use the *calculated* the dipole moment derivatives
 to estimate the experimental values via a
-[regularization](http://en.wikipedia.org/wiki/Regularization_(mathematics)) method.
+[regularization](http://en.wikipedia.org/wiki/Regularization_(mathematics))
+method, as follows.
 
 Suppose the quantum chemical dipole derivatives at zero field are
-\\( {\color{green}\mu\sub{\delta,I\alpha}({\color{red} \B{R}^c},\B{0}) \\)
+\\( {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},\B{0}) \\)
 which differ from the corresponding experimental quantities by a
-*shift* \\( \Delta\sub{\delta,I\alpha} \\). We shall impose the regularization
-condition that these shifts should be as small possible, subject to
-the constraint on the dipole derivatives already derived. This leads
-to the following Lagrangian which must be minimized to obtain
-the shifts:
+*shift-correction* \\( \Delta\sub{\delta,I\alpha} \\), 
+
+$$
+\begin{align}
+{\color{red}\mu^c\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
+& =
+  {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
++ \Delta\sub{\delta,I\alpha},
+\\
+{\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
+& =
+ {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},\B{0})
+-{\color{green}\alpha\sub{\delta\epsilon,I\alpha}}({\color{red} \B{R}^c},\B{0}) {\color{red} F^c\sub{\epsilon}}
+\end{align}
+$$
+
+We shall impose the regularization condition that these shifts should be as
+small possible, subject to the constraint on the dipole derivatives already
+derived. This leads to the following Lagrangian which must be minimized to
+obtain the shifts:
 
 $$
 \mathcal{L}(\B{\Delta})
 =
 \Delta\sub{\delta,I\alpha} \Delta\sub{\delta,I\alpha}
 +\lambda\sub{\delta,I\alpha}
-\left\[
-{\color{green}E\sub{I\alpha}}({\color{red}\B{R}^c},\B{0})
-- \mu\sub{\delta, I\alpha}(\B{R}^c,\B{0}) {\color{red} F^c\sub{\delta}}
+\left[
+  {\color{green}\mu\sub{\delta,I\alpha}}({\color{red} \B{R}^c},{\color{red}\B{F}^c})
++ \Delta\sub{\delta,I\alpha},
 \right]
 $$
 
 Performing the minimization leads to a straightforwards set of linear equations
-for the unknown shifts. The results may be compared to the previous approach.
+for the unknown shifts.
 
 
 ## Acknowledgement
