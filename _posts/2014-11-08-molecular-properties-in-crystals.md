@@ -272,8 +272,10 @@ $$
 \mu\sub{\delta} = \sum\sub{I=1}^{N_n} q_I R\sub{I\delta}.
 $$
 
-This is not a great model because it does not account for the change
-in the charges with change in geometry. Nevertheless, it is straightforward to
+This is not a good model because it does not account for the change
+in the charges with change in geometry. Such charges are also called
+[Born effective charges](http://quantumwise.com/documents/tutorials/latest/Polarization/index.html/chap.born.html#sect1.born.theory). 
+Nevertheless, it is straightforward to
 show that the atomic charges in this may be approximated at the trace of of the
 dipole moment derivatives, which in this case are better known as the
 [atomic polar tensors](http://dx.doi.org/10.1063/1.1681972),
